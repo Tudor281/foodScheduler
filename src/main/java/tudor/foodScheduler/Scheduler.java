@@ -35,15 +35,14 @@ public class Scheduler {
         while(schedule.hasFreeSlots()) {
             List<Recipe> supplementalRecipes = Recipe.getSupplementalRecipes(schedule);
 
-            while(!supplementalRecipes.isEmpty()) {
-                Recipe recipe = supplementalRecipes.remove(random.nextInt(supplementalRecipes.size()));
+            Recipe recipe = supplementalRecipes.remove(random.nextInt(supplementalRecipes.size()));
 
-                try {
-                    add(recipe, schedule);
-                }catch (Exception ignored) {};
+            try {
+                add(recipe, schedule);
+            } catch (Exception ignored) {
             }
             counter ++;
-            if (counter>100) throw new RuntimeException("Run out of attempts, wtf");
+            if (counter>1000) throw new RuntimeException("Run out of attempts, wtf");
         }
     }
 
