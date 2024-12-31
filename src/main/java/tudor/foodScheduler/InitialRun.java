@@ -19,7 +19,9 @@ public class InitialRun {
 
         addConstraints(schedule);
 
-        new AtLeastOnceScheduler().addAtLeastOnceRecipes(schedule);
+        Scheduler scheduler = new Scheduler();
+        scheduler.addAtLeastOnceRecipes(schedule);
+        scheduler.fillInOtherRecipes(schedule);
 
         logger.info("Schedule: ");
         logger.info(schedule.toString());

@@ -122,6 +122,22 @@ public class Recipe {
         return result;
     }
 
+    public static List<Recipe> getSupplementalRecipes(Schedule schedule) {
+        List<Recipe> result = new LinkedList<>();
+        for (Recipe recipe : all.values()) {
+            if (recipe.multiplicity == Disabled || recipe.multiplicity == Once) continue;
+
+            if (recipe.multiplicity == AtMostOnce) {
+                if (schedule.isRecipePresent(recipe)) continue;
+            }
+
+            //also if (recipe.multiplicity == AtLeastOnce || recipe.multiplicity == Optional)
+            result.add(recipe);
+        }
+
+        return result;
+    }
+
     public int getSeasonalityScore() {
         int smallestScore = Integer.MAX_VALUE;
         for (Ingredient ingredient : ingredients) {

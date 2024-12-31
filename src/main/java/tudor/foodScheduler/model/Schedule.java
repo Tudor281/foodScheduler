@@ -13,12 +13,12 @@ public class Schedule {
 
     public Schedule(int[] weeksInMonth) {
         this.weeksInMonth = weeksInMonth;
-        for (int i=0; i<12; i++) {
-            Map<Integer, Map<Integer, Recipe>> month = new HashMap<>();
-            recipes.put(i, month);
-            for (int j=0; j<weeksInMonth[i]; j++) {
-                Map<Integer, Recipe> week = new HashMap<>();
-                month.put(j, week);
+        for (int month=0; month<12; month++) {
+            Map<Integer, Map<Integer, Recipe>> monthContainer = new HashMap<>();
+            recipes.put(month, monthContainer);
+            for (int week=0; week<weeksInMonth[month]; week++) {
+                Map<Integer, Recipe> weekContainer = new HashMap<>();
+                monthContainer.put(week, weekContainer);
             }
         }
     }
@@ -46,9 +46,9 @@ public class Schedule {
 
     public String toString() {
         String result = "";
-        for (int i=0; i<12; i++) {
-            for (int j=0; j<weeksInMonth[i]; j++) {
-                result += toString(i, j);
+        for (int month=0; month<12; month++) {
+            for (int week=0; week<weeksInMonth[month]; week++) {
+                result += toString(month, week);
             }
         }
         return result;
@@ -88,5 +88,15 @@ public class Schedule {
         }
 
         return slots;
+    }
+
+    public boolean hasFreeSlots() {
+        for (int month=0; month<12; month++) {
+            for (int week=0; week<weeksInMonth[month]; week++) {
+                if (recipes.get(month).get(week).get(0) == null) return true;
+                if (recipes.get(month).get(week).get(1) == null) return true;
+            }
+        }
+        return false;
     }
 }
