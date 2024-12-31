@@ -1,8 +1,6 @@
 package tudor.foodScheduler.model;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static tudor.foodScheduler.model.Fel.*;
 import static tudor.foodScheduler.model.Ingredient.*;
@@ -112,6 +110,27 @@ public class Recipe {
         return recipe;
     }
 
+    public static List<Recipe> getAtLeastOnceRecipes(Schedule schedule) {
+        List<Recipe> result = new LinkedList<>();
+        for (Recipe recipe : all.values()) {
+            if (!(recipe.multiplicity == AtLeastOnce || recipe.multiplicity == Once)) continue;
+
+            if (schedule.isRecipePresent(recipe)) continue;
+
+            result.add(recipe);
+        }
+        return result;
+    }
+
+    public int getSeasonalityScore() {
+        int smallestScore = Integer.MAX_VALUE;
+        for (Ingredient ingredient : ingredients) {
+            int score = ingredient.getSeasonalityScore();
+            if (score < smallestScore) smallestScore = score;
+        }
+        return smallestScore;
+    }
+
     static void add(Recipe recipe) {
         all.put(recipe.getName(), recipe);
     }
@@ -126,5 +145,48 @@ public class Recipe {
 
     public String getName() {
         return name;
+    }
+
+    public static List<Recipe> extractLowPriorityRecipes(List<Recipe> input) {
+        List<Recipe> lowPriorityRecipes = new LinkedList<>();
+        for (Recipe recipe : input) {
+            if (recipe.getSeasonalityScore() == Integer.MAX_VALUE) {
+                lowPriorityRecipes.add(recipe);
+            }
+        }
+        input.removeAll(lowPriorityRecipes);
+        return lowPriorityRecipes;
+    }
+
+    public List<Integer> getDomesticSlots() {
+        List<Integer> slots = new LinkedList<>(Months.ALL);
+        for (Ingredient ingredient : ingredients) {
+            List<Integer> removedSlots = new ArrayList<>();
+            for (Integer i : slots) {
+                if (!ingredient.domesticMonths.contains(i)) {
+                    removedSlots.add(i);
+                }
+            }
+            if (!removedSlots.isEmpty()) {
+                slots.removeAll(removedSlots);
+            }
+        }
+        return slots;
+    }
+
+    public List<Integer> getImportSlots() {
+        List<Integer> slots = new LinkedList<>(Months.ALL);
+        for (Ingredient ingredient : ingredients) {
+            List<Integer> removedSlots = new ArrayList<>();
+            for (Integer i : slots) {
+                if (!ingredient.importMonths.contains(i)) {
+                    removedSlots.add(i);
+                }
+            }
+            if (!removedSlots.isEmpty()) {
+                slots.removeAll(removedSlots);
+            }
+        }
+        return slots;
     }
 }

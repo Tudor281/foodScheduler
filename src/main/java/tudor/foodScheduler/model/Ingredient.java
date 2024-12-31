@@ -32,7 +32,7 @@ public enum Ingredient {
     Smantana(ALL, ALL),
     Soia(ALL, ALL),
     Rosii(List.of(6,7,8,9,10,11), ALL),
-    Telina(List.of(), ALL),
+    Telina(ALL, ALL),
     Urzici(List.of(3,4,5), List.of()),
     Varza(List.of(7,8,9,10,11,12), ALL),
     VarzaMurata(ALL, ALL),
@@ -46,5 +46,10 @@ public enum Ingredient {
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
+    }
+
+    public int getSeasonalityScore() {
+        if (domesticMonths.size() == 12 && importMonths.size() == 12) return Integer.MAX_VALUE;
+        return domesticMonths.size() + importMonths.size() * 12;
     }
 }
