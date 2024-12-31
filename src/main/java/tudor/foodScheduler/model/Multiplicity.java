@@ -4,5 +4,6 @@ public enum Multiplicity {
     AtLeastOnce,
     AtMostOnce,
     Disabled,
-    Optional
+    Optional,
+    Once
 }
