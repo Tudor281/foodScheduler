@@ -213,4 +213,61 @@ public class Schedule {
     public Schedule copy() {
         return new Schedule(weeksInMonth, recipes);
     }
+
+    Map<Recipe, Integer> recipeCounts = new HashMap<>();
+    public void countRecipes() {
+        for (int month=0; month<12; month++) {
+            for (int week = 0; week < weeksInMonth[month]; week++) {
+                for (int channel = 0; channel < 3; channel ++) {
+                    Recipe recipe = recipes.get(month).get(week).get(channel).recipe;
+                    Integer count = recipeCounts.get(recipe);
+                    //noinspection Java8MapApi
+                    if (count == null) {
+                        recipeCounts.put(recipe, 1);
+                    } else {
+                        recipeCounts.put(recipe, count + 1);
+                    }
+                }
+            }
+        }
+    }
+
+    public Duplication getIngredientDuplicate() {
+        int prevMonth = 11;
+        int prevWeek = weeksInMonth[11]-1;
+        Map<Integer, ScheduleEntry> prevRow = recipes.get(prevMonth).get(prevWeek); // december 31st
+        for (int month=0; month<12; month++) {
+            for (int week = 0; week < weeksInMonth[month]; week++) {
+                for (int channel = 0; channel < 3; channel++) {
+                    ScheduleEntry prevEntry = prevRow.get(channel);
+                    ScheduleEntry entry = recipes.get(month).get(week).get(channel);
+                    if (prevEntry.recipe.hasIngredientsInCommon(entry.recipe)) {
+                        return new Duplication(
+                                new ScheduleSlot(prevMonth, prevWeek, hasConstraints(prevEntry)),
+                                prevEntry.recipe,
+                                new ScheduleSlot(month, week, hasConstraints(entry)),
+                                entry.recipe);
+                    }
+                }
+                prevMonth = month;
+                prevWeek = week;
+                prevRow = recipes.get(month).get(week);
+            }
+        }
+        return null;
+    }
+
+    boolean hasConstraints(ScheduleEntry entry) {
+        if (entry.initialConstraint) return true;
+
+        Recipe recipe = entry.recipe;
+
+        if (recipe.multiplicity == Multiplicity.AtLeastOnce && recipeCounts.get(recipe) < 2) return true;
+
+        //noinspection RedundantIfStatement
+        if (recipe.multiplicity == Multiplicity.Once) return true;
+
+        return false;
+    }
+
 }

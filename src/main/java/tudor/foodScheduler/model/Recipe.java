@@ -15,7 +15,7 @@ public class Recipe {
     public String name;
     public List<Ingredient> ingredients;
     public List<Spice> spices;
-    Multiplicity multiplicity;
+    public Multiplicity multiplicity;
     public Fel fel;
 
     static final Map<String, Recipe> all = new HashMap<>();
@@ -206,5 +206,12 @@ public class Recipe {
             }
         }
         return slots;
+    }
+
+    public boolean hasIngredientsInCommon(Recipe recipe) {
+        for (Ingredient ingredient : ingredients) {
+            if (recipe.ingredients.contains(ingredient)) return true;
+        }
+        return false;
     }
 }

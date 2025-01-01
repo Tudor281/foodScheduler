@@ -1,6 +1,9 @@
 Even after 100K generations, the best recipy still has 6 duplicates.
 
-Both resolvers need to respect the Schedule constraints and Recipe constraints.
+Both resolvers need to respect the Schedule constraints (initial constraints) and Recipe constraints.
+
+You don't like having Ciorba de fasole cu leustean, si imediat dup-aia ciorba de fasole cu chimen, deci e ingredient based.
+In general e cam ok sa ai ciorba de fasole si fasole prajita.
 
 1. Crossover
 Simple, sort of

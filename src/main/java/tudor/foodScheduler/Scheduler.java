@@ -59,4 +59,13 @@ public class Scheduler {
 
         schedule.add(slots.get(random.nextInt(slots.size())), recipe);
     }
+
+    public void eliminateDuplicates(Schedule schedule) {
+        boolean hasDuplicates = true;
+
+        do {
+
+            schedule.countRecipes();
+        } while (hasDuplicates);
+    }
 }

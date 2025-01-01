@@ -5,10 +5,16 @@ import java.util.List;
 public class ScheduleSlot {
     int month;
     int week;
+    boolean hasConstraints = false;
 
     public ScheduleSlot(int month, int week) {
         this.month = month;
         this.week = week;
+    }
+
+    public ScheduleSlot(int month, int week, boolean hasConstraints) {
+        this(month, week);
+        this.hasConstraints = hasConstraints;
     }
 
     /** Assumes slots are ordered */

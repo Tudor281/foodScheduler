@@ -1,6 +1,7 @@
 package tudor.foodScheduler.model.schedule;
 
 import org.junit.jupiter.api.Test;
+import tudor.foodScheduler.Scheduler;
 import tudor.foodScheduler.model.Recipe;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,5 +30,19 @@ class ScheduleTest {
 
         assertSame(ardei, copy.recipes.get(0).get(0).get(1).recipe);
         assertNull(schedule.recipes.get(0).get(0).get(1));
+    }
+
+    @Test
+    void shouldDetectDuplicates() {
+        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
+        Recipe fasoleCuChimen = Recipe.get("Ciorbă de fasole - Cu chimen");
+        Recipe fasoleCuDafin = Recipe.get("Ciorbă de fasole - Cu dafin");
+        schedule.add(12, 4, fasoleCuChimen);
+        schedule.add(1, 1, fasoleCuDafin);
+
+        Duplication duplication = schedule.getIngredientDuplicate();
+        assertNotNull(duplication);
+        assertSame(fasoleCuChimen, duplication.recipe1);
+        assertSame(fasoleCuDafin, duplication.recipe2);
     }
 }
