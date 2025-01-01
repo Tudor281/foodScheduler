@@ -20,7 +20,7 @@ public class Recipe {
 
     public static final Map<String, Recipe> all = new HashMap<>();
     static {
-        add(new Recipe("American Potato Salad", List.of(Cartofi, Maioneza), Once, Rece, List.of(Mustar, Apio, Patrunjel)));
+        add(new Recipe("American Potato Salad", List.of(Cartofi, Maioneza), Once, F2, List.of(Mustar, Apio, Patrunjel)));
         add(new Recipe("Apple Pie", List.of(Mere), Optional, Desert, List.of()));
         add(new Recipe("Ardei umpluți simplu", List.of(Ardei, Orez), Optional, F2, List.of(FrunzeTelina)));
         add(new Recipe("Ardei umpluți cu carne", List.of(Ardei, Orez, Carne), Once, F2, List.of(FrunzeTelina)));

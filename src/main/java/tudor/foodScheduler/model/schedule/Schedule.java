@@ -250,7 +250,7 @@ public class Schedule {
                     ScheduleEntry prevEntry = prevRow.get(channel);
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (prevEntry == null || entry == null) continue; // we could have empty slots, especially on channel 3
-                    if (prevEntry.recipe.hasIngredientsInCommon(entry.recipe)) {
+                    if (prevEntry.recipe.hasIngredientsInCommon(entry.recipe) && !(prevEntry.initialConstraint && entry.initialConstraint)) {
                         return new Duplication(
                                 new ScheduleSlot(prevMonth, prevWeek, hasConstraints(prevEntry)),
                                 prevEntry.recipe,
