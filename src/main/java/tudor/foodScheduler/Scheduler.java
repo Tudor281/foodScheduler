@@ -1,5 +1,6 @@
 package tudor.foodScheduler;
 
+import tudor.foodScheduler.model.Multiplicity;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Duplication;
 import tudor.foodScheduler.model.schedule.Schedule;
@@ -39,6 +40,9 @@ public class Scheduler {
 
             Recipe recipe = supplementalRecipes.remove(random.nextInt(supplementalRecipes.size()));
 
+            Integer count = schedule.recipeCounts.get(recipe);
+            if (recipe.multiplicity == Multiplicity.AtLeastOnce && recipe.limit != null &&  count != null && recipe.limit >= count) continue;;
+
             try {
                 add(recipe, schedule);
             } catch (Exception ignored) {
@@ -65,8 +69,6 @@ public class Scheduler {
     public void eliminateDuplicates(Schedule schedule) throws SchedulingException {
         int count = 0;
         do {
-            schedule.countRecipes();
-
             Duplication duplication = schedule.getIngredientDuplicate();
             if (duplication == null) return;
 

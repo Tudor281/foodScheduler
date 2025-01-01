@@ -17,6 +17,7 @@ public class Recipe {
     public List<Spice> spices;
     public Multiplicity multiplicity;
     public Fel fel;
+    public Integer limit = null;
 
     public static final Map<String, Recipe> all = new HashMap<>();
     static {
@@ -37,7 +38,7 @@ public class Recipe {
         add(new Recipe("Ciorbă de frunze", List.of(Frunze), AtLeastOnce, F1, List.of(Marar, Leustean)));
         add(new Recipe("Ciorbă de ghebe cu smântână", List.of(Ciuperci, Smantana), AtMostOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de năut cu afumătură", List.of(Carne, Naut), AtMostOnce, F1, List.of(BoiaDulce)));
-        add(new Recipe("Ciorbă de păstăi", List.of(PastaiCongelate), AtLeastOnce, F1, List.of(Pastarnac, Patrunjel, Marar, Leustean)));
+        add(new Recipe("Ciorbă de păstăi", List.of(PastaiCongelate), AtLeastOnce, F1, List.of(Pastarnac, Patrunjel, Marar, Leustean), 3));
         add(new Recipe("Ciorbă de păstăi fresh", List.of(PastaiFresh), Once, F1, List.of(Pastarnac, Patrunjel, Marar, Leustean)));
         add(new Recipe("Ciorbă de perișoare", List.of(Carne), AtMostOnce, F1, List.of())); // TODO No recipy
         add(new Recipe("Ciorbă de pui a la Grec", List.of(Carne, Smantana), Once, F1, List.of(Pastarnac, SucLamaie, Patrunjel, Marar)));
@@ -65,7 +66,7 @@ public class Recipe {
         add(new Recipe("Mâncare de fasole - Iahnie de fasole", List.of(Fasole), AtLeastOnce, F2, List.of(Usturoi, Pastarnac, Dafin)));
         add(new Recipe("Mâncare de mazăre - Cu pui", List.of(Mazare, Carne), Disabled, F2, List.of(Marar, BoiaDulce, Dafin, Usturoi))); // mazărea cu soia e pur și simplu superioară
         add(new Recipe("Mâncare de mazăre - Cu soia", List.of(Mazare, Soia), AtLeastOnce, F2, List.of(Marar, BoiaDulce, Dafin, Usturoi)));
-        add(new Recipe("Mâncare de mazăre - Simplu", List.of(Mazare), AtLeastOnce, F2, List.of(Marar)));
+        add(new Recipe("Mâncare de mazăre - Simplu", List.of(Mazare), AtLeastOnce, F2, List.of(Marar), 4));
         add(new Recipe("Melanzane alla parmigiano", List.of(Vinete, Branza), Once, F2, List.of()));
         add(new Recipe("Musaca cu carne", List.of(Cartofi, Carne), Once, F2, List.of(Apio, VinAlb)));
         add(new Recipe("Musaca cu ciuperci", List.of(Cartofi, Ciuperci), AtLeastOnce, F2, List.of())); // TODO no recipy
@@ -159,6 +160,11 @@ public class Recipe {
         this.multiplicity = multiplicity;
         this.fel = fel;
         this.spices = spices;
+    }
+
+    public Recipe(String name, List<Ingredient> ingredients, Multiplicity multiplicity, Fel fel, List<Spice> spices, int limit) {
+        this(name, ingredients, multiplicity, fel, spices);
+        this.limit = limit;
     }
 
     public String getName() {

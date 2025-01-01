@@ -15,7 +15,6 @@ public class Schedule {
     // channels: 0 F1, 1 F2, 3, AUX
     Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes = new HashMap<>();
     int[] weeksInMonth;
-    Set<Recipe> recipesPresent = new HashSet<>();
     int numberOfWeeks;
 
     public Schedule(int[] weeksInMonth) {
@@ -45,7 +44,7 @@ public class Schedule {
 
                 weekContainer.putAll(otherWeekContainer);
                 for (ScheduleEntry entry : otherWeekContainer.values()) {
-                    recipesPresent.add(entry.recipe);
+                    count(entry.recipe);
                 }
             }
         }
@@ -59,13 +58,15 @@ public class Schedule {
 
     /** Real month and week numbers, starting from 1 */
     public void add(int month, int week, Recipe recipe, boolean initialConstraint) {
-        recipes.get(month-1).get(week-1).put(getChannel(recipe), new ScheduleEntry(recipe, initialConstraint));
-        recipesPresent.add(recipe);
+        ScheduleEntry oldEntry = recipes.get(month-1).get(week-1).put(getChannel(recipe), new ScheduleEntry(recipe, initialConstraint));
+        count(recipe);
+        if (oldEntry != null) dec(oldEntry.recipe);
     }
 
     public void add(ScheduleSlot slot, Recipe recipe) {
-        recipes.get(slot.month).get(slot.week).put(getChannel(recipe), new ScheduleEntry(recipe, false));
-        recipesPresent.add(recipe);
+        ScheduleEntry oldEntry = recipes.get(slot.month).get(slot.week).put(getChannel(recipe), new ScheduleEntry(recipe, false));
+        count(recipe);
+        if (oldEntry != null) dec(oldEntry.recipe);
     }
 
     private int getChannel(Recipe recipe) {
@@ -75,7 +76,7 @@ public class Schedule {
     }
 
     public boolean isRecipePresent(Recipe recipe) {
-        return recipesPresent.contains(recipe);
+        return recipeCounts.containsKey(recipe);
     }
 
     public String toString() {
@@ -220,7 +221,7 @@ public class Schedule {
         return new Schedule(weeksInMonth, recipes);
     }
 
-    Map<Recipe, Integer> recipeCounts = new HashMap<>();
+    public Map<Recipe, Integer> recipeCounts = new HashMap<>();
     public void countRecipes() {
         recipeCounts.clear();
         for (int month=0; month<12; month++) {
@@ -238,6 +239,24 @@ public class Schedule {
                 }
             }
         }
+    }
+
+    void count(Recipe recipe) {
+        Integer count = recipeCounts.get(recipe);
+        //noinspection Java8MapApi
+        if (count == null) {
+            recipeCounts.put(recipe, 1);
+        } else {
+            recipeCounts.put(recipe, count+1);
+        }
+    }
+
+    void dec(Recipe recipe) {
+        Integer count = recipeCounts.get(recipe);
+        if (count == null || count <= 0) {
+            throw new RuntimeException("Removing a recipe that has not been counted");
+        }
+        recipeCounts.put(recipe, count - 1);
     }
 
     public Duplication getIngredientDuplicate() {
@@ -313,6 +332,8 @@ public class Schedule {
     private boolean canAdd(Recipe recipe) {
         switch (recipe.multiplicity) {
             case AtLeastOnce -> {
+                //noinspection RedundantIfStatement
+                if (recipe.limit != null && recipeCounts.get(recipe) != null && recipe.limit >= recipeCounts.get(recipe)) return false;
                 return true;
             }
             case AtMostOnce, Once -> {
