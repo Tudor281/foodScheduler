@@ -54,12 +54,12 @@ public class Recipe {
         add(new Recipe("Lasagna bolognese", List.of(Carne), Once, F2, List.of(Apio, VinAlb)));
         add(new Recipe("Mâncare de cartofi - ardelenească", List.of(Cartofi), AtLeastOnce, F2, List.of(Iuteala, BoiaDulce, BoiaIute, Dafin)));
         add(new Recipe("Mâncare de cartofi - Cu pui", List.of(Cartofi, Carne), Optional, F2, List.of(Dafin, BoiaDulce, Iuteala)));
-        add(new Recipe("Mâncare de cartofi - Cu soia", List.of(Cartofi, Soia), Optional, F2, List.of(Dafin, BoiaDulce, Iuteala)));
+        add(new Recipe("Mâncare de cartofi - Cu soia", List.of(Cartofi, Soia), Once, F2, List.of(Dafin, BoiaDulce, Iuteala)));
         add(new Recipe("Mâncare de cartofi - moldovenească", List.of(Cartofi), AtLeastOnce, F2, List.of(Patrunjel, Marar, Iuteala)));
         add(new Recipe("Mâncare de ciuperci - Ciulama de ciuperci", List.of(Ciuperci), Optional, FastFood, List.of(Patrunjel, Marar)));
         add(new Recipe("Mâncare de ciuperci - Ciuperci cu smântână și usturoi", List.of(Ciuperci, Smantana), Optional, FastFood, List.of(Patrunjel, Usturoi)));
         add(new Recipe("Mâncare de fasole - Fasole prăjită", List.of(Fasole), AtLeastOnce, F2, List.of(Marar)));
-        add(new Recipe("Măncare de fasole - Fasole prăjită - Fuchs remix", List.of(Fasole), Optional, F2, List.of(Marar, FuchsFasole)));
+        add(new Recipe("Măncare de fasole - Fasole prăjită - Fuchs remix", List.of(Fasole), AtLeastOnce, F2, List.of(Marar, FuchsFasole)));
         add(new Recipe("Mâncare de fasole - Iahnie de fasole", List.of(Fasole), AtLeastOnce, F2, List.of(Usturoi, Pastarnac, Dafin)));
         add(new Recipe("Mâncare de mazăre - Cu pui", List.of(Mazare, Carne), Disabled, F2, List.of(Marar, BoiaDulce, Dafin, Usturoi))); // mazărea cu soia e pur și simplu superioară
         add(new Recipe("Mâncare de mazăre - Cu soia", List.of(Mazare, Soia), AtLeastOnce, F2, List.of(Marar, BoiaDulce, Dafin, Usturoi)));

@@ -118,15 +118,30 @@ public class Schedule {
     }
 
     /** The higher the score, the higher the distance between various ingredients */
-    public double getScore() {
+    public double getScoreExp() {
         double score = 0;
         for (Ingredient ingredient : Ingredient.values()) {
             List<ScheduleSlot> slots = getSlots(ingredient);
-            score += ScheduleSlot.computeDistance(slots, weeksInMonth);
+            score += ScheduleSlot.computeDistanceExp(slots, weeksInMonth);
         }
         for (Spice spice : Spice.values()) {
             List<ScheduleSlot> slots = getSlots(spice);
-            score += ScheduleSlot.computeDistance(slots, weeksInMonth);
+            score += ScheduleSlot.computeDistanceExp(slots, weeksInMonth);
+        }
+        return score;
+    }
+
+    /** The higher the score, the higher the distance between various ingredients */
+    public double getScoreSqrt() {
+        double score = 0;
+        for (Ingredient ingredient : Ingredient.values()) {
+            List<ScheduleSlot> slots = getSlots(ingredient);
+            score += ScheduleSlot.computeDistanceSqrt(slots, weeksInMonth);
+        }
+        score *= 4;
+        for (Spice spice : Spice.values()) {
+            List<ScheduleSlot> slots = getSlots(spice);
+            score += ScheduleSlot.computeDistanceSqrt(slots, weeksInMonth);
         }
         return score;
     }

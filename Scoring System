@@ -1,2 +1,10 @@
 Exponential
     The reward for big distance is so great, that it sacrifices some other ingredients, just the get the big score on a few ingredients.
+
+Linear
+    Kinda still puts duplicates, does not penalise them hard enough.
+
+Sqrt
+    Should penalize duplicates?
+
+Logarithm

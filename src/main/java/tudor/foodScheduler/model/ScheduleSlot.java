@@ -12,7 +12,7 @@ public class ScheduleSlot {
     }
 
     /** Assumes slots are ordered */
-    public static double computeDistance(List<ScheduleSlot> scheduleSlotList, int[] weeksInMonth) {
+    public static double computeDistanceExp(List<ScheduleSlot> scheduleSlotList, int[] weeksInMonth) {
         if (scheduleSlotList.isEmpty()) {
             return 0; // we want many ingredients used throughout the year. Since we're maximizing distance between them, 0 is bad for a schedule
         }
@@ -28,6 +28,32 @@ public class ScheduleSlot {
         }
         score += Math.exp(scheduleSlotList.getFirst().getOutsideWeeksDistance(scheduleSlotList.getLast(), weeksInMonth));
         return score;
+    }
+
+    /** Assumes slots are ordered */
+    public static double computeDistanceSqrt(List<ScheduleSlot> scheduleSlotList, int[] weeksInMonth) {
+        if (scheduleSlotList.isEmpty()) {
+            return 0; // we want many ingredients used throughout the year. Since we're maximizing distance between them, 0 is bad for a schedule
+        }
+        if (scheduleSlotList.size() == 1) {
+            return math(getSum(weeksInMonth));
+        }
+        double score = 0;
+        ScheduleSlot prevSlot = scheduleSlotList.getFirst();
+        for (int i = 1; i< scheduleSlotList.size(); i ++) {
+            ScheduleSlot currentSlot = scheduleSlotList.get(i);
+            score += math(prevSlot.getWeeksDistance(currentSlot, weeksInMonth));
+            prevSlot = currentSlot;
+        }
+        score += math(scheduleSlotList.getFirst().getOutsideWeeksDistance(scheduleSlotList.getLast(), weeksInMonth));
+        return score;
+    }
+
+    private static double math(double input) {
+        if (input-3 < 0) {
+            return -(input-3)*(input-3) + 10;
+        }
+        return Math.sqrt(input-3) + 10;
     }
 
     static int getSum(int[] weeksInMonth) {

@@ -25,7 +25,7 @@ public class InitialRun {
         scheduler.addAtLeastOnceRecipes(bestSchedule);
         scheduler.fillInOtherRecipes(bestSchedule);
 
-        double bestScore = bestSchedule.getScore();
+        double bestScore = bestSchedule.getScoreSqrt();
 
         logger.info("{}", bestScore);
 
@@ -34,7 +34,7 @@ public class InitialRun {
             scheduler.addAtLeastOnceRecipes(candidate);
             scheduler.fillInOtherRecipes(candidate);
 
-            double candidateScore = candidate.getScore();
+            double candidateScore = candidate.getScoreSqrt();
             if (candidateScore > bestScore) {
                 bestScore = candidateScore;
                 bestSchedule = candidate;

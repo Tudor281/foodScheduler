@@ -21,12 +21,12 @@ class ScheduleSlotTest {
             ScheduleSlot origin = new ScheduleSlot(1, 1);
             ScheduleSlot finish = new ScheduleSlot(7, 2);
 
-            double twoScore = ScheduleSlot.computeDistance(List.of(origin, finish), weeksInMonth);
+            double twoScore = ScheduleSlot.computeDistanceExp(List.of(origin, finish), weeksInMonth);
 
             logger.info("2 score: {}", twoScore);
 
             ScheduleSlot intermediary = new ScheduleSlot(3, 0);
-            double threeScore = ScheduleSlot.computeDistance(List.of(origin, intermediary, finish), weeksInMonth);
+            double threeScore = ScheduleSlot.computeDistanceExp(List.of(origin, intermediary, finish), weeksInMonth);
 
             logger.info("3 score: {}", threeScore);
 
