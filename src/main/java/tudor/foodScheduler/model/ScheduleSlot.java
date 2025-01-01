@@ -1,5 +1,7 @@
 package tudor.foodScheduler.model;
 
+import java.util.List;
+
 public class ScheduleSlot {
     int month;
     int week;
@@ -7,5 +9,54 @@ public class ScheduleSlot {
     public ScheduleSlot(int month, int week) {
         this.month = month;
         this.week = week;
+    }
+
+    /** Assumes slots are ordered */
+    public static double computeDistance(List<ScheduleSlot> scheduleSlotList, int[] weeksInMonth) {
+        if (scheduleSlotList.isEmpty()) {
+            return 0; // we want many ingredients used throughout the year. Since we're maximizing distance between them, 0 is bad for a schedule
+        }
+        if (scheduleSlotList.size() == 1) {
+            return Math.exp(getSum(weeksInMonth));
+        }
+        double score = 0;
+        ScheduleSlot prevSlot = scheduleSlotList.getFirst();
+        for (int i = 1; i< scheduleSlotList.size(); i ++) {
+            ScheduleSlot currentSlot = scheduleSlotList.get(i);
+            score += Math.exp(prevSlot.getWeeksDistance(currentSlot, weeksInMonth));
+            prevSlot = currentSlot;
+        }
+        score += Math.exp(scheduleSlotList.getFirst().getOutsideWeeksDistance(scheduleSlotList.getLast(), weeksInMonth));
+        return score;
+    }
+
+    static int getSum(int[] weeksInMonth) {
+        int sum = 0;
+        for (int month = 0; month < 12; month ++) {
+            sum += weeksInMonth[month];
+        }
+        return sum;
+    }
+
+    /** Assumes other is greater than this
+     * The distance between week and week+1 is 0 */
+    int getWeeksDistance(ScheduleSlot other, int[] weeksInMonth) {
+        if (other.month == month) {
+            return other.week - week - 1;
+        }
+        int sum = 0;
+        sum += weeksInMonth[month] - week - 1;
+        sum += other.week;
+        for (int i = month + 1; i<other.month; i++) {
+            sum += weeksInMonth[i];
+        }
+        return sum;
+    }
+
+    int getOutsideWeeksDistance(ScheduleSlot other, int[] weeksInMonth) {
+        ScheduleSlot origin = new ScheduleSlot(0, 0);
+        ScheduleSlot finalWeek = new ScheduleSlot(11, weeksInMonth[11]-1);
+
+        return origin.getWeeksDistance(this, weeksInMonth) + other.getWeeksDistance(finalWeek, weeksInMonth) + 2;
     }
 }

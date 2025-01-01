@@ -15,16 +15,39 @@ public class InitialRun {
         logger.info("Starting");
 
         // 2025
-        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
+        Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
 
-        addConstraints(schedule);
+        addConstraints(template);
 
         Scheduler scheduler = new Scheduler();
-        scheduler.addAtLeastOnceRecipes(schedule);
-        scheduler.fillInOtherRecipes(schedule);
+
+        Schedule bestSchedule = template.copy();
+        scheduler.addAtLeastOnceRecipes(bestSchedule);
+        scheduler.fillInOtherRecipes(bestSchedule);
+
+        double bestScore = bestSchedule.getScore();
+
+        logger.info("{}", bestScore);
+
+        for (int i=0; i<1000; i++) {
+            Schedule candidate = template.copy();
+            scheduler.addAtLeastOnceRecipes(candidate);
+            scheduler.fillInOtherRecipes(candidate);
+
+            double candidateScore = candidate.getScore();
+            if (candidateScore > bestScore) {
+                bestScore = candidateScore;
+                bestSchedule = candidate;
+            }
+
+            if (i % 10 == 0) {
+                System.out.println((i / 10) + "\t"+bestScore);
+            }
+        }
+
 
         logger.info("Schedule: ");
-        logger.info(schedule.toString());
+        logger.info(bestSchedule.toString());
     }
 
     private static void addConstraints(Schedule schedule) {

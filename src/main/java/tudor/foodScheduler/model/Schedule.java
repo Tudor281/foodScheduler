@@ -23,6 +23,23 @@ public class Schedule {
         }
     }
 
+    private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, Recipe>>> recipes) {
+        this.weeksInMonth = weeksInMonth;
+        for (int month=0; month<12; month++) {
+            Map<Integer, Map<Integer, Recipe>> monthContainer = new HashMap<>();
+            this.recipes.put(month, monthContainer);
+            for (int week=0; week<weeksInMonth[month]; week++) {
+                Map<Integer, Recipe> weekContainer = new HashMap<>();
+                monthContainer.put(week, weekContainer);
+
+                Map<Integer, Recipe> otherWeekContainer = recipes.get(month).get(week);
+
+                weekContainer.putAll(otherWeekContainer);
+                recipesPresent.addAll(otherWeekContainer.values());
+            }
+        }
+    }
+
     /** Real month and week numbers, starting from 1 */
     public void add(int month, int week, Recipe recipe) {
         recipes.get(month-1).get(week-1).put(getChannel(recipe), recipe);
@@ -98,5 +115,57 @@ public class Schedule {
             }
         }
         return false;
+    }
+
+    /** The higher the score, the higher the distance between various ingredients */
+    public double getScore() {
+        double score = 0;
+        for (Ingredient ingredient : Ingredient.values()) {
+            List<ScheduleSlot> slots = getSlots(ingredient);
+            score += ScheduleSlot.computeDistance(slots, weeksInMonth);
+        }
+        for (Spice spice : Spice.values()) {
+            List<ScheduleSlot> slots = getSlots(spice);
+            score += ScheduleSlot.computeDistance(slots, weeksInMonth);
+        }
+        return score;
+    }
+
+    List<ScheduleSlot> getSlots(Ingredient ingredient) {
+        List<ScheduleSlot> slots = new ArrayList<>();
+        for (int month=0; month<12; month++) {
+            for (int week = 0; week < weeksInMonth[month]; week++) {
+                Map<Integer, Recipe> channelsContainer = recipes.get(month).get(week);
+                if (channelsContainer == null) throw new RuntimeException("Schedule is not filled");
+
+                for (Recipe recipe : channelsContainer.values()) {
+                    if (recipe.ingredients.contains(ingredient)) {
+                        slots.add(new ScheduleSlot(month, week));
+                    }
+                }
+            }
+        }
+        return slots;
+    }
+
+    List<ScheduleSlot> getSlots(Spice spice) {
+        List<ScheduleSlot> slots = new ArrayList<>();
+        for (int month=0; month<12; month++) {
+            for (int week = 0; week < weeksInMonth[month]; week++) {
+                Map<Integer, Recipe> channelsContainer = recipes.get(month).get(week);
+                if (channelsContainer == null) throw new RuntimeException("Schedule is not filled");
+
+                for (Recipe recipe : channelsContainer.values()) {
+                    if (recipe.spices.contains(spice)) {
+                        slots.add(new ScheduleSlot(month, week));
+                    }
+                }
+            }
+        }
+        return slots;
+    }
+
+    public Schedule copy() {
+        return new Schedule(weeksInMonth, recipes);
     }
 }
