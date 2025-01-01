@@ -1,8 +1,9 @@
-package tudor.foodScheduler.model;
+package tudor.foodScheduler.model.schedule;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.Stats;
+import tudor.foodScheduler.model.*;
 
 import java.util.*;
 
@@ -12,47 +13,49 @@ public class Schedule {
 
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
-    Map<Integer, Map<Integer, Map<Integer, Recipe>>> recipes = new HashMap<>();
+    Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes = new HashMap<>();
     int[] weeksInMonth;
     Set<Recipe> recipesPresent = new HashSet<>();
 
     public Schedule(int[] weeksInMonth) {
         this.weeksInMonth = weeksInMonth;
         for (int month=0; month<12; month++) {
-            Map<Integer, Map<Integer, Recipe>> monthContainer = new HashMap<>();
+            Map<Integer, Map<Integer, ScheduleEntry>> monthContainer = new HashMap<>();
             recipes.put(month, monthContainer);
             for (int week=0; week<weeksInMonth[month]; week++) {
-                Map<Integer, Recipe> weekContainer = new HashMap<>();
+                Map<Integer, ScheduleEntry> weekContainer = new HashMap<>();
                 monthContainer.put(week, weekContainer);
             }
         }
     }
 
-    private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, Recipe>>> recipes) {
+    private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes) {
         this.weeksInMonth = weeksInMonth;
         for (int month=0; month<12; month++) {
-            Map<Integer, Map<Integer, Recipe>> monthContainer = new HashMap<>();
+            Map<Integer, Map<Integer, ScheduleEntry>> monthContainer = new HashMap<>();
             this.recipes.put(month, monthContainer);
             for (int week=0; week<weeksInMonth[month]; week++) {
-                Map<Integer, Recipe> weekContainer = new HashMap<>();
+                Map<Integer, ScheduleEntry> weekContainer = new HashMap<>();
                 monthContainer.put(week, weekContainer);
 
-                Map<Integer, Recipe> otherWeekContainer = recipes.get(month).get(week);
+                Map<Integer, ScheduleEntry> otherWeekContainer = recipes.get(month).get(week);
 
                 weekContainer.putAll(otherWeekContainer);
-                recipesPresent.addAll(otherWeekContainer.values());
+                for (ScheduleEntry entry : otherWeekContainer.values()) {
+                    recipesPresent.add(entry.recipe);
+                }
             }
         }
     }
 
     /** Real month and week numbers, starting from 1 */
     public void add(int month, int week, Recipe recipe) {
-        recipes.get(month-1).get(week-1).put(getChannel(recipe), recipe);
+        recipes.get(month-1).get(week-1).put(getChannel(recipe), new ScheduleEntry(recipe, true));
         recipesPresent.add(recipe);
     }
 
     public void add(ScheduleSlot slot, Recipe recipe) {
-        Recipe oldRecipe = recipes.get(slot.month).get(slot.week).put(getChannel(recipe), recipe);
+        ScheduleEntry oldRecipe = recipes.get(slot.month).get(slot.week).put(getChannel(recipe), new ScheduleEntry(recipe, false));
         if (oldRecipe != null) throw new RuntimeException("Overwrite detected");
     }
 
@@ -85,9 +88,9 @@ public class Schedule {
     }
 
     String getName(int month, int week, int channel) {
-        Recipe recipe = recipes.get(month).get(week).get(channel);
-        if (recipe == null) return "";
-        return recipe.name;
+        ScheduleEntry entry = recipes.get(month).get(week).get(channel);
+        if (entry == null) return "";
+        return entry.recipe.name;
     }
 
     public List<ScheduleSlot> getDomesticSlots(Recipe recipe) {
@@ -177,11 +180,11 @@ public class Schedule {
         List<ScheduleSlot> slots = new ArrayList<>();
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
-                Map<Integer, Recipe> channelsContainer = recipes.get(month).get(week);
+                Map<Integer, ScheduleEntry> channelsContainer = recipes.get(month).get(week);
                 if (channelsContainer == null) throw new RuntimeException("Schedule is not filled");
 
-                for (Recipe recipe : channelsContainer.values()) {
-                    if (recipe.ingredients.contains(ingredient)) {
+                for (ScheduleEntry entry : channelsContainer.values()) {
+                    if (entry.recipe.ingredients.contains(ingredient)) {
                         slots.add(new ScheduleSlot(month, week));
                     }
                 }
@@ -194,11 +197,11 @@ public class Schedule {
         List<ScheduleSlot> slots = new ArrayList<>();
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
-                Map<Integer, Recipe> channelsContainer = recipes.get(month).get(week);
+                Map<Integer, ScheduleEntry> channelsContainer = recipes.get(month).get(week);
                 if (channelsContainer == null) throw new RuntimeException("Schedule is not filled");
 
-                for (Recipe recipe : channelsContainer.values()) {
-                    if (recipe.spices.contains(spice)) {
+                for (ScheduleEntry entry : channelsContainer.values()) {
+                    if (entry.recipe.spices.contains(spice)) {
                         slots.add(new ScheduleSlot(month, week));
                     }
                 }

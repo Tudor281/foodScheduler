@@ -1,4 +1,4 @@
-package tudor.foodScheduler.model;
+package tudor.foodScheduler.model.schedule;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

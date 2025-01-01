@@ -1,8 +1,8 @@
 package tudor.foodScheduler;
 
 import tudor.foodScheduler.model.Recipe;
-import tudor.foodScheduler.model.Schedule;
-import tudor.foodScheduler.model.ScheduleSlot;
+import tudor.foodScheduler.model.schedule.Schedule;
+import tudor.foodScheduler.model.schedule.ScheduleSlot;
 
 import java.util.Comparator;
 import java.util.List;

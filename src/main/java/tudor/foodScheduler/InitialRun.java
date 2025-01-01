@@ -3,7 +3,7 @@ package tudor.foodScheduler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.model.Recipe;
-import tudor.foodScheduler.model.Schedule;
+import tudor.foodScheduler.model.schedule.Schedule;
 
 /**
  * Hello world!

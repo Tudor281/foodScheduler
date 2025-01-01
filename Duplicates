@@ -4,6 +4,7 @@ Both resolvers need to respect the Schedule constraints and Recipe constraints.
 
 1. Crossover
 Simple, sort of
+You remove some duplicates but insert others
 
 2. Optimum placement
 You wanted to add this optimum placement feature anyways.

@@ -1,5 +1,7 @@
 package tudor.foodScheduler.model;
 
+import tudor.foodScheduler.model.schedule.Schedule;
+
 import java.util.*;
 
 import static tudor.foodScheduler.model.Fel.*;
@@ -10,11 +12,11 @@ import static tudor.foodScheduler.model.Spice.*;
 import static tudor.foodScheduler.model.Spice.Usturoi;
 
 public class Recipe {
-    String name;
-    List<Ingredient> ingredients;
-    List<Spice> spices;
+    public String name;
+    public List<Ingredient> ingredients;
+    public List<Spice> spices;
     Multiplicity multiplicity;
-    Fel fel;
+    public Fel fel;
 
     static final Map<String, Recipe> all = new HashMap<>();
     static {

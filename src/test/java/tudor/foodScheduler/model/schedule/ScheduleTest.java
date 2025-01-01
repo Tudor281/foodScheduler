@@ -1,6 +1,7 @@
-package tudor.foodScheduler.model;
+package tudor.foodScheduler.model.schedule;
 
 import org.junit.jupiter.api.Test;
+import tudor.foodScheduler.model.Recipe;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,12 +14,12 @@ class ScheduleTest {
         schedule.add(1, 1, applePie);
 
         assertTrue(schedule.isRecipePresent(applePie));
-        assertSame(applePie, schedule.recipes.get(0).get(0).get(2));
+        assertSame(applePie, schedule.recipes.get(0).get(0).get(2).recipe);
 
         Schedule copy = schedule.copy();
 
         assertTrue(copy.isRecipePresent(applePie));
-        assertSame(applePie, copy.recipes.get(0).get(0).get(2));
+        assertSame(applePie, copy.recipes.get(0).get(0).get(2).recipe);
 
         Recipe ardei = Recipe.get("Ardei umpluți simplu");
         copy.add(1, 1, ardei);
@@ -26,7 +27,7 @@ class ScheduleTest {
         assertTrue(copy.isRecipePresent(ardei));
         assertFalse(schedule.isRecipePresent(ardei));
 
-        assertSame(ardei, copy.recipes.get(0).get(0).get(1));
+        assertSame(ardei, copy.recipes.get(0).get(0).get(1).recipe);
         assertNull(schedule.recipes.get(0).get(0).get(1));
     }
 }
