@@ -1,9 +1,14 @@
 package tudor.foodScheduler.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tudor.foodScheduler.Stats;
+
 import java.util.*;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class Schedule {
+    private static final Logger logger = LoggerFactory.getLogger(Schedule.class);
 
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
@@ -132,18 +137,40 @@ public class Schedule {
     }
 
     /** The higher the score, the higher the distance between various ingredients */
-    public double getScoreSqrt() {
-        double score = 0;
+    public double getScore() {
+
+        double ingredientSum = 0;
+        double minIngredientScore = Integer.MAX_VALUE;
+        double minIngredientDuplicates = 0;
+        List<Ingredient> minIngredientsList = new ArrayList<>();
         for (Ingredient ingredient : Ingredient.values()) {
             List<ScheduleSlot> slots = getSlots(ingredient);
-            score += ScheduleSlot.computeDistanceSqrt(slots, weeksInMonth);
+            double score = ScheduleSlot.computeDistanceHybrid(slots, weeksInMonth);
+            if (score < minIngredientScore) {
+                minIngredientScore = score;
+                minIngredientDuplicates = score;
+                minIngredientsList.clear();
+                minIngredientsList.add(ingredient);
+            } else if (score == minIngredientScore) {
+                minIngredientDuplicates += minIngredientScore;
+                minIngredientsList.add(ingredient);
+            }
+            ingredientSum += score;
         }
-        score *= 4;
+
+        for (Ingredient ingredient : minIngredientsList) {
+            Stats.add(ingredient);
+        }
+
+        double spiceSum = 0;
         for (Spice spice : Spice.values()) {
             List<ScheduleSlot> slots = getSlots(spice);
-            score += ScheduleSlot.computeDistanceSqrt(slots, weeksInMonth);
+            spiceSum += ScheduleSlot.computeDistanceHybrid(slots, weeksInMonth);
         }
-        return score;
+        double avgIngredients = ingredientSum / Ingredient.values().length;
+        double avgSpices = spiceSum / Spice.values().length;
+//        logger.info("MinDupliates {} \t avgIngredients {} \t avgSpices {} \t", minIngredientDuplicates, avgIngredients, avgSpices);
+        return minIngredientDuplicates * (2 * avgIngredients + avgSpices);
     }
 
     List<ScheduleSlot> getSlots(Ingredient ingredient) {

@@ -3,8 +3,11 @@ Exponential
 
 Linear
     Kinda still puts duplicates, does not penalise them hard enough.
+    The linear kinda sums 52 all the time, can't possibly work. 2 slots = 52, 3 slots = 52
 
 Sqrt
     Should penalize duplicates?
 
 Logarithm
+
+Minimum hybrid score * avg(sqrt(ingredients)) + avg(hybrid(spice)

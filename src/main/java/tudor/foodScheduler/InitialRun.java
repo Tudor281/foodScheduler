@@ -25,16 +25,16 @@ public class InitialRun {
         scheduler.addAtLeastOnceRecipes(bestSchedule);
         scheduler.fillInOtherRecipes(bestSchedule);
 
-        double bestScore = bestSchedule.getScoreSqrt();
+        double bestScore = bestSchedule.getScore();
 
         logger.info("{}", bestScore);
 
-        for (int i=0; i<1000; i++) {
+        for (int i=0; i<100000; i++) {
             Schedule candidate = template.copy();
             scheduler.addAtLeastOnceRecipes(candidate);
             scheduler.fillInOtherRecipes(candidate);
 
-            double candidateScore = candidate.getScoreSqrt();
+            double candidateScore = candidate.getScore();
             if (candidateScore > bestScore) {
                 bestScore = candidateScore;
                 bestSchedule = candidate;
@@ -45,6 +45,7 @@ public class InitialRun {
             }
         }
 
+        Stats.report();
 
         logger.info("Schedule: ");
         logger.info(bestSchedule.toString());

@@ -1,0 +1,16 @@
+Even after 100K generations, the best recipy still has 6 duplicates.
+
+Both resolvers need to respect the Schedule constraints and Recipe constraints.
+
+1. Crossover
+Simple, sort of
+
+2. Optimum placement
+You wanted to add this optimum placement feature anyways.
+
+Suppose you have Gratin Broccoli, Gratin Rossi, both once, and they are near. If you replace one of them, you need to find a suitable replacement.
+You could say, instead of optimum insertion, make optimum replacement?
+
+3. Optimum replacement
+If Recipy is under Recipy contraint and we can't delete it, we must move it. Get slots for recipy, analyse optimum position.
+Pick a random spot with no duplicates though, but in season.

@@ -38,7 +38,8 @@ public enum Ingredient {
     VarzaMurata(ALL, ALL),
     Vinete(List.of(7,8,9,10), ALL),
     Zahar(ALL, List.of()),
-    Zucchini(List.of(), ALL);
+//    Zucchini(List.of(), ALL)
+    ;
 
     final List<Integer> domesticMonths;
     final List<Integer> importMonths;
