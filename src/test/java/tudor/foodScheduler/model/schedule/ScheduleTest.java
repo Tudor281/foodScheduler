@@ -128,4 +128,70 @@ class ScheduleTest {
 
         assertFalse(suitableReplacements.isEmpty());
     }
+
+    @Test
+    void shouldNotIdentify2ConstraintsWhereThereIsOnlyOne() {
+        String input = """
+                1	1	Ciorbă de fasole - Cu dafin	Mâncare de mazăre - Cu soia	Clătite
+                1	2	Ciorbă de cartofi cu smântână	Musaca cu carne	Humus
+                1	3	Supă cremă de mazăre	Varză călită	Vitel tonne
+                1	4	Ciorbă de ghebe cu smântână	Tocăniță de praz	Griș cu lapte
+                2	1	Supă cremă de mazăre	Mâncare de cartofi - moldovenească	Fasole bătută
+                2	2	Supă cremă de broccoli - Simplu	Mâncare de mazăre - Simplu	Țelină cu morcov
+                2	3	Ciorbă de cartofi roșie	Musaca cu ciuperci	
+                2	4	Ciorbă de conopidă	Varză fiartă	Țelină cu morcov
+                3	1	Supă cremă de țelină - Mama	Tocăniță de ardei	Chiftele cu carne
+                3	2	Supă de roșii	Măncare de fasole - Fasole prăjită - Fuchs remix	
+                3	3	Ciorbă de cartofi cu smântână	Mâncare de mazăre - Cu soia	
+                3	4	Ciorbă de fasole - Cu dafin	Musaca cu ciuperci	Salată orientală
+                3	5	Supă cremă de mazăre	Pilaf - Cu urzici	Tiramisu
+                4	1	Ciorbă de frunze	Mâncare de cartofi - ardelenească	
+                4	2	Ciorbă rădăuțeană	Pilaf - Cu ciuperci și alte legume	
+                4	3	Ciorbă de păstăi	Varză fiartă	Cozonac
+                4	4	Supă cremă de broccoli - Simplu	Mâncare de fasole - Fasole prăjită	Mâncare de ciuperci - Ciulama de ciuperci
+                5	1	Supă cremă de mazăre	Tocăniță de legume	Humus
+                5	2	Ciorbă de păstăi fresh	Mâncare de cartofi - Cu soia	
+                5	3	Supă cremă de mazăre	Mâncare de mazăre - Simplu	Clătite
+                5	4	Supă de roșii	Pilaf - Cu ciuperci și alte legume	
+                6	1	Ciorbă de fasole - Cu chimen	Melanzane alla parmigiano	Chiftele de soia în suc de roșii
+                6	2	Supă de conopidă	Mâncare de cartofi - moldovenească	
+                6	3	Ciorbă de dovlecei cu ciuperci	Varză fiartă	
+                6	4	Ciorbă de frunze	Gratin de cartofi cu broccoli și brânză	Salată orientală
+                6	5	Supă cremă de mazăre	Tocăniță de gogonele	
+                7	1	Ciorbă de dovlecei cu ciuperci	American Potato Salad	Apple Pie
+                7	2	Nakkikeitto	Gratin de cartofi cu broccoli și brânză	Fasole bătută
+                7	3	Supă cremă de dovlecei	Lasagna bolognese	Humus
+                7	4	Ciorbă de salată cu scrob	Tocăniță de ardei	Tiramisu
+                8	1	Supă cremă de broccoli - Simplu	Măncare de fasole - Fasole prăjită - Fuchs remix	
+                8	2	Supă cremă de broccoli - Soia	Ardei umpluți cu carne	Tzatziki
+                8	3	Ciorbă de fasole - Cu dafin	Gulaș	
+                8	4	Ciorbă de păstăi	Ardei umpluți simplu	Riz au lait
+                8	5	Ciorbă de păstăi	Tocăniță de legume	
+                9	1	Supă cremă de broccoli - Simplu	Varză fiartă	Salată orientală
+                9	2	Ciorbă de fasole - Cu cimbru	Mâncare de fasole - Iahnie de fasole	
+                9	3	Ciorbă de dovlecei cu ciuperci	Varză la Cluj	Salată de pui
+                9	4	Supă cremă de țelină - Mama	Musaca cu ciuperci	Riz au lait
+                10	1	Supă cremă de broccoli - Cu carne	Tocăniță de gogonele	
+                10	2	Supă cremă de conopidă	Pilaf - Paella cu pui	Griș cu lapte
+                10	3	Ciorbă de fasole - Cu leuștean	Mâncare de mazăre - Simplu	
+                10	4	Ciorbă de conopidă	Pilaf - Sarmale viță de vie cu carne	Fasole bătută
+                11	1	Supă cremă de mazăre	Tocăniță de gogonele	Țelină cu morcov
+                11	2	Ciorbă de fasole - Cu leuștean	Tocăniță de praz	Apple Pie
+                11	3	Supă cremă de țelină - Cu praz și smântână	Mâncare de fasole - Iahnie de fasole	
+                11	4	Ciorbă de perișoare	Tocăniță de gogonele	Țelină cu morcov
+                11	5	Supă de roșii	Mâncare de fasole - Iahnie de fasole	
+                12	1	Nakkikeitto - V	Pilaf - Simplu	
+                12	2	Supă cremă de mazăre	Gigantes Plaki	Apple Pie
+                12	3	Supă cremă de mazăre	Răcitură	Salată orientală
+                12	4	Ciorbă de păstăi	Măncare de fasole - Fasole prăjită - Fuchs remix	
+                """;
+
+        Schedule schedule = ScheduleInitializer.getSchedule(input);
+
+        schedule.countRecipes();
+
+        Duplication duplication = schedule.getIngredientDuplicate();
+
+        System.out.println("Hello");
+    }
 }

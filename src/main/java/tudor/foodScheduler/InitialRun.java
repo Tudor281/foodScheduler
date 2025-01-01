@@ -75,8 +75,8 @@ public class InitialRun {
         schedule.add(6, 1, melanzane, true);
 
         // ziua USA
-        Recipe potatoSalad = Recipe.get("American Potato Salad");
-        schedule.add(7, 1, potatoSalad, true);
+//        Recipe potatoSalad = Recipe.get("American Potato Salad");
+//        schedule.add(7, 1, potatoSalad, true);
         Recipe applePie = Recipe.get("Apple Pie");
         schedule.add(7, 1, applePie, true);
 

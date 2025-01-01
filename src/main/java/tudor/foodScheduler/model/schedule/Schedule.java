@@ -267,14 +267,23 @@ public class Schedule {
     }
 
     boolean hasConstraints(ScheduleEntry entry) {
-        if (entry.initialConstraint) return true;
+        if (entry.initialConstraint) {
+//            logger.debug("{} is initial constraint", entry.recipe);
+            return true;
+        }
 
         Recipe recipe = entry.recipe;
 
-        if (recipe.multiplicity == Multiplicity.AtLeastOnce && recipeCounts.get(recipe) < 2) return true;
+        if (recipe.multiplicity == Multiplicity.AtLeastOnce && recipeCounts.get(recipe) < 2) {
+//            logger.debug("{} at least once and exists", recipe);
+            return true;
+        }
 
         //noinspection RedundantIfStatement
-        if (recipe.multiplicity == Multiplicity.Once) return true;
+        if (recipe.multiplicity == Multiplicity.Once) {
+//            logger.debug("{} is at least once", recipe);
+            return true;
+        }
 
         return false;
     }

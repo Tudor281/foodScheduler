@@ -20,10 +20,10 @@ public class Recipe {
 
     public static final Map<String, Recipe> all = new HashMap<>();
     static {
-        add(new Recipe("American Potato Salad", List.of(Cartofi, Maioneza), Once, F2, List.of(Mustar, Apio, Patrunjel)));
+        add(new Recipe("American Potato Salad", List.of(Cartofi, Maioneza), Once, Rece, List.of(Mustar, Apio, Patrunjel)));
         add(new Recipe("Apple Pie", List.of(Mere), Optional, Desert, List.of()));
         add(new Recipe("Ardei umpluți simplu", List.of(Ardei, Orez), Optional, F2, List.of(FrunzeTelina)));
-        add(new Recipe("Ardei umpluți cu carne", List.of(Ardei, Orez, Carne), AtMostOnce, F2, List.of(FrunzeTelina)));
+        add(new Recipe("Ardei umpluți cu carne", List.of(Ardei, Orez, Carne), Once, F2, List.of(FrunzeTelina)));
         add(new Recipe("Chiftele cu carne", List.of(Carne), Once, Rece, List.of(Usturoi))); // binding to pilaf simplu
         add(new Recipe("Chiftele de soia în suc de roșii", List.of(Soia), Once, Rece, List.of())); // TODO No recipy
         add(new Recipe("Ciorbă de cartofi cu smântână", List.of(Cartofi, Smantana), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
@@ -40,10 +40,10 @@ public class Recipe {
         add(new Recipe("Ciorbă de păstăi", List.of(PastaiCongelate), AtLeastOnce, F1, List.of(Pastarnac, Patrunjel, Marar, Leustean)));
         add(new Recipe("Ciorbă de păstăi fresh", List.of(PastaiFresh), Once, F1, List.of(Pastarnac, Patrunjel, Marar, Leustean)));
         add(new Recipe("Ciorbă de perișoare", List.of(Carne), AtMostOnce, F1, List.of())); // TODO No recipy
-        add(new Recipe("Ciorbă de pui a la Grec", List.of(Carne, Smantana), AtMostOnce, F1, List.of(Pastarnac, SucLamaie, Patrunjel, Marar)));
+        add(new Recipe("Ciorbă de pui a la Grec", List.of(Carne, Smantana), Once, F1, List.of(Pastarnac, SucLamaie, Patrunjel, Marar)));
         add(new Recipe("Ciorbă de salată cu scrob", List.of(Salata, Smantana), AtLeastOnce, F1, List.of()));
-        add(new Recipe("Ciorbă rădăuțeană", List.of(Carne, Smantana), AtMostOnce, F1, List.of())); // TODO no recipy
-        add(new Recipe("Ciuperci cu maioneză și usturoi", List.of(Ciuperci, Maioneza), Optional, Rece, List.of()));
+        add(new Recipe("Ciorbă rădăuțeană", List.of(Carne, Smantana), Once, F1, List.of())); // TODO no recipy
+        add(new Recipe("Ciuperci cu maioneză și usturoi", List.of(Ciuperci, Maioneza), AtLeastOnce, Rece, List.of()));
         add(new Recipe("Clătite", List.of(), Optional, Desert, List.of()));
         add(new Recipe("Cozonac", List.of(), Once, Desert, List.of()));
         add(new Recipe("Fasole bătută", List.of(Fasole), Optional, Rece, List.of()));
@@ -221,5 +221,9 @@ public class Recipe {
             if (!(ingredient.importMonths.contains(month) || ingredient.domesticMonths.contains(month))) return false;
         }
         return true;
+    }
+
+    public String toString() {
+        return name;
     }
 }
