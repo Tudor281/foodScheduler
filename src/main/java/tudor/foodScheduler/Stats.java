@@ -11,6 +11,11 @@ public class Stats {
 
     static Map<Ingredient, Integer> counts = new HashMap<>();
 
+    static int optimalInsertionFailures = 0;
+    static int suitableReplacementsNotFound = 0;
+    static int runOutOfOptimalInsertsAttempts = 0;
+    static int optimalInsertsConstrained = 0;
+
     public static void add(Ingredient ingredient) {
         Integer count = counts.get(ingredient);
         if (count == null) {
@@ -18,6 +23,22 @@ public class Stats {
         } else {
             counts.put(ingredient, count + 1);
         }
+    }
+
+    public static void countOptimalInsertFailure() {
+        optimalInsertionFailures++;
+    }
+
+    public static void countSuitableReplacementsNotFound() {
+        suitableReplacementsNotFound++;
+    }
+
+    public static void countRunOutOfOptimalInsertsAttempts() {
+        runOutOfOptimalInsertsAttempts++;
+    }
+
+    public static void countOptimalInsertsConstrained() {
+        optimalInsertsConstrained++;
     }
 
     public static void report() {
@@ -33,5 +54,10 @@ public class Stats {
         for (Map.Entry<Ingredient, Integer> entry : classification) {
             logger.info("{} -> {}", entry.getKey(), entry.getValue());
         }
+
+        logger.info("Optimal insert failures: {}", optimalInsertionFailures);
+        logger.info("Suitable replacements not found: {}", suitableReplacementsNotFound);
+        logger.info("Run out of optimal inserts attempts: {}", runOutOfOptimalInsertsAttempts);
+        logger.info("Optimal Inserts constraints lock: {}", optimalInsertsConstrained);
     }
 }

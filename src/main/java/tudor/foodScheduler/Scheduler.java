@@ -1,8 +1,10 @@
 package tudor.foodScheduler;
 
 import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.schedule.Duplication;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleSlot;
+import tudor.foodScheduler.model.schedule.SchedulingException;
 
 import java.util.Comparator;
 import java.util.List;
@@ -60,12 +62,51 @@ public class Scheduler {
         schedule.add(slots.get(random.nextInt(slots.size())), recipe);
     }
 
-    public void eliminateDuplicates(Schedule schedule) {
-        boolean hasDuplicates = true;
-
+    public void eliminateDuplicates(Schedule schedule) throws SchedulingException {
+        int count = 0;
         do {
-
             schedule.countRecipes();
-        } while (hasDuplicates);
+
+            Duplication duplication = schedule.getIngredientDuplicate();
+            if (duplication == null) return;
+
+            int constraintCount = duplication.getNumberOfConstraints();
+            if (constraintCount == 2) {
+                Stats.countOptimalInsertsConstrained();
+                throw new SchedulingException("Can't deduplicate constrained recipies");
+            }
+
+            ScheduleSlot targetSlot;
+            Recipe targetRecipe;
+
+            if (constraintCount == 1) {
+                if (duplication.slot1.hasConstraints()) {
+                    targetSlot = duplication.slot2;
+                    targetRecipe = duplication.recipe2;
+                } else {
+                    targetSlot = duplication.slot1;
+                    targetRecipe = duplication.recipe1;
+                }
+            } else { // constraint 0
+                if (random.nextBoolean()) {
+                    targetSlot = duplication.slot2;
+                    targetRecipe = duplication.recipe2;
+                } else {
+                    targetSlot = duplication.slot1;
+                    targetRecipe = duplication.recipe1;
+                }
+            }
+
+            List<Recipe> suitableReplacements = schedule.getSuitableReplacements(targetSlot, targetRecipe);
+
+            if (suitableReplacements.isEmpty()) {
+                Stats.countSuitableReplacementsNotFound();
+                throw new SchedulingException("No suitable replacements exist");
+            }
+
+            schedule.add(targetSlot, suitableReplacements.get(random.nextInt(suitableReplacements.size())));
+        } while (count++ < 100);
+        Stats.countRunOutOfOptimalInsertsAttempts();
+        throw new SchedulingException("Run out of attempts to deduplicate schedule");
     }
 }

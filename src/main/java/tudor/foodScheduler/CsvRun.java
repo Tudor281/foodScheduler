@@ -1,70 +1,10 @@
-package tudor.foodScheduler.model.schedule;
+package tudor.foodScheduler;
 
-import org.junit.jupiter.api.Test;
-import tudor.foodScheduler.Scheduler;
-import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.schedule.Schedule;
+import tudor.foodScheduler.model.schedule.ScheduleInitializer;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-class ScheduleTest {
-    @Test
-    void shouldCopyContents() {
-        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
-
-        Recipe applePie = Recipe.get("Apple Pie");
-        schedule.add(1, 1, applePie, false);
-
-        assertTrue(schedule.isRecipePresent(applePie));
-        assertSame(applePie, schedule.recipes.get(0).get(0).get(2).recipe);
-
-        Schedule copy = schedule.copy();
-
-        assertTrue(copy.isRecipePresent(applePie));
-        assertSame(applePie, copy.recipes.get(0).get(0).get(2).recipe);
-
-        Recipe ardei = Recipe.get("Ardei umpluți simplu");
-        copy.add(1, 1, ardei, false);
-
-        assertTrue(copy.isRecipePresent(ardei));
-        assertFalse(schedule.isRecipePresent(ardei));
-
-        assertSame(ardei, copy.recipes.get(0).get(0).get(1).recipe);
-        assertNull(schedule.recipes.get(0).get(0).get(1));
-    }
-
-    @Test
-    void shouldDetectDuplicates() {
-        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
-        Recipe fasoleCuChimen = Recipe.get("Ciorbă de fasole - Cu chimen");
-        Recipe fasoleCuDafin = Recipe.get("Ciorbă de fasole - Cu dafin");
-        schedule.add(12, 4, fasoleCuChimen, false);
-        schedule.add(1, 1, fasoleCuDafin, false);
-
-        Duplication duplication = schedule.getIngredientDuplicate();
-        assertNotNull(duplication);
-        assertSame(fasoleCuChimen, duplication.recipe1);
-        assertSame(fasoleCuDafin, duplication.recipe2);
-    }
-
-    @Test
-    void shouldIdentifyReplacements() {
-        Schedule schedule = new Schedule(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1});
-
-        Recipe fasoleCuDafin = Recipe.get("Ciorbă de fasole - Cu dafin");
-        Recipe cartofiArdelenesti = Recipe.get("Mâncare de cartofi - ardelenească");
-        for (int i=1; i<13; i++) {
-            schedule.add(i, 1, fasoleCuDafin, false);
-            schedule.add(i, 1, cartofiArdelenesti, false);
-        }
-
-        List<Recipe> candidates = schedule.getSuitableReplacements(new ScheduleSlot(0,0), fasoleCuDafin);
-        System.out.println("Hello");
-    }
-
-    @Test
-    void shouldIdentifySuitableReplacement2() {
+public class CsvRun {
+    public static void main(String[] args) {
         String input = """
                 1	1	Ciorbă de salată cu scrob	Pilaf - Simplu	
                 1	2	Ciorbă de cartofi roșie	Musaca cu carne	Riz au lait
@@ -120,12 +60,6 @@ class ScheduleTest {
                 12	4	Supă cremă de broccoli - Simplu	Măncare de fasole - Fasole prăjită - Fuchs remix	
                 """;
 
-        Schedule schedule = ScheduleInitializer.getSchedule(input);
-
-        schedule.countRecipes();
-
-        List<Recipe> suitableReplacements = schedule.getSuitableReplacements(new ScheduleSlot(1, 3), Recipe.get("Ciorbă rădăuțeană"));
-
-        assertFalse(suitableReplacements.isEmpty());
+        ScheduleInitializer.getSchedule(input);
     }
 }

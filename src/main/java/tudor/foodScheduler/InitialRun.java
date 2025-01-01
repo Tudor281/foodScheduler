@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Schedule;
+import tudor.foodScheduler.model.schedule.SchedulingException;
 
 /**
  * Hello world!
@@ -33,6 +34,15 @@ public class InitialRun {
             Schedule candidate = template.copy();
             scheduler.addAtLeastOnceRecipes(candidate);
             scheduler.fillInOtherRecipes(candidate);
+            try {
+                scheduler.eliminateDuplicates(candidate);
+            } catch (SchedulingException ignored) {
+                Stats.countOptimalInsertFailure();
+            }
+            catch (Exception e) {
+                logger.error("Failure", e);
+                Stats.countOptimalInsertFailure();
+            }
 
             double candidateScore = candidate.getScore();
             if (candidateScore > bestScore) {
@@ -40,8 +50,8 @@ public class InitialRun {
                 bestSchedule = candidate;
             }
 
-            if (i % 10 == 0) {
-                System.out.println((i / 10) + "\t"+bestScore);
+            if (i % 1000 == 0) {
+                System.out.println(i + "\t"+bestScore);
             }
         }
 
@@ -54,48 +64,48 @@ public class InitialRun {
     private static void addConstraints(Schedule schedule) {
         // ziua mea
         Recipe musacaCuCarne = Recipe.get("Musaca cu carne");
-        schedule.add(1, 2, musacaCuCarne);
+        schedule.add(1, 2, musacaCuCarne, true);
 
         // pastele
         Recipe cozonac = Recipe.get("Cozonac");
-        schedule.add(4, 3, cozonac);
+        schedule.add(4, 3, cozonac, true);
 
         // ziua italiei
         Recipe melanzane = Recipe.get("Melanzane alla parmigiano");
-        schedule.add(6, 1, melanzane);
+        schedule.add(6, 1, melanzane, true);
 
         // ziua USA
         Recipe potatoSalad = Recipe.get("American Potato Salad");
-        schedule.add(7, 1, potatoSalad);
+        schedule.add(7, 1, potatoSalad, true);
         Recipe applePie = Recipe.get("Apple Pie");
-        schedule.add(7, 1, applePie);
+        schedule.add(7, 1, applePie, true);
 
         // ziua frantei
         Recipe gratinBroccoli = Recipe.get("Gratin de cartofi cu broccoli și brânză");
-        schedule.add(7, 2, gratinBroccoli);
+        schedule.add(7, 2, gratinBroccoli, true);
 
         // ziua egiptului
         Recipe humus = Recipe.get("Humus");
-        schedule.add(7, 3, humus);
+        schedule.add(7, 3, humus, true);
 
         // ziua ungariei
         Recipe gulas = Recipe.get("Gulaș");
-        schedule.add(8, 3, gulas);
+        schedule.add(8, 3, gulas, true);
 
         // ziua spaniei
         Recipe paella = Recipe.get("Pilaf - Paella cu pui");
-        schedule.add(10, 2, paella);
+        schedule.add(10, 2, paella, true);
 
         // ziua turciei
         Recipe sarmale = Recipe.get("Pilaf - Sarmale viță de vie cu carne");
-        schedule.add(10,4, sarmale);
+        schedule.add(10,4, sarmale, true);
 
         // ziua finlandei
         Recipe nakki = Recipe.get("Nakkikeitto - V");
-        schedule.add(12, 1, nakki);
+        schedule.add(12, 1, nakki, true);
 
         // craciun ? il fac mereu cu familia, nu prea are sens
         Recipe racitura = Recipe.get("Răcitură");
-        schedule.add(12, 3, racitura);
+        schedule.add(12, 3, racitura, true);
     }
 }

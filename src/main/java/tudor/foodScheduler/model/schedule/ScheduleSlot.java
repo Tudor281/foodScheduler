@@ -93,4 +93,41 @@ public class ScheduleSlot {
 
         return origin.getWeeksDistance(this, weeksInMonth) + other.getWeeksDistance(finalWeek, weeksInMonth) + 2;
     }
+
+    public boolean hasConstraints() {
+        return hasConstraints;
+    }
+
+    public int getHumanMonth() {
+        return month + 1;
+    }
+
+    public ScheduleSlot copy() {
+        return new ScheduleSlot(month, week);
+    }
+
+    void increment(int[] weeksInMonth) {
+        week++;
+        if (week >= weeksInMonth[month]) {
+            week = 0;
+            month++;
+
+            if (month >= 11) {
+                month = 0;
+            }
+        }
+    }
+
+    void decrement(int[] weeksInMonth) {
+        week--;
+        if (week < 0) {
+            month--;
+
+            if (month < 0) {
+                month = 11;
+            }
+
+            week = weeksInMonth[month] -1;
+        }
+    }
 }

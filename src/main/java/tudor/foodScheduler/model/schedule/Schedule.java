@@ -16,9 +16,11 @@ public class Schedule {
     Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes = new HashMap<>();
     int[] weeksInMonth;
     Set<Recipe> recipesPresent = new HashSet<>();
+    int numberOfWeeks;
 
     public Schedule(int[] weeksInMonth) {
         this.weeksInMonth = weeksInMonth;
+        calculateNumberOfWeeks();
         for (int month=0; month<12; month++) {
             Map<Integer, Map<Integer, ScheduleEntry>> monthContainer = new HashMap<>();
             recipes.put(month, monthContainer);
@@ -31,6 +33,7 @@ public class Schedule {
 
     private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes) {
         this.weeksInMonth = weeksInMonth;
+        calculateNumberOfWeeks();
         for (int month=0; month<12; month++) {
             Map<Integer, Map<Integer, ScheduleEntry>> monthContainer = new HashMap<>();
             this.recipes.put(month, monthContainer);
@@ -48,15 +51,21 @@ public class Schedule {
         }
     }
 
+    private void calculateNumberOfWeeks() {
+        for (int i=0; i<12; i++) {
+            numberOfWeeks += weeksInMonth[i];
+        }
+    }
+
     /** Real month and week numbers, starting from 1 */
-    public void add(int month, int week, Recipe recipe) {
-        recipes.get(month-1).get(week-1).put(getChannel(recipe), new ScheduleEntry(recipe, true));
+    public void add(int month, int week, Recipe recipe, boolean initialConstraint) {
+        recipes.get(month-1).get(week-1).put(getChannel(recipe), new ScheduleEntry(recipe, initialConstraint));
         recipesPresent.add(recipe);
     }
 
     public void add(ScheduleSlot slot, Recipe recipe) {
-        ScheduleEntry oldRecipe = recipes.get(slot.month).get(slot.week).put(getChannel(recipe), new ScheduleEntry(recipe, false));
-        if (oldRecipe != null) throw new RuntimeException("Overwrite detected");
+        recipes.get(slot.month).get(slot.week).put(getChannel(recipe), new ScheduleEntry(recipe, false));
+        recipesPresent.add(recipe);
     }
 
     private int getChannel(Recipe recipe) {
@@ -144,18 +153,15 @@ public class Schedule {
 
         double ingredientSum = 0;
         double minIngredientScore = Integer.MAX_VALUE;
-        double minIngredientDuplicates = 0;
         List<Ingredient> minIngredientsList = new ArrayList<>();
         for (Ingredient ingredient : Ingredient.values()) {
             List<ScheduleSlot> slots = getSlots(ingredient);
             double score = ScheduleSlot.computeDistanceHybrid(slots, weeksInMonth);
             if (score < minIngredientScore) {
                 minIngredientScore = score;
-                minIngredientDuplicates = score;
                 minIngredientsList.clear();
                 minIngredientsList.add(ingredient);
             } else if (score == minIngredientScore) {
-                minIngredientDuplicates += minIngredientScore;
                 minIngredientsList.add(ingredient);
             }
             ingredientSum += score;
@@ -173,7 +179,7 @@ public class Schedule {
         double avgIngredients = ingredientSum / Ingredient.values().length;
         double avgSpices = spiceSum / Spice.values().length;
 //        logger.info("MinDupliates {} \t avgIngredients {} \t avgSpices {} \t", minIngredientDuplicates, avgIngredients, avgSpices);
-        return minIngredientDuplicates * (2 * avgIngredients + avgSpices);
+        return 2 * avgIngredients + avgSpices;
     }
 
     List<ScheduleSlot> getSlots(Ingredient ingredient) {
@@ -216,16 +222,18 @@ public class Schedule {
 
     Map<Recipe, Integer> recipeCounts = new HashMap<>();
     public void countRecipes() {
+        recipeCounts.clear();
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
                 for (int channel = 0; channel < 3; channel ++) {
-                    Recipe recipe = recipes.get(month).get(week).get(channel).recipe;
-                    Integer count = recipeCounts.get(recipe);
+                    ScheduleEntry entry = recipes.get(month).get(week).get(channel);
+                    if (entry == null) continue; // especially channel 3 recipes are optional
+                    Integer count = recipeCounts.get(entry.recipe);
                     //noinspection Java8MapApi
                     if (count == null) {
-                        recipeCounts.put(recipe, 1);
+                        recipeCounts.put(entry.recipe, 1);
                     } else {
-                        recipeCounts.put(recipe, count + 1);
+                        recipeCounts.put(entry.recipe, count + 1);
                     }
                 }
             }
@@ -241,6 +249,7 @@ public class Schedule {
                 for (int channel = 0; channel < 3; channel++) {
                     ScheduleEntry prevEntry = prevRow.get(channel);
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
+                    if (prevEntry == null || entry == null) continue; // we could have empty slots, especially on channel 3
                     if (prevEntry.recipe.hasIngredientsInCommon(entry.recipe)) {
                         return new Duplication(
                                 new ScheduleSlot(prevMonth, prevWeek, hasConstraints(prevEntry)),
@@ -270,4 +279,67 @@ public class Schedule {
         return false;
     }
 
+    public List<Recipe> getSuitableReplacements(ScheduleSlot slot, Recipe recipe) {
+        int greatestDistance = Integer.MIN_VALUE;
+        List<Recipe> bestRecipes = new ArrayList<>();
+        for (Recipe candidate : Recipe.all.values()) {
+            if (candidate.fel != recipe.fel) continue;
+
+            if (!canAdd(candidate)) continue;
+
+            if (!candidate.isInSeason(slot.getHumanMonth())) continue;
+
+            int distance = getDistance(slot, candidate.ingredients, getChannel(recipe));
+            if (distance>greatestDistance) {
+                greatestDistance = distance;
+                bestRecipes.clear();
+                bestRecipes.add(candidate);
+            } else if (distance == greatestDistance) {
+                bestRecipes.add(candidate);
+            }
+        }
+        return bestRecipes;
+    }
+
+    private boolean canAdd(Recipe recipe) {
+        switch (recipe.multiplicity) {
+            case AtLeastOnce -> {
+                return true;
+            }
+            case AtMostOnce, Once -> {
+                return !recipeCounts.containsKey(recipe);
+            }
+            case Disabled -> {
+                return false;
+            }
+            case Optional -> {
+                return true;
+            }
+        }
+        throw new RuntimeException("Stupid java");
+    }
+
+    int getDistance(ScheduleSlot slot, List<Ingredient> ingredients, int channel) {
+        ScheduleSlot forwardIterator = slot.copy();
+        ScheduleSlot backwardIterator = slot.copy();
+        int counter = 0;
+        do {
+            forwardIterator.increment(weeksInMonth);
+            if (hasCommonIngredients(forwardIterator, ingredients, channel)) return counter;
+            backwardIterator.decrement(weeksInMonth);
+            if (hasCommonIngredients(backwardIterator, ingredients, channel)) return counter;
+
+            counter++;
+        } while (counter<numberOfWeeks);
+        return counter;
+    }
+
+    boolean hasCommonIngredients(ScheduleSlot slot, List<Ingredient> ingredients, int channel) {
+        ScheduleEntry entry = recipes.get(slot.month).get(slot.week).get(channel);
+        if (entry == null) return false;
+        for (Ingredient ingredient : ingredients) {
+            if (entry.recipe.ingredients.contains(ingredient)) return true;
+        }
+        return false;
+    }
 }
