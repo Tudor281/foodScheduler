@@ -40,13 +40,9 @@ public class Scheduler {
 
             Recipe recipe = supplementalRecipes.remove(random.nextInt(supplementalRecipes.size()));
 
-            Integer count = schedule.recipeCounts.get(recipe);
-            if (recipe.multiplicity == Multiplicity.AtLeastOnce && recipe.limit != null &&  count != null && recipe.limit >= count) continue;;
-
             try {
                 add(recipe, schedule);
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) {} // we might have filled up certain categories
             counter ++;
             if (counter>1000) throw new RuntimeException("Run out of attempts, wtf");
         }

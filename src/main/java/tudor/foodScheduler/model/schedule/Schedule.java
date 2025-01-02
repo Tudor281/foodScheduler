@@ -114,10 +114,11 @@ public class Schedule {
     private List<ScheduleSlot> getSlotsForMonths(List<Integer> months, int channel) {
         List<ScheduleSlot> slots = new ArrayList<>();
 
-        for (Integer month : months) {
-            for (int week = 0; week < weeksInMonth[month-1]; week++) {
-                if (recipes.get(month-1).get(week).get(channel) == null) {
-                    slots.add(new ScheduleSlot(month-1, week));
+        for (Integer humanMonth : months) {
+            int scheduleMonth = humanMonth - 1;
+            for (int week = 0; week < weeksInMonth[scheduleMonth]; week++) {
+                if (recipes.get(scheduleMonth).get(week).get(channel) == null) {
+                    slots.add(new ScheduleSlot(scheduleMonth, week));
                 }
             }
         }
@@ -382,5 +383,11 @@ public class Schedule {
             if (entry.recipe.ingredients.contains(ingredient)) return true;
         }
         return false;
+    }
+
+    public boolean reachedLimit(Recipe recipe) {
+        Integer count = recipeCounts.get(recipe);
+        if (count == null) return false;
+        return recipe.multiplicity == Multiplicity.AtLeastOnce && recipe.limit != null && recipe.limit >= count;
     }
 }

@@ -134,6 +134,8 @@ public class Recipe {
                 if (schedule.isRecipePresent(recipe)) continue;
             }
 
+            if (schedule.reachedLimit(recipe)) continue;
+
             //also if (recipe.multiplicity == AtLeastOnce || recipe.multiplicity == Optional)
             result.add(recipe);
         }
