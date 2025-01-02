@@ -1,5 +1,6 @@
 package tudor.foodScheduler.model;
 
+import tudor.foodScheduler.Inspector;
 import tudor.foodScheduler.model.schedule.Schedule;
 
 import java.util.*;
@@ -28,7 +29,7 @@ public class Recipe {
         add(new Recipe("Chiftele cu carne", List.of(Carne), Once, Rece, List.of(Usturoi))); // binding to pilaf simplu
         add(new Recipe("Chiftele de soia în suc de roșii", List.of(Soia), Once, Rece, List.of())); // TODO No recipy
         add(new Recipe("Ciorbă de cartofi cu smântână", List.of(Cartofi, Smantana), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
-        add(new Recipe("Ciorbă de cartofi roșie", List.of(Cartofi), AtLeastOnce, F1, List.of(Patrunjel, Marar), 4));
+        add(new Recipe("Ciorbă de cartofi roșie", List.of(Cartofi), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de conopidă", List.of(Conopida), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de dovlecei cu ciuperci", List.of(Dovlecei, Ciuperci), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de fasole - Cu chimen", List.of(Fasole), AtLeastOnce, F1, List.of(Pastarnac, Usturoi, Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, BoiaAfumata, Iuteala)));
@@ -66,7 +67,7 @@ public class Recipe {
         add(new Recipe("Mâncare de fasole - Iahnie de fasole", List.of(Fasole), AtLeastOnce, F2, List.of(Usturoi, Pastarnac, Dafin)));
         add(new Recipe("Mâncare de mazăre - Cu pui", List.of(Mazare, Carne), Disabled, F2, List.of(Marar, BoiaDulce, Dafin, Usturoi))); // mazărea cu soia e pur și simplu superioară
         add(new Recipe("Mâncare de mazăre - Cu soia", List.of(Mazare, Soia), AtLeastOnce, F2, List.of(Marar, BoiaDulce, Dafin, Usturoi)));
-        add(new Recipe("Mâncare de mazăre - Simplu", List.of(Mazare), AtLeastOnce, F2, List.of(Marar), 4));
+        add(new Recipe("Mâncare de mazăre - Simplu", List.of(Mazare), AtLeastOnce, F2, List.of(Marar)));
         add(new Recipe("Melanzane alla parmigiano", List.of(Vinete, Branza), Once, F2, List.of()));
         add(new Recipe("Musaca cu carne", List.of(Cartofi, Carne), Once, F2, List.of(Apio, VinAlb)));
         add(new Recipe("Musaca cu ciuperci", List.of(Cartofi, Ciuperci), AtLeastOnce, F2, List.of())); // TODO no recipy

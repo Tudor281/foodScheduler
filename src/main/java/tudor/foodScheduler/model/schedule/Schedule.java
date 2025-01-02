@@ -12,6 +12,8 @@ import java.util.*;
 public class Schedule {
     private static final Logger logger = LoggerFactory.getLogger(Schedule.class);
 
+    public static final int hardCap = 4;
+
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
     Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes = new HashMap<>();
@@ -45,7 +47,7 @@ public class Schedule {
 
                 weekContainer.putAll(otherWeekContainer);
                 for (ScheduleEntry entry : otherWeekContainer.values()) {
-                    count(entry.recipe);
+                    recipeCounts.count(entry.recipe);
                 }
             }
         }
@@ -60,14 +62,14 @@ public class Schedule {
     /** Real month and week numbers, starting from 1 */
     public void add(int month, int week, Recipe recipe, boolean initialConstraint) {
         ScheduleEntry oldEntry = recipes.get(month-1).get(week-1).put(getChannel(recipe), new ScheduleEntry(recipe, initialConstraint));
-        count(recipe);
-        if (oldEntry != null) dec(oldEntry.recipe);
+        recipeCounts.count(recipe);
+        if (oldEntry != null) recipeCounts.deCount(recipe);
     }
 
     public void add(ScheduleSlot slot, Recipe recipe) {
         ScheduleEntry oldEntry = recipes.get(slot.month).get(slot.week).put(getChannel(recipe), new ScheduleEntry(recipe, false));
-        count(recipe);
-        if (oldEntry != null) dec(oldEntry.recipe);
+        recipeCounts.count(recipe);
+        if (oldEntry != null) recipeCounts.deCount(recipe);
     }
 
     private int getChannel(Recipe recipe) {
@@ -77,7 +79,7 @@ public class Schedule {
     }
 
     public boolean isRecipePresent(Recipe recipe) {
-        return recipeCounts.get(recipe) == 0;
+        return recipeCounts.get(recipe) > 0;
     }
 
     public String toString() {
@@ -125,6 +127,7 @@ public class Schedule {
         for (Map.Entry<Spice, Integer> entry : spicesCount.getSortedDescending()) {
             result += entry.getKey() + "\t" + entry.getValue() + "\n";
         }
+        result += "\n END \n";
         return result;
     }
 
@@ -276,14 +279,6 @@ public class Schedule {
         }
     }
 
-    void count(Recipe recipe) {
-        recipeCounts.count(recipe);
-    }
-
-    void dec(Recipe recipe) {
-        recipeCounts.deCount(recipe);
-    }
-
     public Duplication getIngredientDuplicate() {
         int prevMonth = 11;
         int prevWeek = weeksInMonth[11]-1;
@@ -357,8 +352,9 @@ public class Schedule {
     private boolean canAdd(Recipe recipe) {
         switch (recipe.multiplicity) {
             case AtLeastOnce -> {
-                //noinspection RedundantIfStatement
                 if (recipe.limit != null && recipe.limit >= recipeCounts.get(recipe)) return false;
+                //noinspection RedundantIfStatement
+                if (recipeCounts.get(recipe) >= hardCap) return false;
                 return true;
             }
             case AtMostOnce, Once -> {
@@ -406,9 +402,8 @@ public class Schedule {
     }
 
     public boolean reachedLimit(Recipe recipe) {
-        Integer count = recipeCounts.get(recipe);
-        if (count == null) return false;
-        return recipe.multiplicity == Multiplicity.AtLeastOnce && recipe.limit != null && recipe.limit >= count;
+        int count = recipeCounts.get(recipe);
+        return recipe.multiplicity == Multiplicity.AtLeastOnce && ((recipe.limit != null && recipe.limit >= count) || count >= hardCap);
     }
 
     public void optimize() {
