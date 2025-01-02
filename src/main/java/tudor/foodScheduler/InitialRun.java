@@ -2,6 +2,7 @@ package tudor.foodScheduler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tudor.foodScheduler.model.Ingredient;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.SchedulingException;
@@ -61,7 +62,7 @@ public class InitialRun {
         logger.info(bestSchedule.toString());
     }
 
-    private static void addConstraints(Schedule schedule) {
+    public static void addConstraints(Schedule schedule) {
         // ziua mea
         Recipe musacaCuCarne = Recipe.get("Musaca cu carne");
         schedule.add(1, 2, musacaCuCarne, true);

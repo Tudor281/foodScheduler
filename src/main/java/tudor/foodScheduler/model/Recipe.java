@@ -217,6 +217,9 @@ public class Recipe {
     public boolean hasIngredientsInCommon(Recipe recipe) {
         for (Ingredient ingredient : ingredients) {
             if (recipe.ingredients.contains(ingredient)) return true;
+            for (Ingredient aka : ingredient.akas) {
+                if (recipe.ingredients.contains(aka)) return true;
+            }
         }
         return false;
     }

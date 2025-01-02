@@ -1,5 +1,6 @@
 package tudor.foodScheduler.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static tudor.foodScheduler.model.Months.ALL;
@@ -41,8 +42,17 @@ public enum Ingredient {
 //    Zucchini(List.of(), ALL)
     ;
 
+    static {
+        Varza.akas.add(VarzaMurata);
+        VarzaMurata.akas.add(Varza);
+
+        PastaiCongelate.akas.add(PastaiFresh);
+        PastaiFresh.akas.add(PastaiCongelate);
+    }
+
     final List<Integer> domesticMonths;
     final List<Integer> importMonths;
+    public final List<Ingredient> akas = new ArrayList<>();
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;

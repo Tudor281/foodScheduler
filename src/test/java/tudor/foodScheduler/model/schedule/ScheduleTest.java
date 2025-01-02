@@ -1,5 +1,6 @@
 package tudor.foodScheduler.model.schedule;
 
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import tudor.foodScheduler.Scheduler;
 import tudor.foodScheduler.model.Recipe;
@@ -61,6 +62,21 @@ class ScheduleTest {
 
         List<Recipe> candidates = schedule.getSuitableReplacements(new ScheduleSlot(0,0), fasoleCuDafin);
         System.out.println("Hello");
+    }
+
+    @Nested
+    class getDistance {
+        @Test
+        void shouldDetectCorrectDistanceByAka() {
+            Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
+
+            Recipe cPastai = Recipe.get("Ciorbă de păstăi");
+            Recipe cPastaiFresh = Recipe.get("Ciorbă de păstăi fresh");
+
+            schedule.add(2, 2, cPastai, true);
+            int distance = schedule.getDistance(new ScheduleSlot(0,0), cPastaiFresh.ingredients, 0);
+            assertEquals(4, distance);
+        }
     }
 
     @Test

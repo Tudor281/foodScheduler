@@ -149,13 +149,15 @@ public class Schedule {
         return score;
     }
 
-    /** The higher the score, the higher the distance between various ingredients */
+    /** The higher the score, the greater the distance between various ingredients */
     public double getScore() {
-
         double ingredientSum = 0;
         double minIngredientScore = Integer.MAX_VALUE;
         List<Ingredient> minIngredientsList = new ArrayList<>();
+        Set<Ingredient> akas = new HashSet<>();
         for (Ingredient ingredient : Ingredient.values()) {
+            if (akas.contains(ingredient)) continue;
+            akas.addAll(ingredient.akas);
             List<ScheduleSlot> slots = getSlots(ingredient);
             double score = ScheduleSlot.computeDistanceHybrid(slots, weeksInMonth);
             if (score < minIngredientScore) {
@@ -184,6 +186,9 @@ public class Schedule {
     }
 
     List<ScheduleSlot> getSlots(Ingredient ingredient) {
+        List<Ingredient> pool = new ArrayList<>();
+        pool.add(ingredient);
+        pool.addAll(ingredient.akas);
         List<ScheduleSlot> slots = new ArrayList<>();
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
@@ -191,8 +196,10 @@ public class Schedule {
                 if (channelsContainer == null) throw new RuntimeException("Schedule is not filled");
 
                 for (ScheduleEntry entry : channelsContainer.values()) {
-                    if (entry.recipe.ingredients.contains(ingredient)) {
-                        slots.add(new ScheduleSlot(month, week));
+                    for (Ingredient pooledIngredient : pool) {
+                        if (entry.recipe.ingredients.contains(pooledIngredient)) {
+                            slots.add(new ScheduleSlot(month, week));
+                        }
                     }
                 }
             }
@@ -350,14 +357,18 @@ public class Schedule {
     }
 
     int getDistance(ScheduleSlot slot, List<Ingredient> ingredients, int channel) {
+        List<Ingredient> akaPool = new ArrayList<>(ingredients);
+        for (Ingredient ingredient : ingredients) {
+            akaPool.addAll(ingredient.akas);
+        }
         ScheduleSlot forwardIterator = slot.copy();
         ScheduleSlot backwardIterator = slot.copy();
         int counter = 0;
         do {
             forwardIterator.increment(weeksInMonth);
-            if (hasCommonIngredients(forwardIterator, ingredients, channel)) return counter;
+            if (hasCommonIngredients(forwardIterator, akaPool, channel)) return counter;
             backwardIterator.decrement(weeksInMonth);
-            if (hasCommonIngredients(backwardIterator, ingredients, channel)) return counter;
+            if (hasCommonIngredients(backwardIterator, akaPool, channel)) return counter;
 
             counter++;
         } while (counter<numberOfWeeks);
