@@ -2,7 +2,6 @@ package tudor.foodScheduler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tudor.foodScheduler.model.Ingredient;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.SchedulingException;
@@ -66,6 +65,8 @@ public class InitialRun {
         // ziua mea
         Recipe musacaCuCarne = Recipe.get("Musaca cu carne");
         schedule.add(1, 2, musacaCuCarne, true);
+        Recipe supaRosii = Recipe.get("Supă de roșii"); // sinergie apio
+        schedule.add(1, 2, supaRosii, true);
 
         // pastele
         Recipe cozonac = Recipe.get("Cozonac");

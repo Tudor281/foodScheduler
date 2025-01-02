@@ -40,7 +40,7 @@ public class Recipe {
         add(new Recipe("Ciorbă de năut cu afumătură", List.of(Carne, Naut), AtMostOnce, F1, List.of(BoiaDulce)));
         add(new Recipe("Ciorbă de păstăi", List.of(PastaiCongelate), AtLeastOnce, F1, List.of(Pastarnac, Patrunjel, Marar, Leustean), 3));
         add(new Recipe("Ciorbă de păstăi fresh", List.of(PastaiFresh), Once, F1, List.of(Pastarnac, Patrunjel, Marar, Leustean)));
-        add(new Recipe("Ciorbă de perișoare", List.of(Carne), AtMostOnce, F1, List.of())); // TODO No recipy
+        add(new Recipe("Ciorbă de perișoare", List.of(Carne), Once, F1, List.of())); // TODO No recipy
         add(new Recipe("Ciorbă de pui a la Grec", List.of(Carne, Smantana), Once, F1, List.of(Pastarnac, SucLamaie, Patrunjel, Marar)));
         add(new Recipe("Ciorbă de salată cu scrob", List.of(Salata, Smantana), AtLeastOnce, F1, List.of()));
         add(new Recipe("Ciorbă rădăuțeană", List.of(Carne, Smantana), Once, F1, List.of())); // TODO no recipy
