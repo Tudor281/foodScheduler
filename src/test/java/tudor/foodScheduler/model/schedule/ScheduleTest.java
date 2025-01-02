@@ -74,7 +74,7 @@ class ScheduleTest {
             Recipe cPastaiFresh = Recipe.get("Ciorbă de păstăi fresh");
 
             schedule.add(2, 2, cPastai, true);
-            int distance = schedule.getDistance(new ScheduleSlot(0,0), cPastaiFresh.ingredients, 0);
+            int distance = schedule.getDistance(new ScheduleSlot(0,0), cPastaiFresh.ingredients, 0, null);
             assertEquals(4, distance);
         }
     }

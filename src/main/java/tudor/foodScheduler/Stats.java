@@ -9,21 +9,27 @@ import java.util.*;
 public class Stats {
     private static final Logger logger = LoggerFactory.getLogger(Stats.class);
 
-    static Map<Ingredient, Integer> counts = new HashMap<>();
+    static Map<Ingredient, Integer> minScoreIngredientCounts = new HashMap<>();
 
     static int optimalInsertionFailures = 0;
     static int suitableReplacementsNotFound = 0;
     static int runOutOfOptimalInsertsAttempts = 0;
     static int optimalInsertsConstrained = 0;
+    static int swapsEndedPrematurely = 0;
+    static int swapsExecuted = 0;
 
-    public static void add(Ingredient ingredient) {
-        Integer count = counts.get(ingredient);
+    public static void addMinScoreIngredient(Ingredient ingredient) {
+        Integer count = minScoreIngredientCounts.get(ingredient);
         if (count == null) {
-            counts.put(ingredient, 1);
+            minScoreIngredientCounts.put(ingredient, 1);
         } else {
-            counts.put(ingredient, count + 1);
+            minScoreIngredientCounts.put(ingredient, count + 1);
         }
     }
+
+    public static void countSwapsEndedPrematurely() {swapsEndedPrematurely++; }
+    public static void countSwapsExecuted() {swapsExecuted++; }
+
 
     public static void countOptimalInsertFailure() {
         optimalInsertionFailures++;
@@ -42,7 +48,7 @@ public class Stats {
     }
 
     public static void report() {
-        List<Map.Entry<Ingredient, Integer>> classification = new ArrayList<>(counts.entrySet());
+        List<Map.Entry<Ingredient, Integer>> classification = new ArrayList<>(minScoreIngredientCounts.entrySet());
 
         classification.sort(new Comparator<Map.Entry<Ingredient, Integer>>() {
             @Override
@@ -59,5 +65,7 @@ public class Stats {
         logger.info("Suitable replacements not found: {}", suitableReplacementsNotFound);
         logger.info("Run out of optimal inserts attempts: {}", runOutOfOptimalInsertsAttempts);
         logger.info("Optimal Inserts constraints lock: {}", optimalInsertsConstrained);
+        logger.info("Swaps ended prematurely: {}", swapsEndedPrematurely);
+        logger.info("Swaps executed: {}", swapsExecuted);
     }
 }

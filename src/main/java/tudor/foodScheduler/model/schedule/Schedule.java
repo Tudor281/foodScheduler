@@ -172,7 +172,7 @@ public class Schedule {
         }
 
         for (Ingredient ingredient : minIngredientsList) {
-            Stats.add(ingredient);
+            Stats.addMinScoreIngredient(ingredient);
         }
 
         double spiceSum = 0;
@@ -197,6 +197,7 @@ public class Schedule {
                 if (channelsContainer == null) throw new RuntimeException("Schedule is not filled");
 
                 for (ScheduleEntry entry : channelsContainer.values()) {
+                    if (entry == null) continue;
                     for (Ingredient pooledIngredient : pool) {
                         if (entry.recipe.ingredients.contains(pooledIngredient)) {
                             slots.add(new ScheduleSlot(month, week));
@@ -216,6 +217,7 @@ public class Schedule {
                 if (channelsContainer == null) throw new RuntimeException("Schedule is not filled");
 
                 for (ScheduleEntry entry : channelsContainer.values()) {
+                    if (entry == null) continue;
                     if (entry.recipe.spices.contains(spice)) {
                         slots.add(new ScheduleSlot(month, week));
                     }
@@ -325,7 +327,7 @@ public class Schedule {
 
             if (!candidate.isInSeason(slot.getHumanMonth())) continue;
 
-            int distance = getDistance(slot, candidate.ingredients, getChannel(recipe));
+            int distance = getDistance(slot, candidate.ingredients, getChannel(recipe), null);
             if (distance>greatestDistance) {
                 greatestDistance = distance;
                 bestRecipes.clear();
@@ -357,7 +359,8 @@ public class Schedule {
         throw new RuntimeException("Stupid java");
     }
 
-    int getDistance(ScheduleSlot slot, List<Ingredient> ingredients, int channel) {
+    /** Exception is used for permutation, not to compare with the origin slot */
+    int getDistance(ScheduleSlot slot, List<Ingredient> ingredients, int channel, ScheduleSlot exception) {
         List<Ingredient> akaPool = new ArrayList<>(ingredients);
         for (Ingredient ingredient : ingredients) {
             akaPool.addAll(ingredient.akas);
@@ -367,16 +370,18 @@ public class Schedule {
         int counter = 0;
         do {
             forwardIterator.increment(weeksInMonth);
-            if (hasCommonIngredients(forwardIterator, akaPool, channel)) return counter;
+            if (hasCommonIngredients(forwardIterator, akaPool, channel, exception)) return counter;
             backwardIterator.decrement(weeksInMonth);
-            if (hasCommonIngredients(backwardIterator, akaPool, channel)) return counter;
+            if (hasCommonIngredients(backwardIterator, akaPool, channel, exception)) return counter;
 
             counter++;
         } while (counter<numberOfWeeks);
         return counter;
     }
 
-    boolean hasCommonIngredients(ScheduleSlot slot, List<Ingredient> ingredients, int channel) {
+    boolean hasCommonIngredients(ScheduleSlot slot, List<Ingredient> ingredients, int channel, ScheduleSlot exception) {
+        if (exception != null && slot.month == exception.month && slot.week == exception.week) return false;
+
         ScheduleEntry entry = recipes.get(slot.month).get(slot.week).get(channel);
         if (entry == null) return false;
         for (Ingredient ingredient : ingredients) {
@@ -389,5 +394,67 @@ public class Schedule {
         Integer count = recipeCounts.get(recipe);
         if (count == null) return false;
         return recipe.multiplicity == Multiplicity.AtLeastOnce && recipe.limit != null && recipe.limit >= count;
+    }
+
+    public void optimize() {
+        for (int iteration = 0; iteration < 10; iteration ++) {
+            boolean madeASwap = false;
+
+            for (int month = 0; month < 12; month++) {
+                for (int week = 0; week < weeksInMonth[month]; week++) {
+                    for (int channel = 0; channel < 3; channel++) {
+                        // calculate current distance score
+                        ScheduleEntry entry = recipes.get(month).get(week).get(channel);
+                        if (entry == null || entry.initialConstraint) continue;
+
+                        Recipe recipe = entry.recipe;
+                        ScheduleSlot currentSlot = new ScheduleSlot(month, week);
+                        int currentDistance = getDistance(currentSlot, recipe.ingredients, channel, null);
+                        if (currentDistance > 3) continue;
+                        int bestCandidateDistance = 0;
+                        ScheduleSlot bestSwap = null;
+                        // find best possible slot
+                        for (int candidateMonth = 0; candidateMonth < 12; candidateMonth++) {
+                            for (int candidateWeek = 0; candidateWeek < weeksInMonth[candidateMonth]; candidateWeek++) {
+                                if (!recipe.isInSeason(candidateMonth+1)) continue;
+
+                                ScheduleSlot candidateSlot = new ScheduleSlot(candidateMonth, candidateWeek);
+                                int targetDistance = getDistance(candidateSlot, recipe.ingredients, channel, currentSlot);
+                                if (targetDistance <= bestCandidateDistance || targetDistance < currentDistance) continue;
+
+                                ScheduleEntry candidateEntry = recipes.get(candidateMonth).get(candidateWeek).get(channel);
+                                if (candidateEntry != null) {
+                                    if (candidateEntry.initialConstraint) continue;
+
+                                    Recipe candidateRecipe = candidateEntry.recipe;
+                                    if (candidateRecipe.hasIngredientsInCommon(recipe)) continue;
+                                    if (!candidateRecipe.isInSeason(month+1)) continue;
+
+                                    int candidateCurrentDistance = getDistance(candidateSlot, candidateRecipe.ingredients, channel, null);
+                                    int swapDistance = getDistance(currentSlot, candidateRecipe.ingredients, channel, candidateSlot);
+                                    if (swapDistance < candidateCurrentDistance) continue; // we want a mutually beneficial swap
+                                }
+
+                                bestCandidateDistance = targetDistance;
+                                bestSwap = candidateSlot;
+                            }
+                        }
+
+                        if (bestSwap != null) {
+                            madeASwap = true;
+                            Stats.countSwapsExecuted();
+                            ScheduleEntry targetEntry = recipes.get(bestSwap.month).get(bestSwap.week).get(channel);
+                            recipes.get(bestSwap.month).get(bestSwap.week).put(channel, entry);
+                            recipes.get(month).get(week).put(channel, targetEntry);
+                        }
+                    }
+                }
+            }
+
+            if (!madeASwap) {
+                Stats.countSwapsEndedPrematurely();
+                return;
+            }
+        }
     }
 }

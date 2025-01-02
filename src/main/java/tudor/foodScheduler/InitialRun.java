@@ -30,10 +30,11 @@ public class InitialRun {
 
         logger.info("{}", bestScore);
 
-        for (int i=0; i<100000; i++) {
+        for (int i=0; i<10000; i++) {
             Schedule candidate = template.copy();
             scheduler.addAtLeastOnceRecipes(candidate);
             scheduler.fillInOtherRecipes(candidate);
+            candidate.optimize();
             try {
                 scheduler.eliminateDuplicates(candidate);
             } catch (SchedulingException ignored) {
