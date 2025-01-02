@@ -38,8 +38,8 @@ public enum Ingredient {
     Varza(List.of(7,8,9,10,11,12), ALL),
     VarzaMurata(ALL, ALL),
     Vinete(List.of(7,8,9,10), ALL),
-//    Zahar(ALL, List.of()),
-//    Zucchini(List.of(), ALL)
+    Zahar(ALL, List.of()),
+    Zucchini(List.of(), ALL)
     ;
 
     static {

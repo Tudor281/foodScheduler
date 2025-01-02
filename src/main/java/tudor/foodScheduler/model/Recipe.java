@@ -28,7 +28,7 @@ public class Recipe {
         add(new Recipe("Chiftele cu carne", List.of(Carne), Once, Rece, List.of(Usturoi))); // binding to pilaf simplu
         add(new Recipe("Chiftele de soia în suc de roșii", List.of(Soia), Once, Rece, List.of())); // TODO No recipy
         add(new Recipe("Ciorbă de cartofi cu smântână", List.of(Cartofi, Smantana), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
-        add(new Recipe("Ciorbă de cartofi roșie", List.of(Cartofi), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
+        add(new Recipe("Ciorbă de cartofi roșie", List.of(Cartofi), AtLeastOnce, F1, List.of(Patrunjel, Marar), 4));
         add(new Recipe("Ciorbă de conopidă", List.of(Conopida), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de dovlecei cu ciuperci", List.of(Dovlecei, Ciuperci), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de fasole - Cu chimen", List.of(Fasole), AtLeastOnce, F1, List.of(Pastarnac, Usturoi, Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, BoiaAfumata, Iuteala)));
@@ -71,7 +71,7 @@ public class Recipe {
         add(new Recipe("Musaca cu carne", List.of(Cartofi, Carne), Once, F2, List.of(Apio, VinAlb)));
         add(new Recipe("Musaca cu ciuperci", List.of(Cartofi, Ciuperci), AtLeastOnce, F2, List.of())); // TODO no recipy
         add(new Recipe("Nakkikeitto", List.of(Carne, Cartofi), Optional, F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin)));
-        add(new Recipe("Nakkikeitto - V", List.of(Cartofi, Soia), AtLeastOnce, F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin)));
+        add(new Recipe("Nakkikeitto - V", List.of(Cartofi, Soia), AtLeastOnce, F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin), 2));
         add(new Recipe("Pilaf - Cu ciuperci și alte legume", List.of(Orez, Ciuperci), AtLeastOnce, F2, List.of(Marar, Patrunjel, Pastarnac)));
         add(new Recipe("Pilaf - Cu urzici", List.of(Orez, Urzici), Once, F2, List.of(Patrunjel)));
         add(new Recipe("Pilaf - Paella cu pui", List.of(Orez, Carne), Once, F2, List.of(Usturoi, Patrunjel, Curcuma, SucLamaie)));

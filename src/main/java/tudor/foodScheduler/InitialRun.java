@@ -28,8 +28,6 @@ public class InitialRun {
 
         double bestScore = bestSchedule.getScore();
 
-        logger.info("{}", bestScore);
-
         for (int i=0; i<10000; i++) {
             Schedule candidate = template.copy();
             scheduler.addAtLeastOnceRecipes(candidate);

@@ -9,7 +9,7 @@ import java.util.*;
 public class Stats {
     private static final Logger logger = LoggerFactory.getLogger(Stats.class);
 
-    static Map<Ingredient, Integer> minScoreIngredientCounts = new HashMap<>();
+    static Counter<Ingredient> minScoreIngredientCounts = new Counter<>();
 
     static int optimalInsertionFailures = 0;
     static int suitableReplacementsNotFound = 0;
@@ -19,12 +19,7 @@ public class Stats {
     static int swapsExecuted = 0;
 
     public static void addMinScoreIngredient(Ingredient ingredient) {
-        Integer count = minScoreIngredientCounts.get(ingredient);
-        if (count == null) {
-            minScoreIngredientCounts.put(ingredient, 1);
-        } else {
-            minScoreIngredientCounts.put(ingredient, count + 1);
-        }
+        minScoreIngredientCounts.count(ingredient);
     }
 
     public static void countSwapsEndedPrematurely() {swapsEndedPrematurely++; }
@@ -48,14 +43,7 @@ public class Stats {
     }
 
     public static void report() {
-        List<Map.Entry<Ingredient, Integer>> classification = new ArrayList<>(minScoreIngredientCounts.entrySet());
-
-        classification.sort(new Comparator<Map.Entry<Ingredient, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Ingredient, Integer> o1, Map.Entry<Ingredient, Integer> o2) {
-                return -o1.getValue().compareTo(o2.getValue());
-            }
-        });
+        List<Map.Entry<Ingredient, Integer>> classification = minScoreIngredientCounts.getSortedDescending();
 
         for (Map.Entry<Ingredient, Integer> entry : classification) {
             logger.info("{} -> {}", entry.getKey(), entry.getValue());

@@ -2,6 +2,7 @@ package tudor.foodScheduler.model.schedule;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tudor.foodScheduler.Counter;
 import tudor.foodScheduler.Stats;
 import tudor.foodScheduler.model.*;
 
@@ -76,7 +77,7 @@ public class Schedule {
     }
 
     public boolean isRecipePresent(Recipe recipe) {
-        return recipeCounts.containsKey(recipe);
+        return recipeCounts.get(recipe) == 0;
     }
 
     public String toString() {
@@ -86,6 +87,7 @@ public class Schedule {
                 result += toString(month, week);
             }
         }
+        result += countIngredientsAndSpices();
         return result;
     }
 
@@ -95,6 +97,35 @@ public class Schedule {
                 + '\t' + getName(month, week, 1)
                 + '\t' + getName(month, week, 2)
                 + '\n';
+    }
+
+    public String countIngredientsAndSpices() {
+        Counter<Ingredient> ingredientsCount = new Counter<>();
+        Counter<Spice> spicesCount = new Counter<>();
+        for (int month=0; month<12; month++) {
+            for (int week=0; week<weeksInMonth[month]; week++) {
+                for (int channel=0; channel < 3; channel++) {
+                    ScheduleEntry entry = recipes.get(month).get(week).get(channel);
+                    if (entry == null) continue;
+                    for (Ingredient ingredient : entry.recipe.ingredients) {
+                        ingredientsCount.count(ingredient);
+                    }
+                    for (Spice spice : entry.recipe.spices) {
+                        spicesCount.count(spice);
+                    }
+                }
+            }
+        }
+
+        String result = "\nIngredients:\n";
+        for (Map.Entry<Ingredient, Integer> entry : ingredientsCount.getSortedDescending()) {
+            result += entry.getKey() + "\t" + entry.getValue() + "\n";
+        }
+        result += "\nSpices:\n";
+        for (Map.Entry<Spice, Integer> entry : spicesCount.getSortedDescending()) {
+            result += entry.getKey() + "\t" + entry.getValue() + "\n";
+        }
+        return result;
     }
 
     String getName(int month, int week, int channel) {
@@ -231,7 +262,7 @@ public class Schedule {
         return new Schedule(weeksInMonth, recipes);
     }
 
-    public Map<Recipe, Integer> recipeCounts = new HashMap<>();
+    public Counter<Recipe> recipeCounts = new Counter<>();
     public void countRecipes() {
         recipeCounts.clear();
         for (int month=0; month<12; month++) {
@@ -239,34 +270,18 @@ public class Schedule {
                 for (int channel = 0; channel < 3; channel ++) {
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (entry == null) continue; // especially channel 3 recipes are optional
-                    Integer count = recipeCounts.get(entry.recipe);
-                    //noinspection Java8MapApi
-                    if (count == null) {
-                        recipeCounts.put(entry.recipe, 1);
-                    } else {
-                        recipeCounts.put(entry.recipe, count + 1);
-                    }
+                    recipeCounts.count(entry.recipe);
                 }
             }
         }
     }
 
     void count(Recipe recipe) {
-        Integer count = recipeCounts.get(recipe);
-        //noinspection Java8MapApi
-        if (count == null) {
-            recipeCounts.put(recipe, 1);
-        } else {
-            recipeCounts.put(recipe, count+1);
-        }
+        recipeCounts.count(recipe);
     }
 
     void dec(Recipe recipe) {
-        Integer count = recipeCounts.get(recipe);
-        if (count == null || count <= 0) {
-            throw new RuntimeException("Removing a recipe that has not been counted");
-        }
-        recipeCounts.put(recipe, count - 1);
+        recipeCounts.deCount(recipe);
     }
 
     public Duplication getIngredientDuplicate() {
@@ -343,11 +358,11 @@ public class Schedule {
         switch (recipe.multiplicity) {
             case AtLeastOnce -> {
                 //noinspection RedundantIfStatement
-                if (recipe.limit != null && recipeCounts.get(recipe) != null && recipe.limit >= recipeCounts.get(recipe)) return false;
+                if (recipe.limit != null && recipe.limit >= recipeCounts.get(recipe)) return false;
                 return true;
             }
             case AtMostOnce, Once -> {
-                return !recipeCounts.containsKey(recipe);
+                return recipeCounts.get(recipe) == 0;
             }
             case Disabled -> {
                 return false;
