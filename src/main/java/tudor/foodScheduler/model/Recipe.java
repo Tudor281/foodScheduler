@@ -30,7 +30,7 @@ public class Recipe {
         add(new Recipe("Ciorbă de cartofi cu smântână", List.of(Cartofi, Smantana), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de cartofi roșie", List.of(Cartofi), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de conopidă", List.of(Conopida), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
-        add(new Recipe("Ciorbă de dovlecei cu ciuperci", List.of(Dovlecei, Ciuperci, Telina), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
+        add(new Recipe("Ciorbă de dovlecei cu ciuperci", List.of(Dovlecei, Ciuperci), AtLeastOnce, F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de fasole - Cu chimen", List.of(Fasole), AtLeastOnce, F1, List.of(Pastarnac, Usturoi, Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, BoiaAfumata, Iuteala)));
         add(new Recipe("Ciorbă de fasole - Cu dafin", List.of(Fasole), AtLeastOnce, F1, List.of(Patrunjel, Marar, Dafin)));
         add(new Recipe("Ciorbă de fasole - Cu cimbru", List.of(Fasole), AtLeastOnce, F1, List.of(Patrunjel, Marar, Cimbru)));
