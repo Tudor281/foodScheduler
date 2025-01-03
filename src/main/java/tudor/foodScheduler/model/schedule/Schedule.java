@@ -2,8 +2,8 @@ package tudor.foodScheduler.model.schedule;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tudor.foodScheduler.Counter;
-import tudor.foodScheduler.Stats;
+import tudor.foodScheduler.utils.Counter;
+import tudor.foodScheduler.utils.Stats;
 import tudor.foodScheduler.model.*;
 
 import java.util.*;

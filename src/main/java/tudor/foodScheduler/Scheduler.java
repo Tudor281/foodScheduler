@@ -1,11 +1,11 @@
 package tudor.foodScheduler;
 
-import tudor.foodScheduler.model.Multiplicity;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Duplication;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleSlot;
 import tudor.foodScheduler.model.schedule.SchedulingException;
+import tudor.foodScheduler.utils.Stats;
 
 import java.util.Comparator;
 import java.util.List;

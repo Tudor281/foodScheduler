@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.SchedulingException;
+import tudor.foodScheduler.utils.Stats;
 
 /**
  * Hello world!

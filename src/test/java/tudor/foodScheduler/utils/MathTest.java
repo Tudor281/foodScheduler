@@ -1,4 +1,4 @@
-package tudor.foodScheduler;
+package tudor.foodScheduler.utils;
 
 import org.junit.jupiter.api.Test;
 
