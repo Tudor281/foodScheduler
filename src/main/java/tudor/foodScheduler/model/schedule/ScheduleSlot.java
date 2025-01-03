@@ -18,25 +18,6 @@ public class ScheduleSlot {
     }
 
     /** Assumes slots are ordered */
-    public static double computeDistanceExp(List<ScheduleSlot> scheduleSlotList, int[] weeksInMonth) {
-        if (scheduleSlotList.isEmpty()) {
-            return 0; // we want many ingredients used throughout the year. Since we're maximizing distance between them, 0 is bad for a schedule
-        }
-        if (scheduleSlotList.size() == 1) {
-            return Math.exp(getSum(weeksInMonth));
-        }
-        double score = 0;
-        ScheduleSlot prevSlot = scheduleSlotList.getFirst();
-        for (int i = 1; i< scheduleSlotList.size(); i ++) {
-            ScheduleSlot currentSlot = scheduleSlotList.get(i);
-            score += Math.exp(prevSlot.getWeeksDistance(currentSlot, weeksInMonth));
-            prevSlot = currentSlot;
-        }
-        score += Math.exp(scheduleSlotList.getFirst().getOutsideWeeksDistance(scheduleSlotList.getLast(), weeksInMonth));
-        return score;
-    }
-
-    /** Assumes slots are ordered */
     public static double computeDistanceHybrid(List<ScheduleSlot> scheduleSlotList, int[] weeksInMonth) {
         if (scheduleSlotList.isEmpty()) {
             return 0; // we want many ingredients used throughout the year. Since we're maximizing distance between them, 0 is bad for a schedule

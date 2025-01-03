@@ -106,7 +106,7 @@ public class Schedule {
                 + '\t' + getName(month, week, 0)
                 + '\t' + getName(month, week, 1)
                 + '\t' + getName(month, week, 2)
-                + '\t' + comments.get(month).get(week)
+                + '\t' + buildComments(month, week)
                 + '\n';
     }
 
@@ -146,6 +146,24 @@ public class Schedule {
         return entry.recipe.name;
     }
 
+    String buildComments(int month, int week) {
+        String comment = comments.get(month).get(week);
+        for (int channel = 0; channel < 3; channel++) {
+            ScheduleEntry entry = recipes.get(month).get(week).get(channel);
+            if (entry == null) continue;
+            for (Spice spice : entry.recipe.spices) {
+                if (spice.perishable) {
+                    if (comment.isBlank()) {
+                        comment = spice.toString();
+                    } else {
+                        comment += ", "+spice;
+                    }
+                }
+            }
+        }
+        return comment;
+    }
+
     public List<ScheduleSlot> getDomesticSlots(Recipe recipe) {
         return getSlotsForMonths(recipe.getDomesticSlots(), getChannel(recipe));
     }
@@ -179,20 +197,6 @@ public class Schedule {
         return false;
     }
 
-    /** The higher the score, the higher the distance between various ingredients */
-    public double getScoreExp() {
-        double score = 0;
-        for (Ingredient ingredient : Ingredient.values()) {
-            List<ScheduleSlot> slots = getSlots(ingredient);
-            score += ScheduleSlot.computeDistanceExp(slots, weeksInMonth);
-        }
-        for (Spice spice : Spice.values()) {
-            List<ScheduleSlot> slots = getSlots(spice);
-            score += ScheduleSlot.computeDistanceExp(slots, weeksInMonth);
-        }
-        return score;
-    }
-
     /** The higher the score, the greater the distance between various ingredients */
     public double getScore() {
         double ingredientSum = 0;
@@ -220,6 +224,7 @@ public class Schedule {
 
         double spiceSum = 0;
         for (Spice spice : Spice.values()) {
+            if (spice.perishable) continue;
             List<ScheduleSlot> slots = getSlots(spice);
             spiceSum += ScheduleSlot.computeDistanceHybrid(slots, weeksInMonth);
         }
