@@ -19,6 +19,7 @@ public class Schedule {
     Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes = new HashMap<>();
     int[] weeksInMonth;
     int numberOfWeeks;
+    Map<Integer, Map<Integer, String>> comments = new HashMap<>();
 
     public Schedule(int[] weeksInMonth) {
         this.weeksInMonth = weeksInMonth;
@@ -26,19 +27,24 @@ public class Schedule {
         for (int month=0; month<12; month++) {
             Map<Integer, Map<Integer, ScheduleEntry>> monthContainer = new HashMap<>();
             recipes.put(month, monthContainer);
+            Map<Integer, String> commentsContainer = new HashMap<>();
+            comments.put(month, commentsContainer);
             for (int week=0; week<weeksInMonth[month]; week++) {
                 Map<Integer, ScheduleEntry> weekContainer = new HashMap<>();
                 monthContainer.put(week, weekContainer);
+                commentsContainer.put(week, "");
             }
         }
     }
 
-    private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes) {
+    private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes, Map<Integer, Map<Integer, String>> inputComments) {
         this.weeksInMonth = weeksInMonth;
         calculateNumberOfWeeks();
         for (int month=0; month<12; month++) {
             Map<Integer, Map<Integer, ScheduleEntry>> monthContainer = new HashMap<>();
             this.recipes.put(month, monthContainer);
+            Map<Integer, String> commentsContainer = new HashMap<>();
+            comments.put(month, commentsContainer);
             for (int week=0; week<weeksInMonth[month]; week++) {
                 Map<Integer, ScheduleEntry> weekContainer = new HashMap<>();
                 monthContainer.put(week, weekContainer);
@@ -49,6 +55,8 @@ public class Schedule {
                 for (ScheduleEntry entry : otherWeekContainer.values()) {
                     recipeCounts.count(entry.recipe);
                 }
+
+                commentsContainer.put(week, inputComments.get(month).get(week));
             }
         }
     }
@@ -98,6 +106,7 @@ public class Schedule {
                 + '\t' + getName(month, week, 0)
                 + '\t' + getName(month, week, 1)
                 + '\t' + getName(month, week, 2)
+                + '\t' + comments.get(month).get(week)
                 + '\n';
     }
 
@@ -262,7 +271,7 @@ public class Schedule {
     }
 
     public Schedule copy() {
-        return new Schedule(weeksInMonth, recipes);
+        return new Schedule(weeksInMonth, recipes, comments);
     }
 
     public Counter<Recipe> recipeCounts = new Counter<>();
@@ -466,5 +475,15 @@ public class Schedule {
                 return;
             }
         }
+    }
+
+    public void addComment(int humanMonth, int humanWeek, String comment) {
+        String existingComment = comments.get(humanMonth-1).get(humanWeek-1);
+        if (existingComment.isEmpty()) {
+            existingComment = comment;
+        } else {
+            existingComment = existingComment + "; " + comment;
+        }
+        comments.get(humanMonth-1).put(humanWeek-1, existingComment);
     }
 }
