@@ -96,7 +96,7 @@ class ScheduleTest {
                 3	4	Supă cremă de țelină - Mama	Varză fiartă	Țelină cu morcov
                 3	5	Supă cremă de mazăre	Pilaf - Cu ciuperci și alte legume	Griș cu lapte
                 4	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi - moldovenească	
-                4	2	Ciorbă de frunze	Măncare de fasole - Fasole prăjită - Fuchs remix	Riz au lait
+                4	2	Ciorbă de frunze	Mâncare de fasole - Fasole prăjită - Fuchs remix	Riz au lait
                 4	3	Ciorbă de fasole - Cu leuștean	Gigantes Plaki	Cozonac
                 4	4	Ciorbă de fasole - Cu chimen	Pilaf - Cu urzici	
                 5	1	Supă cremă de broccoli - Soia	Mâncare de cartofi - ardelenească	
@@ -133,10 +133,10 @@ class ScheduleTest {
                 12	1	Nakkikeitto - V	Mâncare de mazăre - Cu soia	
                 12	2	Ciorbă de cartofi roșie	Lasagna bolognese	Fasole bătută
                 12	3	Supă cremă de conopidă	Răcitură	
-                12	4	Supă cremă de broccoli - Simplu	Măncare de fasole - Fasole prăjită - Fuchs remix	
+                12	4	Supă cremă de broccoli - Simplu	Mâncare de fasole - Fasole prăjită - Fuchs remix	
                 """;
 
-        Schedule schedule = ScheduleInitializer.getSchedule(input);
+        Schedule schedule = ScheduleInitializer.getSchedule(input, false);
 
         schedule.countRecipes();
 
@@ -157,7 +157,7 @@ class ScheduleTest {
                 2	3	Ciorbă de cartofi roșie	Musaca cu ciuperci	
                 2	4	Ciorbă de conopidă	Varză fiartă	Țelină cu morcov
                 3	1	Supă cremă de țelină - Mama	Tocăniță de ardei	Chiftele cu carne
-                3	2	Supă de roșii	Măncare de fasole - Fasole prăjită - Fuchs remix	
+                3	2	Supă de roșii	Mâncare de fasole - Fasole prăjită - Fuchs remix	
                 3	3	Ciorbă de cartofi cu smântână	Mâncare de mazăre - Cu soia	
                 3	4	Ciorbă de fasole - Cu dafin	Musaca cu ciuperci	Salată orientală
                 3	5	Supă cremă de mazăre	Pilaf - Cu urzici	Tiramisu
@@ -178,7 +178,7 @@ class ScheduleTest {
                 7	2	Nakkikeitto	Gratin de cartofi cu broccoli și brânză	Fasole bătută
                 7	3	Supă cremă de dovlecei	Lasagna bolognese	Humus
                 7	4	Ciorbă de salată cu scrob	Tocăniță de ardei	Tiramisu
-                8	1	Supă cremă de broccoli - Simplu	Măncare de fasole - Fasole prăjită - Fuchs remix	
+                8	1	Supă cremă de broccoli - Simplu	Mâncare de fasole - Fasole prăjită - Fuchs remix	
                 8	2	Supă cremă de broccoli - Soia	Ardei umpluți cu carne	Tzatziki
                 8	3	Ciorbă de fasole - Cu dafin	Gulaș	
                 8	4	Ciorbă de păstăi	Ardei umpluți simplu	Riz au lait
@@ -199,10 +199,10 @@ class ScheduleTest {
                 12	1	Nakkikeitto - V	Pilaf - Simplu	
                 12	2	Supă cremă de mazăre	Gigantes Plaki	Apple Pie
                 12	3	Supă cremă de mazăre	Răcitură	Salată orientală
-                12	4	Ciorbă de păstăi	Măncare de fasole - Fasole prăjită - Fuchs remix	
+                12	4	Ciorbă de păstăi	Mâncare de fasole - Fasole prăjită - Fuchs remix	
                 """;
 
-        Schedule schedule = ScheduleInitializer.getSchedule(input);
+        Schedule schedule = ScheduleInitializer.getSchedule(input, false);
 
         schedule.countRecipes();
 

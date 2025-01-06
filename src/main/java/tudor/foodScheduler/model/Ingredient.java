@@ -27,13 +27,13 @@ public enum Ingredient {
     Orez(ALL, ALL),
     PastaiCongelate(ALL, List.of()),
     PastaiFresh(List.of(5), List.of()), // pastai fresh doar prin Mai
-    Peste(ALL, ALL),
     Praz(List.of(10,11,12,1,2,3), List.of()),
     Salata(ALL, ALL),
     Smantana(ALL, ALL),
-    Soia(ALL, ALL),
+    Soia(ALL, ALL, false),
     Rosii(List.of(6,7,8,9,10,11), ALL),
     Telina(ALL, ALL),
+    Ton(ALL, ALL),
     Urzici(List.of(3,4,5), List.of()),
     Varza(List.of(7,8,9,10,11,12), ALL),
     VarzaMurata(ALL, ALL),
@@ -53,10 +53,16 @@ public enum Ingredient {
     final List<Integer> domesticMonths;
     final List<Integer> importMonths;
     public final List<Ingredient> akas = new ArrayList<>();
+    public boolean score = true; // recipes with less of this ingredient get better scores, by disabling I hope I get more of these
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
+    }
+
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score) {
+        this(domesticMonths, importMonths);
+        this.score = score;
     }
 
     public int getSeasonalityScore() {

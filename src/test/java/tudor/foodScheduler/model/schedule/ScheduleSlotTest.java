@@ -13,28 +13,6 @@ class ScheduleSlotTest {
     private static final Logger logger = LoggerFactory.getLogger(ScheduleSlotTest.class);
 
     @Nested
-    class computeDistance {
-        @Test
-        void twoRecipesShouldBeBiggerThanThreeRecipes() {
-            int[] weeksInMonth = new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4};
-
-            ScheduleSlot origin = new ScheduleSlot(1, 1);
-            ScheduleSlot finish = new ScheduleSlot(7, 2);
-
-            double twoScore = ScheduleSlot.computeDistanceExp(List.of(origin, finish), weeksInMonth);
-
-            logger.info("2 score: {}", twoScore);
-
-            ScheduleSlot intermediary = new ScheduleSlot(3, 0);
-            double threeScore = ScheduleSlot.computeDistanceExp(List.of(origin, intermediary, finish), weeksInMonth);
-
-            logger.info("3 score: {}", threeScore);
-
-            assertTrue(threeScore < twoScore);
-        }
-    }
-
-    @Nested
     class weekDistance {
         @Test
         void shouldGiveDistanceForSameMonth() {

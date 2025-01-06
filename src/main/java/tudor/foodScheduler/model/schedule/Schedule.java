@@ -204,7 +204,7 @@ public class Schedule {
         List<Ingredient> minIngredientsList = new ArrayList<>();
         Set<Ingredient> akas = new HashSet<>();
         for (Ingredient ingredient : Ingredient.values()) {
-            if (akas.contains(ingredient)) continue;
+            if (akas.contains(ingredient) || !ingredient.score) continue;
             akas.addAll(ingredient.akas);
             List<ScheduleSlot> slots = getSlots(ingredient);
             double score = ScheduleSlot.computeDistanceHybrid(slots, weeksInMonth);

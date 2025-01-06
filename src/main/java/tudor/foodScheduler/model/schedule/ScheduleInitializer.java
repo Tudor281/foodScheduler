@@ -3,7 +3,7 @@ package tudor.foodScheduler.model.schedule;
 import tudor.foodScheduler.model.Recipe;
 
 public class ScheduleInitializer {
-    public static Schedule getSchedule(String input) {
+    public static Schedule getSchedule(String input, boolean initialConstraint) {
         // determine weeks in calendar
         String[] rows = input.split("\n");
 
@@ -24,10 +24,10 @@ public class ScheduleInitializer {
         Schedule schedule = new Schedule(weeksInMonths);
         for (String row : rows) {
             String[] cells = row.split("\t");
-            schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[2]), false);
-            schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[3]), false);
+            schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[2]), initialConstraint);
+            schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[3]), initialConstraint);
             if (cells.length==5 && !cells[4].isBlank()) {
-                schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[4]), false);
+                schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[4]), initialConstraint);
             }
 
         }

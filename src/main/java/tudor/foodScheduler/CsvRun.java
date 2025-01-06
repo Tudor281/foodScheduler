@@ -63,7 +63,9 @@ public class CsvRun {
                 12	4	Supă cremă de broccoli - Cu carne	Pilaf - Simplu	Țelină cu morcov
                 """;
 
-        Schedule schedule = ScheduleInitializer.getSchedule(input);
+        Schedule schedule = ScheduleInitializer.getSchedule(input, true);
+
+        InitialRun.addConstraints(schedule);
 
         schedule.optimize();
 
