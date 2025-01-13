@@ -21,6 +21,10 @@ public class InitialRun {
 
         addConstraints(template);
 
+        completeRecipe(template);
+    }
+
+    public static void completeRecipe(Schedule template) throws Exception {
         Scheduler scheduler = new Scheduler();
 
         Schedule bestSchedule = template.copy();
@@ -63,13 +67,17 @@ public class InitialRun {
 
     public static void addConstraints(Schedule schedule) {
         // ziua mea
-        Recipe musacaCuCarne = Recipe.get("Musaca cu carne");
-        schedule.add(1, 2, musacaCuCarne, true);
-        Recipe supaRosii = Recipe.get("Supă de roșii"); // sinergie apio
-        schedule.add(1, 2, supaRosii, true);
+//        Recipe musacaCuCarne = Recipe.get("Musaca cu carne");
+//        schedule.add(1, 2, musacaCuCarne, true);
+//        Recipe supaRosii = Recipe.get("Supă de roșii"); // sinergie apio
+//        schedule.add(1, 2, supaRosii, true);
+        Recipe nakkikeito = Recipe.get("Nakkikeitto");
+        schedule.add(1, 2, nakkikeito, true);
         schedule.addComment(1, 2, "Ziua mea");
 
         // ziua Greciei
+        Recipe ciorbaGrec = Recipe.get("Ciorbă de pui a la Grec");
+        schedule.add(3,4, ciorbaGrec, true);
         Recipe gigantesPlaki = Recipe.get("Gigantes Plaki");
         schedule.add(3, 4, gigantesPlaki, true);
         Recipe tzatziki = Recipe.get("Tzatziki");
@@ -123,14 +131,13 @@ public class InitialRun {
         schedule.add(12, 1, nakki, true);
         schedule.addComment(12, 1,"Ziua Finlandei");
 
-        // craciun ? il fac mereu cu familia, nu prea are sens
+        // craciun ? il fac mereu cu familia, nu prea are sens. Dar răcitura ar trebui să țină mult și bine?
         Recipe racitura = Recipe.get("Răcitură");
         schedule.add(12, 3, racitura, true);
         schedule.addComment(12, 3, "Crăciunul");
 
-        // legacy from last year
-        Recipe supaCremaTelina = Recipe.get("Supă cremă de țelină - Mama");
-        schedule.add(12, 4, supaCremaTelina, true);
-        schedule.add(12, 4, gigantesPlaki, true);
+        Recipe fasoleChimen = Recipe.get("Ciorbă de fasole - Cu chimen");
+        schedule.add(12, 4, fasoleChimen, true);
+        schedule.addComment(12, 4, "Anul nou");
     }
 }

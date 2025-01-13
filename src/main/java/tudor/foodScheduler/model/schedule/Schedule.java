@@ -68,8 +68,8 @@ public class Schedule {
     }
 
     /** Real month and week numbers, starting from 1 */
-    public void add(int month, int week, Recipe recipe, boolean initialConstraint) {
-        ScheduleEntry oldEntry = recipes.get(month-1).get(week-1).put(getChannel(recipe), new ScheduleEntry(recipe, initialConstraint));
+    public void add(int humanMonth, int humanWeek, Recipe recipe, boolean initialConstraint) {
+        ScheduleEntry oldEntry = recipes.get(humanMonth-1).get(humanWeek-1).put(getChannel(recipe), new ScheduleEntry(recipe, initialConstraint));
         recipeCounts.count(recipe);
         if (oldEntry != null) recipeCounts.deCount(recipe);
     }

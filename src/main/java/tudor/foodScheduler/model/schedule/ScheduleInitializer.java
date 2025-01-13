@@ -24,9 +24,13 @@ public class ScheduleInitializer {
         Schedule schedule = new Schedule(weeksInMonths);
         for (String row : rows) {
             String[] cells = row.split("\t");
-            schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[2]), initialConstraint);
-            schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[3]), initialConstraint);
-            if (cells.length==5 && !cells[4].isBlank()) {
+            if (cells.length > 2) {
+                schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[2]), initialConstraint);
+            }
+            if (cells.length > 3) {
+                schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[3]), initialConstraint);
+            }
+            if (cells.length>4 && !cells[4].isBlank()) {
                 schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[4]), initialConstraint);
             }
 
