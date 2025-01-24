@@ -22,11 +22,12 @@ public enum Ingredient {
     Iaurt(ALL, ALL),
     Maioneza(ALL, ALL),
     Mazare(ALL, ALL),
-    Mere(List.of(11, 12), ALL),
     Naut(ALL, ALL),
     Orez(ALL, ALL),
+    Ou(ALL, ALL),
     PastaiCongelate(ALL, List.of()),
     PastaiFresh(List.of(5), List.of()), // pastai fresh doar prin Mai
+    Paste(ALL, ALL),
     Praz(List.of(10,11,12,1,2,3), List.of()),
     Salata(ALL, ALL),
     Smantana(ALL, ALL),
@@ -39,7 +40,29 @@ public enum Ingredient {
     VarzaMurata(ALL, ALL),
     Vinete(List.of(7,8,9,10), ALL),
     Zahar(ALL, List.of()),
-    Zucchini(List.of(), ALL)
+    Zucchini(List.of(), ALL),
+
+    // fructe
+    Banane(List.of(), ALL),
+    Caise(List.of(6,7,8,9), List.of()),
+    Capsuni(List.of(6,7,8,9), List.of()),
+    Cirese(List.of(6, 7), List.of()),
+    Clementine(List.of(), List.of(12, 1, 2)),
+    Grapefruit(List.of(), List.of(12, 1, 2)),
+    Kaki(List.of(), List.of(10, 11, 12, 1, 2)),
+    Kiwi(List.of(), List.of(10, 11, 12, 1, 2)),
+    Mandarine(List.of(), List.of(12, 1, 2)),
+    Mango(List.of(), ALL),
+    Mere(List.of(11, 12), ALL),
+    Mineole(List.of(1), List.of()),
+    Papaya(List.of(), List.of(1)),
+    PepeneGalben(List.of(7,8,9), List.of()),
+    PepeneRosu(List.of(7,8,9), List.of()),
+    Pere(List.of(), ALL),
+    Portocale(List.of(), List.of(12, 1, 2)),
+    Prune(List.of(8,9,10,11), List.of(12, 1)),
+    Rodii(List.of(), ALL),
+    Struguri(List.of(9,10,11), List.of())
     ;
 
     static {

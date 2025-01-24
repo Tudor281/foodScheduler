@@ -56,7 +56,7 @@ public class Scheduler {
         }
 
         if (slots.isEmpty()) {
-            throw new Exception("Can't find a slot");
+            throw new Exception("Can't find a slot for "+recipe.getName());
         }
 
         schedule.add(slots.get(random.nextInt(slots.size())), recipe);

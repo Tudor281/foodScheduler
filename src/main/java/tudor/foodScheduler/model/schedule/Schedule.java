@@ -13,6 +13,7 @@ public class Schedule {
     private static final Logger logger = LoggerFactory.getLogger(Schedule.class);
 
     public static final int hardCap = 4;
+    public static final int nrChannels = 5;
 
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
@@ -83,7 +84,9 @@ public class Schedule {
     private int getChannel(Recipe recipe) {
         if (recipe.fel == Fel.F1) return 0;
         if (recipe.fel == Fel.F2) return 1;
-        return 2;
+        if (recipe.fel == Fel.FastFood) return 2;
+        if (recipe.fel == Fel.Fruits) return 3;
+        return 4;
     }
 
     public boolean isRecipePresent(Recipe recipe) {
@@ -102,12 +105,13 @@ public class Schedule {
     }
 
     String toString(int month, int week) {
-        return (month + 1) + "\t" + (week + 1)
-                + '\t' + getName(month, week, 0)
-                + '\t' + getName(month, week, 1)
-                + '\t' + getName(month, week, 2)
-                + '\t' + buildComments(month, week)
-                + '\n';
+        String result = (month + 1) + "\t" + (week + 1);
+        for (int i = 0; i< nrChannels; i++) {
+            result += '\t' + getName(month, week, i);
+        }
+        result += '\t' + buildComments(month, week) + '\n';
+
+        return result;
     }
 
     public String countIngredientsAndSpices() {
@@ -115,7 +119,7 @@ public class Schedule {
         Counter<Spice> spicesCount = new Counter<>();
         for (int month=0; month<12; month++) {
             for (int week=0; week<weeksInMonth[month]; week++) {
-                for (int channel=0; channel < 3; channel++) {
+                for (int channel = 0; channel < nrChannels; channel++) {
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (entry == null) continue;
                     for (Ingredient ingredient : entry.recipe.ingredients) {
@@ -148,7 +152,7 @@ public class Schedule {
 
     String buildComments(int month, int week) {
         String comment = comments.get(month).get(week);
-        for (int channel = 0; channel < 3; channel++) {
+        for (int channel = 0; channel < nrChannels; channel++) {
             ScheduleEntry entry = recipes.get(month).get(week).get(channel);
             if (entry == null) continue;
             for (Spice spice : entry.recipe.spices) {
@@ -284,7 +288,7 @@ public class Schedule {
         recipeCounts.clear();
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
-                for (int channel = 0; channel < 3; channel ++) {
+                for (int channel = 0; channel < nrChannels; channel ++) {
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (entry == null) continue; // especially channel 3 recipes are optional
                     recipeCounts.count(entry.recipe);
@@ -299,7 +303,7 @@ public class Schedule {
         Map<Integer, ScheduleEntry> prevRow = recipes.get(prevMonth).get(prevWeek); // december 31st
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
-                for (int channel = 0; channel < 3; channel++) {
+                for (int channel = 0; channel < nrChannels; channel++) {
                     ScheduleEntry prevEntry = prevRow.get(channel);
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (prevEntry == null || entry == null) continue; // we could have empty slots, especially on channel 3
@@ -426,7 +430,7 @@ public class Schedule {
 
             for (int month = 0; month < 12; month++) {
                 for (int week = 0; week < weeksInMonth[month]; week++) {
-                    for (int channel = 0; channel < 3; channel++) {
+                    for (int channel = 0; channel < nrChannels; channel++) {
                         // calculate current distance score
                         ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                         if (entry == null || entry.initialConstraint) continue;

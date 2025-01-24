@@ -10,6 +10,7 @@ public enum Spice {
     Busuioc,
     Chimen,
     Cimbru,
+    Coriandru,
     Curcuma,
     Dafin,
     FrunzeTelina,
