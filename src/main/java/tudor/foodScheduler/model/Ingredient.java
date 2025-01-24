@@ -15,6 +15,7 @@ public enum Ingredient {
     Castraveti(List.of(6,7,8,9), List.of(10,11,12)),
     Ciuperci(ALL, ALL),
     Conopida(List.of(4,5,6,7,8,9,10,11,12), ALL),
+    DovlecPlacintar(List.of(9,10,11,12,1,2,3), List.of()),
     Dovlecei(List.of(6,7,8,9), ALL),
     Fasole(ALL, ALL),
     Frunze(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta

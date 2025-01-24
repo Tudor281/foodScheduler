@@ -67,7 +67,8 @@ public class Recipe {
         add(new Recipe("Mâncare de mazăre - Cu soia", AtLeastOnce, List.of(Mazare, Soia), F2, List.of(Marar, BoiaDulce, Dafin, Usturoi)));
         add(new Recipe("Mâncare de mazăre - Simplu", Once, List.of(Mazare), F2, List.of(Marar)));
         add(new Recipe("Melanzane alla parmigiano", Once, List.of(Vinete, Branza), F2, List.of()));
-        add(new Recipe("Musaca cu carne", Once, List.of(Cartofi, Carne), F2, List.of(Apio, VinAlb)));
+        add(new Recipe("Musaca cu carne", Once, List.of(Cartofi, Carne), F2, List.of())); // TODO no recipy
+        add(new Recipe("Musaca cu ragu", AtMostOnce, List.of(Cartofi, Carne), F2, List.of(Apio, VinAlb)));
         add(new Recipe("Musaca cu ciuperci", AtLeastOnce, List.of(Cartofi, Ciuperci), F2, List.of(), 2)); // TODO no recipy
         add(new Recipe("Musaca cu soia", Once, List.of(Cartofi, Soia), F2, List.of(Apio, VinAlb))); // TODO no recipy
         add(new Recipe("Nakkikeitto", AtMostOnce, List.of(Carne, Cartofi), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin)));
@@ -89,6 +90,7 @@ public class Recipe {
         add(new Recipe("Supă cremă de broccoli - Simplu", AtLeastOnce, List.of(Broccoli), F1, List.of(Usturoi, Telina)));
         add(new Recipe("Supă cremă de broccoli - Soia", Once, List.of(Broccoli, Soia), F1, List.of(Usturoi, Telina)));
         add(new Recipe("Supă cremă de conopidă", AtMostOnce, List.of(Conopida, Smantana), F1, List.of(Usturoi, Patrunjel)));
+        add(new Recipe("Supă cremă de dovleac", Once, List.of(DovlecPlacintar), F1, List.of(Telina)));
         add(new Recipe("Supă cremă de dovlecei", Once, List.of(Dovlecei), F1, List.of())); // TODO no recipy
         add(new Recipe("Supă cremă de mazăre", AtLeastOnce, List.of(Mazare), F1, List.of()));
         add(new Recipe("Supă cremă de țelină - Cu praz și smântână", Once, List.of(Ingredient.Telina, Praz, Smantana), F1, List.of(Pastarnac)));
@@ -115,7 +117,7 @@ public class Recipe {
         // Fast Food
         add(new Recipe("Mămăligă", AtLeastOnce, List.of(), FastFood, List.of()));
         add(new Recipe("Găgău", AtLeastOnce, List.of(), FastFood, List.of()));
-        add(new Recipe("Mâncare de ciuperci - Ciulama de ciuperci", Optional, List.of(Ciuperci), FastFood, List.of(Patrunjel, Marar)));
+        add(new Recipe("Mâncare de ciuperci - Ciulama de ciuperci", Once, List.of(Ciuperci), FastFood, List.of(Patrunjel, Marar)));
         add(new Recipe("Mâncare de ciuperci - Ciuperci cu smântână și usturoi", AtMostOnce, List.of(Ciuperci, Smantana), FastFood, List.of(Patrunjel, Usturoi)));
         add(new Recipe("Mâncărică de păstăi", AtLeastOnce, List.of(PastaiCongelate), FastFood, List.of(Patrunjel)));
         add(new Recipe("Microfoane", Once, List.of(Carne), FastFood, List.of(BoiaDulce)));

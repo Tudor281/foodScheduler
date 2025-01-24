@@ -12,7 +12,6 @@ import java.util.*;
 public class Schedule {
     private static final Logger logger = LoggerFactory.getLogger(Schedule.class);
 
-    public static final int hardCap = 4;
     public static final int nrChannels = 5;
 
     // month -> week -> channel -> Recipe
@@ -70,23 +69,15 @@ public class Schedule {
 
     /** Real month and week numbers, starting from 1 */
     public void add(int humanMonth, int humanWeek, Recipe recipe, boolean initialConstraint) {
-        ScheduleEntry oldEntry = recipes.get(humanMonth-1).get(humanWeek-1).put(getChannel(recipe), new ScheduleEntry(recipe, initialConstraint));
+        ScheduleEntry oldEntry = recipes.get(humanMonth-1).get(humanWeek-1).put(recipe.fel.channel, new ScheduleEntry(recipe, initialConstraint));
         recipeCounts.count(recipe);
         if (oldEntry != null) recipeCounts.deCount(recipe);
     }
 
     public void add(ScheduleSlot slot, Recipe recipe) {
-        ScheduleEntry oldEntry = recipes.get(slot.month).get(slot.week).put(getChannel(recipe), new ScheduleEntry(recipe, false));
+        ScheduleEntry oldEntry = recipes.get(slot.month).get(slot.week).put(recipe.fel.channel, new ScheduleEntry(recipe, false));
         recipeCounts.count(recipe);
         if (oldEntry != null) recipeCounts.deCount(recipe);
-    }
-
-    private int getChannel(Recipe recipe) {
-        if (recipe.fel == Fel.F1) return 0;
-        if (recipe.fel == Fel.F2) return 1;
-        if (recipe.fel == Fel.FastFood) return 2;
-        if (recipe.fel == Fel.Fruits) return 3;
-        return 4;
     }
 
     public boolean isRecipePresent(Recipe recipe) {
@@ -169,11 +160,11 @@ public class Schedule {
     }
 
     public List<ScheduleSlot> getDomesticSlots(Recipe recipe) {
-        return getSlotsForMonths(recipe.getDomesticSlots(), getChannel(recipe));
+        return getSlotsForMonths(recipe.getDomesticSlots(), recipe.fel.channel);
     }
 
     public List<ScheduleSlot> getImportSlots(Recipe recipe) {
-        return getSlotsForMonths(recipe.getImportSlots(), getChannel(recipe));
+        return getSlotsForMonths(recipe.getImportSlots(), recipe.fel.channel);
     }
 
     private List<ScheduleSlot> getSlotsForMonths(List<Integer> months, int channel) {
@@ -196,6 +187,8 @@ public class Schedule {
             for (int week=0; week<weeksInMonth[month]; week++) {
                 if (recipes.get(month).get(week).get(0) == null) return true;
                 if (recipes.get(month).get(week).get(1) == null) return true;
+                if (recipes.get(month).get(week).get(2) == null) return true;
+                if (recipes.get(month).get(week).get(3) == null) return true;
             }
         }
         return false;
@@ -355,7 +348,7 @@ public class Schedule {
 
             if (!candidate.isInSeason(slot.getHumanMonth())) continue;
 
-            int distance = getDistance(slot, candidate.ingredients, getChannel(recipe), null);
+            int distance = getDistance(slot, candidate.ingredients, recipe.fel.channel, null);
             if (distance>greatestDistance) {
                 greatestDistance = distance;
                 bestRecipes.clear();
@@ -372,7 +365,7 @@ public class Schedule {
             case AtLeastOnce -> {
                 if (recipe.limit != null && recipe.limit >= recipeCounts.get(recipe)) return false;
                 //noinspection RedundantIfStatement
-                if (recipeCounts.get(recipe) >= hardCap) return false;
+                if (recipeCounts.get(recipe) >= recipe.fel.cap) return false;
                 return true;
             }
             case AtMostOnce, Once -> {
@@ -421,7 +414,7 @@ public class Schedule {
 
     public boolean reachedLimit(Recipe recipe) {
         int count = recipeCounts.get(recipe);
-        return recipe.multiplicity == Multiplicity.AtLeastOnce && ((recipe.limit != null && recipe.limit >= count) || count >= hardCap);
+        return recipe.multiplicity == Multiplicity.AtLeastOnce && ((recipe.limit != null && recipe.limit >= count) || count >= recipe.fel.cap);
     }
 
     public void optimize() {
