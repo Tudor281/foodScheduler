@@ -11,6 +11,7 @@ public enum Spice {
     Chimen,
     Cimbru,
     Coriandru,
+    Curry,
     Curcuma,
     Dafin,
     FrunzeTelina,

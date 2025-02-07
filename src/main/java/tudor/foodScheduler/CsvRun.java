@@ -12,7 +12,7 @@ public class CsvRun {
                 1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei
                 1	2	Supă de roșii	Musaca cu carne
                 1	3	Ciorbă de dovlecei cu ciuperci	Mâncare de mazăre - Cu soia
-                1	4		
+                1	4	Supă cremă de țelină - Cu praz și smântână	Tocăniță de legume	
                 2	1		
                 2	2		
                 2	3		

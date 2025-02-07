@@ -29,10 +29,12 @@ public enum Ingredient {
     PastaiCongelate(ALL, List.of()),
     PastaiFresh(List.of(5), List.of()), // pastai fresh doar prin Mai
     Paste(ALL, ALL),
+    Peste(ALL, ALL),
     Praz(List.of(10,11,12,1,2,3), List.of()),
     Salata(ALL, ALL),
     Smantana(ALL, ALL),
     Soia(ALL, ALL, false),
+    Spanac(ALL, ALL),
     Rosii(List.of(6,7,8,9,10,11), ALL),
     Telina(ALL, ALL),
     Ton(ALL, ALL),
