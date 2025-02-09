@@ -375,6 +375,8 @@ public class Schedule {
                 return false;
             }
             case Optional -> {
+                //noinspection RedundantIfStatement
+                if (recipe.limit != null && recipe.limit >= recipeCounts.get(recipe)) return false;
                 return true;
             }
         }

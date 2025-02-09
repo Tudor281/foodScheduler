@@ -18,12 +18,12 @@ class ScheduleTest {
         schedule.add(1, 1, applePie, false);
 
         assertTrue(schedule.isRecipePresent(applePie));
-        assertSame(applePie, schedule.recipes.get(0).get(0).get(2).recipe);
+        assertSame(applePie, schedule.recipes.get(0).get(0).get(4).recipe);
 
         Schedule copy = schedule.copy();
 
         assertTrue(copy.isRecipePresent(applePie));
-        assertSame(applePie, copy.recipes.get(0).get(0).get(2).recipe);
+        assertSame(applePie, copy.recipes.get(0).get(0).get(4).recipe);
 
         Recipe ardei = Recipe.get("Ardei umpluți simplu");
         copy.add(1, 1, ardei, false);

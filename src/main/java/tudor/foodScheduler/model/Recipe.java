@@ -92,7 +92,7 @@ public class Recipe {
         add(new Recipe("Supă cremă de broccoli - Simplu", AtLeastOnce, List.of(Broccoli), F1, List.of(Usturoi, Telina)));
         add(new Recipe("Supă cremă de broccoli - Soia", Once, List.of(Broccoli, Soia), F1, List.of(Usturoi, Telina)));
         add(new Recipe("Supă cremă de conopidă", AtMostOnce, List.of(Conopida, Smantana), F1, List.of(Usturoi, Patrunjel)));
-        add(new Recipe("Supă cremă de dovleac", Once, List.of(DovlecPlacintar), F1, List.of(Telina)));
+        add(new Recipe("Supă cremă de dovleac", Once, List.of(DovleacPlacintar), F1, List.of(Telina)));
         add(new Recipe("Supă cremă de dovlecei", Once, List.of(Dovlecei), F1, List.of())); // TODO no recipy
         add(new Recipe("Supă cremă de mazăre", AtLeastOnce, List.of(Mazare), F1, List.of()));
         add(new Recipe("Supă cremă de țelină - Cu praz și smântână", Once, List.of(Ingredient.Telina, Praz, Smantana), F1, List.of(Pastarnac)));
@@ -103,7 +103,7 @@ public class Recipe {
         add(new Recipe("Tiramisu", AtLeastOnce, List.of(), Desert, List.of()));
         add(new Recipe("Tocănița Malita", Once, List.of(Soia, Ardei), F2, List.of(Usturoi, BoiaIute, Coriandru)));
         add(new Recipe("Tocăniță de ardei", Once, List.of(Ardei), F2, List.of()));
-        add(new Recipe("Tocăniță de ardei cu ton", Once, List.of(Ardei, Ton), F2, List.of()));
+        add(new Recipe("Tocăniță de ardei cu ton", Disabled, List.of(Ardei, Ton), F2, List.of())); // mi s-a acrit după varză cu fish fingers. Vrei ton cu tocăniță de ardei, mănâncă separat, nu fă o întreagă oală cu asta
         add(new Recipe("Tocăniță de ardei cu soia", AtLeastOnce, List.of(Ardei, Soia), F2, List.of()));
         add(new Recipe("Tocăniță de gogonele", AtLeastOnce, List.of(Gogonele), F2, List.of()));
         add(new Recipe("Tocăniță de legume", AtLeastOnce, List.of(Ardei), F2, List.of(Patrunjel, FrunzeTelina)));
@@ -112,8 +112,8 @@ public class Recipe {
         add(new Recipe("Țelină cu morcov", AtLeastOnce, List.of(Ingredient.Telina, Maioneza, Ton), Rece, List.of()));
         add(new Recipe("Varză călită", Once, List.of(VarzaMurata), F2, List.of())); // TODO no recipy, goes with chiftele
         add(new Recipe("Varză fiartă", AtLeastOnce, List.of(Varza), F2, List.of(Dafin)));
-        add(new Recipe("Varză fiartă cu fish fingers", Once, List.of(Varza, Peste), F2, List.of(Dafin)));
-        add(new Recipe("Varză fiartă cu soia", AtLeastOnce, List.of(Varza, Soia), F2, List.of(Dafin)));
+        add(new Recipe("Varză cu fish fingers", Disabled, List.of(Varza, Peste), F2, List.of(Dafin))); // e o porcărie grasă și grețoasă
+        add(new Recipe("Varză cu soia", AtLeastOnce, List.of(Varza, Soia), F2, List.of(Dafin)));
         add(new Recipe("Varză la Cluj", Once, List.of(VarzaMurata, Carne), F2, List.of())); // TODO no recipy
         add(new Recipe("Varză la Cluj cu soia", Once, List.of(VarzaMurata, Soia), F2, List.of())); // TODO no recipy
         add(new Recipe("Vitel tonne", Once, List.of(Carne, Ton), Rece, List.of())); // TODO no recipy
@@ -127,7 +127,7 @@ public class Recipe {
         add(new Recipe("Mâncărică de păstăi", AtLeastOnce, List.of(PastaiCongelate), FastFood, List.of(Patrunjel)));
         add(new Recipe("Microfoane", Once, List.of(Carne), FastFood, List.of(BoiaDulce)));
         add(new Recipe("Ficat de pui prăjit", Once, List.of(Carne), FastFood, List.of()));
-        add(new Recipe("Fish fingers", Once, List.of(Carne), FastFood, List.of()));
+        add(new Recipe("Fish fingers", Disabled, List.of(Carne), FastFood, List.of())); // sunt grase, sunt puturoase. Dacă ți se face poftă, ia 100g, nu 500g. Dar sunt uleioase, grețoase.
         add(new Recipe("Șnițel de soia", AtLeastOnce, List.of(Soia), FastFood, List.of()));
         add(new Recipe("Șnițel de pui", Once, List.of(Carne), FastFood, List.of()));
         add(new Recipe("Somon prăjit", Once, List.of(Carne), FastFood, List.of()));
@@ -305,5 +305,27 @@ public class Recipe {
 
     public String toString() {
         return name;
+    }
+
+    public String toStringMultiplicity() {
+        switch (multiplicity) {
+            case AtLeastOnce -> {
+                if (limit != null) return "1-"+limit;
+                return "1+";
+            }
+            case Once -> {
+                return "1";
+            }
+            case AtMostOnce -> {
+                return "0-1";
+            }
+            case Disabled -> {
+                return "0";
+            }
+            case Optional -> {
+                return "0+";
+            }
+        }
+        return "Undefined case: "+multiplicity;
     }
 }
