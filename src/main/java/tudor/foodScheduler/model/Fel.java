@@ -2,7 +2,7 @@ package tudor.foodScheduler.model;
 
 public enum Fel {
     F1(0,4),
-    F2(1, 4),
+    F2(1, 3),
     FastFood(2, 15),
     Fruits(3, 20),
     Rece(4, 50),
