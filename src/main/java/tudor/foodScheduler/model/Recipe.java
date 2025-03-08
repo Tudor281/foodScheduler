@@ -56,6 +56,7 @@ public class Recipe {
         add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(), Desert, List.of()));
         add(new Recipe("Gulaș", Once, List.of(Cartofi, Carne), F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Usturoi, Patrunjel, Tarhon, FrunzeTelina)));
         add(new Recipe("Humus", AtLeastOnce, List.of(Naut), Rece, List.of()));
+        add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(Naut), Rece, List.of(Usturoi, Busuioc)));
         add(new Recipe("Lasagna bolognese", Once, List.of(Carne, Apio), F2, List.of(VinAlb)));
         add(new Recipe("Lohikeitto", AtMostOnce, List.of(Peste, Smantana), F1, List.of(Dafin)));
         add(new Recipe("Mâncare de cartofi - ardelenească", AtLeastOnce, List.of(Cartofi), F2, List.of(Iuteala, BoiaDulce, BoiaIute, Dafin)));
@@ -68,6 +69,7 @@ public class Recipe {
         add(new Recipe("Mâncare de mazăre - Cu pui", Disabled, List.of(Mazare, Carne), F2, List.of(Marar, BoiaDulce, Dafin, Usturoi))); // mazărea cu soia e pur și simplu superioară
         add(new Recipe("Mâncare de mazăre - Cu soia", AtLeastOnce, List.of(Mazare, Soia), F2, List.of(Marar, BoiaDulce, Dafin, Usturoi)));
         add(new Recipe("Mâncare de mazăre - Simplu", Once, List.of(Mazare), F2, List.of(Marar)));
+        add(new Recipe("Mâncare de păstăi", AtLeastOnce, List.of(PastaiCongelate), F2, List.of(Patrunjel)));
         add(new Recipe("Melanzane alla parmigiano", Once, List.of(Vinete, Branza), F2, List.of()));
         add(new Recipe("Minestrone", Once, List.of(), F1, List.of())); // TODO no recipy
         add(new Recipe("Musaca cu carne", Once, List.of(Cartofi, Carne), F2, List.of())); // TODO no recipy
