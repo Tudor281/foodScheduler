@@ -420,7 +420,7 @@ public class Schedule {
     }
 
     public void optimize() {
-        for (int iteration = 0; iteration < 10; iteration ++) {
+        for (int iteration = 0; iteration < 100000; iteration ++) {
             boolean madeASwap = false;
 
             for (int month = 0; month < 12; month++) {
@@ -443,7 +443,7 @@ public class Schedule {
 
                                 ScheduleSlot candidateSlot = new ScheduleSlot(candidateMonth, candidateWeek);
                                 int targetDistance = getDistance(candidateSlot, recipe.ingredients, channel, currentSlot);
-                                if (targetDistance <= bestCandidateDistance || targetDistance < currentDistance) continue;
+                                if (targetDistance <= bestCandidateDistance || targetDistance >= currentDistance) continue;
 
                                 ScheduleEntry candidateEntry = recipes.get(candidateMonth).get(candidateWeek).get(channel);
                                 if (candidateEntry != null) {

@@ -30,37 +30,41 @@ public class InitialRun {
         Schedule bestSchedule = template.copy();
         scheduler.addAtLeastOnceRecipes(bestSchedule);
         scheduler.fillInOtherRecipes(bestSchedule);
-
         double bestScore = bestSchedule.getScore();
+        System.out.println("Score before optimization: "+bestScore);
+        bestSchedule.optimize();
 
-        for (int i=0; i<10000; i++) {
-            Schedule candidate = template.copy();
-            scheduler.addAtLeastOnceRecipes(candidate);
-            scheduler.fillInOtherRecipes(candidate);
-            candidate.optimize();
-            try {
-                scheduler.eliminateDuplicates(candidate);
-            } catch (SchedulingException ignored) {
-                Stats.countOptimalInsertFailure();
-            }
-            catch (Exception e) {
-                logger.error("Failure", e);
-                Stats.countOptimalInsertFailure();
-            }
 
-            double candidateScore = candidate.getScore();
-            if (candidateScore > bestScore) {
-                bestScore = candidateScore;
-                bestSchedule = candidate;
-            }
-
-            if (i % 1000 == 0) {
-                System.out.println(i + "\t"+bestScore);
-            }
-        }
+//        for (int i=0; i<10000; i++) {
+//            Schedule candidate = template.copy();
+//            scheduler.addAtLeastOnceRecipes(candidate);
+//            scheduler.fillInOtherRecipes(candidate);
+//            candidate.optimize();
+//            try {
+//                scheduler.eliminateDuplicates(candidate);
+//            } catch (SchedulingException ignored) {
+//                Stats.countOptimalInsertFailure();
+//            }
+//            catch (Exception e) {
+//                logger.error("Failure", e);
+//                Stats.countOptimalInsertFailure();
+//            }
+//
+//            double candidateScore = candidate.getScore();
+//            if (candidateScore > bestScore) {
+//                bestScore = candidateScore;
+//                bestSchedule = candidate;
+//            }
+//
+//            if (i % 1000 == 0) {
+//                System.out.println(i + "\t"+bestScore);
+//            }
+//        }
 
         Stats.report();
 
+        bestScore = bestSchedule.getScore();
+        System.out.println("Best score: "+bestScore);
         logger.info("Schedule: ");
         logger.info(bestSchedule.toString());
     }
