@@ -2,6 +2,7 @@ package tudor.foodScheduler.model.schedule;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tudor.foodScheduler.InitialRun;
 import tudor.foodScheduler.utils.Counter;
 import tudor.foodScheduler.utils.Stats;
 import tudor.foodScheduler.model.*;
@@ -13,6 +14,8 @@ public class Schedule {
     private static final Logger logger = LoggerFactory.getLogger(Schedule.class);
 
     public static final int nrChannels = 5;
+
+    private static final Random random = InitialRun.getRandom();
 
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
@@ -419,12 +422,12 @@ public class Schedule {
     }
 
     public void optimize() {
-        for (int iteration = 0; iteration < 100000; iteration ++) {
-            boolean madeASwap = false;
-
+        double score = getScore();
+        int localExplorationCounter = 0;
+        for (int iteration = 0; iteration < 100; iteration ++) {
             int minimumDistance = Integer.MAX_VALUE;
-            ScheduleSlot minDistanceSlot = null;
-            Recipe minDistanceRecipe = null;
+            List<ScheduleSlot> minDistanceSlots = new ArrayList<>();
+            List<Recipe> minDistanceRecipes = new ArrayList<>();
 
             for (int month = 0; month < 12; month++) {
                 for (int week = 0; week < weeksInMonth[month]; week++) {
@@ -437,9 +440,13 @@ public class Schedule {
                         ScheduleSlot currentSlot = new ScheduleSlot(month, week);
                         int currentDistance = getDistance(currentSlot, recipe.ingredients, channel, null);
                         if (currentDistance < minimumDistance) {
-                            minDistanceSlot = currentSlot;
-                            minDistanceRecipe = recipe;
+                            minDistanceSlots.clear();
+                            minDistanceRecipes.clear();
                             minimumDistance = currentDistance;
+                        }
+                        if (currentDistance == minimumDistance) {
+                            minDistanceSlots.add(currentSlot);
+                            minDistanceRecipes.add(recipe);
                         }
                         if (currentDistance > 3) continue;
                         int bestCandidateDistance = 0;
@@ -463,7 +470,8 @@ public class Schedule {
 
                                     int candidateCurrentDistance = getDistance(candidateSlot, candidateRecipe.ingredients, channel, null);
                                     int swapDistance = getDistance(currentSlot, candidateRecipe.ingredients, channel, candidateSlot);
-                                    if (swapDistance < candidateCurrentDistance) continue; // we want a mutually beneficial swap
+                                    if (swapDistance <= candidateCurrentDistance) continue; // we want a mutually beneficial swap
+                                    int juju = 0;
                                 }
 
                                 bestCandidateDistance = targetDistance;
@@ -472,20 +480,34 @@ public class Schedule {
                         }
 
                         if (bestSwap != null) {
-                            madeASwap = true;
                             Stats.countSwapsExecuted();
-                            ScheduleEntry targetEntry = recipes.get(bestSwap.month).get(bestSwap.week).get(channel);
-                            recipes.get(bestSwap.month).get(bestSwap.week).put(channel, entry);
-                            recipes.get(month).get(week).put(channel, targetEntry);
+                            if (random.nextInt(10) > 8) {
+                                performOptimalInsert(currentSlot, recipe, currentDistance);
+                            } else {
+                                ScheduleEntry targetEntry = recipes.get(bestSwap.month).get(bestSwap.week).get(channel);
+                                recipes.get(bestSwap.month).get(bestSwap.week).put(channel, entry);
+                                recipes.get(month).get(week).put(channel, targetEntry);
+                            }
                         }
                     }
                 }
             }
 
-            if (!madeASwap && !performOptimalInsert(minDistanceSlot, minDistanceRecipe, minimumDistance)) {
-                Stats.countSwapsEndedPrematurely();
-                return;
+            double newScore = getScore();
+            if (newScore <= score) {
+                localExplorationCounter++;
+                int index = random.nextInt(minDistanceSlots.size());
+                if (!performOptimalInsert(minDistanceSlots.get(index), minDistanceRecipes.get(index), minimumDistance)) {
+                    Stats.countSwapsEndedPrematurely();
+                    return;
+                }
+            } else {
+                score = newScore;
+                localExplorationCounter = 0;
             }
+            if (localExplorationCounter > 50) return;
+//            System.out.println("Score: "+score);
+
         }
     }
 
@@ -494,7 +516,7 @@ public class Schedule {
         if (suitableReplacements.isEmpty()) {
             return false;
         }
-        add(minDistanceSlot, suitableReplacements.get(new Random().nextInt(suitableReplacements.size())));
+        add(minDistanceSlot, suitableReplacements.get(random.nextInt(suitableReplacements.size())));
         return true;
     }
 

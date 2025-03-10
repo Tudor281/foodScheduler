@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Scheduler {
-    Random random = new Random(1000);
+    Random random = InitialRun.getRandom();
 
     public void addAtLeastOnceRecipes(Schedule schedule) throws Exception {
         // get at least once recipes
