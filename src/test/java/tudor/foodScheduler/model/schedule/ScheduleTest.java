@@ -60,7 +60,7 @@ class ScheduleTest {
             schedule.add(i, 1, cartofiArdelenesti, false);
         }
 
-        List<Recipe> candidates = schedule.getSuitableReplacements(new ScheduleSlot(0,0), fasoleCuDafin);
+        List<Recipe> candidates = schedule.getSuitableReplacements(0, new ScheduleSlot(0,0), fasoleCuDafin);
         System.out.println("Hello");
     }
 
@@ -140,7 +140,7 @@ class ScheduleTest {
 
         schedule.countRecipes();
 
-        List<Recipe> suitableReplacements = schedule.getSuitableReplacements(new ScheduleSlot(1, 3), Recipe.get("Ciorbă rădăuțeană"));
+        List<Recipe> suitableReplacements = schedule.getSuitableReplacements(0, new ScheduleSlot(1, 3), Recipe.get("Ciorbă rădăuțeană"));
 
         assertFalse(suitableReplacements.isEmpty());
     }

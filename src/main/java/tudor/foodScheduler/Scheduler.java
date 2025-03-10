@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Scheduler {
-    Random random = new Random();
+    Random random = new Random(1000);
 
     public void addAtLeastOnceRecipes(Schedule schedule) throws Exception {
         // get at least once recipes
@@ -95,7 +95,7 @@ public class Scheduler {
                 }
             }
 
-            List<Recipe> suitableReplacements = schedule.getSuitableReplacements(targetSlot, targetRecipe);
+            List<Recipe> suitableReplacements = schedule.getSuitableReplacements(0, targetSlot, targetRecipe);
 
             if (suitableReplacements.isEmpty()) {
                 Stats.countSuitableReplacementsNotFound();

@@ -338,8 +338,7 @@ public class Schedule {
         return false;
     }
 
-    public List<Recipe> getSuitableReplacements(ScheduleSlot slot, Recipe recipe) {
-        int greatestDistance = Integer.MIN_VALUE;
+    public List<Recipe> getSuitableReplacements(int greatestDistance, ScheduleSlot slot, Recipe recipe) {
         List<Recipe> bestRecipes = new ArrayList<>();
         for (Recipe candidate : Recipe.all.values()) {
             if (candidate.fel != recipe.fel) continue;
@@ -423,6 +422,10 @@ public class Schedule {
         for (int iteration = 0; iteration < 100000; iteration ++) {
             boolean madeASwap = false;
 
+            int minimumDistance = Integer.MAX_VALUE;
+            ScheduleSlot minDistanceSlot = null;
+            Recipe minDistanceRecipe = null;
+
             for (int month = 0; month < 12; month++) {
                 for (int week = 0; week < weeksInMonth[month]; week++) {
                     for (int channel = 0; channel < nrChannels; channel++) {
@@ -433,6 +436,11 @@ public class Schedule {
                         Recipe recipe = entry.recipe;
                         ScheduleSlot currentSlot = new ScheduleSlot(month, week);
                         int currentDistance = getDistance(currentSlot, recipe.ingredients, channel, null);
+                        if (currentDistance < minimumDistance) {
+                            minDistanceSlot = currentSlot;
+                            minDistanceRecipe = recipe;
+                            minimumDistance = currentDistance;
+                        }
                         if (currentDistance > 3) continue;
                         int bestCandidateDistance = 0;
                         ScheduleSlot bestSwap = null;
@@ -474,11 +482,20 @@ public class Schedule {
                 }
             }
 
-            if (!madeASwap) {
+            if (!madeASwap && !performOptimalInsert(minDistanceSlot, minDistanceRecipe, minimumDistance)) {
                 Stats.countSwapsEndedPrematurely();
                 return;
             }
         }
+    }
+
+    private boolean performOptimalInsert(ScheduleSlot minDistanceSlot, Recipe minDistanceRecipe, int currentDistance) {
+        List<Recipe> suitableReplacements = getSuitableReplacements(currentDistance, minDistanceSlot, minDistanceRecipe);
+        if (suitableReplacements.isEmpty()) {
+            return false;
+        }
+        add(minDistanceSlot, suitableReplacements.get(new Random().nextInt(suitableReplacements.size())));
+        return true;
     }
 
     public void addComment(int humanMonth, int humanWeek, String comment) {
