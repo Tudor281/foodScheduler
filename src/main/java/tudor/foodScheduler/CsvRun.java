@@ -9,16 +9,16 @@ public class CsvRun {
     private static final Logger logger = LoggerFactory.getLogger(CsvRun.class);
     public static void main(String[] args) throws Exception {
         String input = """
-                1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Țelină cu morcov
-                1	2	Nakkikeitto	Musaca cu carne	Mâncare de ciuperci - Ciuperci cu smântână și usturoi	Portocale	Tiramisu
-                1	3	Ciorbă de dovlecei cu ciuperci	Mâncare de mazăre - Cu soia	Roșii cu brânză	Mandarine	Tiramisu
-                1	4	Supă cremă de țelină - Cu praz și smântână	Tocăniță de legume	Paste - cu Basilico (semi)	Papaya	Clătite
-                2	1	Supă de conopidă	Musaca cu ciuperci	Omletă cremă	Mere	Salată orientală
-                2	2	Supă cremă de dovleac	Varză fiartă	Fish fingers	Kiwi	Salată de pui
-                2	3	Ciorbă de salată cu scrob	Ghiveci	Paste - Napoletane (semi)	Grapefruit	Apple Pie
-                2	4					
-                3	1					
-                3	2					
+                1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Ciuperci cu maioneză și usturoi
+                1	2	Nakkikeitto	Musaca cu carne	Mâncare de ciuperci - Ciuperci cu smântână și usturoi	Kiwi	Humus
+                1	3	Ciorbă de dovlecei cu ciuperci	Mâncare de mazăre - Cu soia	Roșii cu brânză	Clementine	Apple Pie
+                1	4	Supă cremă de țelină - Cu praz și smântână	Tocăniță de legume	Paste - cu Basilico (semi)	Papaya	Salată boeuf
+                2	1	Supă de conopidă	Musaca cu ciuperci	Omletă cremă	Grapefruit	Clătite
+                2	2	Supă cremă de dovleac	Varză fiartă	Fish fingers	Mandarine	Griș cu lapte
+                2	3	Ciorbă de salată cu scrob	Ghiveci	Paste - Napoletane (semi)	Kiwi	Ciuperci cu maioneză și usturoi
+                2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait
+                3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi - ardelenească	Găgău	Mere	Griș cu lapte
+                3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia	Paste - con Ricotta (semi)	Pere	Salată boeuf
                 3	3					
                 3	4					
                 3	5					
