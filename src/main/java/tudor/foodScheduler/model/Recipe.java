@@ -1,6 +1,7 @@
 package tudor.foodScheduler.model;
 
 import tudor.foodScheduler.model.schedule.Schedule;
+import tudor.foodScheduler.utils.Roulette;
 
 import java.util.*;
 
@@ -105,7 +106,7 @@ public class Recipe {
         add(new Recipe("Supă de roșii", AtLeastOnce, List.of(Rosii), F1, List.of(Pastarnac, Patrunjel, Telina, FrunzeTelina)));
         add(new Recipe("Tiramisu", AtLeastOnce, List.of(Branza), Desert, List.of()));
         add(new Recipe("Tocănița Malita", Once, List.of(Soia, Ardei), F2, List.of(Usturoi, BoiaIute, Coriandru)));
-        add(new Recipe("Tocăniță de ardei", Once, List.of(Ardei), F2, List.of()));
+        add(new Recipe("Tocăniță de ardei", AtMostOnce, List.of(Ardei), F2, List.of()));
         add(new Recipe("Tocăniță de ardei cu ton", Disabled, List.of(Ardei, Ton), F2, List.of())); // mi s-a acrit după varză cu fish fingers. Vrei ton cu tocăniță de ardei, mănâncă separat, nu fă o întreagă oală cu asta
         add(new Recipe("Tocăniță de ardei cu soia", AtLeastOnce, List.of(Ardei, Soia), F2, List.of()));
         add(new Recipe("Tocăniță de gogonele", AtLeastOnce, List.of(Gogonele), F2, List.of()));
@@ -197,8 +198,9 @@ public class Recipe {
         return result;
     }
 
-    public static List<Recipe> getSupplementalRecipes(Schedule schedule) {
-        List<Recipe> result = new LinkedList<>();
+    public static Roulette<Recipe> getSupplementalRecipes(Schedule schedule) {
+        Map<Recipe, Integer> counts = new HashMap<>();
+        int maxCounts = 0;
         for (Recipe recipe : all.values()) {
             if (recipe.multiplicity == Disabled || recipe.multiplicity == Once) continue;
 
@@ -209,10 +211,19 @@ public class Recipe {
             if (schedule.reachedLimit(recipe)) continue;
 
             //also if (recipe.multiplicity == AtLeastOnce || recipe.multiplicity == Optional)
-            result.add(recipe);
+            int recipeCounts = schedule.recipeCounts.get(recipe);
+            counts.put(recipe, recipeCounts);
+            if (maxCounts < recipeCounts) maxCounts = recipeCounts;
         }
 
-        return result;
+        maxCounts++; // such that maxCount items have score 1. Also works beautifully if maxCount is 0
+
+        Roulette<Recipe> roulette = new Roulette<>();
+        for (Map.Entry<Recipe, Integer> entry : counts.entrySet()) {
+            roulette.add(entry.getKey(), maxCounts - entry.getValue());
+        }
+
+        return roulette;
     }
 
     public int getSeasonalityScore() {

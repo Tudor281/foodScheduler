@@ -340,6 +340,7 @@ public class Schedule {
     }
 
     public List<Recipe> getSuitableReplacements(int greatestDistance, ScheduleSlot slot, Recipe recipe) {
+        if (!canRemove(recipe)) return List.of();
         List<Recipe> bestRecipes = new ArrayList<>();
         for (Recipe candidate : Recipe.all.values()) {
             if (candidate.fel != recipe.fel) continue;
@@ -358,6 +359,17 @@ public class Schedule {
             }
         }
         return bestRecipes;
+    }
+
+    private boolean canRemove(Recipe recipe) {
+        switch (recipe.multiplicity) {
+            case AtLeastOnce, Once -> {
+                return recipeCounts.get(recipe) > 1;
+            }
+            default -> {
+                return true;
+            }
+        }
     }
 
     private boolean canAdd(Recipe recipe) {
@@ -495,10 +507,7 @@ public class Schedule {
             if (newScore <= score) {
                 localExplorationCounter++;
                 int index = InitialRun.random.nextInt(minDistanceSlots.size());
-                if (!performOptimalInsert(minDistanceSlots.get(index), minDistanceRecipes.get(index), minimumDistance)) {
-                    Stats.countSwapsEndedPrematurely();
-                    return;
-                }
+                performOptimalInsert(minDistanceSlots.get(index), minDistanceRecipes.get(index), minimumDistance);
             } else {
                 score = newScore;
                 localExplorationCounter = 0;
@@ -510,13 +519,12 @@ public class Schedule {
         }
     }
 
-    private boolean performOptimalInsert(ScheduleSlot minDistanceSlot, Recipe minDistanceRecipe, int currentDistance) {
+    private void performOptimalInsert(ScheduleSlot minDistanceSlot, Recipe minDistanceRecipe, int currentDistance) {
         List<Recipe> suitableReplacements = getSuitableReplacements(currentDistance, minDistanceSlot, minDistanceRecipe);
         if (suitableReplacements.isEmpty()) {
-            return false;
+            return;
         }
         add(minDistanceSlot, suitableReplacements.get(InitialRun.random.nextInt(suitableReplacements.size())));
-        return true;
     }
 
     public void addComment(int humanMonth, int humanWeek, String comment) {

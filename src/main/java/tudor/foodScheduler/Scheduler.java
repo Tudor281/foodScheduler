@@ -5,6 +5,7 @@ import tudor.foodScheduler.model.schedule.Duplication;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleSlot;
 import tudor.foodScheduler.model.schedule.SchedulingException;
+import tudor.foodScheduler.utils.Roulette;
 import tudor.foodScheduler.utils.Stats;
 
 import java.util.Comparator;
@@ -34,9 +35,9 @@ public class Scheduler {
     public void fillInOtherRecipes(Schedule schedule) {
         int counter = 0;
         while(schedule.hasFreeSlots()) {
-            List<Recipe> supplementalRecipes = Recipe.getSupplementalRecipes(schedule);
+            Roulette<Recipe> supplementalRecipes = Recipe.getSupplementalRecipes(schedule);
 
-            Recipe recipe = supplementalRecipes.remove(InitialRun.random.nextInt(supplementalRecipes.size()));
+            Recipe recipe = supplementalRecipes.getRandom();
 
             try {
                 add(recipe, schedule);
