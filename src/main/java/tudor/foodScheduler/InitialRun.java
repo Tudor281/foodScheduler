@@ -15,7 +15,13 @@ import java.util.Random;
 public class InitialRun {
     private static final Logger logger = LoggerFactory.getLogger(InitialRun.class);
 
-    public static Random random = new Random(1000);
+    public static Random random;
+    static {
+        Random random1 = new Random();
+        long seed = random1.nextLong();
+        System.out.println("Seed: "+seed);
+        random = new Random(seed);
+    }
 
     public static void main(String[] args) throws Exception {
         logger.info("Starting");
@@ -36,7 +42,7 @@ public class InitialRun {
         scheduler.fillInOtherRecipes(bestSchedule);
         double bestScore = bestSchedule.getScore();
         System.out.println("Score before optimization: "+bestScore);
-        System.out.println(bestSchedule.toString());
+        System.out.println(bestSchedule);
         bestSchedule.optimize();
 
 //        for (int i=0; i<100; i++) {
