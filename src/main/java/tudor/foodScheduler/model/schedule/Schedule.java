@@ -15,8 +15,6 @@ public class Schedule {
 
     public static final int nrChannels = 5;
 
-    private static final Random random = InitialRun.getRandom();
-
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
     Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes = new HashMap<>();
@@ -424,7 +422,7 @@ public class Schedule {
     public void optimize() {
         double score = getScore();
         int localExplorationCounter = 0;
-        for (int iteration = 0; iteration < 100; iteration ++) {
+        for (int iteration = 0; iteration < 10000; iteration ++) {
             int minimumDistance = Integer.MAX_VALUE;
             List<ScheduleSlot> minDistanceSlots = new ArrayList<>();
             List<Recipe> minDistanceRecipes = new ArrayList<>();
@@ -481,13 +479,13 @@ public class Schedule {
 
                         if (bestSwap != null) {
                             Stats.countSwapsExecuted();
-                            if (random.nextInt(10) > 8) {
-                                performOptimalInsert(currentSlot, recipe, currentDistance);
-                            } else {
+//                            if (random.nextInt(10) > 8) {
+//                                performOptimalInsert(currentSlot, recipe, currentDistance);
+//                            } else {
                                 ScheduleEntry targetEntry = recipes.get(bestSwap.month).get(bestSwap.week).get(channel);
                                 recipes.get(bestSwap.month).get(bestSwap.week).put(channel, entry);
                                 recipes.get(month).get(week).put(channel, targetEntry);
-                            }
+//                            }
                         }
                     }
                 }
@@ -496,7 +494,7 @@ public class Schedule {
             double newScore = getScore();
             if (newScore <= score) {
                 localExplorationCounter++;
-                int index = random.nextInt(minDistanceSlots.size());
+                int index = InitialRun.random.nextInt(minDistanceSlots.size());
                 if (!performOptimalInsert(minDistanceSlots.get(index), minDistanceRecipes.get(index), minimumDistance)) {
                     Stats.countSwapsEndedPrematurely();
                     return;
@@ -506,6 +504,7 @@ public class Schedule {
                 localExplorationCounter = 0;
             }
             if (localExplorationCounter > 50) return;
+
 //            System.out.println("Score: "+score);
 
         }
@@ -516,7 +515,7 @@ public class Schedule {
         if (suitableReplacements.isEmpty()) {
             return false;
         }
-        add(minDistanceSlot, suitableReplacements.get(random.nextInt(suitableReplacements.size())));
+        add(minDistanceSlot, suitableReplacements.get(InitialRun.random.nextInt(suitableReplacements.size())));
         return true;
     }
 

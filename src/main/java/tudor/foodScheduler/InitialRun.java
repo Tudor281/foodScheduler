@@ -15,6 +15,8 @@ import java.util.Random;
 public class InitialRun {
     private static final Logger logger = LoggerFactory.getLogger(InitialRun.class);
 
+    public static Random random = new Random(1000);
+
     public static void main(String[] args) throws Exception {
         logger.info("Starting");
 
@@ -34,34 +36,34 @@ public class InitialRun {
         scheduler.fillInOtherRecipes(bestSchedule);
         double bestScore = bestSchedule.getScore();
         System.out.println("Score before optimization: "+bestScore);
+        System.out.println(bestSchedule.toString());
         bestSchedule.optimize();
 
-
-        for (int i=0; i<100; i++) {
-            Schedule candidate = template.copy();
-            scheduler.addAtLeastOnceRecipes(candidate);
-            scheduler.fillInOtherRecipes(candidate);
-            candidate.optimize();
-            try {
-                scheduler.eliminateDuplicates(candidate);
-            } catch (SchedulingException ignored) {
-                Stats.countOptimalInsertFailure();
-            }
-            catch (Exception e) {
-                logger.error("Failure", e);
-                Stats.countOptimalInsertFailure();
-            }
-
-            double candidateScore = candidate.getScore();
-            if (candidateScore > bestScore) {
-                bestScore = candidateScore;
-                bestSchedule = candidate;
-            }
-
-            if (i % 1000 == 0) {
-                System.out.println(i + "\t"+bestScore);
-            }
-        }
+//        for (int i=0; i<100; i++) {
+//            Schedule candidate = template.copy();
+//            scheduler.addAtLeastOnceRecipes(candidate);
+//            scheduler.fillInOtherRecipes(candidate);
+//            candidate.optimize();
+//            try {
+//                scheduler.eliminateDuplicates(candidate);
+//            } catch (SchedulingException ignored) {
+//                Stats.countOptimalInsertFailure();
+//            }
+//            catch (Exception e) {
+//                logger.error("Failure", e);
+//                Stats.countOptimalInsertFailure();
+//            }
+//
+//            double candidateScore = candidate.getScore();
+//            if (candidateScore > bestScore) {
+//                bestScore = candidateScore;
+//                bestSchedule = candidate;
+//            }
+//
+//            if (i % 1000 == 0) {
+//                System.out.println(i + "\t"+bestScore);
+//            }
+//        }
 
         Stats.report();
 
@@ -145,9 +147,5 @@ public class InitialRun {
         Recipe fasoleChimen = Recipe.get("Ciorbă de fasole - Cu chimen");
         schedule.add(12, 4, fasoleChimen, true);
         schedule.addComment(12, 4, "Anul nou");
-    }
-
-    public static Random getRandom() {
-        return new Random(1000);
     }
 }

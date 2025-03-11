@@ -9,6 +9,7 @@ import static tudor.foodScheduler.model.Months.ALL;
 public enum Ingredient {
     Ardei(List.of(6,7,8,9), ALL),
     Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
+    Avocado(List.of(), ALL),
     Branza(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne(ALL, ALL),
@@ -18,11 +19,15 @@ public enum Ingredient {
     Conopida(List.of(4,5,6,7,8,9,10,11,12), ALL),
     DovleacPlacintar(List.of(9,10,11,12,1), List.of(2)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
     Dovlecei(List.of(6,7,8,9), ALL),
+    Faina(ALL, List.of()),
     Fasole(ALL, ALL),
     Frunze(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
     Gogonele(List.of(6,7,8,9,10,11), List.of()),
+    Gris(ALL, List.of()),
     Iaurt(ALL, ALL),
+    Lapte(ALL, List.of()),
     Maioneza(ALL, ALL),
+    Malai(ALL, List.of()),
     Mazare(ALL, ALL),
     Naut(ALL, ALL),
     Orez(ALL, ALL),
