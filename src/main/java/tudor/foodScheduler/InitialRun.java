@@ -1,7 +1,5 @@
 package tudor.foodScheduler;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.SchedulingException;
@@ -13,8 +11,6 @@ import java.util.Random;
  * Hello world!
  */
 public class InitialRun {
-    private static final Logger logger = LoggerFactory.getLogger(InitialRun.class);
-
     public static Random random;
     static {
         Random random1 = new Random();
@@ -24,7 +20,7 @@ public class InitialRun {
     }
 
     public static void main(String[] args) throws Exception {
-        logger.info("Starting");
+        System.out.println("Starting...");
 
         // 2025
         Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
@@ -75,8 +71,8 @@ public class InitialRun {
 
         bestScore = bestSchedule.getScore();
         System.out.println("Best score: "+bestScore);
-        logger.info("Schedule: ");
-        logger.info(bestSchedule.toString());
+        System.out.println("Schedule: ");
+        System.out.println(bestSchedule);
     }
 
     public static void addConstraints(Schedule schedule) {

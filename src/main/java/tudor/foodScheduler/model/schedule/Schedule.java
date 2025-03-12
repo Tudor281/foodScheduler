@@ -1,7 +1,5 @@
 package tudor.foodScheduler.model.schedule;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.InitialRun;
 import tudor.foodScheduler.utils.Counter;
 import tudor.foodScheduler.utils.Stats;
@@ -11,8 +9,6 @@ import java.util.*;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class Schedule {
-    private static final Logger logger = LoggerFactory.getLogger(Schedule.class);
-
     public static final int nrChannels = 5;
 
     // month -> week -> channel -> Recipe

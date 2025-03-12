@@ -1,14 +1,10 @@
 package tudor.foodScheduler.utils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.model.Ingredient;
 
 import java.util.*;
 
 public class Stats {
-    private static final Logger logger = LoggerFactory.getLogger(Stats.class);
-
     static Counter<Ingredient> minScoreIngredientCounts = new Counter<>();
 
     static int optimalInsertionFailures = 0;
@@ -46,14 +42,14 @@ public class Stats {
         List<Map.Entry<Ingredient, Integer>> classification = minScoreIngredientCounts.getSortedDescending();
 
         for (Map.Entry<Ingredient, Integer> entry : classification) {
-            logger.info("{} -> {}", entry.getKey(), entry.getValue());
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
 
-        logger.info("Optimal insert failures: {}", optimalInsertionFailures);
-        logger.info("Suitable replacements not found: {}", suitableReplacementsNotFound);
-        logger.info("Run out of optimal inserts attempts: {}", runOutOfOptimalInsertsAttempts);
-        logger.info("Optimal Inserts constraints lock: {}", optimalInsertsConstrained);
-        logger.info("Swaps ended prematurely: {}", swapsEndedPrematurely);
-        logger.info("Swaps executed: {}", swapsExecuted);
+        System.out.println("Optimal insert failures: "+ optimalInsertionFailures);
+        System.out.println("Suitable replacements not found: "+ suitableReplacementsNotFound);
+        System.out.println("Run out of optimal inserts attempts: "+ runOutOfOptimalInsertsAttempts);
+        System.out.println("Optimal Inserts constraints lock: "+ optimalInsertsConstrained);
+        System.out.println("Swaps ended prematurely: "+ swapsEndedPrematurely);
+        System.out.println("Swaps executed: "+ swapsExecuted);
     }
 }

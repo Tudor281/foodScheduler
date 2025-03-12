@@ -1,12 +1,9 @@
 package tudor.foodScheduler;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleInitializer;
 
 public class CsvRun {
-    private static final Logger logger = LoggerFactory.getLogger(CsvRun.class);
     public static void main(String[] args) throws Exception {
         String input = """
                 1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Ciuperci cu maioneză și usturoi
