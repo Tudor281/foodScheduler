@@ -5,6 +5,7 @@ import tudor.foodScheduler.model.schedule.Duplication;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleSlot;
 import tudor.foodScheduler.model.schedule.SchedulingException;
+import tudor.foodScheduler.utils.Roulette;
 import tudor.foodScheduler.utils.Stats;
 
 import java.util.Comparator;
@@ -12,8 +13,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Scheduler {
-    Random random = InitialRun.getRandom();
-
     public void addAtLeastOnceRecipes(Schedule schedule) throws Exception {
         // get at least once recipes
 
@@ -28,7 +27,7 @@ public class Scheduler {
         }
 
         while(!lowPriorityRecipes.isEmpty()) {
-            Recipe recipe = lowPriorityRecipes.remove(random.nextInt(lowPriorityRecipes.size()));
+            Recipe recipe = lowPriorityRecipes.remove(InitialRun.random.nextInt(lowPriorityRecipes.size()));
             add(recipe, schedule);
         }
     }
@@ -36,9 +35,9 @@ public class Scheduler {
     public void fillInOtherRecipes(Schedule schedule) {
         int counter = 0;
         while(schedule.hasFreeSlots()) {
-            List<Recipe> supplementalRecipes = Recipe.getSupplementalRecipes(schedule);
+            Roulette<Recipe> supplementalRecipes = Recipe.getSupplementalRecipes(schedule);
 
-            Recipe recipe = supplementalRecipes.remove(random.nextInt(supplementalRecipes.size()));
+            Recipe recipe = supplementalRecipes.getRandom();
 
             try {
                 add(recipe, schedule);
@@ -59,7 +58,7 @@ public class Scheduler {
             throw new Exception("Can't find a slot for "+recipe.getName());
         }
 
-        schedule.add(slots.get(random.nextInt(slots.size())), recipe);
+        schedule.add(slots.get(InitialRun.random.nextInt(slots.size())), recipe);
     }
 
     public void eliminateDuplicates(Schedule schedule) throws SchedulingException {
@@ -86,7 +85,7 @@ public class Scheduler {
                     targetRecipe = duplication.recipe1;
                 }
             } else { // constraint 0
-                if (random.nextBoolean()) {
+                if (InitialRun.random.nextBoolean()) {
                     targetSlot = duplication.slot2;
                     targetRecipe = duplication.recipe2;
                 } else {
@@ -102,7 +101,7 @@ public class Scheduler {
                 throw new SchedulingException("No suitable replacements exist");
             }
 
-            schedule.add(targetSlot, suitableReplacements.get(random.nextInt(suitableReplacements.size())));
+            schedule.add(targetSlot, suitableReplacements.get(InitialRun.random.nextInt(suitableReplacements.size())));
         } while (count++ < 100);
         Stats.countRunOutOfOptimalInsertsAttempts();
         throw new SchedulingException("Run out of attempts to deduplicate schedule");

@@ -1,12 +1,9 @@
 package tudor.foodScheduler;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleInitializer;
 
 public class CsvRun {
-    private static final Logger logger = LoggerFactory.getLogger(CsvRun.class);
     public static void main(String[] args) throws Exception {
         String input = """
                 1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Ciuperci cu maioneză și usturoi
@@ -18,7 +15,7 @@ public class CsvRun {
                 2	3	Ciorbă de salată cu scrob	Ghiveci	Paste - Napoletane (semi)	Kiwi	Ciuperci cu maioneză și usturoi
                 2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait
                 3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi - ardelenească	Găgău	Mere	Griș cu lapte
-                3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia	Paste - con Ricotta (semi)	Pere	Salată boeuf
+                3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia	Paste - con Ricotta (semi)	Pere	Humus cu pesto
                 3	3					
                 3	4					
                 3	5					

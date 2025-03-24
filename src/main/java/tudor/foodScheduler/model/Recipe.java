@@ -1,6 +1,7 @@
 package tudor.foodScheduler.model;
 
 import tudor.foodScheduler.model.schedule.Schedule;
+import tudor.foodScheduler.utils.Roulette;
 
 import java.util.*;
 
@@ -23,7 +24,7 @@ public class Recipe {
     public static final Map<String, Recipe> all = new HashMap<>();
     static {
         add(new Recipe("American Potato Salad", Once, List.of(Cartofi, Maioneza, Apio), F2, List.of(Mustar, Patrunjel)));
-        add(new Recipe("Apple Pie", Optional, List.of(Mere), Desert, List.of()));
+        add(new Recipe("Apple Pie", Once, List.of(Mere), Desert, List.of()));
         add(new Recipe("Ardei umpluți simplu", Once, List.of(Ardei, Orez), F2, List.of(FrunzeTelina)));
         add(new Recipe("Ardei umpluți cu carne", Once, List.of(Ardei, Orez, Carne), F2, List.of(FrunzeTelina)));
         add(new Recipe("Chiftele cu carne", Once, List.of(Carne), Rece, List.of(Usturoi))); // binding to pilaf simplu
@@ -46,14 +47,14 @@ public class Recipe {
         add(new Recipe("Ciorbă de salată cu scrob", AtLeastOnce, List.of(Salata, Smantana), F1, List.of()));
         add(new Recipe("Ciorbă rădăuțeană", Once, List.of(Carne, Smantana), F1, List.of())); // TODO no recipy
         add(new Recipe("Ciuperci cu maioneză și usturoi", AtLeastOnce, List.of(Ciuperci, Maioneza), Rece, List.of()));
-        add(new Recipe("Clătite", Optional, List.of(), Desert, List.of()));
-        add(new Recipe("Cozonac", Once, List.of(), Desert, List.of()));
-        add(new Recipe("Fasole bătută", Optional, List.of(Fasole), Rece, List.of()));
+        add(new Recipe("Clătite", Once, List.of(Faina), Desert, List.of()));
+        add(new Recipe("Cozonac", Once, List.of(Faina), Desert, List.of()));
+        add(new Recipe("Fasole bătută", AtLeastOnce, List.of(Fasole), Rece, List.of()));
         add(new Recipe("Ghiveci", AtLeastOnce, List.of(Conopida), F2, List.of()));
         add(new Recipe("Gigantes Plaki", AtLeastOnce, List.of(Fasole), F2, List.of(Usturoi, Patrunjel, Marar, FrunzeTelina)));
         add(new Recipe("Gratin de cartofi cu broccoli și brânză", Once, List.of(Cartofi, Broccoli, Smantana, Branza), F2, List.of(Usturoi)));
         add(new Recipe("Gratin de cartofi cu roșii și brânză", Once, List.of(Cartofi, Rosii, Smantana, Branza), F2, List.of(Busuioc)));
-        add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(), Desert, List.of()));
+        add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(Lapte, Gris), Desert, List.of()));
         add(new Recipe("Gulaș", Once, List.of(Cartofi, Carne), F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Usturoi, Patrunjel, Tarhon, FrunzeTelina)));
         add(new Recipe("Humus", AtLeastOnce, List.of(Naut), Rece, List.of()));
         add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(Naut), Rece, List.of(Usturoi, Busuioc)));
@@ -71,7 +72,7 @@ public class Recipe {
         add(new Recipe("Mâncare de mazăre - Simplu", Once, List.of(Mazare), F2, List.of(Marar)));
         add(new Recipe("Mâncare de păstăi", AtLeastOnce, List.of(PastaiCongelate), F2, List.of(Patrunjel)));
         add(new Recipe("Melanzane alla parmigiano", Once, List.of(Vinete, Branza), F2, List.of()));
-        add(new Recipe("Minestrone", Once, List.of(), F1, List.of())); // TODO no recipy
+        add(new Recipe("Minestrone", Once, List.of(Mazare, Paste), F1, List.of())); // TODO no recipy
         add(new Recipe("Musaca cu carne", Once, List.of(Cartofi, Carne), F2, List.of())); // TODO no recipy
         add(new Recipe("Musaca cu ragu", AtMostOnce, List.of(Cartofi, Carne, Apio), F2, List.of(VinAlb)));
         add(new Recipe("Musaca cu ciuperci", AtLeastOnce, List.of(Cartofi, Ciuperci), F2, List.of(), 2)); // TODO no recipy
@@ -86,8 +87,8 @@ public class Recipe {
         add(new Recipe("Pilaf - Sarmale viță de vie cu carne", Once, List.of(Orez, Carne), F2, List.of())); // TODO no recipy
         add(new Recipe("Pilaf - Simplu", AtLeastOnce, List.of(Orez), F2, List.of(Curcuma), 2));
         add(new Recipe("Răcitură", Once, List.of(Carne), F2, List.of(Usturoi)));
-        add(new Recipe("Riz au lait", AtLeastOnce, List.of(Orez), Desert, List.of()));
-        add(new Recipe("Salată boeuf", Optional, List.of(Cartofi, Maioneza), Rece, List.of(Mustar)));
+        add(new Recipe("Riz au lait", AtLeastOnce, List.of(Orez, Lapte), Desert, List.of()));
+        add(new Recipe("Salată boeuf", AtLeastOnce, List.of(Cartofi, Maioneza), Rece, List.of(Mustar)));
         add(new Recipe("Salată de pui", Once, List.of(Carne, Maioneza), Rece, List.of()));
         add(new Recipe("Salată de vienete cu usturoi", AtLeastOnce, List.of(Vinete, Maioneza), Rece, List.of(Usturoi)));
         add(new Recipe("Salată orientală", AtLeastOnce, List.of(Cartofi), Rece, List.of()));
@@ -103,9 +104,9 @@ public class Recipe {
         add(new Recipe("Supă de cartofi și mazăre", Once, List.of(Cartofi, Mazare), F1, List.of(Usturoi, Coriandru, Curry)));
         add(new Recipe("Supă de conopidă", Once, List.of(Conopida), F1, List.of(SucLamaie)));
         add(new Recipe("Supă de roșii", AtLeastOnce, List.of(Rosii), F1, List.of(Pastarnac, Patrunjel, Telina, FrunzeTelina)));
-        add(new Recipe("Tiramisu", AtLeastOnce, List.of(), Desert, List.of()));
+        add(new Recipe("Tiramisu", AtLeastOnce, List.of(Branza), Desert, List.of()));
         add(new Recipe("Tocănița Malita", Once, List.of(Soia, Ardei), F2, List.of(Usturoi, BoiaIute, Coriandru)));
-        add(new Recipe("Tocăniță de ardei", Once, List.of(Ardei), F2, List.of()));
+        add(new Recipe("Tocăniță de ardei", AtMostOnce, List.of(Ardei), F2, List.of()));
         add(new Recipe("Tocăniță de ardei cu ton", Disabled, List.of(Ardei, Ton), F2, List.of())); // mi s-a acrit după varză cu fish fingers. Vrei ton cu tocăniță de ardei, mănâncă separat, nu fă o întreagă oală cu asta
         add(new Recipe("Tocăniță de ardei cu soia", AtLeastOnce, List.of(Ardei, Soia), F2, List.of()));
         add(new Recipe("Tocăniță de gogonele", AtLeastOnce, List.of(Gogonele), F2, List.of()));
@@ -122,8 +123,8 @@ public class Recipe {
         add(new Recipe("Vitel tonne", Once, List.of(Carne, Ton), Rece, List.of())); // TODO no recipy
 
         // Fast Food
-        add(new Recipe("Mămăligă", AtLeastOnce, List.of(), FastFood, List.of()));
-        add(new Recipe("Găgău", AtLeastOnce, List.of(), FastFood, List.of()));
+        add(new Recipe("Mămăligă", AtLeastOnce, List.of(Malai, Branza, Lapte), FastFood, List.of()));
+        add(new Recipe("Găgău", AtLeastOnce, List.of(Malai, Branza), FastFood, List.of()));
         add(new Recipe("Mâncare de ciuperci - Ciulama de ciuperci", Once, List.of(Ciuperci), FastFood, List.of(Patrunjel, Marar)));
         add(new Recipe("Mâncare de ciuperci - Ciuperci cu smântână și usturoi", AtMostOnce, List.of(Ciuperci, Smantana), FastFood, List.of(Patrunjel, Usturoi)));
         add(new Recipe("Spanac cu smântână", Once, List.of(Spanac, Smantana), FastFood, List.of(Usturoi)));
@@ -137,10 +138,10 @@ public class Recipe {
         add(new Recipe("Pește prăjit", Once, List.of(Carne), FastFood, List.of()));
         add(new Recipe("Omletă cremă", AtLeastOnce, List.of(Ou), FastFood, List.of()));
         add(new Recipe("Omletă normală", AtLeastOnce, List.of(Ou), FastFood, List.of()));
-        add(new Recipe("Roșii cu brânză", AtLeastOnce, List.of(), FastFood, List.of()));
-        add(new Recipe("Salad Box", AtLeastOnce, List.of(), FastFood, List.of()));
-        add(new Recipe("Cobb Salad", AtLeastOnce, List.of(), FastFood, List.of()));
-        add(new Recipe("Facebook Salad", AtLeastOnce, List.of(), FastFood, List.of()));
+        add(new Recipe("Roșii cu brânză", AtLeastOnce, List.of(Rosii, Branza), FastFood, List.of()));
+        add(new Recipe("Salad Box", AtLeastOnce, List.of(Salata), FastFood, List.of()));
+        add(new Recipe("Cobb Salad", AtLeastOnce, List.of(Salata, Carne, Ou, Rosii, Avocado), FastFood, List.of()));
+        add(new Recipe("Facebook Salad", AtLeastOnce, List.of(Avocado, Ou, Rosii), FastFood, List.of()));
         add(new Recipe("Paste - Pesto al Genovese (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
         add(new Recipe("Paste - Al sugo di pomodoro", Once, List.of(Paste), FastFood, List.of()));
         add(new Recipe("Paste - cu somon", Once, List.of(Paste, Carne), FastFood, List.of()));
@@ -197,8 +198,9 @@ public class Recipe {
         return result;
     }
 
-    public static List<Recipe> getSupplementalRecipes(Schedule schedule) {
-        List<Recipe> result = new LinkedList<>();
+    public static Roulette<Recipe> getSupplementalRecipes(Schedule schedule) {
+        Map<Recipe, Integer> counts = new HashMap<>();
+        int maxCounts = 0;
         for (Recipe recipe : all.values()) {
             if (recipe.multiplicity == Disabled || recipe.multiplicity == Once) continue;
 
@@ -209,10 +211,19 @@ public class Recipe {
             if (schedule.reachedLimit(recipe)) continue;
 
             //also if (recipe.multiplicity == AtLeastOnce || recipe.multiplicity == Optional)
-            result.add(recipe);
+            int recipeCounts = schedule.recipeCounts.get(recipe);
+            counts.put(recipe, recipeCounts);
+            if (maxCounts < recipeCounts) maxCounts = recipeCounts;
         }
 
-        return result;
+        maxCounts++; // such that maxCount items have score 1. Also works beautifully if maxCount is 0
+
+        Roulette<Recipe> roulette = new Roulette<>();
+        for (Map.Entry<Recipe, Integer> entry : counts.entrySet()) {
+            roulette.add(entry.getKey(), maxCounts - entry.getValue());
+        }
+
+        return roulette;
     }
 
     public int getSeasonalityScore() {
@@ -229,6 +240,7 @@ public class Recipe {
     }
 
     public Recipe(String name, Multiplicity multiplicity, List<Ingredient> ingredients, Fel fel, List<Spice> spices) {
+        if (ingredients.isEmpty()) throw new RuntimeException("Ingredients can't be empty");
         this.name = name;
         this.ingredients = ingredients;
         this.multiplicity = multiplicity;

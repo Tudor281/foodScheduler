@@ -1,7 +1,5 @@
 package tudor.foodScheduler.model.schedule;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tudor.foodScheduler.InitialRun;
 import tudor.foodScheduler.utils.Counter;
 import tudor.foodScheduler.utils.Stats;
@@ -11,11 +9,7 @@ import java.util.*;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class Schedule {
-    private static final Logger logger = LoggerFactory.getLogger(Schedule.class);
-
     public static final int nrChannels = 5;
-
-    private static final Random random = InitialRun.getRandom();
 
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
@@ -342,6 +336,7 @@ public class Schedule {
     }
 
     public List<Recipe> getSuitableReplacements(int greatestDistance, ScheduleSlot slot, Recipe recipe) {
+        if (!canRemove(recipe)) return List.of();
         List<Recipe> bestRecipes = new ArrayList<>();
         for (Recipe candidate : Recipe.all.values()) {
             if (candidate.fel != recipe.fel) continue;
@@ -360,6 +355,17 @@ public class Schedule {
             }
         }
         return bestRecipes;
+    }
+
+    private boolean canRemove(Recipe recipe) {
+        switch (recipe.multiplicity) {
+            case AtLeastOnce, Once -> {
+                return recipeCounts.get(recipe) > 1;
+            }
+            default -> {
+                return true;
+            }
+        }
     }
 
     private boolean canAdd(Recipe recipe) {
@@ -424,7 +430,7 @@ public class Schedule {
     public void optimize() {
         double score = getScore();
         int localExplorationCounter = 0;
-        for (int iteration = 0; iteration < 100; iteration ++) {
+        for (int iteration = 0; iteration < 10000; iteration ++) {
             int minimumDistance = Integer.MAX_VALUE;
             List<ScheduleSlot> minDistanceSlots = new ArrayList<>();
             List<Recipe> minDistanceRecipes = new ArrayList<>();
@@ -481,13 +487,13 @@ public class Schedule {
 
                         if (bestSwap != null) {
                             Stats.countSwapsExecuted();
-                            if (random.nextInt(10) > 8) {
-                                performOptimalInsert(currentSlot, recipe, currentDistance);
-                            } else {
+//                            if (random.nextInt(10) > 8) {
+//                                performOptimalInsert(currentSlot, recipe, currentDistance);
+//                            } else {
                                 ScheduleEntry targetEntry = recipes.get(bestSwap.month).get(bestSwap.week).get(channel);
                                 recipes.get(bestSwap.month).get(bestSwap.week).put(channel, entry);
                                 recipes.get(month).get(week).put(channel, targetEntry);
-                            }
+//                            }
                         }
                     }
                 }
@@ -496,28 +502,25 @@ public class Schedule {
             double newScore = getScore();
             if (newScore <= score) {
                 localExplorationCounter++;
-                int index = random.nextInt(minDistanceSlots.size());
-                if (!performOptimalInsert(minDistanceSlots.get(index), minDistanceRecipes.get(index), minimumDistance)) {
-                    Stats.countSwapsEndedPrematurely();
-                    return;
-                }
+                int index = InitialRun.random.nextInt(minDistanceSlots.size());
+                performOptimalInsert(minDistanceSlots.get(index), minDistanceRecipes.get(index), minimumDistance);
             } else {
                 score = newScore;
                 localExplorationCounter = 0;
             }
             if (localExplorationCounter > 50) return;
+
 //            System.out.println("Score: "+score);
 
         }
     }
 
-    private boolean performOptimalInsert(ScheduleSlot minDistanceSlot, Recipe minDistanceRecipe, int currentDistance) {
+    private void performOptimalInsert(ScheduleSlot minDistanceSlot, Recipe minDistanceRecipe, int currentDistance) {
         List<Recipe> suitableReplacements = getSuitableReplacements(currentDistance, minDistanceSlot, minDistanceRecipe);
         if (suitableReplacements.isEmpty()) {
-            return false;
+            return;
         }
-        add(minDistanceSlot, suitableReplacements.get(random.nextInt(suitableReplacements.size())));
-        return true;
+        add(minDistanceSlot, suitableReplacements.get(InitialRun.random.nextInt(suitableReplacements.size())));
     }
 
     public void addComment(int humanMonth, int humanWeek, String comment) {
