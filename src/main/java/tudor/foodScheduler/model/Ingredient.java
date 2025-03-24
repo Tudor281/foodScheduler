@@ -8,15 +8,15 @@ import static tudor.foodScheduler.model.Months.ALL;
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
     Ardei(List.of(6,7,8,9), ALL),
-    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
+    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
     Branza(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne(ALL, ALL),
     Cartofi(ALL, ALL),
-    Castraveti(List.of(6,7,8,9), List.of(1,2,10,11,12)),
+    Castraveti(List.of(6,7,8,9), List.of(1,2,3,10,11,12)),
     Ciuperci(ALL, ALL),
     Conopida(List.of(4,5,6,7,8,9,10,11,12), ALL),
-    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
+    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
     Dovlecei(List.of(6,7,8,9), ALL),
     Fasole(ALL, ALL),
     Frunze(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
@@ -52,10 +52,10 @@ public enum Ingredient {
     Capsuni(List.of(6,7,8,9), List.of()),
     Cirese(List.of(6, 7), List.of()),
     Clementine(List.of(), List.of(12, 1)),
-    Grapefruit(List.of(), List.of(12, 1, 2)),
+    Grapefruit(List.of(), List.of(12, 1, 2,3)),
     Kaki(List.of(), List.of(10, 11, 12, 1)),
-    Kiwi(List.of(), List.of(10, 11, 12, 1, 2)),
-    Mandarine(List.of(), List.of(12, 1, 2)),
+    Kiwi(List.of(), List.of(10, 11, 12, 1, 2, 3)),
+    Mandarine(List.of(), List.of(12, 1, 2,3)),
     Mango(List.of(), ALL),
     Mere(List.of(11, 12,1,2), ALL),
     Mineole(List.of(), List.of(1)),
@@ -63,7 +63,7 @@ public enum Ingredient {
     PepeneGalben(List.of(7,8,9), List.of()),
     PepeneRosu(List.of(7,8,9), List.of()),
     Pere(List.of(), ALL),
-    Portocale(List.of(), List.of(11,12, 1, 2)),
+    Portocale(List.of(), List.of(11,12, 1, 2,3)),
     Prune(List.of(8,9,10,11), List.of(12, 1)),
     Rodii(List.of(), ALL),
     Struguri(List.of(9,10,11), List.of())
