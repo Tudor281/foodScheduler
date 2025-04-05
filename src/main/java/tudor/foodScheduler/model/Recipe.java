@@ -37,7 +37,7 @@ public class Recipe {
         add(new Recipe("Ciorbă de fasole - Cu dafin", AtLeastOnce, List.of(Fasole), F1, List.of(Patrunjel, Marar, Dafin)));
         add(new Recipe("Ciorbă de fasole - Cu cimbru", AtLeastOnce, List.of(Fasole), F1, List.of(Patrunjel, Marar, Cimbru)));
         add(new Recipe("Ciorbă de fasole - Cu leuștean", AtLeastOnce, List.of(Fasole), F1, List.of(Patrunjel, Marar, Leustean)));
-        add(new Recipe("Ciorbă de frunze", AtLeastOnce, List.of(Frunze), F1, List.of(Marar, Leustean)));
+        add(new Recipe("Ciorbă de frunze", Disabled, List.of(Frunze), F1, List.of(Marar, Leustean))); // nu găsești cantități industriale de frunze în București, doar la legătură.
         add(new Recipe("Ciorbă de ghebe cu smântână", Once, List.of(Ciuperci, Smantana), F1, List.of(Patrunjel, Marar)));
         add(new Recipe("Ciorbă de năut cu afumătură", Once, List.of(Carne, Naut), F1, List.of(BoiaDulce)));
         add(new Recipe("Ciorbă de păstăi", AtLeastOnce, List.of(PastaiCongelate), F1, List.of(Pastarnac, Patrunjel, Marar, Leustean, Telina), 3));
@@ -80,7 +80,7 @@ public class Recipe {
         add(new Recipe("Nakkikeitto", AtMostOnce, List.of(Carne, Cartofi), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin)));
         add(new Recipe("Nakkikeitto - V", AtLeastOnce, List.of(Cartofi, Soia), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin), 2));
         add(new Recipe("Pilaf - Cu ciuperci și alte legume", AtLeastOnce, List.of(Orez, Ciuperci), F2, List.of(Marar, Patrunjel, Pastarnac, Telina)));
-        add(new Recipe("Pilaf - Cu urzici", Once, List.of(Orez, Urzici), F2, List.of(Patrunjel)));
+        add(new Recipe("Pilaf - Cu urzici", Disabled, List.of(Orez, Urzici), F2, List.of(Patrunjel))); // faci când găsești, e un tiny window
         add(new Recipe("Pilaf - Paella cu pui", Once, List.of(Orez, Carne), F2, List.of(Usturoi, Patrunjel, Curcuma, SucLamaie)));
         add(new Recipe("Pilaf - Sarmale cu varză murată și carne", Disabled, List.of(Orez, VarzaMurata, Carne), F2, List.of())); // TODO no recipy
         add(new Recipe("Pilaf - Sarmale viță de vie simplu", Disabled, List.of(Orez), F2, List.of())); // TODO no recipy
@@ -137,6 +137,7 @@ public class Recipe {
         add(new Recipe("Somon prăjit", Once, List.of(Carne), FastFood, List.of()));
         add(new Recipe("Pește prăjit", Once, List.of(Carne), FastFood, List.of()));
         add(new Recipe("Omletă cremă", AtLeastOnce, List.of(Ou), FastFood, List.of()));
+        add(new Recipe("Omletă cu roșii", AtLeastOnce, List.of(Ou, Rosii, Branza), FastFood, List.of()));
         add(new Recipe("Omletă normală", AtLeastOnce, List.of(Ou), FastFood, List.of()));
         add(new Recipe("Roșii cu brânză", AtLeastOnce, List.of(Rosii, Branza), FastFood, List.of()));
         add(new Recipe("Salad Box", AtLeastOnce, List.of(Salata), FastFood, List.of()));
