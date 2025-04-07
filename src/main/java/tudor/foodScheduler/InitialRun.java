@@ -14,7 +14,8 @@ public class InitialRun {
     public static Random random;
     static {
         Random random1 = new Random();
-        long seed = random1.nextLong();
+        long seed = -3641413982555598708L;
+//        long seed = random1.nextLong();
         System.out.println("Seed: "+seed);
         random = new Random(seed);
     }
@@ -39,7 +40,7 @@ public class InitialRun {
         double bestScore = bestSchedule.getScore();
         System.out.println("Score before optimization: "+bestScore);
         System.out.println(bestSchedule);
-        bestSchedule.optimize();
+        bestSchedule = bestSchedule.optimize();
 
 //        for (int i=0; i<100; i++) {
 //            Schedule candidate = template.copy();

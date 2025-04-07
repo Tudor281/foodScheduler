@@ -427,7 +427,8 @@ public class Schedule {
         return recipe.multiplicity == Multiplicity.AtLeastOnce && ((recipe.limit != null && recipe.limit >= count) || count >= recipe.fel.cap);
     }
 
-    public void optimize() {
+    public Schedule optimize() {
+        Schedule bestSchedule = this.copy();
         double score = getScore();
         int localExplorationCounter = 0;
         for (int iteration = 0; iteration < 10000; iteration ++) {
@@ -506,12 +507,14 @@ public class Schedule {
             } else {
                 score = newScore;
                 localExplorationCounter = 0;
+                bestSchedule = this.copy();
             }
-            if (localExplorationCounter > 50) return;
+            if (localExplorationCounter > 50) return bestSchedule;
 
 //            System.out.println("Score: "+score);
 
         }
+        return bestSchedule;
     }
 
     private void performOptimalInsert(List<ScheduleSlot> minDistanceSlots, List<Recipe> minDistanceRecipes, int currentDistance) {
@@ -519,13 +522,13 @@ public class Schedule {
         do {
             counter++;
             if (counter > 10) {
-                System.out.println("Gave up for "+minDistanceSlots.size()+" recipes");
+//                System.out.println("Gave up for "+minDistanceSlots.size()+" recipes");
                 return;
             }
             int index = InitialRun.random.nextInt(minDistanceSlots.size());
             Recipe recipe = minDistanceRecipes.get(index);
             if (!canRemove(recipe)) {
-                System.out.println("Bottomed out "+recipe.getName());
+//                System.out.println("Bottomed out "+recipe.getName());
                 continue;
             }
             ScheduleSlot slot = minDistanceSlots.get(index);
@@ -534,6 +537,7 @@ public class Schedule {
                 continue;
             }
             add(slot, suitableReplacements.get(InitialRun.random.nextInt(suitableReplacements.size())));
+            break;
         } while (true);
     }
 

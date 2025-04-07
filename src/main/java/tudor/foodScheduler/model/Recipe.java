@@ -104,7 +104,7 @@ public class Recipe {
         add(new Recipe("Supă de cartofi și mazăre", Once, List.of(Cartofi, Mazare), F1, List.of(Usturoi, Coriandru, Curry)));
         add(new Recipe("Supă de conopidă", Once, List.of(Conopida), F1, List.of(SucLamaie)));
         add(new Recipe("Supă de roșii", AtLeastOnce, List.of(Rosii), F1, List.of(Pastarnac, Patrunjel, Telina, FrunzeTelina)));
-        add(new Recipe("Tiramisu", AtLeastOnce, List.of(Branza), Desert, List.of()));
+        add(new Recipe("Tiramisu", Disabled, List.of(Branza), Desert, List.of()));
         add(new Recipe("Tocănița Malita", Once, List.of(Soia, Ardei), F2, List.of(Usturoi, BoiaIute, Coriandru)));
         add(new Recipe("Tocăniță de ardei", AtMostOnce, List.of(Ardei), F2, List.of()));
         add(new Recipe("Tocăniță de ardei cu ton", Disabled, List.of(Ardei, Ton), F2, List.of())); // mi s-a acrit după varză cu fish fingers. Vrei ton cu tocăniță de ardei, mănâncă separat, nu fă o întreagă oală cu asta
@@ -136,7 +136,7 @@ public class Recipe {
         add(new Recipe("Șnițel de pui", Once, List.of(Carne), FastFood, List.of()));
         add(new Recipe("Somon prăjit", Once, List.of(Carne), FastFood, List.of()));
         add(new Recipe("Pește prăjit", Once, List.of(Carne), FastFood, List.of()));
-        add(new Recipe("Omletă cremă", AtLeastOnce, List.of(Ou), FastFood, List.of()));
+        add(new Recipe("Omletă cremă", Once, List.of(Ou), FastFood, List.of())); // e aproape ou crud, si are gust a ou, e mai buna omleta prajita
         add(new Recipe("Omletă cu roșii", AtLeastOnce, List.of(Ou, Rosii, Branza), FastFood, List.of()));
         add(new Recipe("Omletă normală", AtLeastOnce, List.of(Ou), FastFood, List.of()));
         add(new Recipe("Roșii cu brânză", AtLeastOnce, List.of(Rosii, Branza), FastFood, List.of()));
