@@ -95,8 +95,8 @@ public class InitialRun {
         schedule.addComment(3, 4, "Ziua Greciei");
 
         // pastele
-        Recipe cozonac = Recipe.get("Cozonac");
-        schedule.add(4, 3, cozonac, true);
+//        Recipe cozonac = Recipe.get("Cozonac");
+//        schedule.add(4, 3, cozonac, true);
         schedule.addComment(4, 3, "Paștele");
 
         // ziua italiei

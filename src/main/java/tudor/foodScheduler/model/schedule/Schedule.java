@@ -502,8 +502,7 @@ public class Schedule {
             double newScore = getScore();
             if (newScore <= score) {
                 localExplorationCounter++;
-                int index = InitialRun.random.nextInt(minDistanceSlots.size());
-                performOptimalInsert(minDistanceSlots.get(index), minDistanceRecipes.get(index), minimumDistance);
+                performOptimalInsert(minDistanceSlots, minDistanceRecipes, minimumDistance);
             } else {
                 score = newScore;
                 localExplorationCounter = 0;
@@ -515,12 +514,27 @@ public class Schedule {
         }
     }
 
-    private void performOptimalInsert(ScheduleSlot minDistanceSlot, Recipe minDistanceRecipe, int currentDistance) {
-        List<Recipe> suitableReplacements = getSuitableReplacements(currentDistance, minDistanceSlot, minDistanceRecipe);
-        if (suitableReplacements.isEmpty()) {
-            return;
-        }
-        add(minDistanceSlot, suitableReplacements.get(InitialRun.random.nextInt(suitableReplacements.size())));
+    private void performOptimalInsert(List<ScheduleSlot> minDistanceSlots, List<Recipe> minDistanceRecipes, int currentDistance) {
+        int counter = 0;
+        do {
+            counter++;
+            if (counter > 10) {
+                System.out.println("Gave up for "+minDistanceSlots.size()+" recipes");
+                return;
+            }
+            int index = InitialRun.random.nextInt(minDistanceSlots.size());
+            Recipe recipe = minDistanceRecipes.get(index);
+            if (!canRemove(recipe)) {
+                System.out.println("Bottomed out "+recipe.getName());
+                continue;
+            }
+            ScheduleSlot slot = minDistanceSlots.get(index);
+            List<Recipe> suitableReplacements = getSuitableReplacements(currentDistance, slot, recipe);
+            if (suitableReplacements.isEmpty()) {
+                continue;
+            }
+            add(slot, suitableReplacements.get(InitialRun.random.nextInt(suitableReplacements.size())));
+        } while (true);
     }
 
     public void addComment(int humanMonth, int humanWeek, String comment) {

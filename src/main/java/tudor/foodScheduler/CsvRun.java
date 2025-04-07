@@ -16,11 +16,11 @@ public class CsvRun {
                 2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait
                 3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi - ardelenească	Găgău	Mere	Griș cu lapte
                 3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia	Paste - con Ricotta (semi)	Pere	Humus cu pesto
-                3	3					
-                3	4					
-                3	5					
-                4	1					
-                4	2					
+                3	3	Ciorbă de fasole - Cu chimen	Mâncare de cartofi - ardelenească	Roșii cu brânză	Banane	Ciuperci cu maioneză și usturoi
+                3	4	Ciorbă de pui a la Grec	Gigantes Plaki	Mămăligă	Mere	Tzatziki
+                3	5	Ciorbă de frunze	Mâncare de cartofi - Cu pui	Facebook Salad	Banane	Salată de vienete cu usturoi
+                4	1	Ciorbă de cartofi roșie	Tocăniță de praz	Omletă cremă	Mere	Chiftele cu carne
+                4	2	Supă cremă de mazăre	Mâncare de fasole - Fasole prăjită - Fuchs remix	Omletă normală	Pere	
                 4	3					
                 4	4					
                 5	1					

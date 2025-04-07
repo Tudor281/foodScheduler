@@ -48,7 +48,7 @@ public class Recipe {
         add(new Recipe("Ciorbă rădăuțeană", Once, List.of(Carne, Smantana), F1, List.of())); // TODO no recipy
         add(new Recipe("Ciuperci cu maioneză și usturoi", AtLeastOnce, List.of(Ciuperci, Maioneza), Rece, List.of()));
         add(new Recipe("Clătite", Once, List.of(Faina), Desert, List.of()));
-        add(new Recipe("Cozonac", Once, List.of(Faina), Desert, List.of()));
+        add(new Recipe("Cozonac", Disabled, List.of(Faina), Desert, List.of()));
         add(new Recipe("Fasole bătută", AtLeastOnce, List.of(Fasole), Rece, List.of()));
         add(new Recipe("Ghiveci", AtLeastOnce, List.of(Conopida), F2, List.of()));
         add(new Recipe("Gigantes Plaki", AtLeastOnce, List.of(Fasole), F2, List.of(Usturoi, Patrunjel, Marar, FrunzeTelina)));
