@@ -3,6 +3,7 @@ package tudor.foodScheduler;
 import tudor.foodScheduler.model.Fel;
 import tudor.foodScheduler.model.Multiplicity;
 import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.cookbook.TudorCookBook;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -12,7 +13,7 @@ public class Stats {
     public static void main(String[] args) {
         Fel fel = Fel.F2;
 
-        List<Recipe> recipes = new ArrayList<>(Recipe.all.values());
+        List<Recipe> recipes = TudorCookBook.getCookbook().getAll();
         recipes.sort(new Comparator<Recipe>() {
             @Override
             public int compare(Recipe o1, Recipe o2) {

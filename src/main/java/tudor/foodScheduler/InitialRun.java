@@ -1,8 +1,8 @@
 package tudor.foodScheduler;
 
 import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.cookbook.TudorCookBook;
 import tudor.foodScheduler.model.schedule.Schedule;
-import tudor.foodScheduler.model.schedule.SchedulingException;
 import tudor.foodScheduler.utils.Stats;
 
 import java.util.Random;
@@ -14,8 +14,8 @@ public class InitialRun {
     public static Random random;
     static {
         Random random1 = new Random();
-        long seed = -3641413982555598708L;
-//        long seed = random1.nextLong();
+//        long seed = -3641413982555598708L;
+        long seed = random1.nextLong();
         System.out.println("Seed: "+seed);
         random = new Random(seed);
     }
@@ -24,7 +24,7 @@ public class InitialRun {
         System.out.println("Starting...");
 
         // 2025
-        Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
+        Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, TudorCookBook.getCookbook());
 
         addConstraints(template);
 
@@ -82,16 +82,16 @@ public class InitialRun {
 //        schedule.add(1, 2, musacaCuCarne, true);
 //        Recipe supaRosii = Recipe.get("Supă de roșii"); // sinergie apio
 //        schedule.add(1, 2, supaRosii, true);
-        Recipe nakkikeito = Recipe.get("Nakkikeitto");
+        Recipe nakkikeito = schedule.cookbook.get("Nakkikeitto");
         schedule.add(1, 2, nakkikeito, true);
         schedule.addComment(1, 2, "Ziua mea");
 
         // ziua Greciei
-        Recipe ciorbaGrec = Recipe.get("Ciorbă de pui a la Grec");
+        Recipe ciorbaGrec = schedule.cookbook.get("Ciorbă de pui a la Grec");
         schedule.add(3,4, ciorbaGrec, true);
-        Recipe gigantesPlaki = Recipe.get("Gigantes Plaki");
+        Recipe gigantesPlaki = schedule.cookbook.get("Gigantes Plaki");
         schedule.add(3, 4, gigantesPlaki, true);
-        Recipe tzatziki = Recipe.get("Tzatziki");
+        Recipe tzatziki = schedule.cookbook.get("Tzatziki");
         schedule.add(3, 4, tzatziki, true);
         schedule.addComment(3, 4, "Ziua Greciei");
 
@@ -101,53 +101,53 @@ public class InitialRun {
         schedule.addComment(4, 3, "Paștele");
 
         // ziua italiei
-        Recipe melanzane = Recipe.get("Melanzane alla parmigiano");
+        Recipe melanzane = schedule.cookbook.get("Melanzane alla parmigiano");
         schedule.add(6, 1, melanzane, true);
         schedule.addComment(6, 1, "Ziua Italiei");
 
         // ziua USA
-        Recipe potatoSalad = Recipe.get("American Potato Salad");
+        Recipe potatoSalad = schedule.cookbook.get("American Potato Salad");
         schedule.add(7, 1, potatoSalad, true);
-        Recipe applePie = Recipe.get("Apple Pie");
+        Recipe applePie = schedule.cookbook.get("Apple Pie");
         schedule.add(7, 1, applePie, true);
         schedule.addComment(7, 1, "Ziua USA");
 
         // ziua frantei
-        Recipe gratinBroccoli = Recipe.get("Gratin de cartofi cu broccoli și brânză");
+        Recipe gratinBroccoli = schedule.cookbook.get("Gratin de cartofi cu broccoli și brânză");
         schedule.add(7, 2, gratinBroccoli, true);
         schedule.addComment(7, 2, "Ziua Franței");
 
         // ziua egiptului
-        Recipe humus = Recipe.get("Humus");
+        Recipe humus = schedule.cookbook.get("Humus");
         schedule.add(7, 3, humus, true);
         schedule.addComment(7, 3, "Ziua Egiptului");
 
         // ziua ungariei
-        Recipe gulas = Recipe.get("Gulaș");
+        Recipe gulas = schedule.cookbook.get("Gulaș");
         schedule.add(8, 3, gulas, true);
         schedule.addComment(8,3,"Ziua Ungariei");
 
         // ziua spaniei
-        Recipe paella = Recipe.get("Pilaf - Paella cu pui");
+        Recipe paella = schedule.cookbook.get("Pilaf - Paella cu pui");
         schedule.add(10, 2, paella, true);
         schedule.addComment(10, 2, "Ziua Spaniei");
 
         // ziua turciei
-        Recipe sarmale = Recipe.get("Pilaf - Sarmale viță de vie cu carne");
+        Recipe sarmale = schedule.cookbook.get("Pilaf - Sarmale viță de vie cu carne");
         schedule.add(10,4, sarmale, true);
         schedule.addComment(10, 4, "Ziua Turciei");
 
         // ziua finlandei
-        Recipe nakki = Recipe.get("Nakkikeitto - V");
+        Recipe nakki = schedule.cookbook.get("Nakkikeitto - V");
         schedule.add(12, 1, nakki, true);
         schedule.addComment(12, 1,"Ziua Finlandei");
 
         // craciun ? il fac mereu cu familia, nu prea are sens. Dar răcitura ar trebui să țină mult și bine?
-        Recipe racitura = Recipe.get("Răcitură");
+        Recipe racitura = schedule.cookbook.get("Răcitură");
         schedule.add(12, 3, racitura, true);
         schedule.addComment(12, 3, "Crăciunul");
 
-        Recipe fasoleChimen = Recipe.get("Ciorbă de fasole - Cu chimen");
+        Recipe fasoleChimen = schedule.cookbook.get("Ciorbă de fasole - Cu chimen");
         schedule.add(12, 4, fasoleChimen, true);
         schedule.addComment(12, 4, "Anul nou");
     }

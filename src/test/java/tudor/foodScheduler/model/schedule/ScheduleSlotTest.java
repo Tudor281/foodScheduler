@@ -2,15 +2,12 @@ package tudor.foodScheduler.model.schedule;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ScheduleSlotTest {
-    private static final Logger logger = LoggerFactory.getLogger(ScheduleSlotTest.class);
 
     @Nested
     class weekDistance {

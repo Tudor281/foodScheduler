@@ -2,19 +2,22 @@ package tudor.foodScheduler.model.schedule;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import tudor.foodScheduler.Scheduler;
 import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.cookbook.Cookbook;
+import tudor.foodScheduler.model.cookbook.TudorCookBook;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ScheduleTest {
+    Cookbook cookbook = TudorCookBook.getCookbook();
+
     @Test
     void shouldCopyContents() {
-        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
+        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, cookbook);
 
-        Recipe applePie = Recipe.get("Apple Pie");
+        Recipe applePie = cookbook.get("Apple Pie");
         schedule.add(1, 1, applePie, false);
 
         assertTrue(schedule.isRecipePresent(applePie));
@@ -25,7 +28,7 @@ class ScheduleTest {
         assertTrue(copy.isRecipePresent(applePie));
         assertSame(applePie, copy.recipes.get(0).get(0).get(4).recipe);
 
-        Recipe ardei = Recipe.get("Ardei umpluți simplu");
+        Recipe ardei = cookbook.get("Ardei umpluți simplu");
         copy.add(1, 1, ardei, false);
 
         assertTrue(copy.isRecipePresent(ardei));
@@ -37,9 +40,9 @@ class ScheduleTest {
 
     @Test
     void shouldDetectDuplicates() {
-        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
-        Recipe fasoleCuChimen = Recipe.get("Ciorbă de fasole - Cu chimen");
-        Recipe fasoleCuDafin = Recipe.get("Ciorbă de fasole - Cu dafin");
+        Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, cookbook);
+        Recipe fasoleCuChimen = cookbook.get("Ciorbă de fasole - Cu chimen");
+        Recipe fasoleCuDafin = cookbook.get("Ciorbă de fasole - Cu dafin");
         schedule.add(12, 4, fasoleCuChimen, false);
         schedule.add(1, 1, fasoleCuDafin, false);
 
@@ -51,10 +54,10 @@ class ScheduleTest {
 
     @Test
     void shouldIdentifyReplacements() {
-        Schedule schedule = new Schedule(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1});
+        Schedule schedule = new Schedule(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, cookbook);
 
-        Recipe fasoleCuDafin = Recipe.get("Ciorbă de fasole - Cu dafin");
-        Recipe cartofiArdelenesti = Recipe.get("Mâncare de cartofi - ardelenească");
+        Recipe fasoleCuDafin = cookbook.get("Ciorbă de fasole - Cu dafin");
+        Recipe cartofiArdelenesti = cookbook.get("Mâncare de cartofi - ardelenească");
         for (int i=1; i<13; i++) {
             schedule.add(i, 1, fasoleCuDafin, false);
             schedule.add(i, 1, cartofiArdelenesti, false);
@@ -68,10 +71,10 @@ class ScheduleTest {
     class getDistance {
         @Test
         void shouldDetectCorrectDistanceByAka() {
-            Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4});
+            Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, cookbook);
 
-            Recipe cPastai = Recipe.get("Ciorbă de păstăi");
-            Recipe cPastaiFresh = Recipe.get("Ciorbă de păstăi fresh");
+            Recipe cPastai = cookbook.get("Ciorbă de păstăi");
+            Recipe cPastaiFresh = cookbook.get("Ciorbă de păstăi fresh");
 
             schedule.add(2, 2, cPastai, true);
             int distance = schedule.getDistance(new ScheduleSlot(0,0), cPastaiFresh.ingredients, 0, null);
@@ -90,7 +93,7 @@ class ScheduleTest {
                 2	2	Supă de roșii	Mâncare de fasole - Fasole prăjită	Griș cu lapte
                 2	3	Ciorbă de fasole - Cu dafin	Mâncare de cartofi - Cu pui	Vitel tonne
                 2	4	Ciorbă rădăuțeană	Mâncare de mazăre - Cu soia	Chiftele de soia în suc de roșii
-                3	1	Supă cremă de țelină - Cu praz și smântână	Mâncare de cartofi - Cu soia	
+                3	1	Ciorbă rădăuțeană	Mâncare de cartofi - Cu soia	
                 3	2	Ciorbă de cartofi cu smântână	Mâncare de mazăre - Cu soia	Salată boeuf
                 3	3	Ciorbă de păstăi	Mâncare de fasole - Iahnie de fasole	
                 3	4	Supă cremă de țelină - Mama	Varză fiartă	Țelină cu morcov
@@ -136,11 +139,11 @@ class ScheduleTest {
                 12	4	Supă cremă de broccoli - Simplu	Mâncare de fasole - Fasole prăjită - Fuchs remix	
                 """;
 
-        Schedule schedule = ScheduleInitializer.getSchedule(input, false);
+        Schedule schedule = ScheduleInitializer.getSchedule(input, false, cookbook);
 
         schedule.countRecipes();
 
-        List<Recipe> suitableReplacements = schedule.getSuitableReplacements(0, new ScheduleSlot(1, 3), Recipe.get("Ciorbă rădăuțeană"));
+        List<Recipe> suitableReplacements = schedule.getSuitableReplacements(0, new ScheduleSlot(1, 3), cookbook.get("Ciorbă rădăuțeană"));
 
         assertFalse(suitableReplacements.isEmpty());
     }
@@ -202,7 +205,7 @@ class ScheduleTest {
                 12	4	Ciorbă de păstăi	Mâncare de fasole - Fasole prăjită - Fuchs remix	
                 """;
 
-        Schedule schedule = ScheduleInitializer.getSchedule(input, false);
+        Schedule schedule = ScheduleInitializer.getSchedule(input, false, cookbook);
 
         schedule.countRecipes();
 

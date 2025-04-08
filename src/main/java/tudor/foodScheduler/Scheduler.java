@@ -16,7 +16,7 @@ public class Scheduler {
     public void addAtLeastOnceRecipes(Schedule schedule) throws Exception {
         // get at least once recipes
 
-        List<Recipe> atLeastOnceRecipes = Recipe.getAtLeastOnceRecipes(schedule);
+        List<Recipe> atLeastOnceRecipes = schedule.cookbook.getAtLeastOnceRecipes(schedule);
 
         List<Recipe> lowPriorityRecipes = Recipe.extractLowPriorityRecipes(atLeastOnceRecipes);
 
@@ -35,7 +35,7 @@ public class Scheduler {
     public void fillInOtherRecipes(Schedule schedule) {
         int counter = 0;
         while(schedule.hasFreeSlots()) {
-            Roulette<Recipe> supplementalRecipes = Recipe.getSupplementalRecipes(schedule);
+            Roulette<Recipe> supplementalRecipes = schedule.cookbook.getSupplementalRecipes(schedule);
 
             Recipe recipe = supplementalRecipes.getRandom();
 

@@ -1,9 +1,10 @@
 package tudor.foodScheduler.model.schedule;
 
 import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.cookbook.Cookbook;
 
 public class ScheduleInitializer {
-    public static Schedule getSchedule(String input, boolean initialConstraint) {
+    public static Schedule getSchedule(String input, boolean initialConstraint, Cookbook cookbook) {
         // determine weeks in calendar
         String[] rows = input.split("\n");
 
@@ -21,12 +22,12 @@ public class ScheduleInitializer {
         }
         weeksInMonths[currentMonth-1] = weekCounter;
 
-        Schedule schedule = new Schedule(weeksInMonths);
+        Schedule schedule = new Schedule(weeksInMonths, cookbook);
         for (String row : rows) {
             String[] cells = row.split("\t");
             for (int i=2; i<8; i++) {
                 if (cells.length > i && !cells[i].isBlank()) {
-                    schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), Recipe.get(cells[i]), initialConstraint);
+                    schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), cookbook.get(cells[i]), initialConstraint);
                 }
             }
         }

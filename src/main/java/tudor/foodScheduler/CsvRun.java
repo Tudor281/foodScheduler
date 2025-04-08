@@ -1,5 +1,6 @@
 package tudor.foodScheduler;
 
+import tudor.foodScheduler.model.cookbook.TudorCookBook;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleInitializer;
 
@@ -60,7 +61,7 @@ public class CsvRun {
                 12	4					
                 """;
 
-        Schedule schedule = ScheduleInitializer.getSchedule(input, true);
+        Schedule schedule = ScheduleInitializer.getSchedule(input, true, TudorCookBook.getCookbook());
 
         InitialRun.addConstraints(schedule);
 

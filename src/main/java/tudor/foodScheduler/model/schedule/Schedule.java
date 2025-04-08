@@ -1,6 +1,7 @@
 package tudor.foodScheduler.model.schedule;
 
 import tudor.foodScheduler.InitialRun;
+import tudor.foodScheduler.model.cookbook.Cookbook;
 import tudor.foodScheduler.utils.Counter;
 import tudor.foodScheduler.utils.Stats;
 import tudor.foodScheduler.model.*;
@@ -17,9 +18,11 @@ public class Schedule {
     int[] weeksInMonth;
     int numberOfWeeks;
     Map<Integer, Map<Integer, String>> comments = new HashMap<>();
+    public Cookbook cookbook;
 
-    public Schedule(int[] weeksInMonth) {
+    public Schedule(int[] weeksInMonth, Cookbook cookbook) {
         this.weeksInMonth = weeksInMonth;
+        this.cookbook = cookbook;
         calculateNumberOfWeeks();
         for (int month=0; month<12; month++) {
             Map<Integer, Map<Integer, ScheduleEntry>> monthContainer = new HashMap<>();
@@ -72,7 +75,7 @@ public class Schedule {
     }
 
     public void add(ScheduleSlot slot, Recipe recipe) {
-        ScheduleEntry oldEntry = recipes.get(slot.month).get(slot.week).put(recipe.fel.channel, new ScheduleEntry(recipe, false));
+        ScheduleEntry oldEntry = recipes.get(slot.computerMonth).get(slot.computerWeek).put(recipe.fel.channel, new ScheduleEntry(recipe, false));
         recipeCounts.count(recipe);
         if (oldEntry != null) recipeCounts.deCount(recipe);
     }
@@ -338,12 +341,18 @@ public class Schedule {
     public List<Recipe> getSuitableReplacements(int greatestDistance, ScheduleSlot slot, Recipe recipe) {
         if (!canRemove(recipe)) return List.of();
         List<Recipe> bestRecipes = new ArrayList<>();
-        for (Recipe candidate : Recipe.all.values()) {
+        for (Recipe candidate : cookbook.all.values()) {
             if (candidate.fel != recipe.fel) continue;
 
-            if (!canAdd(candidate)) continue;
+            if (!canAdd(candidate)) {
+//                System.out.println("Can't add "+candidate.name);
+                continue;
+            }
 
-            if (!candidate.isInSeason(slot.getHumanMonth())) continue;
+            if (!candidate.isInSeason(slot.getHumanMonth())) {
+//                System.out.println(candidate.name + " not in season");
+                continue;
+            }
 
             int distance = getDistance(slot, candidate.ingredients, recipe.fel.channel, null);
             if (distance>greatestDistance) {
@@ -412,9 +421,9 @@ public class Schedule {
     }
 
     boolean hasCommonIngredients(ScheduleSlot slot, List<Ingredient> ingredients, int channel, ScheduleSlot exception) {
-        if (exception != null && slot.month == exception.month && slot.week == exception.week) return false;
+        if (exception != null && slot.computerMonth == exception.computerMonth && slot.computerWeek == exception.computerWeek) return false;
 
-        ScheduleEntry entry = recipes.get(slot.month).get(slot.week).get(channel);
+        ScheduleEntry entry = recipes.get(slot.computerMonth).get(slot.computerWeek).get(channel);
         if (entry == null) return false;
         for (Ingredient ingredient : ingredients) {
             if (entry.recipe.ingredients.contains(ingredient)) return true;
@@ -491,8 +500,8 @@ public class Schedule {
 //                            if (random.nextInt(10) > 8) {
 //                                performOptimalInsert(currentSlot, recipe, currentDistance);
 //                            } else {
-                                ScheduleEntry targetEntry = recipes.get(bestSwap.month).get(bestSwap.week).get(channel);
-                                recipes.get(bestSwap.month).get(bestSwap.week).put(channel, entry);
+                                ScheduleEntry targetEntry = recipes.get(bestSwap.computerMonth).get(bestSwap.computerWeek).get(channel);
+                                recipes.get(bestSwap.computerMonth).get(bestSwap.computerWeek).put(channel, entry);
                                 recipes.get(month).get(week).put(channel, targetEntry);
 //                            }
                         }

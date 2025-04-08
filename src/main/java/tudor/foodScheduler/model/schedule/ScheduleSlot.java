@@ -3,17 +3,17 @@ package tudor.foodScheduler.model.schedule;
 import java.util.List;
 
 public class ScheduleSlot {
-    int month;
-    int week;
+    int computerMonth;
+    int computerWeek;
     boolean hasConstraints = false;
 
-    public ScheduleSlot(int month, int week) {
-        this.month = month;
-        this.week = week;
+    public ScheduleSlot(int computerMonth, int computerWeek) {
+        this.computerMonth = computerMonth;
+        this.computerWeek = computerWeek;
     }
 
-    public ScheduleSlot(int month, int week, boolean hasConstraints) {
-        this(month, week);
+    public ScheduleSlot(int computerMonth, int computerWeek, boolean hasConstraints) {
+        this(computerMonth, computerWeek);
         this.hasConstraints = hasConstraints;
     }
 
@@ -56,13 +56,13 @@ public class ScheduleSlot {
     /** Assumes other is greater than this
      * The distance between week and week+1 is 0 */
     int getWeeksDistance(ScheduleSlot other, int[] weeksInMonth) {
-        if (other.month == month) {
-            return other.week - week - 1;
+        if (other.computerMonth == computerMonth) {
+            return other.computerWeek - computerWeek - 1;
         }
         int sum = 0;
-        sum += weeksInMonth[month] - week - 1;
-        sum += other.week;
-        for (int i = month + 1; i<other.month; i++) {
+        sum += weeksInMonth[computerMonth] - computerWeek - 1;
+        sum += other.computerWeek;
+        for (int i = computerMonth + 1; i<other.computerMonth; i++) {
             sum += weeksInMonth[i];
         }
         return sum;
@@ -80,35 +80,35 @@ public class ScheduleSlot {
     }
 
     public int getHumanMonth() {
-        return month + 1;
+        return computerMonth + 1;
     }
 
     public ScheduleSlot copy() {
-        return new ScheduleSlot(month, week);
+        return new ScheduleSlot(computerMonth, computerWeek);
     }
 
     void increment(int[] weeksInMonth) {
-        week++;
-        if (week >= weeksInMonth[month]) {
-            week = 0;
-            month++;
+        computerWeek++;
+        if (computerWeek >= weeksInMonth[computerMonth]) {
+            computerWeek = 0;
+            computerMonth++;
 
-            if (month >= 11) {
-                month = 0;
+            if (computerMonth >= 11) {
+                computerMonth = 0;
             }
         }
     }
 
     void decrement(int[] weeksInMonth) {
-        week--;
-        if (week < 0) {
-            month--;
+        computerWeek--;
+        if (computerWeek < 0) {
+            computerMonth--;
 
-            if (month < 0) {
-                month = 11;
+            if (computerMonth < 0) {
+                computerMonth = 11;
             }
 
-            week = weeksInMonth[month] -1;
+            computerWeek = weeksInMonth[computerMonth] -1;
         }
     }
 }
