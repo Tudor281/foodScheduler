@@ -8,17 +8,17 @@ import static tudor.foodScheduler.model.Months.ALL;
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
     Ardei(List.of(6,7,8,9), ALL),
-    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
+    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
     Avocado(List.of(), ALL),
     Branza(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne(ALL, ALL),
     Cartofi(ALL, ALL),
-    Castraveti(List.of(6,7,8,9), List.of(1,2,3,10,11,12)),
+    Castraveti(List.of(3,4,5,6,7,8,9), ALL),
     Ciuperci(ALL, ALL),
-    Conopida(List.of(4,5,6,7,8,9,10,11,12), ALL),
-    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
-    Dovlecei(List.of(6,7,8,9), ALL),
+    Conopida(List.of(5,6,7,8,9,10,11,12), ALL),
+    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
+    Dovlecei(List.of(4,5,6,7,8,9), ALL),
     Faina(ALL, List.of()),
     Fasole(ALL, ALL),
     Frunze(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
@@ -36,7 +36,7 @@ public enum Ingredient {
     PastaiFresh(List.of(5), List.of()), // pastai fresh doar prin Mai
     Paste(ALL, ALL),
     Peste(ALL, ALL),
-    Praz(List.of(10,11,12,1,2,3), List.of()),
+    Praz(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12)),
     Salata(ALL, ALL),
     Smantana(ALL, ALL),
     Soia(ALL, ALL, false),
@@ -45,7 +45,7 @@ public enum Ingredient {
     Telina(ALL, ALL),
     Ton(ALL, ALL),
     Urzici(List.of(3,4,5), List.of()),
-    Varza(List.of(7,8,9,10,11,12), ALL),
+    Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL),
     VarzaMurata(ALL, ALL),
     Vinete(List.of(7,8,9,10), ALL),
     Zahar(ALL, List.of()),
@@ -57,10 +57,10 @@ public enum Ingredient {
     Capsuni(List.of(6,7,8,9), List.of()),
     Cirese(List.of(6, 7), List.of()),
     Clementine(List.of(), List.of(12, 1)),
-    Grapefruit(List.of(), List.of(12, 1, 2,3)),
-    Kaki(List.of(), List.of(10, 11, 12, 1)),
-    Kiwi(List.of(), List.of(10, 11, 12, 1, 2, 3)),
-    Mandarine(List.of(), List.of(12, 1, 2,3)),
+    Grapefruit(List.of(), List.of(12,1,2,3,4)),
+    Kaki(List.of(), List.of(10,11,12,1)),
+    Kiwi(List.of(), List.of(10,11,12,1,2,3,4)),
+    Mandarine(List.of(), List.of(11,12,1,2,3,4)),
     Mango(List.of(), ALL),
     Mere(List.of(11, 12,1,2), ALL),
     Mineole(List.of(), List.of(1)),
