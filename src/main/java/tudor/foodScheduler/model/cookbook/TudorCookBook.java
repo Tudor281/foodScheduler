@@ -35,7 +35,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", Once, List.of(Ciuperci, Smantana), F1, List.of(Patrunjel, Marar)));
         cookbook.add(new Recipe("Ciorbă de năut cu afumătură", Once, List.of(Carne, Naut), F1, List.of(BoiaDulce)));
         cookbook.add(new Recipe("Ciorbă de păstăi", AtLeastOnce, List.of(PastaiCongelate), F1, List.of(Pastarnac, Patrunjel, Marar, Leustean, Telina), 3));
-        cookbook.add(new Recipe("Ciorbă de păstăi fresh", Once, List.of(PastaiFresh), F1, List.of(Pastarnac, Patrunjel, Marar, Leustean, Telina)));
+        cookbook.add(new Recipe("Ciorbă de păstăi fresh", Disabled, List.of(PastaiFresh), F1, List.of(Pastarnac, Patrunjel, Marar, Leustean, Telina)));
         cookbook.add(new Recipe("Ciorbă de perișoare", Once, List.of(Carne), F1, List.of())); // TODO No recipy
         cookbook.add(new Recipe("Ciorbă de pui a la Grec", Once, List.of(Carne, Smantana), F1, List.of(Pastarnac, SucLamaie, Patrunjel, Marar, Telina)));
         cookbook.add(new Recipe("Ciorbă de salată cu scrob", AtLeastOnce, List.of(Salata, Smantana), F1, List.of()));
