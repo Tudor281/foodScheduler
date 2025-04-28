@@ -52,6 +52,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Gulaș", Once, List.of(Cartofi, Carne), F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Usturoi, Patrunjel, Tarhon, FrunzeTelina)));
         cookbook.add(new Recipe("Humus", AtLeastOnce, List.of(Naut), Rece, List.of()));
         cookbook.add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(Naut), Rece, List.of(Usturoi, Busuioc)));
+        cookbook.add(new Recipe("Lalele", AtLeastOnce, List.of(Rosii, Branza), Rece, List.of(Usturoi, SucLamaie, Oregano)));
         cookbook.add(new Recipe("Lasagna bolognese", Once, List.of(Carne, Apio), F2, List.of(VinAlb)));
         cookbook.add(new Recipe("Lohikeitto", AtMostOnce, List.of(Peste, Smantana), F1, List.of(Dafin)));
         cookbook.add(new Recipe("Mâncare de cartofi - ardelenească", AtLeastOnce, List.of(Cartofi), F2, List.of(Iuteala, BoiaDulce, BoiaIute, Dafin)));
