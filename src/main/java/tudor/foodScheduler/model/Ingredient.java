@@ -47,7 +47,7 @@ public enum Ingredient {
     Urzici(List.of(3,4,5), List.of()),
     Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL),
     VarzaMurata(ALL, ALL),
-    Vinete(List.of(7,8,9,10), ALL),
+    Vinete(List.of(5,6,7,8,9,10), ALL),
     Zahar(ALL, List.of()),
     Zucchini(List.of(), ALL),
 
@@ -59,7 +59,7 @@ public enum Ingredient {
     Clementine(List.of(), List.of(12, 1)),
     Grapefruit(List.of(), List.of(12,1,2,3,4)),
     Kaki(List.of(), List.of(10,11,12,1)),
-    Kiwi(List.of(), List.of(10,11,12,1,2,3,4)),
+    Kiwi(List.of(), List.of(10,11,12,1,2,3,4,5)),
     Mandarine(List.of(), List.of(11,12,1,2,3,4)),
     Mango(List.of(), ALL),
     Mere(List.of(11, 12,1,2), ALL),
