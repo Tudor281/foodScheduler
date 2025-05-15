@@ -64,7 +64,7 @@ class ScheduleTest {
         }
 
         List<Recipe> candidates = schedule.getSuitableReplacements(0, new ScheduleSlot(0,0), fasoleCuDafin);
-        System.out.println("Hello");
+        System.out.println("Hello: "+candidates);
     }
 
     @Nested
@@ -211,6 +211,6 @@ class ScheduleTest {
 
         Duplication duplication = schedule.getIngredientDuplicate();
 
-        System.out.println("Hello");
+        System.out.println("Duplication: "+duplication);
     }
 }

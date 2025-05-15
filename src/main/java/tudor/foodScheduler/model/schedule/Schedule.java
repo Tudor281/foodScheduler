@@ -113,8 +113,8 @@ public class Schedule {
                 for (int channel = 0; channel < nrChannels; channel++) {
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (entry == null) continue;
-                    for (Ingredient ingredient : entry.recipe.ingredients) {
-                        ingredientsCount.count(ingredient);
+                    for (IngredientEntry ingredientEntry : entry.recipe.ingredients) {
+                        ingredientsCount.count(ingredientEntry.ingredient);
                     }
                     for (Spice spice : entry.recipe.spices) {
                         spicesCount.count(spice);
@@ -244,7 +244,7 @@ public class Schedule {
                 for (ScheduleEntry entry : channelsContainer.values()) {
                     if (entry == null) continue;
                     for (Ingredient pooledIngredient : pool) {
-                        if (entry.recipe.ingredients.contains(pooledIngredient)) {
+                        if (entry.recipe.hasIngredient(pooledIngredient)) {
                             slots.add(new ScheduleSlot(month, week));
                         }
                     }
@@ -401,10 +401,11 @@ public class Schedule {
     }
 
     /** Exception is used for permutation, not to compare with the origin slot */
-    int getDistance(ScheduleSlot slot, List<Ingredient> ingredients, int channel, ScheduleSlot exception) {
-        List<Ingredient> akaPool = new ArrayList<>(ingredients);
-        for (Ingredient ingredient : ingredients) {
-            akaPool.addAll(ingredient.akas);
+    int getDistance(ScheduleSlot slot, List<IngredientEntry> ingredients, int channel, ScheduleSlot exception) {
+        List<Ingredient> akaPool = new ArrayList<>();
+        for (IngredientEntry ingredientEntry : ingredients) {
+            akaPool.add(ingredientEntry.ingredient);
+            akaPool.addAll(ingredientEntry.ingredient.akas);
         }
         ScheduleSlot forwardIterator = slot.copy();
         ScheduleSlot backwardIterator = slot.copy();
@@ -426,7 +427,7 @@ public class Schedule {
         ScheduleEntry entry = recipes.get(slot.computerMonth).get(slot.computerWeek).get(channel);
         if (entry == null) return false;
         for (Ingredient ingredient : ingredients) {
-            if (entry.recipe.ingredients.contains(ingredient)) return true;
+            if (entry.recipe.hasIngredient(ingredient)) return true;
         }
         return false;
     }
@@ -487,7 +488,6 @@ public class Schedule {
                                     int candidateCurrentDistance = getDistance(candidateSlot, candidateRecipe.ingredients, channel, null);
                                     int swapDistance = getDistance(currentSlot, candidateRecipe.ingredients, channel, candidateSlot);
                                     if (swapDistance <= candidateCurrentDistance) continue; // we want a mutually beneficial swap
-                                    int juju = 0;
                                 }
 
                                 bestCandidateDistance = targetDistance;

@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Recipe {
     public String name;
-    public List<Ingredient> ingredients;
+    public List<IngredientEntry> ingredients;
     public List<Spice> spices;
     public Multiplicity multiplicity;
     public Fel fel;
     public Integer limit = null;
 
-    public Recipe(String name, Multiplicity multiplicity, List<Ingredient> ingredients, Fel fel, List<Spice> spices) {
+    public Recipe(String name, Multiplicity multiplicity, List<IngredientEntry> ingredients, Fel fel, List<Spice> spices) {
         if (ingredients.isEmpty()) throw new RuntimeException("Ingredients can't be empty");
         this.name = name;
         this.ingredients = ingredients;
@@ -19,15 +19,15 @@ public class Recipe {
         this.spices = spices;
     }
 
-    public Recipe(String name, Multiplicity multiplicity, List<Ingredient> ingredients, Fel fel, List<Spice> spices, int limit) {
+    public Recipe(String name, Multiplicity multiplicity, List<IngredientEntry> ingredients, Fel fel, List<Spice> spices, int limit) {
         this(name, multiplicity, ingredients, fel, spices);
         this.limit = limit;
     }
 
     public int getSeasonalityScore() {
         int smallestScore = Integer.MAX_VALUE;
-        for (Ingredient ingredient : ingredients) {
-            int score = ingredient.getSeasonalityScore();
+        for (IngredientEntry ingredientEntry : ingredients) {
+            int score = ingredientEntry.ingredient.getSeasonalityScore();
             if (score < smallestScore) smallestScore = score;
         }
         return smallestScore;
@@ -50,50 +50,56 @@ public class Recipe {
 
     public List<Integer> getDomesticSlots() {
         List<Integer> slots = new LinkedList<>(Months.ALL);
-        for (Ingredient ingredient : ingredients) {
+        for (IngredientEntry ingredientEntry : ingredients) {
             List<Integer> removedSlots = new ArrayList<>();
             for (Integer i : slots) {
-                if (!ingredient.domesticMonths.contains(i)) {
+                if (!ingredientEntry.ingredient.domesticMonths.contains(i)) {
                     removedSlots.add(i);
                 }
             }
-            if (!removedSlots.isEmpty()) {
-                slots.removeAll(removedSlots);
-            }
+
+            slots.removeAll(removedSlots);
         }
         return slots;
     }
 
     public List<Integer> getImportSlots() {
         List<Integer> slots = new LinkedList<>(Months.ALL);
-        for (Ingredient ingredient : ingredients) {
+        for (IngredientEntry ingredientEntry : ingredients) {
             List<Integer> removedSlots = new ArrayList<>();
             for (Integer i : slots) {
-                if (!ingredient.importMonths.contains(i)) {
+                if (!ingredientEntry.ingredient.importMonths.contains(i)) {
                     removedSlots.add(i);
                 }
             }
-            if (!removedSlots.isEmpty()) {
-                slots.removeAll(removedSlots);
-            }
+            slots.removeAll(removedSlots);
         }
         return slots;
     }
 
+    public boolean hasIngredient(Ingredient ingredient) {
+        for (IngredientEntry ingredientEntry : ingredients) {
+            if (ingredientEntry.ingredient == ingredient) return true;
+        }
+        return false;
+    }
+
     public boolean hasIngredientsInCommon(Recipe recipe) {
-        for (Ingredient ingredient : ingredients) {
-            if (recipe.ingredients.contains(ingredient)) return true;
-            for (Ingredient aka : ingredient.akas) {
-                if (recipe.ingredients.contains(aka)) return true;
+        for (IngredientEntry ingredientEntry : ingredients) {
+            if (recipe.hasIngredient(ingredientEntry.ingredient)) return true;
+            for (Ingredient aka : ingredientEntry.ingredient.akas) {
+                if (recipe.hasIngredient(aka)) return true;
             }
         }
         return false;
     }
 
     /** human month */
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean isInSeason(int month) {
-        for (Ingredient ingredient : ingredients) {
-            if (!(ingredient.importMonths.contains(month) || ingredient.domesticMonths.contains(month))) return false;
+        for (IngredientEntry ingredientEntry : ingredients) {
+            if (!(ingredientEntry.ingredient.importMonths.contains(month)
+                    || ingredientEntry.ingredient.domesticMonths.contains(month))) return false;
         }
         return true;
     }

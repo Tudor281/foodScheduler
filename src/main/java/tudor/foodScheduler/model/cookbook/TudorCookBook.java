@@ -1,7 +1,6 @@
 package tudor.foodScheduler.model.cookbook;
 
-import tudor.foodScheduler.model.Ingredient;
-import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.*;
 
 import java.util.List;
 
@@ -11,22 +10,22 @@ import static tudor.foodScheduler.model.Ingredient.*;
 import static tudor.foodScheduler.model.Multiplicity.*;
 import static tudor.foodScheduler.model.Multiplicity.Once;
 import static tudor.foodScheduler.model.Spice.*;
-import static tudor.foodScheduler.model.Spice.BoiaDulce;
 import static tudor.foodScheduler.model.Spice.Telina;
+import static tudor.foodScheduler.model.UnitOfMeasure.*;
 
 public class TudorCookBook {
     public static Cookbook getCookbook() {
         Cookbook cookbook = new Cookbook();
-        cookbook.add(new Recipe("American Potato Salad", Once, List.of(Cartofi, Maioneza, Apio), F2, List.of(Mustar, Patrunjel)));
-        cookbook.add(new Recipe("Apple Pie", Once, List.of(Mere), Desert, List.of()));
-        cookbook.add(new Recipe("Ardei umpluți simplu", Once, List.of(Ardei, Orez), F2, List.of(FrunzeTelina)));
-        cookbook.add(new Recipe("Ardei umpluți cu carne", Once, List.of(Ardei, Orez, Carne), F2, List.of(FrunzeTelina)));
-        cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(Carne), Rece, List.of(Usturoi))); // binding to pilaf simplu
-        cookbook.add(new Recipe("Chiftele de soia în suc de roșii", Once, List.of(Soia), Rece, List.of())); // TODO No recipy
-        cookbook.add(new Recipe("Ciorbă congelată", AtLeastOnce, List.of(Broccoli, Conopida), F1, List.of(Patrunjel, Marar))); // ia chestii congelate, vezi cum e. E fain ca sunt chestii mixate in loc sa cumperi un broccoli / o conopida
-        cookbook.add(new Recipe("Ciorbă de cartofi cu smântână", AtLeastOnce, List.of(Cartofi, Smantana), F1, List.of(Patrunjel, Marar)));
-        cookbook.add(new Recipe("Ciorbă de cartofi roșie", AtLeastOnce, List.of(Cartofi), F1, List.of(Patrunjel, Marar)));
-        cookbook.add(new Recipe("Ciorbă de conopidă", AtLeastOnce, List.of(Conopida), F1, List.of(Patrunjel, Marar)));
+        cookbook.add(new Recipe("American Potato Salad", Once, List.of(new IngredientEntry(Cartofi, 1000, gram), new IngredientEntry(Maioneza, 200, gram), new IngredientEntry(Ceapa, 1, bucati), new IngredientEntry(Apio, 100, gram), new IngredientEntry(Ou, 3, bucati)), F2, List.of(Mustar, Patrunjel, Sare, Piper, BoiaDulce)));
+        cookbook.add(new Recipe("Apple Pie", Once, List.of(new IngredientEntry(Mere, 500, gram), new IngredientEntry(Zahar, 2, linguri)), Desert, List.of(Scortisoara)));
+        cookbook.add(new Recipe("Ardei umpluți simplu", Once, List.of(new IngredientEntry(Ardei, 6, bucati), new IngredientEntry(Orez, 1000, gram)), F2, List.of(FrunzeTelina, Sare, Piper)));
+        cookbook.add(new Recipe("Ardei umpluți cu carne", Once, List.of(new IngredientEntry(Ardei, 6, bucati), new IngredientEntry(Orez, 1000, gram), new IngredientEntry(Carne_Pui, 500, gram)), F2, List.of(FrunzeTelina, Sare, Piper)));
+        cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(new IngredientEntry(Carne_Vita, 500, gram), new IngredientEntry(Ceapa, 1, bucati), new IngredientEntry(Ou, 1, bucati)), Rece, List.of(Usturoi, Sare, Piper))); // binding to pilaf simplu
+        cookbook.add(new Recipe("Chiftele de soia în suc de roșii", Once, List.of(new IngredientEntry(Soia, 200, gram)), Rece, List.of())); // TODO No recipy
+        cookbook.add(new Recipe("Ciorbă congelată", AtLeastOnce, List.of(new IngredientEntry(Broccoli, 250, gram), new IngredientEntry(Conopida, 250, gram)), F1, List.of(Patrunjel, Marar, Sare, Piper))); // ia chestii congelate, vezi cum e. E fain ca sunt chestii mixate in loc sa cumperi un broccoli / o conopida
+        cookbook.add(new Recipe("Ciorbă de cartofi cu smântână", AtLeastOnce, List.of(new IngredientEntry(Cartofi, 800, gram), new IngredientEntry(Morcov, 2, bucati), new IngredientEntry(Ceapa, 2, bucati), new IngredientEntry(Ardei, 1, bucati), new IngredientEntry(Smantana, 300, gram)), F1, List.of(Patrunjel, Marar, Sare, Piper)));
+        cookbook.add(new Recipe("Ciorbă de cartofi roșie", AtLeastOnce, List.of(new IngredientEntry(Cartofi, 800, gram), new IngredientEntry(Morcov, 2, bucati), new IngredientEntry(Ceapa, 2, bucati), new IngredientEntry(Ardei, 1, bucati), new IngredientEntry(Suc_Rosii_Bulion, 200, gram)), F1, List.of(Patrunjel, Marar, Sare, Piper)));
+        cookbook.add(new Recipe("Ciorbă de conopidă", AtLeastOnce, List.of(new IngredientEntry(Conopida, 1, bucati), new IngredientEntry(Morcov, 2, bucati), new IngredientEntry(Ceapa, 2, bucati), new IngredientEntry(Ardei, 1, bucati), new IngredientEntry(Suc_Rosii_Bulion, 200, gram)), F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de dovlecei cu ciuperci", AtLeastOnce, List.of(Dovlecei, Ciuperci), F1, List.of(Patrunjel, Marar, Telina)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu chimen", AtLeastOnce, List.of(Fasole), F1, List.of(Pastarnac, Usturoi, Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, BoiaAfumata, Iuteala, Telina)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu dafin", AtLeastOnce, List.of(Fasole), F1, List.of(Patrunjel, Marar, Dafin)));

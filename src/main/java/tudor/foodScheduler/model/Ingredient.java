@@ -12,9 +12,11 @@ public enum Ingredient {
     Avocado(List.of(), ALL),
     Branza(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
-    Carne(ALL, ALL),
+    Carne_Pui(ALL, ALL),
+    Carne_Vita(ALL, ALL),
     Cartofi(ALL, ALL),
     Castraveti(List.of(3,4,5,6,7,8,9), ALL),
+    Ceapa(ALL, ALL),
     Ciuperci(ALL, ALL),
     Conopida(List.of(5,6,7,8,9,10,11,12), ALL),
     DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
@@ -29,6 +31,7 @@ public enum Ingredient {
     Maioneza(ALL, ALL),
     Malai(ALL, List.of()),
     Mazare(ALL, ALL),
+    Morcov(ALL, ALL),
     Naut(ALL, ALL),
     Orez(ALL, ALL),
     Ou(ALL, ALL),
@@ -41,6 +44,7 @@ public enum Ingredient {
     Smantana(ALL, ALL),
     Soia(ALL, ALL, false),
     Spanac(ALL, ALL),
+    Suc_Rosii_Bulion(ALL, ALL),
     Rosii(List.of(6,7,8,9,10,11), ALL),
     Telina(ALL, ALL),
     Ton(ALL, ALL),
@@ -80,6 +84,9 @@ public enum Ingredient {
 
         PastaiCongelate.akas.add(PastaiFresh);
         PastaiFresh.akas.add(PastaiCongelate);
+
+        Carne_Pui.akas.add(Carne_Vita);
+        Carne_Vita.akas.add(Carne_Pui);
     }
 
     final List<Integer> domesticMonths;
