@@ -20,7 +20,6 @@ public enum Spice {
     Marar,
     Mustar,
     Oregano,
-    Pastarnac,
     Patrunjel,
     Piper,
     Rozmarin,
@@ -28,14 +27,8 @@ public enum Spice {
     Scortisoara,
     SucLamaie,
     Tarhon,
-    Telina(true),
-    Usturoi,
     VinAlb;
 
-    public boolean perishable = false;
 
     Spice() {}
-    Spice(boolean perishable) {
-        this.perishable = perishable;
-    }
 }
