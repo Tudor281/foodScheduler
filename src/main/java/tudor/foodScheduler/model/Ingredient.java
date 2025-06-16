@@ -8,7 +8,7 @@ import static tudor.foodScheduler.model.Months.ALL;
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
     Ardei(List.of(6,7,8,9), ALL),
-    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
+    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
     Avocado(List.of(), ALL),
     Branza(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
@@ -49,7 +49,7 @@ public enum Ingredient {
     VarzaMurata(ALL, ALL),
     Vinete(List.of(5,6,7,8,9,10), ALL),
     Zahar(ALL, List.of()),
-    Zucchini(List.of(), ALL),
+    Zucchini(List.of(6), ALL),
 
     // fructe
     Banane(List.of(), ALL),
@@ -57,7 +57,7 @@ public enum Ingredient {
     Capsuni(List.of(6,7,8,9), List.of()),
     Cirese(List.of(6, 7), List.of()),
     Clementine(List.of(), List.of(12, 1)),
-    Grapefruit(List.of(), List.of(12,1,2,3,4)),
+    Grapefruit(List.of(), List.of(12,1,2,3,4,5,6)),
     Kaki(List.of(), List.of(10,11,12,1)),
     Kiwi(List.of(), List.of(10,11,12,1,2,3,4,5)),
     Mandarine(List.of(), List.of(11,12,1,2,3,4)),
@@ -68,7 +68,7 @@ public enum Ingredient {
     PepeneGalben(List.of(7,8,9), List.of()),
     PepeneRosu(List.of(7,8,9), List.of()),
     Pere(List.of(), ALL),
-    Portocale(List.of(), List.of(11,12, 1, 2,3)),
+    Portocale(List.of(), List.of(11,12, 1, 2,3,4,5,6)),
     Prune(List.of(8,9,10,11), List.of(12, 1)),
     Rodii(List.of(), ALL),
     Struguri(List.of(9,10,11), List.of())
