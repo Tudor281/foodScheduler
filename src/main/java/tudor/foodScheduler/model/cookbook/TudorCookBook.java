@@ -17,6 +17,7 @@ import static tudor.foodScheduler.model.Spice.Telina;
 public class TudorCookBook {
     public static Cookbook getCookbook() {
         Cookbook cookbook = new Cookbook();
+        cookbook.add(new Recipe("American Pancakes", Once, List.of(Faina, Zahar), Desert, List.of()));
         cookbook.add(new Recipe("American Potato Salad", Once, List.of(Cartofi, Maioneza, Apio), F2, List.of(Mustar, Patrunjel)));
         cookbook.add(new Recipe("Apple Pie", Once, List.of(Mere), Desert, List.of()));
         cookbook.add(new Recipe("Ardei umpluți simplu", Once, List.of(Ardei, Orez), F2, List.of(FrunzeTelina)));
@@ -43,8 +44,8 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Ciorbă de salată cu scrob", AtLeastOnce, List.of(Salata, Smantana), F1, List.of()));
         cookbook.add(new Recipe("Ciorbă rădăuțeană", Once, List.of(Carne, Smantana), F1, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Ciuperci cu maioneză și usturoi", AtLeastOnce, List.of(Ciuperci, Maioneza), Rece, List.of()));
-        cookbook.add(new Recipe("Clătite", Once, List.of(Faina), Desert, List.of()));
-        cookbook.add(new Recipe("Cozonac", Disabled, List.of(Faina), Desert, List.of()));
+        cookbook.add(new Recipe("Clătite", Once, List.of(Faina, Zahar), Desert, List.of()));
+        cookbook.add(new Recipe("Cozonac", Disabled, List.of(Faina, Zahar), Desert, List.of()));
         cookbook.add(new Recipe("Fasole bătută", AtLeastOnce, List.of(Fasole), Rece, List.of()));
         cookbook.add(new Recipe("Ghiveci", AtLeastOnce, List.of(Conopida), F2, List.of()));
         cookbook.add(new Recipe("Gigantes Plaki", AtLeastOnce, List.of(Fasole), F2, List.of(Usturoi, Patrunjel, Marar, FrunzeTelina)));
@@ -76,9 +77,10 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Musaca cu soia", Once, List.of(Cartofi, Soia, Apio), F2, List.of(VinAlb))); // TODO no recipy
         cookbook.add(new Recipe("Nakkikeitto", AtMostOnce, List.of(Carne, Cartofi), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin)));
         cookbook.add(new Recipe("Nakkikeitto - V", AtLeastOnce, List.of(Cartofi, Soia), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin), 2));
+        cookbook.add(new Recipe("Nasi Goreng", AtMostOnce, List.of(Orez, Carne), F2, List.of(Usturoi, Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
         cookbook.add(new Recipe("Pilaf - Cu ciuperci și alte legume", AtLeastOnce, List.of(Orez, Ciuperci), F2, List.of(Marar, Patrunjel, Pastarnac, Telina)));
         cookbook.add(new Recipe("Pilaf - Cu urzici", Disabled, List.of(Orez, Urzici), F2, List.of(Patrunjel))); // faci când găsești, e un tiny window
-        cookbook.add(new Recipe("Pilaf - Paella cu pui", Once, List.of(Orez, Carne), F2, List.of(Usturoi, Patrunjel, Curcuma, SucLamaie)));
+        cookbook.add(new Recipe("Pilaf - Paella cu pui", AtMostOnce, List.of(Orez, Carne), F2, List.of(Usturoi, Patrunjel, Curcuma, SucLamaie)));
         cookbook.add(new Recipe("Pilaf - Sarmale cu varză murată și carne", Disabled, List.of(Orez, VarzaMurata, Carne), F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Pilaf - Sarmale viță de vie simplu", Disabled, List.of(Orez), F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Pilaf - Sarmale viță de vie cu carne", Once, List.of(Orez, Carne), F2, List.of())); // TODO no recipy

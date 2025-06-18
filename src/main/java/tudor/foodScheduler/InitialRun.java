@@ -127,10 +127,10 @@ public class InitialRun {
         schedule.add(8, 3, gulas, true);
         schedule.addComment(8,3,"Ziua Ungariei");
 
-        // ziua spaniei
-        Recipe paella = schedule.cookbook.get("Pilaf - Paella cu pui");
-        schedule.add(10, 2, paella, true);
-        schedule.addComment(10, 2, "Ziua Spaniei");
+        // ziua spaniei - n-are rost că avem și Nasi Goreng din Indonezia
+//        Recipe paella = schedule.cookbook.get("Pilaf - Paella cu pui");
+//        schedule.add(10, 2, paella, true);
+//        schedule.addComment(10, 2, "Ziua Spaniei");
 
         // ziua turciei
         Recipe sarmale = schedule.cookbook.get("Pilaf - Sarmale viță de vie cu carne");
