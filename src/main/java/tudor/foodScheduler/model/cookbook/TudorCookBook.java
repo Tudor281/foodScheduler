@@ -24,7 +24,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Ardei umpluți cu carne", Once, List.of(Ardei, Orez, Carne), F2, List.of(FrunzeTelina)));
         cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(Carne), Rece, List.of(Usturoi))); // binding to pilaf simplu
         cookbook.add(new Recipe("Chiftele de soia în suc de roșii", Once, List.of(Soia), Rece, List.of())); // TODO No recipy
-        cookbook.add(new Recipe("Ciorbă congelată", AtLeastOnce, List.of(Broccoli, Conopida), F1, List.of(Patrunjel, Marar))); // ia chestii congelate, vezi cum e. E fain ca sunt chestii mixate in loc sa cumperi un broccoli / o conopida
+        cookbook.add(new Recipe("Ciorbă congelată", Disabled, List.of(Broccoli, Conopida), F1, List.of(Patrunjel, Marar))); // ia chestii congelate, vezi cum e. E fain ca sunt chestii mixate in loc sa cumperi un broccoli / o conopida. Dar la Lidl, deci non si sa mai, și congelate de la auchan bagi la minestrone.
         cookbook.add(new Recipe("Ciorbă de broccoli", AtLeastOnce, List.of(Broccoli), F1, List.of(Patrunjel, Marar)));
         cookbook.add(new Recipe("Ciorbă de cartofi cu smântână", AtLeastOnce, List.of(Cartofi, Smantana), F1, List.of(Patrunjel, Marar)));
         cookbook.add(new Recipe("Ciorbă de cartofi roșie", AtLeastOnce, List.of(Cartofi), F1, List.of(Patrunjel, Marar)));
