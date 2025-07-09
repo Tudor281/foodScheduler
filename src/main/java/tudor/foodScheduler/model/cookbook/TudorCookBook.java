@@ -19,7 +19,7 @@ public class TudorCookBook {
         Cookbook cookbook = new Cookbook();
         cookbook.add(new Recipe("American Pancakes", Once, List.of(Faina, Zahar), Desert, List.of()));
         cookbook.add(new Recipe("American Potato Salad", Once, List.of(Cartofi, Maioneza, Apio), F2, List.of(Mustar, Patrunjel)));
-        cookbook.add(new Recipe("Apple Pie", Once, List.of(Mere), Desert, List.of()));
+        cookbook.add(new Recipe("Apple Pie", Disabled, List.of(Mere), Desert, List.of())); // n-am contenitore, și nici aluat pentru Apple pie specific n-am
         cookbook.add(new Recipe("Ardei umpluți simplu", Once, List.of(Ardei, Orez), F2, List.of(FrunzeTelina)));
         cookbook.add(new Recipe("Ardei umpluți cu carne", Once, List.of(Ardei, Orez, Carne), F2, List.of(FrunzeTelina)));
         cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(Carne), Rece, List.of(Usturoi))); // binding to pilaf simplu
@@ -70,7 +70,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Mâncare de mazăre - Simplu", Once, List.of(Mazare), F2, List.of(Marar)));
         cookbook.add(new Recipe("Mâncare de păstăi", AtLeastOnce, List.of(PastaiCongelate), F2, List.of(Patrunjel)));
         cookbook.add(new Recipe("Melanzane alla parmigiano", Once, List.of(Vinete, Branza), F2, List.of()));
-        cookbook.add(new Recipe("Minestrone", Once, List.of(Mazare, Paste), F1, List.of())); // TODO no recipy
+        cookbook.add(new Recipe("Minestrone", AtLeastOnce, List.of(Mazare, Orez, Conopida, Broccoli), F1, List.of(Busuioc, Rozmarin, Patrunjel)));
         cookbook.add(new Recipe("Musaca cu carne", Once, List.of(Cartofi, Carne), F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Musaca cu ragu", AtMostOnce, List.of(Cartofi, Carne, Apio), F2, List.of(VinAlb)));
         cookbook.add(new Recipe("Musaca cu ciuperci", AtLeastOnce, List.of(Cartofi, Ciuperci), F2, List.of(), 2)); // TODO no recipy
@@ -85,10 +85,13 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Pilaf - Sarmale viță de vie simplu", Disabled, List.of(Orez), F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Pilaf - Sarmale viță de vie cu carne", Once, List.of(Orez, Carne), F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Pilaf - Simplu", AtLeastOnce, List.of(Orez), F2, List.of(Curcuma), 2));
+        cookbook.add(new Recipe("Plăcintă cu mere - Foietaj", AtLeastOnce, List.of(Mere, Zahar), Desert, List.of(Scortisoara)));
         cookbook.add(new Recipe("Răcitură", Once, List.of(Carne), F2, List.of(Usturoi)));
         cookbook.add(new Recipe("Riz au lait", AtLeastOnce, List.of(Orez, Lapte), Desert, List.of()));
         cookbook.add(new Recipe("Salată boeuf", AtLeastOnce, List.of(Cartofi, Maioneza), Rece, List.of(Mustar)));
         cookbook.add(new Recipe("Salată de pui", Once, List.of(Carne, Maioneza), Rece, List.of()));
+        cookbook.add(new Recipe("Salată de pui cu legume", Once, List.of(Cartofi, Carne, Maioneza), Rece, List.of()));
+        cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(Ciuperci, Carne, Maioneza), Rece, List.of(Patrunjel)));
         cookbook.add(new Recipe("Salată de vienete cu usturoi", AtLeastOnce, List.of(Vinete, Maioneza), Rece, List.of(Usturoi)));
         cookbook.add(new Recipe("Salată orientală", AtLeastOnce, List.of(Cartofi), Rece, List.of()));
         cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtMostOnce, List.of(Broccoli, Carne), F1, List.of(Usturoi, Telina)));
@@ -113,11 +116,11 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Tocăniță de praz", AtLeastOnce, List.of(Praz), F2, List.of(Patrunjel, Dafin, Usturoi, SucLamaie)));
         cookbook.add(new Recipe("Tzatziki", AtLeastOnce, List.of(Iaurt, Castraveti), Rece, List.of(Marar, Usturoi)));
         cookbook.add(new Recipe("Țelină cu morcov", AtLeastOnce, List.of(Ingredient.Telina, Maioneza, Ton), Rece, List.of()));
-        cookbook.add(new Recipe("Varză călită", Once, List.of(VarzaMurata), F2, List.of())); // TODO no recipy, goes with chiftele
+        cookbook.add(new Recipe("Varză călită", Once, List.of(VarzaMurata), F2, List.of(Dafin, Chimen)));
         cookbook.add(new Recipe("Varză fiartă", AtLeastOnce, List.of(Varza), F2, List.of(Dafin)));
         cookbook.add(new Recipe("Varză cu fish fingers", Disabled, List.of(Varza, Peste), F2, List.of(Dafin))); // e o porcărie grasă și grețoasă
         cookbook.add(new Recipe("Varză cu soia", AtLeastOnce, List.of(Varza, Soia), F2, List.of(Dafin)));
-        cookbook.add(new Recipe("Varză la Cluj", Once, List.of(VarzaMurata, Carne), F2, List.of())); // TODO no recipy
+        cookbook.add(new Recipe("Varză la Cluj", Once, List.of(VarzaMurata, Carne, Orez), F2, List.of()));
         cookbook.add(new Recipe("Varză la Cluj cu soia", Once, List.of(VarzaMurata, Soia), F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Vitel tonne", Once, List.of(Carne, Ton), Rece, List.of())); // TODO no recipy
 

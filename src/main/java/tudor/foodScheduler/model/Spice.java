@@ -24,6 +24,7 @@ public enum Spice {
     Pastarnac,
     Patrunjel,
     Rozmarin,
+    Scortisoara,
     SucLamaie,
     Tarhon,
     Telina(true),
