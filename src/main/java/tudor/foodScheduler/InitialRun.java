@@ -108,8 +108,8 @@ public class InitialRun {
         // ziua USA
         Recipe potatoSalad = schedule.cookbook.get("American Potato Salad");
         schedule.add(7, 1, potatoSalad, true);
-        Recipe applePie = schedule.cookbook.get("Plăcintă cu mere - Foietaj");
-        schedule.add(7, 1, applePie, true);
+//        Recipe applePie = schedule.cookbook.get("Plăcintă cu mere - Foietaj");
+//        schedule.add(7, 1, applePie, true);
         schedule.addComment(7, 1, "Ziua USA");
 
         // ziua frantei

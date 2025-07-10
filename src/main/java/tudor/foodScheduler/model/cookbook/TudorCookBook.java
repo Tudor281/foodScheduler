@@ -18,7 +18,7 @@ public class TudorCookBook {
     public static Cookbook getCookbook() {
         Cookbook cookbook = new Cookbook();
         cookbook.add(new Recipe("American Pancakes", Once, List.of(Faina, Zahar), Desert, List.of()));
-        cookbook.add(new Recipe("American Potato Salad", Once, List.of(Cartofi, Maioneza, Apio), F2, List.of(Mustar, Patrunjel)));
+        cookbook.add(new Recipe("American Potato Salad", AtLeastOnce, List.of(Cartofi, Maioneza, Apio), Rece, List.of(Mustar, Patrunjel)));
         cookbook.add(new Recipe("Apple Pie", Disabled, List.of(Mere), Desert, List.of())); // n-am contenitore, și nici aluat pentru Apple pie specific n-am
         cookbook.add(new Recipe("Ardei umpluți simplu", Once, List.of(Ardei, Orez), F2, List.of(FrunzeTelina)));
         cookbook.add(new Recipe("Ardei umpluți cu carne", Once, List.of(Ardei, Orez, Carne), F2, List.of(FrunzeTelina)));
