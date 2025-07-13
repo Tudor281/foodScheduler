@@ -89,12 +89,12 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Plăcintă cu mere - Foietaj", AtLeastOnce, List.of(Mere, Zahar), Desert, List.of(Scortisoara)));
         cookbook.add(new Recipe("Răcitură", Once, List.of(Carne), F2, List.of(Usturoi)));
         cookbook.add(new Recipe("Riz au lait", AtLeastOnce, List.of(Orez, Lapte), Desert, List.of()));
-        cookbook.add(new Recipe("Salată boeuf", AtLeastOnce, List.of(Cartofi, Maioneza), Rece, List.of(Mustar)));
-        cookbook.add(new Recipe("Salată de pui", Once, List.of(Carne, Maioneza), Rece, List.of()));
-        cookbook.add(new Recipe("Salată de pui cu legume", Once, List.of(Cartofi, Carne, Maioneza), Rece, List.of()));
-        cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(Ciuperci, Carne, Maioneza), Rece, List.of(Patrunjel)));
-        cookbook.add(new Recipe("Salată de vienete cu usturoi", AtLeastOnce, List.of(Vinete, Maioneza), Rece, List.of(Usturoi)));
-        cookbook.add(new Recipe("Salată orientală", AtLeastOnce, List.of(Cartofi), Rece, List.of()));
+        cookbook.add(new Recipe("Salată boeuf", AtLeastOnce, List.of(Cartofi, Maioneza, Ou), Rece, List.of(Mustar)));
+        cookbook.add(new Recipe("Salată de pui", Once, List.of(Carne, Maioneza, Ou), Rece, List.of()));
+        cookbook.add(new Recipe("Salată de pui cu legume", Once, List.of(Cartofi, Carne, Maioneza, Ou), Rece, List.of()));
+        cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(Ciuperci, Carne, Maioneza, Ou), Rece, List.of(Patrunjel)));
+        cookbook.add(new Recipe("Salată de vienete cu usturoi", AtLeastOnce, List.of(Vinete, Maioneza, Ou), Rece, List.of(Usturoi)));
+        cookbook.add(new Recipe("Salată orientală", AtLeastOnce, List.of(Cartofi, Ou), Rece, List.of()));
         cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtMostOnce, List.of(Broccoli, Carne), F1, List.of(Usturoi, Telina)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Simplu", AtLeastOnce, List.of(Broccoli), F1, List.of(Usturoi, Telina)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Soia", Once, List.of(Broccoli, Soia), F1, List.of(Usturoi, Telina)));
@@ -116,7 +116,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Tocăniță de legume", AtLeastOnce, List.of(Ardei), F2, List.of(Patrunjel, FrunzeTelina)));
         cookbook.add(new Recipe("Tocăniță de praz", AtLeastOnce, List.of(Praz), F2, List.of(Patrunjel, Dafin, Usturoi, SucLamaie)));
         cookbook.add(new Recipe("Tzatziki", AtLeastOnce, List.of(Iaurt, Castraveti), Rece, List.of(Marar, Usturoi)));
-        cookbook.add(new Recipe("Țelină cu morcov", AtLeastOnce, List.of(Ingredient.Telina, Maioneza, Ton), Rece, List.of()));
+        cookbook.add(new Recipe("Țelină cu morcov", AtLeastOnce, List.of(Ingredient.Telina, Maioneza, Ton, Ou), Rece, List.of()));
         cookbook.add(new Recipe("Varză călită", Once, List.of(VarzaMurata), F2, List.of(Dafin, Chimen)));
         cookbook.add(new Recipe("Varză fiartă", AtLeastOnce, List.of(Varza), F2, List.of(Dafin)));
         cookbook.add(new Recipe("Varză cu fish fingers", Disabled, List.of(Varza, Peste), F2, List.of(Dafin))); // e o porcărie grasă și grețoasă
