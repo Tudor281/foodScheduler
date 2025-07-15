@@ -53,7 +53,7 @@ public enum Ingredient {
 
     // fructe
     Banane(List.of(), ALL),
-    Caise(List.of(6,7,8,9), List.of()),
+    Caise(List.of(7,8,9), List.of()),
     Capsuni(List.of(6,7,8,9), List.of()),
     Cirese(List.of(6, 7), List.of()),
     Clementine(List.of(), List.of(12, 1)),
