@@ -93,7 +93,8 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Salată de pui", Once, List.of(Carne, Maioneza, Ou), Rece, List.of()));
         cookbook.add(new Recipe("Salată de pui cu legume", Once, List.of(Cartofi, Carne, Maioneza, Ou), Rece, List.of()));
         cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(Ciuperci, Carne, Maioneza, Ou), Rece, List.of(Patrunjel)));
-        cookbook.add(new Recipe("Salată de vienete cu usturoi", AtLeastOnce, List.of(Vinete, Maioneza, Ou), Rece, List.of(Usturoi)));
+        cookbook.add(new Recipe("Salată de vinete cu ceapă", Once, List.of(Vinete, Maioneza, Ou), Rece, List.of()));
+        cookbook.add(new Recipe("Salată de vinete cu usturoi", AtLeastOnce, List.of(Vinete, Maioneza, Ou), Rece, List.of(Usturoi)));
         cookbook.add(new Recipe("Salată orientală", AtLeastOnce, List.of(Cartofi, Ou), Rece, List.of()));
         cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtMostOnce, List.of(Broccoli, Carne), F1, List.of(Usturoi, Telina)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Simplu", AtLeastOnce, List.of(Broccoli), F1, List.of(Usturoi, Telina)));
