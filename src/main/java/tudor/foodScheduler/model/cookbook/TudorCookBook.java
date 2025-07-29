@@ -80,6 +80,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Nakkikeitto - V", AtLeastOnce, List.of(Cartofi, Soia), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin), 2));
         cookbook.add(new Recipe("Nasi Goreng", AtMostOnce, List.of(Orez, Carne), F2, List.of(Usturoi, Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
         cookbook.add(new Recipe("Pilaf - Cu ciuperci și alte legume", AtLeastOnce, List.of(Orez, Ciuperci), F2, List.of(Marar, Patrunjel, Pastarnac, Telina)));
+        cookbook.add(new Recipe("Pilaf - Cu dovlecei", AtLeastOnce, List.of(Orez, Dovlecei), F2, List.of(Patrunjel)));
         cookbook.add(new Recipe("Pilaf - Cu urzici", Disabled, List.of(Orez, Urzici), F2, List.of(Patrunjel))); // faci când găsești, e un tiny window
         cookbook.add(new Recipe("Pilaf - Paella cu pui", AtMostOnce, List.of(Orez, Carne), F2, List.of(Usturoi, Patrunjel, Curcuma, SucLamaie)));
         cookbook.add(new Recipe("Pilaf - Sarmale cu varză murată și carne", Disabled, List.of(Orez, VarzaMurata, Carne), F2, List.of())); // TODO no recipy
