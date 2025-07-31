@@ -12,6 +12,7 @@ public enum Ingredient {
     Avocado(List.of(), ALL),
     Bors(ALL, ALL),
     Branza(ALL, ALL),
+    Branza_Gorgonzola(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne_Pui(ALL, ALL),
     Carne_Vita(ALL, ALL),
@@ -23,7 +24,7 @@ public enum Ingredient {
     DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
     Dovlecei(List.of(4,5,6,7,8,9), ALL),
     Faina(ALL, List.of()),
-    Fasole(ALL, ALL),
+    Fasole_Uscata(ALL, ALL),
     Frunze(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
     Gogonele(List.of(6,7,8,9,10,11), List.of()),
     Gris(ALL, List.of()),
@@ -53,7 +54,9 @@ public enum Ingredient {
     Taitei(ALL, ALL),
     Telina(ALL, ALL),
     Ton(ALL, ALL),
-    Ulei(ALL, List.of()),
+    Ulei(ALL, ALL),
+    Ulei_Masline(ALL, ALL),
+    Unt(ALL, ALL),
     Urzici(List.of(3,4,5), List.of()),
     Usturoi(ALL, ALL),
     Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL),
@@ -86,14 +89,20 @@ public enum Ingredient {
     ;
 
     static {
-        Varza.akas.add(VarzaMurata);
-        VarzaMurata.akas.add(Varza);
+        Branza.akas.add(Branza_Gorgonzola);
+        Branza_Gorgonzola.akas.add(Branza);
+
+        Carne_Pui.akas.add(Carne_Vita);
+        Carne_Vita.akas.add(Carne_Pui);
 
         PastaiCongelate.akas.add(PastaiFresh);
         PastaiFresh.akas.add(PastaiCongelate);
 
-        Carne_Pui.akas.add(Carne_Vita);
-        Carne_Vita.akas.add(Carne_Pui);
+        Ulei.akas.add(Ulei_Masline);
+        Ulei_Masline.akas.add(Ulei);
+
+        Varza.akas.add(VarzaMurata);
+        VarzaMurata.akas.add(Varza);
     }
 
     final List<Integer> domesticMonths;
