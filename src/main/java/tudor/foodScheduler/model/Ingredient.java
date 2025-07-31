@@ -10,6 +10,7 @@ public enum Ingredient {
     Ardei(List.of(6,7,8,9), ALL),
     Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
     Avocado(List.of(), ALL),
+    Bors(ALL, ALL),
     Branza(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne_Pui(ALL, ALL),
@@ -52,6 +53,7 @@ public enum Ingredient {
     Taitei(ALL, ALL),
     Telina(ALL, ALL),
     Ton(ALL, ALL),
+    Ulei(ALL, List.of()),
     Urzici(List.of(3,4,5), List.of()),
     Usturoi(ALL, ALL),
     Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL),
