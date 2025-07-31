@@ -15,6 +15,7 @@ public enum Spice {
     Dafin,
     FrunzeTelina,
     FuchsFasole,
+    Ghimbir,
     Iuteala,
     Leustean,
     Marar,
