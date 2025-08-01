@@ -13,6 +13,7 @@ public enum Ingredient {
     Bors(ALL, ALL),
     Branza(ALL, ALL),
     Branza_Gorgonzola(ALL, ALL),
+    Branza_Mozzarella(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne_Pui(ALL, ALL),
     Carne_Vita(ALL, ALL),
@@ -90,7 +91,11 @@ public enum Ingredient {
 
     static {
         Branza.akas.add(Branza_Gorgonzola);
+        Branza.akas.add(Branza_Mozzarella);
         Branza_Gorgonzola.akas.add(Branza);
+        Branza_Gorgonzola.akas.add(Branza_Mozzarella);
+        Branza_Mozzarella.akas.add(Branza);
+        Branza_Mozzarella.akas.add(Branza_Gorgonzola);
 
         Carne_Pui.akas.add(Carne_Vita);
         Carne_Vita.akas.add(Carne_Pui);

@@ -273,7 +273,12 @@ public class TudorCookBook {
                 new IngredientEntry(Unt, 100, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F2, List.of(Sare, Piper)));
-        cookbook.add(new Recipe("Gratin de cartofi cu roșii și brânză", Once, List.of(Cartofi, Rosii, Smantana, Branza), F2, List.of(Busuioc)));
+        cookbook.add(new Recipe("Gratin de cartofi cu roșii și brânză", Once, List.of(
+                new IngredientEntry(Cartofi, 1500, gram),
+                new IngredientEntry(Rosii, 600, gram),
+                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Branza_Mozzarella, 300, gram)),
+                F2, List.of(Busuioc, Sare, Piper)));
         cookbook.add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(Lapte, Gris), Desert, List.of()));
         cookbook.add(new Recipe("Gulaș", Once, List.of(Cartofi, Carne), F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Usturoi, Patrunjel, Tarhon, FrunzeTelina)));
         cookbook.add(new Recipe("Humus", AtLeastOnce, List.of(Naut), Rece, List.of()));
