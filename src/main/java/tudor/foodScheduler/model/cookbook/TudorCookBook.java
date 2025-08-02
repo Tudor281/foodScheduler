@@ -279,11 +279,41 @@ public class TudorCookBook {
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Branza_Mozzarella, 300, gram)),
                 F2, List.of(Busuioc, Sare, Piper)));
-        cookbook.add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(Lapte, Gris), Desert, List.of()));
-        cookbook.add(new Recipe("Gulaș", Once, List.of(Cartofi, Carne), F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Usturoi, Patrunjel, Tarhon, FrunzeTelina)));
-        cookbook.add(new Recipe("Humus", AtLeastOnce, List.of(Naut), Rece, List.of()));
-        cookbook.add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(Naut), Rece, List.of(Usturoi, Busuioc)));
-        cookbook.add(new Recipe("Lalele", AtLeastOnce, List.of(Rosii, Branza), Rece, List.of(Usturoi, SucLamaie, Oregano)));
+        cookbook.add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(
+                new IngredientEntry(Lapte, 1500, gram),
+                new IngredientEntry(Gris, 12, linguri),
+                new IngredientEntry(Zahar, 150, gram)),
+                Desert, List.of()));
+        cookbook.add(new Recipe("Gulaș", Once, List.of(
+                new IngredientEntry(Carne_Vita, 600, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Ardei, 2, bucati),
+                new IngredientEntry(Morcov, 3, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 300, gram),
+                new IngredientEntry(Cartofi, 600, gram),
+                new IngredientEntry(Ulei, 4, linguri),
+                new IngredientEntry(Usturoi, 4, bucati),
+                new IngredientEntry(Telina, 200, gram)),
+                F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, Tarhon, FrunzeTelina, Sare, Piper)));
+        cookbook.add(new Recipe("Humus", AtLeastOnce, List.of(
+                new IngredientEntry(Naut, 400, gram),
+                new IngredientEntry(Ulei_Masline, 7, linguri),
+                new IngredientEntry(Tahini, 2, linguri),
+                new IngredientEntry(Usturoi, 2, bucati)),
+                Rece, List.of(Sare, SucLamaie, BoiaAfumata)));
+        cookbook.add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(
+                new IngredientEntry(Naut, 400, gram),
+                new IngredientEntry(Ulei, 7, linguri),
+                new IngredientEntry(Tahini, 2, linguri),
+                new IngredientEntry(Usturoi, 2, bucati),
+                new IngredientEntry(Sos_Pesto_Genovese, 100, gram)),
+                Rece, List.of(Busuioc, Sare, SucLamaie)));
+        cookbook.add(new Recipe("Lalele", AtLeastOnce, List.of(
+                new IngredientEntry(Rosii, 4, bucati),
+                new IngredientEntry(Ceapa_Verde, 4, bucati),
+                new IngredientEntry(Branza_Fagaras, 400, gram),
+                new IngredientEntry(Usturoi, 1, bucati)),
+                Rece, List.of(SucLamaie, Oregano)));
         cookbook.add(new Recipe("Lasagna bolognese", Once, List.of(Carne, Apio), F2, List.of(VinAlb)));
         cookbook.add(new Recipe("Lohikeitto", AtMostOnce, List.of(Peste, Smantana), F1, List.of(Dafin)));
         cookbook.add(new Recipe("Mâncare de cartofi - ardelenească", AtLeastOnce, List.of(Cartofi), F2, List.of(Iuteala, BoiaDulce, BoiaIute, Dafin)));

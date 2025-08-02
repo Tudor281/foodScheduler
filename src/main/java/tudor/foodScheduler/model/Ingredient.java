@@ -12,6 +12,7 @@ public enum Ingredient {
     Avocado(List.of(), ALL),
     Bors(ALL, ALL),
     Branza(ALL, ALL),
+    Branza_Fagaras(ALL, ALL),
     Branza_Gorgonzola(ALL, ALL),
     Branza_Mozzarella(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
@@ -20,6 +21,7 @@ public enum Ingredient {
     Cartofi(ALL, ALL),
     Castraveti(List.of(3,4,5,6,7,8,9), ALL),
     Ceapa(ALL, ALL),
+    Ceapa_Verde(ALL, ALL),
     Ciuperci(ALL, ALL),
     Conopida(List.of(5,6,7,8,9,10,11,12), ALL),
     DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
@@ -49,9 +51,11 @@ public enum Ingredient {
     Smantana(ALL, ALL),
     Soia(ALL, ALL, false),
     Spanac(ALL, ALL),
+    Sos_Pesto_Genovese(ALL, ALL),
     Suc_Rosii_Bulion(ALL, ALL),
     Radacina_Patrunjel(ALL, ALL),
     Rosii(List.of(6,7,8,9,10,11), ALL),
+    Tahini(ALL, ALL),
     Taitei(ALL, ALL),
     Telina(ALL, ALL),
     Ton(ALL, ALL),
@@ -90,11 +94,17 @@ public enum Ingredient {
     ;
 
     static {
+        Branza.akas.add(Branza_Fagaras);
         Branza.akas.add(Branza_Gorgonzola);
         Branza.akas.add(Branza_Mozzarella);
+        Branza_Fagaras.akas.add(Branza);
+        Branza_Fagaras.akas.add(Branza_Gorgonzola);
+        Branza_Fagaras.akas.add(Branza_Mozzarella);
         Branza_Gorgonzola.akas.add(Branza);
+        Branza_Gorgonzola.akas.add(Branza_Fagaras);
         Branza_Gorgonzola.akas.add(Branza_Mozzarella);
         Branza_Mozzarella.akas.add(Branza);
+        Branza_Mozzarella.akas.add(Branza_Fagaras);
         Branza_Mozzarella.akas.add(Branza_Gorgonzola);
 
         Carne_Pui.akas.add(Carne_Vita);
