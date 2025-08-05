@@ -20,6 +20,7 @@ public enum Ingredient {
     Carne_Vita(ALL, ALL),
     Cartofi(ALL, ALL),
     Castraveti(List.of(3,4,5,6,7,8,9), ALL),
+    Castraveti_Murati(ALL, ALL),
     Ceapa(ALL, ALL),
     Ceapa_Verde(ALL, ALL),
     Ciuperci(ALL, ALL),
@@ -28,12 +29,15 @@ public enum Ingredient {
     Dovlecei(List.of(4,5,6,7,8,9), ALL),
     Faina(ALL, List.of()),
     Fasole_Uscata(ALL, ALL),
+    Foietaj(ALL, ALL),
     Frunze(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
     Gogonele(List.of(6,7,8,9,10,11), List.of()),
     Gris(ALL, List.of()),
     Iaurt(ALL, ALL),
     Lapte(ALL, List.of()),
+    Lapte_Praf(ALL, ALL),
     Maioneza(ALL, ALL),
+    Mais(ALL, ALL),
     Malai(ALL, List.of()),
     Mazare(ALL, ALL),
     Morcov(ALL, ALL),
@@ -45,7 +49,9 @@ public enum Ingredient {
     PastaiFresh(List.of(5), List.of()), // pastai fresh doar prin Mai
     Pastarnac(ALL, ALL),
     Paste(ALL, ALL),
+    Paste_Lasagna(ALL, ALL),
     Peste(ALL, ALL),
+    Peste_Somon(ALL, ALL),
     Praz(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12)),
     Salata(ALL, ALL),
     Smantana(ALL, ALL),
@@ -110,8 +116,17 @@ public enum Ingredient {
         Carne_Pui.akas.add(Carne_Vita);
         Carne_Vita.akas.add(Carne_Pui);
 
+        Lapte.akas.add(Lapte_Praf);
+        Lapte_Praf.akas.add(Lapte);
+
         PastaiCongelate.akas.add(PastaiFresh);
         PastaiFresh.akas.add(PastaiCongelate);
+
+        Paste.akas.add(Paste_Lasagna);
+        Paste_Lasagna.akas.add(Paste);
+
+        Peste.akas.add(Peste_Somon);
+        Peste_Somon.akas.add(Peste);
 
         Ulei.akas.add(Ulei_Masline);
         Ulei_Masline.akas.add(Ulei);

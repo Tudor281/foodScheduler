@@ -102,7 +102,7 @@ public class TudorCookBook {
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de dovlecei cu ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Dovlecei, 2, bucati),
-                new IngredientEntry(Ciuperci, 200, gram),
+                new IngredientEntry(Ciuperci, 400, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
@@ -154,7 +154,7 @@ public class TudorCookBook {
                 new IngredientEntry(Bors, 500, gram)),
                 F1, List.of(Marar, Leustean, Sare, Piper))); // nu găsești cantități industriale de frunze în București, doar la legătură.
         cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", Once, List.of(
-                new IngredientEntry(Ciuperci, 500, gram),
+                new IngredientEntry(Ciuperci, 1000, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
@@ -207,7 +207,7 @@ public class TudorCookBook {
                 F1, List.of(SucLamaie, Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de salată cu scrob", AtLeastOnce, List.of(
                 new IngredientEntry(Salata, 1, bucati),
-                new IngredientEntry(Ou, 4, bucati),
+                new IngredientEntry(Ou, 7, bucati),
                 new IngredientEntry(Bors, 500, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
@@ -226,7 +226,7 @@ public class TudorCookBook {
                 new IngredientEntry(Telina, 200, gram),
                 new IngredientEntry(Usturoi, 5, bucati)), F1, List.of(Otet, Patrunjel, Dafin, Sare, Piper)));
         cookbook.add(new Recipe("Ciuperci cu maioneză și usturoi", AtLeastOnce, List.of(
-                new IngredientEntry(Ciuperci, 750, gram),
+                new IngredientEntry(Ciuperci, 1500, gram),
                 new IngredientEntry(Maioneza, 150, gram),
                 new IngredientEntry(Usturoi, 12, gram)),
                 Rece, List.of(Sare)));
@@ -314,44 +314,263 @@ public class TudorCookBook {
                 new IngredientEntry(Branza_Fagaras, 400, gram),
                 new IngredientEntry(Usturoi, 1, bucati)),
                 Rece, List.of(SucLamaie, Oregano)));
-        cookbook.add(new Recipe("Lasagna bolognese", Once, List.of(Carne, Apio), F2, List.of(VinAlb)));
-        cookbook.add(new Recipe("Lohikeitto", AtMostOnce, List.of(Peste, Smantana), F1, List.of(Dafin)));
-        cookbook.add(new Recipe("Mâncare de cartofi - ardelenească", AtLeastOnce, List.of(Cartofi), F2, List.of(Iuteala, BoiaDulce, BoiaIute, Dafin)));
-        cookbook.add(new Recipe("Mâncare de cartofi - Cu pui", AtMostOnce, List.of(Cartofi, Carne), F2, List.of(Dafin, BoiaDulce, Iuteala)));
-        cookbook.add(new Recipe("Mâncare de cartofi - Cu soia", Once, List.of(Cartofi, Soia), F2, List.of(Dafin, BoiaDulce, Iuteala)));
-        cookbook.add(new Recipe("Mâncare de cartofi - moldovenească", AtLeastOnce, List.of(Cartofi), F2, List.of(Patrunjel, Marar, Iuteala)));
-        cookbook.add(new Recipe("Mâncare de fasole - Fasole prăjită", AtLeastOnce, List.of(Fasole_Uscata), F2, List.of(Marar)));
-        cookbook.add(new Recipe("Mâncare de fasole - Fasole prăjită - Fuchs remix", AtLeastOnce, List.of(Fasole_Uscata), F2, List.of(Marar, FuchsFasole)));
-        cookbook.add(new Recipe("Mâncare de fasole - Iahnie de fasole", AtLeastOnce, List.of(Fasole_Uscata), F2, List.of(Usturoi, Pastarnac, Dafin, Telina)));
-        cookbook.add(new Recipe("Mâncare de mazăre - Cu pui", Disabled, List.of(Mazare, Carne), F2, List.of(Marar, BoiaDulce, Dafin, Usturoi))); // mazărea cu soia e pur și simplu superioară
-        cookbook.add(new Recipe("Mâncare de mazăre - Cu soia", AtLeastOnce, List.of(Mazare, Soia), F2, List.of(Marar, BoiaDulce, Dafin, Usturoi)));
-        cookbook.add(new Recipe("Mâncare de mazăre - Simplu", Once, List.of(Mazare), F2, List.of(Marar)));
-        cookbook.add(new Recipe("Mâncare de păstăi", AtLeastOnce, List.of(PastaiCongelate), F2, List.of(Patrunjel)));
-        cookbook.add(new Recipe("Melanzane alla parmigiano", Once, List.of(Vinete, Branza), F2, List.of()));
-        cookbook.add(new Recipe("Minestrone", AtLeastOnce, List.of(Mazare, Orez, Conopida, Broccoli), F1, List.of(Busuioc, Rozmarin, Patrunjel)));
-        cookbook.add(new Recipe("Musaca cu carne", Once, List.of(Cartofi, Carne), F2, List.of()));
-        cookbook.add(new Recipe("Musaca cu ragu", AtMostOnce, List.of(Cartofi, Carne, Apio), F2, List.of(VinAlb)));
-        cookbook.add(new Recipe("Musaca cu ciuperci", AtLeastOnce, List.of(Cartofi, Ciuperci), F2, List.of(), 2));
-        cookbook.add(new Recipe("Musaca cu soia", Once, List.of(Cartofi, Soia, Apio), F2, List.of(VinAlb)));
-        cookbook.add(new Recipe("Nakkikeitto", AtMostOnce, List.of(Carne, Cartofi), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin)));
-        cookbook.add(new Recipe("Nakkikeitto - V", AtLeastOnce, List.of(Cartofi, Soia), F1, List.of(Pastarnac, Usturoi, Dafin, Patrunjel, Rozmarin), 2));
-        cookbook.add(new Recipe("Nasi Goreng", AtMostOnce, List.of(Orez, Carne), F2, List.of(Usturoi, Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
-        cookbook.add(new Recipe("Pilaf - Cu ciuperci și alte legume", AtLeastOnce, List.of(Orez, Ciuperci), F2, List.of(Marar, Patrunjel, Pastarnac, Telina)));
-        cookbook.add(new Recipe("Pilaf - Cu dovlecei", AtLeastOnce, List.of(Orez, Dovlecei), F2, List.of(Patrunjel)));
-        cookbook.add(new Recipe("Pilaf - Cu urzici", Disabled, List.of(Orez, Urzici), F2, List.of(Patrunjel))); // faci când găsești, e un tiny window
-        cookbook.add(new Recipe("Pilaf - Paella cu pui", AtMostOnce, List.of(Orez, Carne), F2, List.of(Usturoi, Patrunjel, Curcuma, SucLamaie)));
-        cookbook.add(new Recipe("Pilaf - Sarmale cu varză murată și carne", Disabled, List.of(Orez, VarzaMurata, Carne), F2, List.of())); // TODO no recipy
-        cookbook.add(new Recipe("Pilaf - Sarmale viță de vie simplu", Disabled, List.of(Orez), F2, List.of())); // TODO no recipy
-        cookbook.add(new Recipe("Pilaf - Sarmale viță de vie cu carne", Once, List.of(Orez, Carne), F2, List.of())); // TODO no recipy
-        cookbook.add(new Recipe("Pilaf - Simplu", AtLeastOnce, List.of(Orez), F2, List.of(Curcuma), 2));
-        cookbook.add(new Recipe("Plăcintă cu mere - Foietaj", AtLeastOnce, List.of(Mere, Zahar), Desert, List.of(Scortisoara)));
-        cookbook.add(new Recipe("Răcitură", Once, List.of(Carne), F2, List.of(Usturoi)));
-        cookbook.add(new Recipe("Riz au lait", AtLeastOnce, List.of(Orez, Lapte), Desert, List.of()));
-        cookbook.add(new Recipe("Salată boeuf", AtLeastOnce, List.of(Cartofi, Maioneza, Ou), Rece, List.of(Mustar)));
-        cookbook.add(new Recipe("Salată de pui", Once, List.of(Carne, Maioneza, Ou), Rece, List.of()));
-        cookbook.add(new Recipe("Salată de pui cu legume", Once, List.of(Cartofi, Carne, Maioneza, Ou), Rece, List.of()));
-        cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(Ciuperci, Carne, Maioneza, Ou), Rece, List.of(Patrunjel)));
-        cookbook.add(new Recipe("Salată de vinete cu ceapă", Once, List.of(Vinete, Maioneza, Ou), Rece, List.of()));
+        cookbook.add(new Recipe("Lasagna bolognese", Once, List.of(
+                new IngredientEntry(Carne_Vita, 500, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Apio, 100, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 350, gram),
+                new IngredientEntry(Unt, 100, gram),
+                new IngredientEntry(Faina, 75, gram),
+                new IngredientEntry(Lapte, 1000, gram),
+                new IngredientEntry(Paste_Lasagna, 500, gram)), F2, List.of(VinAlb, Sare)));
+        cookbook.add(new Recipe("Lohikeitto", AtMostOnce, List.of(
+                new IngredientEntry(Peste_Somon, 450, gram),
+                new IngredientEntry(Cartofi, 700, gram),
+                new IngredientEntry(Morcov, 1, bucati),
+                new IngredientEntry(Ceapa, 1, bucati),
+                new IngredientEntry(Smantana, 300, gram)),
+                F1, List.of(Dafin, Marar, Sare, Piper)));
+        cookbook.add(new Recipe("Mâncare de cartofi - ardelenească", AtLeastOnce, List.of(
+                new IngredientEntry(Cartofi, 2500, gram),
+                new IngredientEntry(Ceapa, 5, bucati)),
+                F2, List.of(Iuteala, BoiaDulce, BoiaIute, Dafin)));
+        cookbook.add(new Recipe("Mâncare de cartofi - Cu pui", AtMostOnce, List.of(
+                new IngredientEntry(Cartofi, 1500, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 100, gram),
+                new IngredientEntry(Carne_Pui, 600, gram)),
+                F2, List.of(Sare, Piper, Dafin, BoiaDulce, Iuteala)));
+        cookbook.add(new Recipe("Mâncare de cartofi - Cu soia", Once, List.of(
+                new IngredientEntry(Cartofi, 1500, gram),
+                new IngredientEntry(Soia, 100, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 100, gram)),
+                F2, List.of(Sare, Piper, Dafin, BoiaDulce, Iuteala)));
+        cookbook.add(new Recipe("Mâncare de cartofi - moldovenească", AtLeastOnce, List.of(
+                new IngredientEntry(Cartofi, 2000, gram),
+                new IngredientEntry(Ceapa, 4, bucati),
+                new IngredientEntry(Ardei, 2, bucati),
+                new IngredientEntry(Morcov, 2, bucati)),
+                F2, List.of(Sare, Piper, Marar, Iuteala)));
+        cookbook.add(new Recipe("Mâncare de fasole - Fasole prăjită", AtLeastOnce, List.of(
+                new IngredientEntry(Fasole_Uscata, 900, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Ardei, 2, bucati),
+                new IngredientEntry(Morcov, 2, bucati)),
+                F2, List.of(Sare, Piper, Marar)));
+        cookbook.add(new Recipe("Mâncare de fasole - Fasole prăjită - Fuchs remix", AtLeastOnce, List.of(
+                new IngredientEntry(Fasole_Uscata, 900, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Ardei, 2, bucati),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 100, gram)),
+                F2, List.of(Sare, Piper, Marar, FuchsFasole)));
+        cookbook.add(new Recipe("Mâncare de fasole - Iahnie de fasole", AtLeastOnce, List.of(
+                new IngredientEntry(Fasole_Uscata, 800, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Usturoi, 6, bucati),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Pastarnac, 1, bucati),
+                new IngredientEntry(Telina, 200, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram)), F2, List.of(Sare, Piper, Dafin)));
+        cookbook.add(new Recipe("Mâncare de mazăre - Cu pui", Disabled, List.of(
+                new IngredientEntry(Mazare, 1000, gram),
+                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Usturoi, 3, bucati)), F2, List.of(Sare, Piper, Marar, BoiaDulce, Dafin))); // mazărea cu soia e pur și simplu superioară
+        cookbook.add(new Recipe("Mâncare de mazăre - Cu soia", AtLeastOnce, List.of(
+                new IngredientEntry(Mazare, 1000, gram),
+                new IngredientEntry(Soia, 100, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Usturoi, 3, bucati)), F2, List.of(Sare, Piper, Marar, BoiaDulce, Dafin)));
+        cookbook.add(new Recipe("Mâncare de mazăre - Simplu", Once, List.of(
+                new IngredientEntry(Mazare, 1400, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Ardei, 2, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
+                new IngredientEntry(Morcov, 3, bucati)),
+                F2, List.of(Sare, Piper, Marar)));
+        cookbook.add(new Recipe("Mâncare de păstăi", AtLeastOnce, List.of(
+                new IngredientEntry(PastaiCongelate, 1400, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Ardei, 3, bucati),
+                new IngredientEntry(Morcov, 3, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 250, gram)),
+                F2, List.of(Sare, Piper, Patrunjel)));
+        cookbook.add(new Recipe("Melanzane alla parmigiano", Once, List.of(
+                new IngredientEntry(Vinete, 1100, gram),
+                new IngredientEntry(Branza_Mozzarella, 200, gram),
+                new IngredientEntry(Ulei, 100, gram), // din toata prajeala
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
+                F2, List.of(Sare, Piper)));
+        cookbook.add(new Recipe("Minestrone", AtLeastOnce, List.of(
+                new IngredientEntry(Conopida, 250, gram),
+                new IngredientEntry(Broccoli, 250, gram),
+                new IngredientEntry(Morcov, 100, gram),
+                new IngredientEntry(Orez, 100, gram),
+                new IngredientEntry(Fasole_Uscata, 100, gram),
+                new IngredientEntry(Mazare, 200, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
+                F1, List.of(Sare, Piper, Busuioc, Rozmarin, Patrunjel)));
+        cookbook.add(new Recipe("Musaca cu carne", Once, List.of(
+                new IngredientEntry(Cartofi, 2000, gram),
+                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Lapte, 200, gram),
+                new IngredientEntry(Unt, 50, gram)), F2, List.of(Sare)));
+        cookbook.add(new Recipe("Musaca cu ragu", AtMostOnce, List.of(
+                new IngredientEntry(Cartofi, 2000, gram),
+                new IngredientEntry(Carne_Vita, 500, gram),
+                new IngredientEntry(Lapte, 200, gram),
+                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Apio, 100, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 350, gram)),
+                F2, List.of(VinAlb)));
+        cookbook.add(new Recipe("Musaca cu ciuperci", AtLeastOnce, List.of(
+                new IngredientEntry(Cartofi, 2000, gram),
+                new IngredientEntry(Lapte, 200, gram),
+                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Ciuperci, 1600, gram),
+                new IngredientEntry(Ceapa, 4, bucati)),
+                F2, List.of(Sare, Piper), 2));
+        cookbook.add(new Recipe("Musaca cu soia", Once, List.of(
+                new IngredientEntry(Cartofi, 2000, gram),
+                new IngredientEntry(Lapte, 200, gram),
+                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Soia, 100, gram),
+                new IngredientEntry(Ceapa, 3, bucati),
+                new IngredientEntry(Apio, 100, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 350, gram)),
+                F2, List.of(VinAlb)));
+        cookbook.add(new Recipe("Nakkikeitto", AtMostOnce, List.of(
+                new IngredientEntry(Cartofi, 900, gram),
+                new IngredientEntry(Carne_Pui, 700, gram),
+                new IngredientEntry(Morcov, 450, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Pastarnac, 2, bucati),
+                new IngredientEntry(Usturoi, 3, bucati)),
+                F1, List.of(Sare, Piper, Dafin, Patrunjel, Rozmarin)));
+        cookbook.add(new Recipe("Nakkikeitto - V", AtLeastOnce, List.of(
+                new IngredientEntry(Cartofi, 900, gram),
+                new IngredientEntry(Soia, 200, gram),
+                new IngredientEntry(Morcov, 450, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Pastarnac, 2, bucati),
+                new IngredientEntry(Usturoi, 3, bucati)),
+                F1, List.of(Sare, Piper, Dafin, Patrunjel, Rozmarin), 2));
+        cookbook.add(new Recipe("Nasi Goreng", AtMostOnce, List.of(
+                new IngredientEntry(Orez, 250, gram),
+                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Morcov, 3, bucati),
+                new IngredientEntry(Ceapa, 1, bucati),
+                new IngredientEntry(Mazare, 300, gram),
+                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ciuperci, 400, gram),
+                new IngredientEntry(Usturoi, 2, bucati)),
+                F2, List.of(Sare, Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
+        cookbook.add(new Recipe("Pilaf - Cu ciuperci și alte legume", AtLeastOnce, List.of(
+                new IngredientEntry(Orez, 200, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Morcov, 1, bucati),
+                new IngredientEntry(Ciuperci, 400, gram),
+                new IngredientEntry(Pastarnac, 1, bucati),
+                new IngredientEntry(Telina, 150, gram),
+                new IngredientEntry(Dovlecei, 1, bucati),
+                new IngredientEntry(Ardei, 1, bucati)),
+                F2, List.of(Sare, Piper, Marar, Patrunjel)));
+        cookbook.add(new Recipe("Pilaf - Cu dovlecei", AtLeastOnce, List.of(
+                new IngredientEntry(Orez, 200, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Ardei, 2, bucati),
+                new IngredientEntry(Dovlecei, 2, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 250, gram)),
+                F2, List.of(Sare, Patrunjel)));
+        cookbook.add(new Recipe("Pilaf - Cu urzici", Disabled, List.of(
+                new IngredientEntry(Orez, 300, gram),
+                new IngredientEntry(Urzici, 500, gram),
+                new IngredientEntry(Ceapa, 4, bucati)),
+                F2, List.of(Sare, Patrunjel, Patrunjel))); // faci când găsești, e un tiny window
+        cookbook.add(new Recipe("Pilaf - Paella cu pui", AtMostOnce, List.of(
+                new IngredientEntry(Orez, 300, gram),
+                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Ardei, 2, bucati),
+                new IngredientEntry(Ceapa, 1, bucati),
+                new IngredientEntry(Rosii, 1, bucati),
+                new IngredientEntry(Usturoi, 6, bucati),
+                new IngredientEntry(Mazare, 100, gram),
+                new IngredientEntry(Fasole_Uscata, 200, gram)),
+                F2, List.of(Sare, Patrunjel, Curcuma, SucLamaie)));
+        cookbook.add(new Recipe("Pilaf - Sarmale cu varză murată și carne", Disabled, List.of(
+                new IngredientEntry(Orez, 200, gram),
+                new IngredientEntry(VarzaMurata, 500, gram),
+                new IngredientEntry(Carne_Pui, 500, gram)),
+                F2, List.of())); // TODO no recipy
+        cookbook.add(new Recipe("Pilaf - Sarmale viță de vie simplu", Disabled, List.of(
+                new IngredientEntry(Orez, 300, gram)), F2,
+                List.of())); // TODO no recipy
+        cookbook.add(new Recipe("Pilaf - Sarmale viță de vie cu carne", Once, List.of(
+                new IngredientEntry(Orez, 200, gram),
+                new IngredientEntry(Carne_Pui, 500, gram)),
+                F2, List.of())); // TODO no recipy
+        cookbook.add(new Recipe("Pilaf - Simplu", AtLeastOnce, List.of(
+                new IngredientEntry(Orez, 600, gram),
+                new IngredientEntry(Ceapa, 6, bucati),
+                new IngredientEntry(Morcov, 2, bucati)), F2, List.of(Curcuma), 2));
+        cookbook.add(new Recipe("Pilaf - Cu ciuperci", Optional, List.of(
+                new IngredientEntry(Orez, 400, gram),
+                new IngredientEntry(Ceapa, 4, bucati),
+                new IngredientEntry(Ciuperci, 600, gram)), F2, List.of(Curcuma), 2));
+        cookbook.add(new Recipe("Plăcintă cu mere - Foietaj", AtLeastOnce, List.of(
+                new IngredientEntry(Foietaj, 500, gram),
+                new IngredientEntry(Mere, 500, gram),
+                new IngredientEntry(Zahar, 2, linguri)),
+                Desert, List.of(Scortisoara)));
+        cookbook.add(new Recipe("Răcitură", Once, List.of(
+                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Usturoi, 10, bucati)),
+                F2, List.of(Sare, Piper))); // TODO: Recipy
+        cookbook.add(new Recipe("Riz au lait", AtLeastOnce, List.of(
+                new IngredientEntry(Orez, 400, gram),
+                new IngredientEntry(Lapte_Praf, 100, gram),
+                new IngredientEntry(Zahar, 200, gram)),
+                Desert, List.of()));
+        cookbook.add(new Recipe("Salată boeuf", AtLeastOnce, List.of(
+                new IngredientEntry(Cartofi, 450, gram),
+                new IngredientEntry(Mazare, 150, gram),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Maioneza, 300, gram),
+                new IngredientEntry(Carne_Pui, 200, gram),
+                new IngredientEntry(Castraveti_Murati, 200, gram)),
+                Rece, List.of(Sare, Mustar)));
+        cookbook.add(new Recipe("Salată de pui", Once, List.of(
+                new IngredientEntry(Carne_Pui, 300, gram),
+                new IngredientEntry(Ciuperci, 800, gram),
+                new IngredientEntry(Mais, 200, gram),
+                new IngredientEntry(Maioneza, 100, gram)),
+                Rece, List.of(Sare, Piper)));
+        cookbook.add(new Recipe("Salată de pui cu legume", Once, List.of(
+                new IngredientEntry(Cartofi, 400, gram),
+                new IngredientEntry(Morcov, 3, bucati),
+                new IngredientEntry(Maioneza, 400, gram),
+                new IngredientEntry(Carne_Pui, 150, gram),
+                new IngredientEntry(Mais, 100, gram)),
+                Rece, List.of(Sare, Mustar)));
+        cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(
+                new IngredientEntry(Maioneza, 400, gram),
+                new IngredientEntry(Ciuperci, 600, gram),
+                new IngredientEntry(Carne_Pui, 250, gram),
+                new IngredientEntry(Paste, 100, gram),
+                new IngredientEntry(Castraveti_Murati, 100, gram)),
+                Rece, List.of(Patrunjel, Mustar)));
+        cookbook.add(new Recipe("Salată de vinete cu ceapă", Once, List.of(
+                Vinete, Maioneza, Ou), Rece, List.of()));
         cookbook.add(new Recipe("Salată de vinete cu usturoi", AtLeastOnce, List.of(Vinete, Maioneza, Ou), Rece, List.of(Usturoi)));
         cookbook.add(new Recipe("Salată orientală", AtLeastOnce, List.of(Cartofi, Ou), Rece, List.of()));
         cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtMostOnce, List.of(Broccoli, Carne), F1, List.of(Usturoi, Telina)));
