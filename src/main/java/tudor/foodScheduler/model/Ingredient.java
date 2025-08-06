@@ -14,6 +14,7 @@ public enum Ingredient {
     Branza(ALL, ALL),
     Branza_Fagaras(ALL, ALL),
     Branza_Gorgonzola(ALL, ALL),
+    Branza_Mascarpone(ALL, ALL),
     Branza_Mozzarella(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne_Pui(ALL, ALL),
@@ -29,16 +30,18 @@ public enum Ingredient {
     Dovlecei(List.of(4,5,6,7,8,9), ALL),
     Faina(ALL, List.of()),
     Fasole_Uscata(ALL, ALL),
+    Fidea(ALL, ALL),
     Foietaj(ALL, ALL),
     Frunze(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
     Gogonele(List.of(6,7,8,9,10,11), List.of()),
     Gris(ALL, List.of()),
-    Iaurt(ALL, ALL),
+    Iaurt_Grecesc_10(ALL, ALL),
     Lapte(ALL, List.of()),
     Lapte_Praf(ALL, ALL),
     Maioneza(ALL, ALL),
     Mais(ALL, ALL),
     Malai(ALL, List.of()),
+    Masline(ALL, ALL),
     Mazare(ALL, ALL),
     Morcov(ALL, ALL),
     Naut(ALL, ALL),
@@ -52,6 +55,7 @@ public enum Ingredient {
     Paste_Lasagna(ALL, ALL),
     Peste(ALL, ALL),
     Peste_Somon(ALL, ALL),
+    Piscoturi(ALL, ALL),
     Praz(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12)),
     Salata(ALL, ALL),
     Smantana(ALL, ALL),
@@ -102,16 +106,24 @@ public enum Ingredient {
     static {
         Branza.akas.add(Branza_Fagaras);
         Branza.akas.add(Branza_Gorgonzola);
+        Branza.akas.add(Branza_Mascarpone);
         Branza.akas.add(Branza_Mozzarella);
         Branza_Fagaras.akas.add(Branza);
         Branza_Fagaras.akas.add(Branza_Gorgonzola);
+        Branza_Fagaras.akas.add(Branza_Mascarpone);
         Branza_Fagaras.akas.add(Branza_Mozzarella);
         Branza_Gorgonzola.akas.add(Branza);
         Branza_Gorgonzola.akas.add(Branza_Fagaras);
+        Branza_Gorgonzola.akas.add(Branza_Mascarpone);
         Branza_Gorgonzola.akas.add(Branza_Mozzarella);
+        Branza_Mascarpone.akas.add(Branza);
+        Branza_Mascarpone.akas.add(Branza_Fagaras);
+        Branza_Mascarpone.akas.add(Branza_Gorgonzola);
+        Branza_Mascarpone.akas.add(Branza_Mozzarella);
         Branza_Mozzarella.akas.add(Branza);
         Branza_Mozzarella.akas.add(Branza_Fagaras);
         Branza_Mozzarella.akas.add(Branza_Gorgonzola);
+        Branza_Mozzarella.akas.add(Branza_Mascarpone);
 
         Carne_Pui.akas.add(Carne_Vita);
         Carne_Vita.akas.add(Carne_Pui);
@@ -122,8 +134,13 @@ public enum Ingredient {
         PastaiCongelate.akas.add(PastaiFresh);
         PastaiFresh.akas.add(PastaiCongelate);
 
+        Fidea.akas.add(Paste);
+        Fidea.akas.add(Paste_Lasagna);
+        Paste.akas.add(Fidea);
         Paste.akas.add(Paste_Lasagna);
+        Paste_Lasagna.akas.add(Fidea);
         Paste_Lasagna.akas.add(Paste);
+
 
         Peste.akas.add(Peste_Somon);
         Peste_Somon.akas.add(Peste);
