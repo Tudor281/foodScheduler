@@ -16,8 +16,10 @@ public enum Ingredient {
     Branza_Gorgonzola(ALL, ALL),
     Branza_Mascarpone(ALL, ALL),
     Branza_Mozzarella(ALL, ALL),
+    Branza_Telemea(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
     Carne_Pui(ALL, ALL),
+    Carne_Pui_Ficat(ALL, ALL),
     Carne_Vita(ALL, ALL),
     Cartofi(ALL, ALL),
     Castraveti(List.of(3,4,5,6,7,8,9), ALL),
@@ -108,25 +110,40 @@ public enum Ingredient {
         Branza.akas.add(Branza_Gorgonzola);
         Branza.akas.add(Branza_Mascarpone);
         Branza.akas.add(Branza_Mozzarella);
+        Branza.akas.add(Branza_Telemea);
         Branza_Fagaras.akas.add(Branza);
         Branza_Fagaras.akas.add(Branza_Gorgonzola);
         Branza_Fagaras.akas.add(Branza_Mascarpone);
         Branza_Fagaras.akas.add(Branza_Mozzarella);
+        Branza_Fagaras.akas.add(Branza_Telemea);
         Branza_Gorgonzola.akas.add(Branza);
         Branza_Gorgonzola.akas.add(Branza_Fagaras);
         Branza_Gorgonzola.akas.add(Branza_Mascarpone);
         Branza_Gorgonzola.akas.add(Branza_Mozzarella);
+        Branza_Gorgonzola.akas.add(Branza_Telemea);
         Branza_Mascarpone.akas.add(Branza);
         Branza_Mascarpone.akas.add(Branza_Fagaras);
         Branza_Mascarpone.akas.add(Branza_Gorgonzola);
         Branza_Mascarpone.akas.add(Branza_Mozzarella);
+        Branza_Mascarpone.akas.add(Branza_Telemea);
         Branza_Mozzarella.akas.add(Branza);
         Branza_Mozzarella.akas.add(Branza_Fagaras);
         Branza_Mozzarella.akas.add(Branza_Gorgonzola);
         Branza_Mozzarella.akas.add(Branza_Mascarpone);
+        Branza_Mozzarella.akas.add(Branza_Telemea);
+        Branza_Telemea.akas.add(Branza);
+        Branza_Telemea.akas.add(Branza_Fagaras);
+        Branza_Telemea.akas.add(Branza_Gorgonzola);
+        Branza_Telemea.akas.add(Branza_Mascarpone);
+        Branza_Telemea.akas.add(Branza_Mozzarella);
+        Branza_Telemea.akas.add(Branza_Telemea);
 
         Carne_Pui.akas.add(Carne_Vita);
+        Carne_Pui.akas.add(Carne_Pui_Ficat);
+        Carne_Pui_Ficat.akas.add(Carne_Pui);
+        Carne_Pui_Ficat.akas.add(Carne_Vita);
         Carne_Vita.akas.add(Carne_Pui);
+        Carne_Vita.akas.add(Carne_Pui_Ficat);
 
         Lapte.akas.add(Lapte_Praf);
         Lapte_Praf.akas.add(Lapte);

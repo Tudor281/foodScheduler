@@ -776,25 +776,97 @@ public class TudorCookBook {
                 Rece, List.of(Sare))); // TODO no recipy
 
         // Fast Food
-        cookbook.add(new Recipe("Mămăligă", AtLeastOnce, List.of(Malai, Branza, Lapte), FastFood, List.of()));
-        cookbook.add(new Recipe("Găgău", AtLeastOnce, List.of(Malai, Branza), FastFood, List.of()));
-        cookbook.add(new Recipe("Mâncare de ciuperci - Ciulama de ciuperci", Once, List.of(Ciuperci), FastFood, List.of(Patrunjel, Marar)));
-        cookbook.add(new Recipe("Mâncare de ciuperci - Ciuperci cu smântână și usturoi", AtMostOnce, List.of(Ciuperci, Smantana), FastFood, List.of(Patrunjel, Usturoi)));
-        cookbook.add(new Recipe("Spanac cu smântână", Once, List.of(Spanac, Smantana), FastFood, List.of(Usturoi)));
-        cookbook.add(new Recipe("Mâncărică de păstăi", AtLeastOnce, List.of(PastaiCongelate), FastFood, List.of(Patrunjel)));
-        cookbook.add(new Recipe("Microfoane", Once, List.of(Carne), FastFood, List.of(BoiaDulce)));
-        cookbook.add(new Recipe("Ficat de pui prăjit", Once, List.of(Carne), FastFood, List.of()));
-        cookbook.add(new Recipe("Fish fingers", Disabled, List.of(Carne), FastFood, List.of())); // sunt grase, sunt puturoase. Dacă ți se face poftă, ia 100g, nu 500g. Dar sunt uleioase, grețoase.
-        cookbook.add(new Recipe("Șnițel de soia", AtLeastOnce, List.of(Soia), FastFood, List.of()));
-        cookbook.add(new Recipe("Șnițel de pui", Once, List.of(Carne), FastFood, List.of()));
-        cookbook.add(new Recipe("Somon prăjit", Once, List.of(Carne), FastFood, List.of()));
-        cookbook.add(new Recipe("Pește prăjit", Once, List.of(Carne), FastFood, List.of()));
-        cookbook.add(new Recipe("Omletă cremă", Once, List.of(Ou), FastFood, List.of())); // e aproape ou crud, si are gust a ou, e mai buna omleta prajita
-        cookbook.add(new Recipe("Omletă cu roșii", AtLeastOnce, List.of(Ou, Rosii, Branza), FastFood, List.of()));
-        cookbook.add(new Recipe("Omletă normală", AtLeastOnce, List.of(Ou), FastFood, List.of()));
-        cookbook.add(new Recipe("Roșii cu brânză", AtLeastOnce, List.of(Rosii, Branza), FastFood, List.of()));
-        cookbook.add(new Recipe("Salad Box", AtLeastOnce, List.of(Salata), FastFood, List.of()));
-        cookbook.add(new Recipe("Cobb Salad", AtLeastOnce, List.of(Salata, Carne, Ou, Rosii, Avocado), FastFood, List.of()));
+        cookbook.add(new Recipe("Mămăligă", AtLeastOnce, List.of(
+                new IngredientEntry(Malai, 100, gram),
+                new IngredientEntry(Branza_Fagaras, 200, gram),
+                new IngredientEntry(Lapte, 300, gram),
+                new IngredientEntry(Ou, 2, bucati)),
+                FastFood, List.of(Sare)));
+        cookbook.add(new Recipe("Găgău", AtLeastOnce, List.of(
+                new IngredientEntry(Malai, 100, gram),
+                new IngredientEntry(Branza_Telemea, 200, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Mâncare de ciuperci - Ciulama de ciuperci", Once, List.of(
+                new IngredientEntry(Ciuperci, 1000, gram),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Faina, 2, linguri),
+                new IngredientEntry(Lapte, 600, gram)),
+                FastFood, List.of(Patrunjel, Marar, Sare, Piper)));
+        cookbook.add(new Recipe("Mâncare de ciuperci - Ciuperci cu smântână și usturoi", AtMostOnce, List.of(
+                new IngredientEntry(Ciuperci, 1000, gram),
+                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Usturoi, 4, bucati)),
+                FastFood, List.of(Patrunjel, Sare, Piper)));
+        cookbook.add(new Recipe("Spanac cu smântână", Once, List.of(
+                new IngredientEntry(Spanac, 500, gram),
+                new IngredientEntry(Smantana, 200, gram),
+                new IngredientEntry(Lapte, 120, gram),
+                new IngredientEntry(Usturoi, 4, bucati)),
+                FastFood, List.of(Sare)));
+        cookbook.add(new Recipe("Mâncărică de păstăi", AtLeastOnce, List.of(
+                new IngredientEntry(PastaiCongelate, 700, gram),
+                new IngredientEntry(Ceapa, 1, bucati),
+                new IngredientEntry(Usturoi, 2, bucati)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Microfoane", Once, List.of(
+                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Malai, 100, gram)),
+                FastFood, List.of(Sare, Piper, BoiaDulce)));
+        cookbook.add(new Recipe("Ficat de pui prăjit", Once, List.of(
+                new IngredientEntry(Carne_Pui_Ficat, 500, gram),
+                new IngredientEntry(Malai, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Fish fingers", Disabled, List.of(
+                new IngredientEntry(Peste, 300, gram)),
+                FastFood, List.of())); // sunt grase, sunt puturoase. Dacă ți se face poftă, ia 100g, nu 500g. Dar sunt uleioase, grețoase.
+        cookbook.add(new Recipe("Șnițel de soia", AtLeastOnce, List.of(
+                new IngredientEntry(Soia, 100, gram),
+                new IngredientEntry(Usturoi, 5, bucati),
+                new IngredientEntry(Malai, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Șnițel de pui", Once, List.of(
+                new IngredientEntry(Carne_Pui, 500, gram)),
+                FastFood, List.of(Sare, Piper)));
+        cookbook.add(new Recipe("Somon prăjit", Once, List.of(
+                new IngredientEntry(Peste_Somon, 250, gram),
+                new IngredientEntry(Malai, 100, gram),
+                new IngredientEntry(Usturoi, 5, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Pește prăjit", Once, List.of(
+                new IngredientEntry(Peste, 500, gram),
+                new IngredientEntry(Malai, 100, gram),
+                new IngredientEntry(Usturoi, 5, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Omletă cremă", Once, List.of(
+                new IngredientEntry(Ou, 3, bucati)),
+                FastFood, List.of(Sare))); // e aproape ou crud, si are gust a ou, e mai buna omleta prajita
+        cookbook.add(new Recipe("Omletă cu roșii", AtLeastOnce, List.of(
+                new IngredientEntry(Ou, 3, bucati),
+                new IngredientEntry(Rosii, 1, bucati),
+                new IngredientEntry(Ceapa_Verde, 1, bucati),
+                new IngredientEntry(Branza_Mozzarella, 150, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Omletă normală", AtLeastOnce, List.of(
+                new IngredientEntry(Ou, 3, bucati)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Roșii cu brânză", AtLeastOnce, List.of(
+                new IngredientEntry(Rosii, 500, gram),
+                new IngredientEntry(Branza_Telemea, 200, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Salad Box", AtLeastOnce, List.of(
+                new IngredientEntry(Salata, 200, gram),
+                new IngredientEntry(Ulei_Masline, 2, linguri)), FastFood, List.of()));
+        cookbook.add(new Recipe("Cobb Salad", AtLeastOnce, List.of(
+                new IngredientEntry(Salata, 200, gram),
+                new IngredientEntry(Carne_Pui, 200, gram),
+                new IngredientEntry(Ou, 3, bucati),
+                new IngredientEntry(Rosii, 2, bucati),
+                new IngredientEntry(Branza_Telemea, 200, gram),
+                new IngredientEntry(Ceapa_Verde, 3, bucati),
+                new IngredientEntry(Avocado, 1, bucati)),
+                FastFood, List.of()));
         cookbook.add(new Recipe("Facebook Salad", AtLeastOnce, List.of(Avocado, Ou, Rosii), FastFood, List.of()));
         cookbook.add(new Recipe("Paste - Pesto al Genovese (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
         cookbook.add(new Recipe("Paste - Al sugo di pomodoro", Once, List.of(Paste), FastFood, List.of()));
