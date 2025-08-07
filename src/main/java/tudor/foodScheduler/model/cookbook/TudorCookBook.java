@@ -867,43 +867,105 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa_Verde, 3, bucati),
                 new IngredientEntry(Avocado, 1, bucati)),
                 FastFood, List.of()));
-        cookbook.add(new Recipe("Facebook Salad", AtLeastOnce, List.of(Avocado, Ou, Rosii), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - Pesto al Genovese (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - Al sugo di pomodoro", Once, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - cu somon", Once, List.of(Paste, Carne), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - cu ton", Once, List.of(Paste, Ton), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - con Verdura (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - con Ricotta (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - Napoletane (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - con Olive (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - cu Basilico (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - con Funghi (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - Quattro Formaggi (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - Carbonara (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - Arrabbiata (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
-        cookbook.add(new Recipe("Paste - Bolognese (semi)", AtMostOnce, List.of(Paste), FastFood, List.of()));
+        cookbook.add(new Recipe("Facebook Salad", AtLeastOnce, List.of(
+                new IngredientEntry(Avocado, 1, bucati),
+                new IngredientEntry(Ou, 2, bucati),
+                new IngredientEntry(Rosii, 1, bucati)), FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - Pesto al Genovese (semi)", AtMostOnce, List.of(
+                new IngredientEntry(Paste, 100, gram),
+                new IngredientEntry(Sos_Pesto_Genovese, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - Al sugo di pomodoro", Once, List.of(
+                new IngredientEntry(Paste, 100, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 100, gram),
+                new IngredientEntry(Usturoi, 2, bucati)),
+                FastFood, List.of(Busuioc)));
+        cookbook.add(new Recipe("Paste - cu somon", Once, List.of(
+                new IngredientEntry(Paste, 100, gram),
+                new IngredientEntry(Peste_Somon, 100, gram),
+                new IngredientEntry(Unt, 25, gram),
+                new IngredientEntry(Faina, 20, gram),
+                new IngredientEntry(Lapte, 200, gram)), FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - cu ton", Once, List.of(
+                new IngredientEntry(Paste, 100, gram),
+                new IngredientEntry(Ton, 160, gram),
+                new IngredientEntry(Ceapa, 1, bucati)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - con Verdura (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - con Ricotta (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - Napoletane (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - con Olive (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - cu Basilico (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - con Funghi (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - Quattro Formaggi (semi)", AtMostOnce, List.of(
+                new IngredientEntry(Paste, 200, gram),
+                new IngredientEntry(Sos_Quattro_Formaggi, 370, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - Carbonara (semi)", AtMostOnce, List.of(
+                new IngredientEntry(Paste, 200, gram),
+                new IngredientEntry(Sos_Carbonara, 370, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - Arrabbiata (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
+        cookbook.add(new Recipe("Paste - Bolognese (semi)", Disabled, List.of(
+                new IngredientEntry(Paste, 100, gram)),
+                FastFood, List.of()));
 
         // Fruits
-        cookbook.add(new Recipe("Banane", AtLeastOnce, List.of(Banane), Fruits, List.of()));
-        cookbook.add(new Recipe("Caise", AtLeastOnce, List.of(Caise), Fruits, List.of()));
-        cookbook.add(new Recipe("Capșuni", Once, List.of(Capsuni), Fruits, List.of()));
-        cookbook.add(new Recipe("Cireșe", Once, List.of(Cirese), Fruits, List.of()));
-        cookbook.add(new Recipe("Clementine", Once, List.of(Clementine), Fruits, List.of()));
-        cookbook.add(new Recipe("Grapefruit", AtMostOnce, List.of(Grapefruit), Fruits, List.of()));
-        cookbook.add(new Recipe("Kaki", AtLeastOnce, List.of(Kaki), Fruits, List.of()));
-        cookbook.add(new Recipe("Kiwi", AtLeastOnce, List.of(Kiwi), Fruits, List.of()));
-        cookbook.add(new Recipe("Mandarine", Once, List.of(Mandarine), Fruits, List.of()));
-        cookbook.add(new Recipe("Mango", AtMostOnce, List.of(Mango), Fruits, List.of()));
-        cookbook.add(new Recipe("Mere", AtLeastOnce, List.of(Mere), Fruits, List.of()));
-        cookbook.add(new Recipe("Mineole", Once, List.of(Mineole), Fruits, List.of()));
-        cookbook.add(new Recipe("Papaya", AtMostOnce, List.of(Papaya), Fruits, List.of()));
-        cookbook.add(new Recipe("Pepene Galben", Once, List.of(PepeneGalben), Fruits, List.of()));
-        cookbook.add(new Recipe("Pepene Roșu", AtLeastOnce, List.of(PepeneRosu), Fruits, List.of()));
-        cookbook.add(new Recipe("Pere", AtLeastOnce, List.of(Pere), Fruits, List.of()));
-        cookbook.add(new Recipe("Portocale", AtLeastOnce, List.of(Portocale), Fruits, List.of()));
-        cookbook.add(new Recipe("Prune", AtLeastOnce, List.of(Prune), Fruits, List.of()));
-        cookbook.add(new Recipe("Rodii", AtMostOnce, List.of(Prune), Fruits, List.of()));
-        cookbook.add(new Recipe("Struguri", Once, List.of(Struguri), Fruits, List.of()));
+        cookbook.add(new Recipe("Banane", AtLeastOnce, List.of(
+                new IngredientEntry(Banane, 1000, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Caise", AtLeastOnce, List.of(
+                new IngredientEntry(Caise, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Capșuni", Once, List.of(
+                new IngredientEntry(Capsuni, 250, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Cireșe", Once, List.of(
+                new IngredientEntry(Cirese, 250, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Clementine", Once, List.of(
+                new IngredientEntry(Clementine, 250, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Grapefruit", AtMostOnce, List.of(
+                new IngredientEntry(Grapefruit, 300, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Kaki", AtLeastOnce, List.of(
+                new IngredientEntry(Kaki, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Kiwi", AtLeastOnce, List.of(
+                new IngredientEntry(Kiwi, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Mandarine", Once, List.of(
+                new IngredientEntry(Mandarine, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Mango", AtMostOnce, List.of(
+                new IngredientEntry(Mango, 200, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Mere", AtLeastOnce, List.of(
+                new IngredientEntry(Mere, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Mineole", Once, List.of(
+                new IngredientEntry(Mineole, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Papaya", AtMostOnce, List.of(
+                new IngredientEntry(Papaya, 200, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Pepene Galben", Once, List.of(
+                new IngredientEntry(PepeneGalben, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Pepene Roșu", AtLeastOnce, List.of(
+                new IngredientEntry(PepeneRosu, 1000, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Pere", AtLeastOnce, List.of(
+                new IngredientEntry(Pere, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Portocale", AtLeastOnce, List.of(
+                new IngredientEntry(Portocale, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Prune", AtLeastOnce, List.of(
+                new IngredientEntry(Prune, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Rodii", AtMostOnce, List.of(
+                new IngredientEntry(Rodii, 200, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Struguri", Once, List.of(
+                new IngredientEntry(Struguri, 250, gram)), Fruits, List.of()));
 
         return cookbook;
     }
