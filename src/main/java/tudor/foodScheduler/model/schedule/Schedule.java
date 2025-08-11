@@ -142,21 +142,7 @@ public class Schedule {
     }
 
     String buildComments(int month, int week) {
-        String comment = comments.get(month).get(week);
-        for (int channel = 0; channel < nrChannels; channel++) {
-            ScheduleEntry entry = recipes.get(month).get(week).get(channel);
-            if (entry == null) continue;
-            for (Spice spice : entry.recipe.spices) {
-                if (spice.perishable) {
-                    if (comment.isBlank()) {
-                        comment = spice.toString();
-                    } else {
-                        comment += ", "+spice;
-                    }
-                }
-            }
-        }
-        return comment;
+        return comments.get(month).get(week);
     }
 
     public List<ScheduleSlot> getDomesticSlots(Recipe recipe) {
@@ -221,7 +207,6 @@ public class Schedule {
 
         double spiceSum = 0;
         for (Spice spice : Spice.values()) {
-            if (spice.perishable) continue;
             List<ScheduleSlot> slots = getSlots(spice);
             spiceSum += ScheduleSlot.computeDistanceHybrid(slots, weeksInMonth);
         }

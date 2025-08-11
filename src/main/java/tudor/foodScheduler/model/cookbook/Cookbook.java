@@ -1,5 +1,7 @@
 package tudor.foodScheduler.model.cookbook;
 
+import tudor.foodScheduler.model.Ingredient;
+import tudor.foodScheduler.model.IngredientEntry;
 import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.utils.Roulette;
@@ -64,5 +66,37 @@ public class Cookbook {
         }
 
         return roulette;
+    }
+
+    public FreeSlotsComputation getOccupiedSlots() {
+        FreeSlotsComputation freeSlotsComputation = new FreeSlotsComputation();
+        for (Recipe recipe : all.values()) {
+            if (recipe.multiplicity == Once || recipe.multiplicity == AtLeastOnce) {
+                freeSlotsComputation.incrementOccupiedForChannel(recipe.fel.channel);
+            }
+            if (recipe.multiplicity == AtLeastOnce || recipe.multiplicity == Optional) {
+                freeSlotsComputation.incrementFreeRecipesForChannel(recipe.fel.channel);
+            }
+        }
+        return freeSlotsComputation;
+    }
+
+    public void calculateDistinguishedIngredients(FreeSlotsComputation freeSlotsComputation) {
+        // channel -> ingredient -> quantity
+        Map<Integer, Map<Ingredient, Float>> quantities = new HashMap<>();
+        // channel -> count
+        Map<Integer, Integer> recipeCountPerChannel =  new HashMap<>();
+
+        for (Recipe recipe : all.values()) {
+            Integer count = recipeCountPerChannel.computeIfAbsent(recipe.fel.channel, k -> 0);
+            recipeCountPerChannel.put(recipe.fel.channel, count + 1);
+
+            Map<Ingredient, Float> ingredientQuantities = quantities.computeIfAbsent(recipe.fel.channel, k -> new HashMap<>());
+            for (IngredientEntry ingredientEntry : recipe.ingredients) {
+                float quantity = ingredientQuantities.computeIfAbsent(ingredientEntry.ingredient, k -> 0f);
+                quantity += ingredientEntry.getIngredientInGrams();
+                ingredientQuantities.put(ingredientEntry.ingredient, quantity);
+            }
+        }
     }
 }

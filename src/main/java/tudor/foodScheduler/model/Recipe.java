@@ -79,6 +79,7 @@ public class Recipe {
 
     public boolean hasIngredient(Ingredient ingredient) {
         for (IngredientEntry ingredientEntry : ingredients) {
+            if (!ingredientEntry.isDistinguished) continue;
             if (ingredientEntry.ingredient == ingredient) return true;
         }
         return false;

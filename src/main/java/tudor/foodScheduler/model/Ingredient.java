@@ -9,7 +9,7 @@ import static tudor.foodScheduler.model.Months.ALL;
 public enum Ingredient {
     Ardei(List.of(6,7,8,9), ALL),
     Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
-    Avocado(List.of(), ALL),
+    Avocado_Hass(List.of(), ALL), // coaja aspra, neagra la maturitate
     Bors(ALL, ALL),
     Branza(ALL, ALL),
     Branza_Fagaras(ALL, ALL),

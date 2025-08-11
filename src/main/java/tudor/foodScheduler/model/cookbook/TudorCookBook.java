@@ -865,10 +865,10 @@ public class TudorCookBook {
                 new IngredientEntry(Rosii, 2, bucati),
                 new IngredientEntry(Branza_Telemea, 200, gram),
                 new IngredientEntry(Ceapa_Verde, 3, bucati),
-                new IngredientEntry(Avocado, 1, bucati)),
+                new IngredientEntry(Avocado_Hass, 1, bucati)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Facebook Salad", AtLeastOnce, List.of(
-                new IngredientEntry(Avocado, 1, bucati),
+                new IngredientEntry(Avocado_Hass, 1, bucati),
                 new IngredientEntry(Ou, 2, bucati),
                 new IngredientEntry(Rosii, 1, bucati)), FastFood, List.of()));
         cookbook.add(new Recipe("Paste - Pesto al Genovese (semi)", AtMostOnce, List.of(
