@@ -1,5 +1,7 @@
 package tudor.foodScheduler.model.cookbook;
 
+import tudor.foodScheduler.model.Recipe;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +18,7 @@ public class FreeSlotsComputation {
     // channel -> nr of occupied slots
     final Map<Integer, Integer> occupiedSlots = new HashMap<>();
 
+    // channel -> avg nr of slots per free recipe
     final Map<Integer, Float> slotsPerFreeRecipes = new HashMap<>();
 
     public int totalSlots = 0;

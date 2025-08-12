@@ -16,6 +16,6 @@ public class DistinguishIngredientsRun {
 
         System.out.println("Tadaa");
 
-        cookbook.calculateDistinguishedIngredients(freeSlotsComputation);
+        cookbook.calculateDistinguishedIngredients();
     }
 }

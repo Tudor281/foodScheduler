@@ -37,7 +37,8 @@ public class Schedule {
         }
     }
 
-    private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes, Map<Integer, Map<Integer, String>> inputComments) {
+    private Schedule(int[] weeksInMonth, Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes, Map<Integer, Map<Integer, String>> inputComments, Cookbook cookbook) {
+        this.cookbook = cookbook;
         this.weeksInMonth = weeksInMonth;
         calculateNumberOfWeeks();
         for (int month=0; month<12; month++) {
@@ -258,7 +259,7 @@ public class Schedule {
     }
 
     public Schedule copy() {
-        return new Schedule(weeksInMonth, recipes, comments);
+        return new Schedule(weeksInMonth, recipes, comments, cookbook);
     }
 
     public Counter<Recipe> recipeCounts = new Counter<>();

@@ -24,6 +24,7 @@ public class InitialRun {
         System.out.println("Starting...");
 
         // 2025
+        TudorCookBook.getCookbook().calculateDistinguishedIngredients();
         Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, TudorCookBook.getCookbook());
 
         addConstraints(template);

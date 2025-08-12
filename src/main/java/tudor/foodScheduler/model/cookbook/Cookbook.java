@@ -81,22 +81,37 @@ public class Cookbook {
         return freeSlotsComputation;
     }
 
-    public void calculateDistinguishedIngredients(FreeSlotsComputation freeSlotsComputation) {
-        // channel -> ingredient -> quantity
-        Map<Integer, Map<Ingredient, Float>> quantities = new HashMap<>();
-        // channel -> count
-        Map<Integer, Integer> recipeCountPerChannel =  new HashMap<>();
+    public QuantityComputation calculateDistinguishedIngredients() {
+        QuantityComputation quantities = new QuantityComputation();
 
+        // cound & sum ingredients
         for (Recipe recipe : all.values()) {
-            Integer count = recipeCountPerChannel.computeIfAbsent(recipe.fel.channel, k -> 0);
-            recipeCountPerChannel.put(recipe.fel.channel, count + 1);
+            quantities.countRecipe(recipe.fel.channel);
 
-            Map<Ingredient, Float> ingredientQuantities = quantities.computeIfAbsent(recipe.fel.channel, k -> new HashMap<>());
             for (IngredientEntry ingredientEntry : recipe.ingredients) {
-                float quantity = ingredientQuantities.computeIfAbsent(ingredientEntry.ingredient, k -> 0f);
-                quantity += ingredientEntry.getIngredientInGrams();
-                ingredientQuantities.put(ingredientEntry.ingredient, quantity);
+                quantities.sumIngredient(recipe.fel.channel, ingredientEntry.ingredient, ingredientEntry.getIngredientInGrams());
             }
         }
+
+        // determine distinguished
+        for (Recipe recipe : all.values()) {
+            if (recipe.multiplicity == Disabled) continue;
+
+            System.out.print(recipe.name + " -> ");
+
+            for (IngredientEntry ingredientEntry : recipe.ingredients) {
+                float avgQuantity = quantities.getAvgQuantity(recipe.fel.channel, ingredientEntry.ingredient);
+                if (ingredientEntry.getIngredientInGrams() / avgQuantity > 2) {
+                    ingredientEntry.isDistinguished = true;
+                    System.out.print(ingredientEntry.ingredient.name()+" ");
+                }
+            }
+
+            System.out.println();
+        }
+
+        return quantities;
     }
+
+
 }

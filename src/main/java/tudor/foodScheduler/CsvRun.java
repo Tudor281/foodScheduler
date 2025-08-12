@@ -61,6 +61,7 @@ public class CsvRun {
                 12	4					
                 """;
 
+        TudorCookBook.getCookbook().calculateDistinguishedIngredients();
         Schedule schedule = ScheduleInitializer.getSchedule(input, true, TudorCookBook.getCookbook());
 
         InitialRun.addConstraints(schedule);
