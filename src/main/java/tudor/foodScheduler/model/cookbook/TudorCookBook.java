@@ -13,8 +13,9 @@ import static tudor.foodScheduler.model.Spice.*;
 import static tudor.foodScheduler.model.UnitOfMeasure.*;
 
 public class TudorCookBook {
-    public static Cookbook getCookbook() {
+    public static Cookbook buildCookbook() {
         Cookbook cookbook = new Cookbook();
+        cookbook.nrChannels = 5;
         cookbook.add(new Recipe("American Pancakes", Once, List.of(
                 new IngredientEntry(Faina, 300, gram),
                 new IngredientEntry(Zahar, 100, gram),

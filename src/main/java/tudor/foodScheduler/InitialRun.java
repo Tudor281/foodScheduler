@@ -1,7 +1,7 @@
 package tudor.foodScheduler;
 
 import tudor.foodScheduler.model.Recipe;
-import tudor.foodScheduler.model.cookbook.TudorCookBook;
+import tudor.foodScheduler.model.cookbook.CiorbeCookBook;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.utils.Stats;
 
@@ -24,10 +24,9 @@ public class InitialRun {
         System.out.println("Starting...");
 
         // 2025
-        TudorCookBook.getCookbook().calculateDistinguishedIngredients();
-        Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, TudorCookBook.getCookbook());
+        Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, CiorbeCookBook.buildCookbook());
 
-        addConstraints(template);
+//        addConstraints(template);
 
         completeRecipe(template);
     }

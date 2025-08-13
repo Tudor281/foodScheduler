@@ -11,7 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ScheduleTest {
-    Cookbook cookbook = TudorCookBook.getCookbook();
+    Cookbook cookbook = TudorCookBook.buildCookbook();
 
     @Test
     void shouldCopyContents() {

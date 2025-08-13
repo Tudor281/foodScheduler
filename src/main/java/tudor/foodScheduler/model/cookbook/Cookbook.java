@@ -12,6 +12,8 @@ import static tudor.foodScheduler.model.Multiplicity.*;
 import static tudor.foodScheduler.model.Multiplicity.AtMostOnce;
 
 public class Cookbook {
+    public int nrChannels;
+
     public final Map<String, Recipe> all = new HashMap<>();
 
     void add(Recipe recipe) {

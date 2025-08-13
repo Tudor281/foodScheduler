@@ -6,7 +6,7 @@ import tudor.foodScheduler.model.cookbook.TudorCookBook;
 
 public class DistinguishIngredientsRun {
     public static void main(String[] args) {
-        Cookbook cookbook = TudorCookBook.getCookbook();
+        Cookbook cookbook = TudorCookBook.buildCookbook();
 
         FreeSlotsComputation freeSlotsComputation = cookbook.getOccupiedSlots();
 

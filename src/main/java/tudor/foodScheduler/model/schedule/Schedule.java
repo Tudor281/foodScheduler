@@ -10,8 +10,6 @@ import java.util.*;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class Schedule {
-    public static final int nrChannels = 5;
-
     // month -> week -> channel -> Recipe
     // channels: 0 F1, 1 F2, 3, AUX
     Map<Integer, Map<Integer, Map<Integer, ScheduleEntry>>> recipes = new HashMap<>();
@@ -21,6 +19,7 @@ public class Schedule {
     public Cookbook cookbook;
 
     public Schedule(int[] weeksInMonth, Cookbook cookbook) {
+        cookbook.calculateDistinguishedIngredients();
         this.weeksInMonth = weeksInMonth;
         this.cookbook = cookbook;
         calculateNumberOfWeeks();
@@ -98,7 +97,7 @@ public class Schedule {
 
     String toString(int month, int week) {
         String result = (month + 1) + "\t" + (week + 1);
-        for (int i = 0; i< nrChannels; i++) {
+        for (int i = 0; i< cookbook.nrChannels; i++) {
             result += '\t' + getName(month, week, i);
         }
         result += '\t' + buildComments(month, week) + '\n';
@@ -111,7 +110,7 @@ public class Schedule {
         Counter<Spice> spicesCount = new Counter<>();
         for (int month=0; month<12; month++) {
             for (int week=0; week<weeksInMonth[month]; week++) {
-                for (int channel = 0; channel < nrChannels; channel++) {
+                for (int channel = 0; channel < cookbook.nrChannels; channel++) {
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (entry == null) continue;
                     for (IngredientEntry ingredientEntry : entry.recipe.ingredients) {
@@ -172,10 +171,9 @@ public class Schedule {
     public boolean hasFreeSlots() {
         for (int month=0; month<12; month++) {
             for (int week=0; week<weeksInMonth[month]; week++) {
-                if (recipes.get(month).get(week).get(0) == null) return true;
-                if (recipes.get(month).get(week).get(1) == null) return true;
-                if (recipes.get(month).get(week).get(2) == null) return true;
-                if (recipes.get(month).get(week).get(3) == null) return true;
+                for (int channel=0; channel<cookbook.nrChannels; channel++) {
+                    if (recipes.get(month).get(week).get(channel) == null) return true;
+                }
             }
         }
         return false;
@@ -267,7 +265,7 @@ public class Schedule {
         recipeCounts.clear();
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
-                for (int channel = 0; channel < nrChannels; channel ++) {
+                for (int channel = 0; channel < cookbook.nrChannels; channel ++) {
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (entry == null) continue; // especially channel 3 recipes are optional
                     recipeCounts.count(entry.recipe);
@@ -282,7 +280,7 @@ public class Schedule {
         Map<Integer, ScheduleEntry> prevRow = recipes.get(prevMonth).get(prevWeek); // december 31st
         for (int month=0; month<12; month++) {
             for (int week = 0; week < weeksInMonth[month]; week++) {
-                for (int channel = 0; channel < nrChannels; channel++) {
+                for (int channel = 0; channel < cookbook.nrChannels; channel++) {
                     ScheduleEntry prevEntry = prevRow.get(channel);
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (prevEntry == null || entry == null) continue; // we could have empty slots, especially on channel 3
@@ -390,6 +388,7 @@ public class Schedule {
     int getDistance(ScheduleSlot slot, List<IngredientEntry> ingredients, int channel, ScheduleSlot exception) {
         List<Ingredient> akaPool = new ArrayList<>();
         for (IngredientEntry ingredientEntry : ingredients) {
+            if (!ingredientEntry.isDistinguished) continue;
             akaPool.add(ingredientEntry.ingredient);
             akaPool.addAll(ingredientEntry.ingredient.akas);
         }
@@ -434,7 +433,7 @@ public class Schedule {
 
             for (int month = 0; month < 12; month++) {
                 for (int week = 0; week < weeksInMonth[month]; week++) {
-                    for (int channel = 0; channel < nrChannels; channel++) {
+                    for (int channel = 0; channel < cookbook.nrChannels; channel++) {
                         // calculate current distance score
                         ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                         if (entry == null || entry.initialConstraint) continue;

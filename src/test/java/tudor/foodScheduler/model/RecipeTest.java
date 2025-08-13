@@ -8,7 +8,7 @@ import tudor.foodScheduler.model.cookbook.TudorCookBook;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RecipeTest {
-    Cookbook cookbook = TudorCookBook.getCookbook();
+    Cookbook cookbook = TudorCookBook.buildCookbook();
 
     @Nested
     class hasIngredientsInCommon {
