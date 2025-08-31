@@ -14,8 +14,8 @@ public class InitialRun {
     public static Random random;
     static {
         Random random1 = new Random();
-//        long seed = -3641413982555598708L;
-        long seed = random1.nextLong();
+        long seed = -3641413982555598708L;
+//        long seed = random1.nextLong();
         System.out.println("Seed: "+seed);
         random = new Random(seed);
     }

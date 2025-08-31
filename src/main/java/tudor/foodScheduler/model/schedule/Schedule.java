@@ -385,6 +385,60 @@ public class Schedule {
     }
 
     /** Exception is used for permutation, not to compare with the origin slot */
+    float getWeightedDistance(ScheduleSlot slot, List<IngredientEntry> ingredients, int channel, ScheduleSlot exception) {
+        List<Ingredient> akaPool = new ArrayList<>();
+        Map<Ingredient, IngredientEntry> akaQuantityMapping = new HashMap<>();
+        for (IngredientEntry ingredientEntry : ingredients) {
+            if (!ingredientEntry.isDistinguished) continue;
+            akaPool.add(ingredientEntry.ingredient);
+            akaQuantityMapping.put(ingredientEntry.ingredient, ingredientEntry);
+            akaPool.addAll(ingredientEntry.ingredient.akas);
+            for (Ingredient ingredient : ingredientEntry.ingredient.akas) {
+                akaQuantityMapping.put(ingredient, ingredientEntry);
+            }
+        }
+
+        float weightedDistance = 0;
+
+        for (Ingredient ingredient : akaPool) {
+            ScheduleSlot forwardIterator = slot.copy();
+            ScheduleSlot backwardIterator = slot.copy();
+            int counter = 0;
+            do {
+                boolean foundCommon = false;
+
+                forwardIterator.increment(weeksInMonth);
+                if (hasCommonIngredient(forwardIterator, ingredient, channel, exception)) {
+                    foundCommon = true;
+                    float quantity =  recipes.get(forwardIterator.computerMonth).get(forwardIterator.computerWeek).get(channel).recipe.getQuantityInGrams(ingredient);
+                    weightedDistance += (float) counter / (quantity + akaQuantityMapping.get(ingredient).getIngredientInGrams());
+                }
+
+                backwardIterator.decrement(weeksInMonth);
+                if (hasCommonIngredient(backwardIterator, ingredient, channel, exception)) {
+                    foundCommon = true;
+                    float quantity =  recipes.get(backwardIterator.computerMonth).get(backwardIterator.computerWeek).get(channel).recipe.getQuantityInGrams(ingredient);
+                    weightedDistance += (float) counter / (quantity + akaQuantityMapping.get(ingredient).getIngredientInGrams());
+                }
+
+                if (foundCommon) break;
+                counter++;
+            } while (counter<numberOfWeeks);
+
+        }
+        return weightedDistance;
+    }
+
+    boolean hasCommonIngredient(ScheduleSlot slot, Ingredient ingredient, int channel, ScheduleSlot exception) {
+        if (exception != null && slot.computerMonth == exception.computerMonth && slot.computerWeek == exception.computerWeek) return false;
+
+        ScheduleEntry entry = recipes.get(slot.computerMonth).get(slot.computerWeek).get(channel);
+        if (entry == null) return false;
+        if (entry.recipe.hasIngredient(ingredient)) return true;
+        return false;
+    }
+
+    /** Exception is used for permutation, not to compare with the origin slot */
     int getDistance(ScheduleSlot slot, List<IngredientEntry> ingredients, int channel, ScheduleSlot exception) {
         List<Ingredient> akaPool = new ArrayList<>();
         for (IngredientEntry ingredientEntry : ingredients) {
@@ -427,7 +481,7 @@ public class Schedule {
         double score = getScore();
         int localExplorationCounter = 0;
         for (int iteration = 0; iteration < 10000; iteration ++) {
-            int minimumDistance = Integer.MAX_VALUE;
+            float minimumDistance = Float.MAX_VALUE;
             List<ScheduleSlot> minDistanceSlots = new ArrayList<>();
             List<Recipe> minDistanceRecipes = new ArrayList<>();
 
@@ -440,18 +494,18 @@ public class Schedule {
 
                         Recipe recipe = entry.recipe;
                         ScheduleSlot currentSlot = new ScheduleSlot(month, week);
-                        int currentDistance = getDistance(currentSlot, recipe.ingredients, channel, null);
+                        float currentDistance = getWeightedDistance(currentSlot, recipe.ingredients, channel, null);
                         if (currentDistance < minimumDistance) {
                             minDistanceSlots.clear();
                             minDistanceRecipes.clear();
                             minimumDistance = currentDistance;
                         }
-                        if (currentDistance == minimumDistance) {
+                        if (currentDistance < minimumDistance * 10 && currentDistance > minimumDistance / 10) {
                             minDistanceSlots.add(currentSlot);
                             minDistanceRecipes.add(recipe);
                         }
-                        if (currentDistance > 3) continue;
-                        int bestCandidateDistance = 0;
+//                        if (currentDistance > 3) continue;
+                        float bestCandidateDistance = 0;
                         ScheduleSlot bestSwap = null;
                         // find best possible slot
                         for (int candidateMonth = 0; candidateMonth < 12; candidateMonth++) {
@@ -459,7 +513,7 @@ public class Schedule {
                                 if (!recipe.isInSeason(candidateMonth+1)) continue;
 
                                 ScheduleSlot candidateSlot = new ScheduleSlot(candidateMonth, candidateWeek);
-                                int targetDistance = getDistance(candidateSlot, recipe.ingredients, channel, currentSlot);
+                                float targetDistance = getWeightedDistance(candidateSlot, recipe.ingredients, channel, currentSlot);
                                 if (targetDistance <= bestCandidateDistance || targetDistance >= currentDistance) continue;
 
                                 ScheduleEntry candidateEntry = recipes.get(candidateMonth).get(candidateWeek).get(channel);
@@ -467,11 +521,11 @@ public class Schedule {
                                     if (candidateEntry.initialConstraint) continue;
 
                                     Recipe candidateRecipe = candidateEntry.recipe;
-                                    if (candidateRecipe.hasIngredientsInCommon(recipe)) continue;
+//                                    if (candidateRecipe.hasIngredientsInCommon(recipe)) continue;
                                     if (!candidateRecipe.isInSeason(month+1)) continue;
 
-                                    int candidateCurrentDistance = getDistance(candidateSlot, candidateRecipe.ingredients, channel, null);
-                                    int swapDistance = getDistance(currentSlot, candidateRecipe.ingredients, channel, candidateSlot);
+                                    float candidateCurrentDistance = getWeightedDistance(candidateSlot, candidateRecipe.ingredients, channel, null);
+                                    float swapDistance = getWeightedDistance(currentSlot, candidateRecipe.ingredients, channel, candidateSlot);
                                     if (swapDistance <= candidateCurrentDistance) continue; // we want a mutually beneficial swap
                                 }
 
@@ -497,7 +551,9 @@ public class Schedule {
             double newScore = getScore();
             if (newScore <= score) {
                 localExplorationCounter++;
-                performOptimalInsert(minDistanceSlots, minDistanceRecipes, minimumDistance);
+                if (!minDistanceSlots.isEmpty()) {
+                    performOptimalInsert(minDistanceSlots, minDistanceRecipes, (int) minimumDistance);
+                }
             } else {
                 score = newScore;
                 localExplorationCounter = 0;

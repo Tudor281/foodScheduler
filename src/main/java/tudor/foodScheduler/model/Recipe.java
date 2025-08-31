@@ -105,6 +105,13 @@ public class Recipe {
         return true;
     }
 
+    public float getQuantityInGrams(Ingredient ingredient) {
+        for (IngredientEntry ingredientEntry : ingredients) {
+            if (ingredientEntry.ingredient == ingredient) return ingredientEntry.getIngredientInGrams();
+        }
+        throw new RuntimeException("Couldn't find ingredient "+ingredient.name()+" in "+name);
+    }
+
     public String toString() {
         return name;
     }
