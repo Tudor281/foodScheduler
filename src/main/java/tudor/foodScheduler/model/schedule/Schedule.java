@@ -438,39 +438,6 @@ public class Schedule {
         return false;
     }
 
-    /** Exception is used for permutation, not to compare with the origin slot */
-    int getDistance(ScheduleSlot slot, List<IngredientEntry> ingredients, int channel, ScheduleSlot exception) {
-        List<Ingredient> akaPool = new ArrayList<>();
-        for (IngredientEntry ingredientEntry : ingredients) {
-            if (!ingredientEntry.isDistinguished) continue;
-            akaPool.add(ingredientEntry.ingredient);
-            akaPool.addAll(ingredientEntry.ingredient.akas);
-        }
-        ScheduleSlot forwardIterator = slot.copy();
-        ScheduleSlot backwardIterator = slot.copy();
-        int counter = 0;
-        do {
-            forwardIterator.increment(weeksInMonth);
-            if (hasCommonIngredients(forwardIterator, akaPool, channel, exception)) return counter;
-            backwardIterator.decrement(weeksInMonth);
-            if (hasCommonIngredients(backwardIterator, akaPool, channel, exception)) return counter;
-
-            counter++;
-        } while (counter<numberOfWeeks);
-        return counter;
-    }
-
-    boolean hasCommonIngredients(ScheduleSlot slot, List<Ingredient> ingredients, int channel, ScheduleSlot exception) {
-        if (exception != null && slot.computerMonth == exception.computerMonth && slot.computerWeek == exception.computerWeek) return false;
-
-        ScheduleEntry entry = recipes.get(slot.computerMonth).get(slot.computerWeek).get(channel);
-        if (entry == null) return false;
-        for (Ingredient ingredient : ingredients) {
-            if (entry.recipe.hasIngredient(ingredient)) return true;
-        }
-        return false;
-    }
-
     public boolean reachedLimit(Recipe recipe) {
         int count = recipeCounts.get(recipe);
         return recipe.multiplicity == Multiplicity.AtLeastOnce && ((recipe.limit != null && recipe.limit >= count) || count >= recipe.fel.cap);

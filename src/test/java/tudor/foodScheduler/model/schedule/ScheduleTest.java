@@ -67,21 +67,6 @@ class ScheduleTest {
         System.out.println("Hello: "+candidates);
     }
 
-    @Nested
-    class getDistance {
-        @Test
-        void shouldDetectCorrectDistanceByAka() {
-            Schedule schedule = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, cookbook);
-
-            Recipe cPastai = cookbook.get("Ciorbă de păstăi");
-            Recipe cPastaiFresh = cookbook.get("Ciorbă de păstăi fresh");
-
-            schedule.add(2, 2, cPastai, true);
-            int distance = schedule.getDistance(new ScheduleSlot(0,0), cPastaiFresh.ingredients, 0, null);
-            assertEquals(4, distance);
-        }
-    }
-
     @Test
     void shouldIdentifySuitableReplacement2() {
         String input = """
