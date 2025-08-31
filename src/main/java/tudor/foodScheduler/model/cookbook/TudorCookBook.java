@@ -644,7 +644,7 @@ public class TudorCookBook {
                 new IngredientEntry(Smantana, 600, gram)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de țelină - Mama", AtLeastOnce, List.of(
-                new IngredientEntry(Telina, 1200, bucati),
+                new IngredientEntry(Telina, 1200, gram),
                 new IngredientEntry(Cartofi, 600, gram),
                 new IngredientEntry(Ceapa, 4, bucati),
                 new IngredientEntry(Morcov, 1, bucati),
