@@ -322,7 +322,7 @@ public class Schedule {
         return false;
     }
 
-    public List<Recipe> getSuitableReplacements(int greatestDistance, ScheduleSlot slot, Recipe recipe) {
+    public List<Recipe> getSuitableReplacements(float greatestDistance, ScheduleSlot slot, Recipe recipe) {
         if (!canRemove(recipe)) return List.of();
         List<Recipe> bestRecipes = new ArrayList<>();
         for (Recipe candidate : cookbook.all.values()) {
@@ -338,7 +338,7 @@ public class Schedule {
                 continue;
             }
 
-            int distance = getDistance(slot, candidate.ingredients, recipe.fel.channel, null);
+            float distance = getWeightedDistance(slot, candidate.ingredients, recipe.fel.channel, null);
             if (distance>greatestDistance) {
                 greatestDistance = distance;
                 bestRecipes.clear();
@@ -552,7 +552,7 @@ public class Schedule {
             if (newScore <= score) {
                 localExplorationCounter++;
                 if (!minDistanceSlots.isEmpty()) {
-                    performOptimalInsert(minDistanceSlots, minDistanceRecipes, (int) minimumDistance);
+                    performOptimalInsert(minDistanceSlots, minDistanceRecipes, minimumDistance);
                 }
             } else {
                 score = newScore;
@@ -567,7 +567,7 @@ public class Schedule {
         return bestSchedule;
     }
 
-    private void performOptimalInsert(List<ScheduleSlot> minDistanceSlots, List<Recipe> minDistanceRecipes, int currentDistance) {
+    private void performOptimalInsert(List<ScheduleSlot> minDistanceSlots, List<Recipe> minDistanceRecipes, float currentDistance) {
         int counter = 0;
         do {
             counter++;
