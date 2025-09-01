@@ -401,6 +401,7 @@ public class Schedule {
         float weightedDistance = 0;
 
         for (Ingredient ingredient : akaPool) {
+            if (!ingredient.score) continue; // we ignore non scored ingredients (we don't distance them)
             ScheduleSlot forwardIterator = slot.copy();
             ScheduleSlot backwardIterator = slot.copy();
             int counter = 0;

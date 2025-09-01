@@ -61,7 +61,7 @@ public enum Ingredient {
     Praz(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12)),
     Salata(ALL, ALL),
     Smantana(ALL, ALL),
-    Soia(ALL, ALL, false),
+    Soia(ALL, ALL),
     Spanac(ALL, ALL),
     Sos_Carbonara(ALL, ALL),
     Sos_Pesto_Genovese(ALL, ALL),
