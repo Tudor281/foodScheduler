@@ -7,7 +7,8 @@ import static tudor.foodScheduler.model.Months.ALL;
 
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
-    Ardei(List.of(6,7,8,9), ALL),
+    // https://fdc.nal.usda.gov/food-details/2258590/nutrients
+    Ardei_Rosu(List.of(6,7,8,9), ALL, 31, 0.13, 0, 5.45, 0, 1.2, 0.9, 6, 0.35, 11, 27, 213, 0, 0.2, 0.04, 0.133, 0, 0, 142, 0.055, 0.142, 1.02, 0.303, 0.427, 47, 0,0,0,0,0),
     Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
     Avocado_Hass(List.of(), ALL), // coaja aspra, neagra la maturitate
     Bors(ALL, ALL),
@@ -176,9 +177,84 @@ public enum Ingredient {
     public final List<Ingredient> akas = new ArrayList<>();
     public boolean score = true; // recipes with less of this ingredient get better scores, by disabling I hope I get more of these
 
+    int calories = 0;
+    double fat = 0;
+    double saturatedFat = 0;
+    double carbohydrates = 0;
+    double sugars = 0;
+    double fibers = 0;
+    double proteins = 0;
+
+    double calciumMg = 0;
+    double ironMg = 0;
+    double magnesiumMg = 0;
+    double phosphorusMg = 0;
+    double potassiumMg = 0;
+    double sodiumMg = 0;
+    double zincMg = 0;
+    double copperMg = 0;
+    double manganeseMg = 0;
+    double seleniumMug = 0;
+    double iodineMug = 0;
+
+    double cMg = 0;
+    double thiaminMg = 0;
+    double riboflavinMg = 0;
+    double niacinMg = 0;
+    double b6Mg = 0;
+    double biotinMug = 0;
+    double folateMug = 0;
+    double retinolMug = 0;
+    double dMug = 0;
+    double kPhylloquinoneMug = 0;
+    double kDihydrophylloquinoneMug = 0;
+    double kMenaquinone4Mug = 0;
+
+
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
+    }
+
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, int caloriesKCal, double fatG, double saturatedFatG, double carbohydratesG, double sugarsG, double fibersG, double proteinsG) {
+        this(domesticMonths, importMonths);
+        this.calories = caloriesKCal;
+        this.fat = fatG;
+        this.saturatedFat = saturatedFatG;
+        this.carbohydrates = carbohydratesG;
+        this.sugars = sugarsG;
+        this.fibers = fibersG;
+        this.proteins = proteinsG;
+    }
+
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, int caloriesKCal, double fatG, double saturatedFatG, double carbohydratesG, double sugarsG, double fibersG, double proteinsG,
+               double calciumMg, double ironMg, double magnesiumMg, double phosphorusMg, double potassiumMg, double sodiumMg, double zincMg, double copperMg, double manganeseMg, double seleniumMug, double iodineMug,
+               double cMg, double thiaminMg, double riboflavinMg, double niacinMg, double b6Mg, double biotinMug, double folateMug, double retinolMug, double dMug, double kPhylloquinoneMug, double kDihydrophylloquinoneMug, double kMenaquinone4Mug) {
+        this(domesticMonths, importMonths, caloriesKCal, fatG, saturatedFatG, carbohydratesG, sugarsG, fibersG, proteinsG);
+        this.calciumMg = calciumMg;
+        this.ironMg = ironMg;
+        this.magnesiumMg = magnesiumMg;
+        this.phosphorusMg = phosphorusMg;
+        this.potassiumMg = potassiumMg;
+        this.sodiumMg = sodiumMg;
+        this.zincMg = zincMg;
+        this.copperMg = copperMg;
+        this.manganeseMg = manganeseMg;
+        this.seleniumMug = seleniumMug;
+        this.iodineMug = iodineMug;
+
+        this.cMg = cMg;
+        this.thiaminMg = thiaminMg;
+        this.riboflavinMg = riboflavinMg;
+        this.niacinMg = niacinMg;
+        this.b6Mg = b6Mg;
+        this.biotinMug = biotinMug;
+        this.folateMug = folateMug;
+        this.retinolMug = retinolMug;
+        this.dMug = dMug;
+        this.kPhylloquinoneMug = kPhylloquinoneMug;
+        this.kDihydrophylloquinoneMug = kDihydrophylloquinoneMug;
+        this.kMenaquinone4Mug = kMenaquinone4Mug;
     }
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score) {

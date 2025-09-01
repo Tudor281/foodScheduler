@@ -23,7 +23,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Broccoli, 1, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
@@ -31,7 +31,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Cartofi, 800, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Ulei, 4, linguri),
                 new IngredientEntry(Bors, 500, gram)),
@@ -40,7 +40,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Cartofi, 800, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
@@ -48,7 +48,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Conopida, 1, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
@@ -56,7 +56,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Dovlecei, 2, bucati),
                 new IngredientEntry(Ciuperci, 400, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Telina, 250, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
@@ -65,7 +65,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Fasole_Uscata, 400, gram ),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Pastarnac, 1, bucati),
                 new IngredientEntry(Usturoi, 5, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
@@ -77,7 +77,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Fasole_Uscata, 400, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Dafin, Sare, Piper)));
@@ -85,7 +85,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Fasole_Uscata, 400, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Cimbru, Sare, Piper)));
@@ -93,7 +93,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Fasole_Uscata, 400, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
@@ -110,7 +110,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Bors, 500, gram),
                 new IngredientEntry(Ulei, 4, linguri))
                 , F1, List.of(Patrunjel, Marar, Sare, Piper)));
@@ -128,7 +128,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Pastarnac, 1, bucati),
                 new IngredientEntry(Telina, 150, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper), 3));
@@ -138,7 +138,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Pastarnac, 1, bucati),
                 new IngredientEntry(Telina, 150, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
@@ -149,7 +149,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Carne_Pui, 700, gram),
                 new IngredientEntry(Orez, 100, gram),
                 new IngredientEntry(Morcov, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Pastarnac, 1, bucati),
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
@@ -173,7 +173,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ou, 4, bucati),
                 new IngredientEntry(Pastarnac, 1, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Telina, 200, gram),
                 new IngredientEntry(Usturoi, 5, bucati)), F1, List.of(Otet, Patrunjel, Dafin, Sare, Piper)));
@@ -217,7 +217,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Usturoi, 4, bucati),
-                new IngredientEntry(Ardei, 1, bucati)),
+                new IngredientEntry(Ardei_Rosu, 1, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Simplu", AtLeastOnce, List.of(
                 new IngredientEntry(Broccoli, 2, bucati),
@@ -225,7 +225,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Telina, 100, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Morcov, 3, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Usturoi, 4, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Soia", Once, List.of(
@@ -236,7 +236,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Usturoi, 4, bucati),
-                new IngredientEntry(Ardei, 1, bucati)),
+                new IngredientEntry(Ardei_Rosu, 1, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de conopidă", AtMostOnce, List.of(
                 new IngredientEntry(Conopida, 1, bucati),
@@ -291,7 +291,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Telina, 200, gram),
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
                 new IngredientEntry(Pastarnac, 1, bucati),
-                new IngredientEntry(Ardei, 1, bucati),
+                new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Fidea, 80, gram)), F1, List.of(Patrunjel, FrunzeTelina, Sare, Piper)));
         return cookbook;
     }

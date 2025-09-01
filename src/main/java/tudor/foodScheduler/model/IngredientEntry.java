@@ -22,7 +22,7 @@ public class IngredientEntry {
                     case Avocado_Hass -> {
                         return 120 * quantity; // copilot
                     }
-                    case Ardei -> {
+                    case Ardei_Rosu -> {
                         return 100 * quantity;
                     }
                     case Broccoli -> {
