@@ -8,9 +8,12 @@ import static tudor.foodScheduler.model.Months.ALL;
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
     // https://fdc.nal.usda.gov/food-details/2258590/nutrients
-    Ardei_Rosu(List.of(6,7,8,9), ALL, 31, 0.13, 0, 5.45, 0, 1.2, 0.9, 6, 0.35, 11, 27, 213, 0, 0.2, 0.04, 0.133, 0, 0, 142, 0.055, 0.142, 1.02, 0.303, 0.427, 47, 0,0,0,0,0),
-    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false), // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
-    Avocado_Hass(List.of(), ALL), // coaja aspra, neagra la maturitate
+    Ardei_Rosu(List.of(6,7,8,9), ALL, 31, 0.13, 0, 5.45, 0, 1.2, 0.9, 6, 0.35, 11, 27, 213, 0, 0.2, 0.04, 0.133, 0, 0, 0, 142, 0.055, 0.142, 1.02, 0.303, 0.427, 47, 0,0,0,0,0),
+    // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
+    // https://fdc.nal.usda.gov/food-details/2346405/nutrients
+    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, 17, 0.16, 0, 3.32, 0, 0, 0.49, 46, 0, 10.9, 22, 265, 97, 0.09, 0, 0.076, 0, 0, 0, 0,0,0,0, 0.052, 0,0,0,0,0,0,0),
+    // https://fdc.nal.usda.gov/food-details/2710824/nutrients
+    Avocado_Hass(List.of(), ALL, 223, 20.3, 0, 8.32, 0, 0, 1.81, 14, 0.61, 32.8, 42, 576, 0, 0.46, 0.285, 0.197, 0, 0,0, 0, 0, 0, 0, 0.167, 0, 129, 0, 0, 0, 0, 0), // coaja aspra, neagra la maturitate
     Bors(ALL, ALL),
     Branza(ALL, ALL),
     Branza_Fagaras(ALL, ALL),
@@ -195,6 +198,7 @@ public enum Ingredient {
     double copperMg = 0;
     double manganeseMg = 0;
     double seleniumMug = 0;
+    double molybdenumMug = 0;
     double iodineMug = 0;
 
     double cMg = 0;
@@ -228,7 +232,7 @@ public enum Ingredient {
     }
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, int caloriesKCal, double fatG, double saturatedFatG, double carbohydratesG, double sugarsG, double fibersG, double proteinsG,
-               double calciumMg, double ironMg, double magnesiumMg, double phosphorusMg, double potassiumMg, double sodiumMg, double zincMg, double copperMg, double manganeseMg, double seleniumMug, double iodineMug,
+               double calciumMg, double ironMg, double magnesiumMg, double phosphorusMg, double potassiumMg, double sodiumMg, double zincMg, double copperMg, double manganeseMg, double seleniumMug, double molybdenumMug, double iodineMug,
                double cMg, double thiaminMg, double riboflavinMg, double niacinMg, double b6Mg, double biotinMug, double folateMug, double retinolMug, double dMug, double kPhylloquinoneMug, double kDihydrophylloquinoneMug, double kMenaquinone4Mug) {
         this(domesticMonths, importMonths, caloriesKCal, fatG, saturatedFatG, carbohydratesG, sugarsG, fibersG, proteinsG);
         this.calciumMg = calciumMg;
@@ -241,6 +245,7 @@ public enum Ingredient {
         this.copperMg = copperMg;
         this.manganeseMg = manganeseMg;
         this.seleniumMug = seleniumMug;
+        this.molybdenumMug = molybdenumMug;
         this.iodineMug = iodineMug;
 
         this.cMg = cMg;
@@ -255,6 +260,16 @@ public enum Ingredient {
         this.kPhylloquinoneMug = kPhylloquinoneMug;
         this.kDihydrophylloquinoneMug = kDihydrophylloquinoneMug;
         this.kMenaquinone4Mug = kMenaquinone4Mug;
+    }
+
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score,
+               int caloriesKCal, double fatG, double saturatedFatG, double carbohydratesG, double sugarsG, double fibersG, double proteinsG,
+               double calciumMg, double ironMg, double magnesiumMg, double phosphorusMg, double potassiumMg, double sodiumMg, double zincMg, double copperMg, double manganeseMg, double seleniumMug, double molybdenumMug, double iodineMug,
+               double cMg, double thiaminMg, double riboflavinMg, double niacinMg, double b6Mg, double biotinMug, double folateMug, double retinolMug, double dMug, double kPhylloquinoneMug, double kDihydrophylloquinoneMug, double kMenaquinone4Mug) {
+        this(domesticMonths, importMonths, caloriesKCal, fatG, saturatedFatG, carbohydratesG, sugarsG, fibersG, proteinsG,
+                calciumMg, ironMg, magnesiumMg, phosphorusMg, potassiumMg, sodiumMg, zincMg, copperMg, manganeseMg, seleniumMug, molybdenumMug, iodineMug,
+                cMg, thiaminMg, riboflavinMg, niacinMg, b6Mg, biotinMug, folateMug, retinolMug, dMug, kPhylloquinoneMug, kDihydrophylloquinoneMug, kMenaquinone4Mug);
+        this.score = score;
     }
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score) {
