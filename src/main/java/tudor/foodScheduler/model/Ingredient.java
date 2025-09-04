@@ -15,6 +15,7 @@ public enum Ingredient {
     Bors(ALL, ALL),
     Branza_CottageFullFat(ALL, ALL),
     Branza_Fagaras(ALL, ALL),
+    Branza_Feta(ALL, ALL),
     Branza_Gorgonzola(ALL, ALL),
     Branza_Mascarpone(ALL, ALL),
     Branza_Mozzarella(ALL, ALL),
@@ -109,68 +110,24 @@ public enum Ingredient {
     Struguri(List.of(9,10,11), List.of())
     ;
 
-    static {
-        Branza_CottageFullFat.akas.add(Branza_Fagaras);
-        Branza_CottageFullFat.akas.add(Branza_Gorgonzola);
-        Branza_CottageFullFat.akas.add(Branza_Mascarpone);
-        Branza_CottageFullFat.akas.add(Branza_Mozzarella);
-        Branza_CottageFullFat.akas.add(Branza_Telemea);
-        Branza_Fagaras.akas.add(Branza_CottageFullFat);
-        Branza_Fagaras.akas.add(Branza_Gorgonzola);
-        Branza_Fagaras.akas.add(Branza_Mascarpone);
-        Branza_Fagaras.akas.add(Branza_Mozzarella);
-        Branza_Fagaras.akas.add(Branza_Telemea);
-        Branza_Gorgonzola.akas.add(Branza_CottageFullFat);
-        Branza_Gorgonzola.akas.add(Branza_Fagaras);
-        Branza_Gorgonzola.akas.add(Branza_Mascarpone);
-        Branza_Gorgonzola.akas.add(Branza_Mozzarella);
-        Branza_Gorgonzola.akas.add(Branza_Telemea);
-        Branza_Mascarpone.akas.add(Branza_CottageFullFat);
-        Branza_Mascarpone.akas.add(Branza_Fagaras);
-        Branza_Mascarpone.akas.add(Branza_Gorgonzola);
-        Branza_Mascarpone.akas.add(Branza_Mozzarella);
-        Branza_Mascarpone.akas.add(Branza_Telemea);
-        Branza_Mozzarella.akas.add(Branza_CottageFullFat);
-        Branza_Mozzarella.akas.add(Branza_Fagaras);
-        Branza_Mozzarella.akas.add(Branza_Gorgonzola);
-        Branza_Mozzarella.akas.add(Branza_Mascarpone);
-        Branza_Mozzarella.akas.add(Branza_Telemea);
-        Branza_Telemea.akas.add(Branza_CottageFullFat);
-        Branza_Telemea.akas.add(Branza_Fagaras);
-        Branza_Telemea.akas.add(Branza_Gorgonzola);
-        Branza_Telemea.akas.add(Branza_Mascarpone);
-        Branza_Telemea.akas.add(Branza_Mozzarella);
-        Branza_Telemea.akas.add(Branza_Telemea);
+    static { // akas
+        aka(Branza_CottageFullFat, Branza_Fagaras, Branza_Feta, Branza_Gorgonzola, Branza_Mascarpone, Branza_Mozzarella, Branza_Telemea);
+        aka(Carne_Pui, Carne_Pui_Ficat, Carne_Vita);
+        aka(Lapte, Lapte_Praf);
+        aka(PastaiCongelate, PastaiFresh);
+        aka(Fidea, Paste, Paste_Lasagna);
+        aka(Peste, Peste_Somon);
+        aka(Ulei, Ulei_Masline);
+        aka(Varza, VarzaMurata);
+    }
 
-        Carne_Pui.akas.add(Carne_Vita);
-        Carne_Pui.akas.add(Carne_Pui_Ficat);
-        Carne_Pui_Ficat.akas.add(Carne_Pui);
-        Carne_Pui_Ficat.akas.add(Carne_Vita);
-        Carne_Vita.akas.add(Carne_Pui);
-        Carne_Vita.akas.add(Carne_Pui_Ficat);
-
-        Lapte.akas.add(Lapte_Praf);
-        Lapte_Praf.akas.add(Lapte);
-
-        PastaiCongelate.akas.add(PastaiFresh);
-        PastaiFresh.akas.add(PastaiCongelate);
-
-        Fidea.akas.add(Paste);
-        Fidea.akas.add(Paste_Lasagna);
-        Paste.akas.add(Fidea);
-        Paste.akas.add(Paste_Lasagna);
-        Paste_Lasagna.akas.add(Fidea);
-        Paste_Lasagna.akas.add(Paste);
-
-
-        Peste.akas.add(Peste_Somon);
-        Peste_Somon.akas.add(Peste);
-
-        Ulei.akas.add(Ulei_Masline);
-        Ulei_Masline.akas.add(Ulei);
-
-        Varza.akas.add(VarzaMurata);
-        VarzaMurata.akas.add(Varza);
+    static void aka(Ingredient... ingredients) {
+        for (int i=0; i<ingredients.length; i++) {
+            for (int j=0; j<ingredients.length; j++) {
+                if (i==j) continue;
+                ingredients[i].akas.add(ingredients[j]);
+            }
+        }
     }
 
     final List<Integer> domesticMonths;
@@ -415,6 +372,6 @@ public enum Ingredient {
         Branza_Mozzarella.b6Mg = 0.037;
         Branza_Mozzarella.b9folateMug = 7;
         Branza_Mozzarella.b12Mug = 2.28;
-        
+
     }
 }
