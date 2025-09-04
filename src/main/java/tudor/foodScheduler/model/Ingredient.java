@@ -141,7 +141,7 @@ public enum Ingredient {
     int calories = 0;
     double fatTotal = 0;
     double saturatedFat = 0;
-    double carbohydratesNonSugarNonFiber = 0;
+    double starch = 0; // total carbs - sugars - fibers (in ciqual carbs have sugars but not fibers, see Castraveti Murati)
     double sugars = 0;
     double fibers = 0;
     double proteins = 0;
@@ -199,7 +199,7 @@ public enum Ingredient {
         Ardei_Rosu.calories = 31;
         Ardei_Rosu.proteins = 0.9;
         Ardei_Rosu.fatTotal = 0.13;
-        Ardei_Rosu.carbohydratesNonSugarNonFiber = 5.45;
+        Ardei_Rosu.starch = 5.45;
         Ardei_Rosu.fibers = 1.2;
         Ardei_Rosu.calciumMg = 6;
         Ardei_Rosu.ironMg = 0.35;
@@ -221,7 +221,7 @@ public enum Ingredient {
         Apio.calories = 17;
         Apio.proteins = 0.49;
         Apio.fatTotal = 0.16;
-        Apio.carbohydratesNonSugarNonFiber = 3.32;
+        Apio.starch = 3.32;
         Apio.calciumMg = 46;
         Apio.magnesiumMg = 10.9;
         Apio.phosphorusMg = 22;
@@ -235,7 +235,7 @@ public enum Ingredient {
         Avocado_Hass.calories = 223;
         Avocado_Hass.proteins = 1.81;
         Avocado_Hass.fatTotal = 20.3;
-        Avocado_Hass.carbohydratesNonSugarNonFiber = 8.32;
+        Avocado_Hass.starch = 8.32;
         Avocado_Hass.calciumMg = 14;
         Avocado_Hass.ironMg = 0.61;
         Avocado_Hass.magnesiumMg = 32.8;
@@ -253,7 +253,7 @@ public enum Ingredient {
         Branza_CottageFullFat.proteins = 11.6;
         Branza_CottageFullFat.fatTotal = 4.22;
         Branza_CottageFullFat.saturatedFat = 2.6;
-        Branza_CottageFullFat.carbohydratesNonSugarNonFiber = 4.6;
+        Branza_CottageFullFat.starch = 4.6;
         Branza_CottageFullFat.calciumMg = 88;
         Branza_CottageFullFat.magnesiumMg = 9.2;
         Branza_CottageFullFat.phosphorusMg = 154;
@@ -274,7 +274,7 @@ public enum Ingredient {
         Branza_Fagaras.proteins = Branza_CottageFullFat.proteins;
         Branza_Fagaras.fatTotal = Branza_CottageFullFat.fatTotal;
         Branza_Fagaras.saturatedFat = Branza_CottageFullFat.saturatedFat;
-        Branza_Fagaras.carbohydratesNonSugarNonFiber = Branza_CottageFullFat.carbohydratesNonSugarNonFiber;
+        Branza_Fagaras.starch = Branza_CottageFullFat.starch;
         Branza_Fagaras.calciumMg = Branza_CottageFullFat.calciumMg;
         Branza_Fagaras.magnesiumMg = Branza_CottageFullFat.magnesiumMg;
         Branza_Fagaras.phosphorusMg = Branza_CottageFullFat.phosphorusMg;
@@ -380,7 +380,7 @@ public enum Ingredient {
         Branza_Mozzarella.calories = 227;
         Branza_Mozzarella.proteins = 16.5;
         Branza_Mozzarella.sugars = 0.7;
-        Branza_Mozzarella.carbohydratesNonSugarNonFiber = 0.75 - Branza_Mozzarella.sugars;
+        Branza_Mozzarella.starch = 0.75 - Branza_Mozzarella.sugars;
         Branza_Mozzarella.fatTotal = 17.7;
         Branza_Mozzarella.saturatedFat = 11.7;
         Branza_Mozzarella.salt = 0.6;
@@ -470,7 +470,7 @@ public enum Ingredient {
         // Ciqual 36030
         Carne_Pui_Picioare.calories = 188;
         Carne_Pui_Picioare.proteins = 24.8;
-        Carne_Pui_Picioare.carbohydratesNonSugarNonFiber = 0.7;
+        Carne_Pui_Picioare.starch = 0.7;
         Carne_Pui_Picioare.fatTotal = 9.52;
         Carne_Pui_Picioare.saturatedFat = 2; // from others
         Carne_Pui_Picioare.salt = 0.23;
@@ -536,7 +536,7 @@ public enum Ingredient {
         // Ciqual 40116
         Carne_Pui_Ficat.calories = 160;
         Carne_Pui_Ficat.proteins = 24.5;
-        Carne_Pui_Ficat.carbohydratesNonSugarNonFiber = 0.8;
+        Carne_Pui_Ficat.starch = 0.8;
         Carne_Pui_Ficat.fatTotal = 6.51;
         Carne_Pui_Ficat.saturatedFat = 2.06;
         Carne_Pui_Ficat.salt = 0.19;
@@ -616,5 +616,79 @@ public enum Ingredient {
         Carne_Vita_Tocata.b6Mg = 0.29;
         Carne_Vita_Tocata.b9folateMug = 9;
         Carne_Vita_Tocata.b12Mug = 2.3;
+
+        // ciqual 4003
+        Cartofi.calories = 81;
+        Cartofi.proteins = 1.8;
+        Cartofi.sugars = 0.86;
+        Cartofi.fibers = 1.8;
+        Cartofi.starch = 16.7 - Cartofi.sugars;
+        Cartofi.fatTotal = 0.34;
+        Cartofi.saturatedFat = 0.094;
+        Cartofi.salt = 0.052;
+        Cartofi.calciumMg = 5.83;
+        Cartofi.copperMg = 0.076;
+        Cartofi.ironMg = 0.27;
+        Cartofi.magnesiumMg = 17.3;
+        Cartofi.manganeseMg = 0.074;
+        Cartofi.phosphorusMg = 37.2;
+        Cartofi.potassiumMg = 363;
+        Cartofi.sodiumMg = 20.6;
+        Cartofi.zincMg = 0.15;
+        Cartofi.betaCaroteneMug = 2;
+        Cartofi.eMg = 0.01;
+        Cartofi.k1PhylloquinoneMug = 2.1;
+        Cartofi.cMg = 2.92;
+        Cartofi.b1thiaminMg = 0.079;
+        Cartofi.b3niacinMg = 1.73;
+        Cartofi.b5pantothenicAcidMg = 0.57;
+        Cartofi.b6Mg = 0.34;
+        Cartofi.b9folateMug = 31.1;
+
+        // Ciqual 20210
+        Castraveti.calories = 15;
+        Castraveti.proteins = 0.56;
+        Castraveti.sugars = 1.8;
+        Castraveti.fibers = 0.8;
+        Castraveti.starch = 2.23 - Castraveti.sugars;
+        Castraveti.calciumMg = 16;
+        Castraveti.copperMg = 0.02;
+        Castraveti.ironMg = 0.14;
+        Castraveti.magnesiumMg = 8.9;
+        Castraveti.manganeseMg = 0.11;
+        Castraveti.phosphorusMg = 25;
+        Castraveti.potassiumMg = 140;
+        Castraveti.zincMg = 0.13;
+        Castraveti.betaCaroteneMug = 24.3;
+        Castraveti.k1PhylloquinoneMug = 2.75;
+        Castraveti.cMg = 3.52;
+        Castraveti.b5pantothenicAcidMg = 0.15;
+        Castraveti.b6Mg = 0.042;
+        Castraveti.b9folateMug = 7.2;
+
+        // Ciqual 11004
+        Castraveti_Murati.calories = 19;
+        Castraveti_Murati.proteins = 1.06; // how can they have more proteins in vinegar?
+        Castraveti_Murati.sugars = 0.6;
+        Castraveti_Murati.fibers = 1.5;
+        Castraveti_Murati.starch = 0.78 - Castraveti_Murati.sugars;
+        Castraveti_Murati.salt = 1.72;
+        Castraveti_Murati.calciumMg = 65;
+        Castraveti_Murati.copperMg = 0.05;
+        Castraveti_Murati.ironMg = 0.25;
+        Castraveti_Murati.magnesiumMg = 23;
+        Castraveti_Murati.manganeseMg = 0.06;
+        Castraveti_Murati.phosphorusMg = 26;
+        Castraveti_Murati.potassiumMg = 120;
+        Castraveti_Murati.sodiumMg = 689;
+        Castraveti_Murati.zincMg = 0.13;
+        Castraveti_Murati.betaCaroteneMug = 369;
+        Castraveti_Murati.eMg = 0.48;
+        Castraveti_Murati.k1PhylloquinoneMug = 42.8;
+        Castraveti_Murati.b1thiaminMg = 0.13;
+        Castraveti_Murati.b3niacinMg = 0.2;
+        Castraveti_Murati.b5pantothenicAcidMg = 0.11;
+        Castraveti_Murati.b9folateMug = 11.5;
+        
     }
 }
