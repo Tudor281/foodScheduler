@@ -115,7 +115,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ulei, 4, linguri))
                 , F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de năut cu afumătură", Once, List.of(
-                new IngredientEntry(Carne_Pui, 350, gram),
+                new IngredientEntry(Carne_Pui_Piept, 350, gram),
                 new IngredientEntry(Naut, 250, gram),
                 new IngredientEntry(Pappardelle, 125, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
@@ -143,10 +143,10 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de perișoare", Once, List.of(
-                new IngredientEntry(Carne_Pui, 500, gram)),
+                new IngredientEntry(Carne_Pui_Piept, 500, gram)),
                 F1, List.of())); // TODO No recipy
         cookbook.add(new Recipe("Ciorbă de pui a la Grec", Once, List.of(
-                new IngredientEntry(Carne_Pui, 700, gram),
+                new IngredientEntry(Carne_Pui_Piept, 700, gram),
                 new IngredientEntry(Orez, 100, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
@@ -168,7 +168,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ulei, 2, linguri)), // de la omletă
                 F1, List.of(Sare)));
         cookbook.add(new Recipe("Ciorbă rădăuțeană", Once, List.of(
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Piept, 500, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Ou, 4, bucati),
                 new IngredientEntry(Pastarnac, 1, bucati),
@@ -195,7 +195,7 @@ public class CiorbeCookBook {
                 F1, List.of(Sare, Piper, Busuioc, Rozmarin, Patrunjel)));
         cookbook.add(new Recipe("Nakkikeitto", AtMostOnce, List.of(
                 new IngredientEntry(Cartofi, 900, gram),
-                new IngredientEntry(Carne_Pui, 700, gram),
+                new IngredientEntry(Carne_Pui_Piept, 700, gram),
                 new IngredientEntry(Morcov, 450, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Pastarnac, 2, bucati),
@@ -211,7 +211,7 @@ public class CiorbeCookBook {
                 F1, List.of(Sare, Piper, Dafin, Patrunjel, Rozmarin), 2));
         cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtMostOnce, List.of(
                 new IngredientEntry(Broccoli, 2, bucati),
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Piept, 500, gram),
                 new IngredientEntry(Cartofi, 400, gram),
                 new IngredientEntry(Telina, 100, gram),
                 new IngredientEntry(Ceapa, 1, bucati),

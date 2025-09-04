@@ -47,14 +47,14 @@ public class TudorCookBook {
                 new IngredientEntry(Orez, 150, gram),
                 new IngredientEntry(Ou, 1, bucati),
                 new IngredientEntry(Ulei, 4, linguri),
-                new IngredientEntry(Carne_Pui, 500, gram)),
+                new IngredientEntry(Carne_Pui_Tocata, 500, gram)),
                 F2, List.of(FrunzeTelina, Sare, Piper)));
         cookbook.add(new Recipe("Bundincă", AtLeastOnce, List.of(
                 new IngredientEntry(Lapte, 100, gram),
                 new IngredientEntry(Zahar, 50, gram)),
                 Desert, List.of())); // TODO No Recipy
         cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(
-                new IngredientEntry(Carne_Vita, 500, gram),
+                new IngredientEntry(Carne_Vita_Tocata, 500, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Ou, 1, bucati),
                 new IngredientEntry(Ulei, 2, linguri),
@@ -163,7 +163,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei, 4, linguri))
                 , F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de năut cu afumătură", Once, List.of(
-                new IngredientEntry(Carne_Pui, 350, gram),
+                new IngredientEntry(Carne_Pui_Piept, 350, gram),
                 new IngredientEntry(Naut, 250, gram),
                 new IngredientEntry(Pappardelle, 125, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
@@ -191,10 +191,10 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de perișoare", Once, List.of(
-                new IngredientEntry(Carne_Pui, 500, gram)),
+                new IngredientEntry(Carne_Pui_Tocata, 500, gram)),
                 F1, List.of())); // TODO No recipy
         cookbook.add(new Recipe("Ciorbă de pui a la Grec", Once, List.of(
-                new IngredientEntry(Carne_Pui, 700, gram),
+                new IngredientEntry(Carne_Pui_Picioare, 700, gram),
                 new IngredientEntry(Orez, 100, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
@@ -216,7 +216,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei, 2, linguri)), // de la omletă
                 F1, List.of(Sare)));
         cookbook.add(new Recipe("Ciorbă rădăuțeană", Once, List.of(
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Picioare, 500, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Ou, 4, bucati),
                 new IngredientEntry(Pastarnac, 1, bucati),
@@ -285,7 +285,7 @@ public class TudorCookBook {
                 new IngredientEntry(Zahar, 150, gram)),
                 Desert, List.of()));
         cookbook.add(new Recipe("Gulaș", Once, List.of(
-                new IngredientEntry(Carne_Vita, 600, gram),
+                new IngredientEntry(Carne_Vita_Chuck, 600, gram),
                 new IngredientEntry(Ceapa, 3, bucati),
                 new IngredientEntry(Ardei_Rosu, 2, bucati),
                 new IngredientEntry(Morcov, 3, bucati),
@@ -315,7 +315,7 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 1, bucati)),
                 Rece, List.of(SucLamaie, Oregano)));
         cookbook.add(new Recipe("Lasagna bolognese", Once, List.of(
-                new IngredientEntry(Carne_Vita, 500, gram),
+                new IngredientEntry(Carne_Vita_Tocata, 500, gram),
                 new IngredientEntry(Ceapa, 3, bucati),
                 new IngredientEntry(Apio, 100, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram),
@@ -339,7 +339,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa, 3, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 100, gram),
-                new IngredientEntry(Carne_Pui, 600, gram)),
+                new IngredientEntry(Carne_Pui_Picioare, 600, gram)),
                 F2, List.of(Sare, Piper, Dafin, BoiaDulce, Iuteala)));
         cookbook.add(new Recipe("Mâncare de cartofi - Cu soia", Once, List.of(
                 new IngredientEntry(Cartofi, 1500, gram),
@@ -377,7 +377,7 @@ public class TudorCookBook {
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram)), F2, List.of(Sare, Piper, Dafin)));
         cookbook.add(new Recipe("Mâncare de mazăre - Cu pui", Disabled, List.of(
                 new IngredientEntry(Mazare, 1000, gram),
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Piept, 500, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Morcov, 2, bucati),
@@ -420,12 +420,12 @@ public class TudorCookBook {
                 F1, List.of(Sare, Piper, Busuioc, Rozmarin, Patrunjel)));
         cookbook.add(new Recipe("Musaca cu carne", Once, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Tocata, 500, gram),
                 new IngredientEntry(Lapte, 200, gram),
                 new IngredientEntry(Unt, 50, gram)), F2, List.of(Sare)));
         cookbook.add(new Recipe("Musaca cu ragu", AtMostOnce, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
-                new IngredientEntry(Carne_Vita, 500, gram),
+                new IngredientEntry(Carne_Vita_Tocata, 500, gram),
                 new IngredientEntry(Lapte, 200, gram),
                 new IngredientEntry(Unt, 50, gram),
                 new IngredientEntry(Ceapa, 3, bucati),
@@ -450,7 +450,7 @@ public class TudorCookBook {
                 F2, List.of(VinAlb)));
         cookbook.add(new Recipe("Nakkikeitto", AtMostOnce, List.of(
                 new IngredientEntry(Cartofi, 900, gram),
-                new IngredientEntry(Carne_Pui, 700, gram),
+                new IngredientEntry(Carne_Pui_Piept, 700, gram),
                 new IngredientEntry(Morcov, 450, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Pastarnac, 2, bucati),
@@ -466,7 +466,7 @@ public class TudorCookBook {
                 F1, List.of(Sare, Piper, Dafin, Patrunjel, Rozmarin), 2));
         cookbook.add(new Recipe("Nasi Goreng", AtMostOnce, List.of(
                 new IngredientEntry(Orez, 250, gram),
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Picioare, 500, gram),
                 new IngredientEntry(Morcov, 3, bucati),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Mazare, 300, gram),
@@ -499,7 +499,7 @@ public class TudorCookBook {
                 F2, List.of(Sare, Patrunjel, Patrunjel))); // faci când găsești, e un tiny window
         cookbook.add(new Recipe("Pilaf - Paella cu pui", AtMostOnce, List.of(
                 new IngredientEntry(Orez, 300, gram),
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Picioare, 500, gram),
                 new IngredientEntry(Ardei_Rosu, 2, bucati),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Rosii, 1, bucati),
@@ -510,14 +510,14 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Pilaf - Sarmale cu varză murată și carne", Disabled, List.of(
                 new IngredientEntry(Orez, 200, gram),
                 new IngredientEntry(VarzaMurata, 500, gram),
-                new IngredientEntry(Carne_Pui, 500, gram)),
+                new IngredientEntry(Carne_Pui_Tocata, 500, gram)),
                 F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Pilaf - Sarmale viță de vie simplu", Disabled, List.of(
                 new IngredientEntry(Orez, 300, gram)), F2,
                 List.of())); // TODO no recipy
         cookbook.add(new Recipe("Pilaf - Sarmale viță de vie cu carne", Once, List.of(
                 new IngredientEntry(Orez, 200, gram),
-                new IngredientEntry(Carne_Pui, 500, gram)),
+                new IngredientEntry(Carne_Pui_Tocata, 500, gram)),
                 F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Pilaf - Simplu", AtLeastOnce, List.of(
                 new IngredientEntry(Orez, 600, gram),
@@ -533,7 +533,7 @@ public class TudorCookBook {
                 new IngredientEntry(Zahar, 2, linguri)),
                 Desert, List.of(Scortisoara)));
         cookbook.add(new Recipe("Răcitură", Once, List.of(
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Picioare, 500, gram),
                 new IngredientEntry(Usturoi, 10, bucati)),
                 F2, List.of(Sare, Piper))); // TODO: Recipy
         cookbook.add(new Recipe("Riz au lait", AtLeastOnce, List.of(
@@ -546,11 +546,11 @@ public class TudorCookBook {
                 new IngredientEntry(Mazare, 150, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Maioneza, 300, gram),
-                new IngredientEntry(Carne_Pui, 200, gram),
+                new IngredientEntry(Carne_Pui_Piept, 200, gram),
                 new IngredientEntry(Castraveti_Murati, 200, gram)),
                 Rece, List.of(Sare, Mustar)));
         cookbook.add(new Recipe("Salată de pui", Once, List.of(
-                new IngredientEntry(Carne_Pui, 300, gram),
+                new IngredientEntry(Carne_Pui_Piept, 300, gram),
                 new IngredientEntry(Ciuperci, 800, gram),
                 new IngredientEntry(Mais, 200, gram),
                 new IngredientEntry(Maioneza, 100, gram)),
@@ -559,13 +559,13 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi, 400, gram),
                 new IngredientEntry(Morcov, 3, bucati),
                 new IngredientEntry(Maioneza, 400, gram),
-                new IngredientEntry(Carne_Pui, 150, gram),
+                new IngredientEntry(Carne_Pui_Piept, 150, gram),
                 new IngredientEntry(Mais, 100, gram)),
                 Rece, List.of(Sare, Mustar)));
         cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(
                 new IngredientEntry(Maioneza, 400, gram),
                 new IngredientEntry(Ciuperci, 600, gram),
-                new IngredientEntry(Carne_Pui, 250, gram),
+                new IngredientEntry(Carne_Pui_Piept, 250, gram),
                 new IngredientEntry(Paste, 100, gram),
                 new IngredientEntry(Castraveti_Murati, 100, gram)),
                 Rece, List.of(Patrunjel, Mustar)));
@@ -589,7 +589,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei, 4, linguri)), Rece, List.of(Sare)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtMostOnce, List.of(
                 new IngredientEntry(Broccoli, 2, bucati),
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Piept, 500, gram),
                 new IngredientEntry(Cartofi, 400, gram),
                 new IngredientEntry(Telina, 100, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
@@ -763,7 +763,7 @@ public class TudorCookBook {
                 new IngredientEntry(VarzaMurata, 1000, gram),
                 new IngredientEntry(Ceapa, 4, bucati),
                 new IngredientEntry(Orez, 150, gram),
-                new IngredientEntry(Carne_Vita, 500, gram)),
+                new IngredientEntry(Carne_Vita_Tocata, 500, gram)),
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Varză la Cluj cu soia", Once, List.of(
                 new IngredientEntry(VarzaMurata, 1000, gram),
@@ -772,7 +772,7 @@ public class TudorCookBook {
                 new IngredientEntry(Orez, 150, gram)),
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Vitel tonne", Once, List.of(
-                new IngredientEntry(Carne_Vita, 500, gram),
+                new IngredientEntry(Carne_Vita_Chuck, 500, gram),
                 new IngredientEntry(Ton, 300, gram)),
                 Rece, List.of(Sare))); // TODO no recipy
 
@@ -812,7 +812,7 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 2, bucati)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Microfoane", Once, List.of(
-                new IngredientEntry(Carne_Pui, 500, gram),
+                new IngredientEntry(Carne_Pui_Picioare, 500, gram),
                 new IngredientEntry(Malai, 100, gram)),
                 FastFood, List.of(Sare, Piper, BoiaDulce)));
         cookbook.add(new Recipe("Ficat de pui prăjit", Once, List.of(
@@ -828,7 +828,7 @@ public class TudorCookBook {
                 new IngredientEntry(Malai, 100, gram)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Șnițel de pui", Once, List.of(
-                new IngredientEntry(Carne_Pui, 500, gram)),
+                new IngredientEntry(Carne_Pui_Piept, 500, gram)),
                 FastFood, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Somon prăjit", Once, List.of(
                 new IngredientEntry(Peste_Somon, 250, gram),
@@ -861,7 +861,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri)), FastFood, List.of()));
         cookbook.add(new Recipe("Cobb Salad", AtLeastOnce, List.of(
                 new IngredientEntry(Salata, 200, gram),
-                new IngredientEntry(Carne_Pui, 200, gram),
+                new IngredientEntry(Carne_Pui_Piept, 200, gram),
                 new IngredientEntry(Ou, 3, bucati),
                 new IngredientEntry(Rosii, 2, bucati),
                 new IngredientEntry(Branza_Telemea, 200, gram),

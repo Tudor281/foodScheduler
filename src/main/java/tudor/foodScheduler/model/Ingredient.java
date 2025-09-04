@@ -21,9 +21,12 @@ public enum Ingredient {
     Branza_Mozzarella(ALL, ALL),
     Branza_Telemea(ALL, ALL),
     Broccoli(List.of(5,6,7,8,9,10,11), ALL),
-    Carne_Pui(ALL, ALL),
+    Carne_Pui_Picioare(ALL,ALL),
+    Carne_Pui_Piept(ALL, ALL),
     Carne_Pui_Ficat(ALL, ALL),
-    Carne_Vita(ALL, ALL),
+    Carne_Pui_Tocata(ALL, ALL),
+    Carne_Vita_Chuck(ALL, ALL), // carne gulas
+    Carne_Vita_Tocata(ALL, ALL),
     Cartofi(ALL, ALL),
     Castraveti(List.of(3,4,5,6,7,8,9), ALL),
     Castraveti_Murati(ALL, ALL),
@@ -112,7 +115,7 @@ public enum Ingredient {
 
     static { // akas
         aka(Branza_CottageFullFat, Branza_Fagaras, Branza_Feta, Branza_Gorgonzola, Branza_Mascarpone, Branza_Mozzarella, Branza_Telemea);
-        aka(Carne_Pui, Carne_Pui_Ficat, Carne_Vita);
+        aka(Carne_Pui_Picioare, Carne_Pui_Piept, Carne_Pui_Tocata, Carne_Pui_Ficat, Carne_Vita_Chuck, Carne_Vita_Tocata);
         aka(Lapte, Lapte_Praf);
         aka(PastaiCongelate, PastaiFresh);
         aka(Fidea, Paste, Paste_Lasagna);
@@ -173,6 +176,7 @@ public enum Ingredient {
     double k1PhylloquinoneMug = 0; // aka Phytomenadione
     double kDihydrophylloquinoneMug = 0; // synthetic vitamin K
     double k2Menaquinone4Mug = 0; // Subtypes: MK-4 to MK-13
+    double luteinZeaxanthinMug = 0;
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;
@@ -287,6 +291,37 @@ public enum Ingredient {
         Branza_Fagaras.k1PhylloquinoneMug = Branza_CottageFullFat.k1PhylloquinoneMug;
         Branza_Fagaras.k2Menaquinone4Mug = Branza_CottageFullFat.k2Menaquinone4Mug;
 
+        // Ciqual 12060
+        Branza_Feta.calories = 270;
+        Branza_Feta.proteins = 16.4;
+        Branza_Feta.sugars = 1.42;
+        Branza_Feta.fatTotal = 21.7;
+        Branza_Feta.saturatedFat = 14.6;
+        Branza_Feta.salt = 1.94;
+        Branza_Feta.calciumMg = 557;
+        Branza_Feta.copperMg = 0.051;
+        Branza_Feta.ironMg = 0.42;
+        Branza_Feta.iodineMug = 13.8;
+        Branza_Feta.magnesiumMg = 19.5;
+        Branza_Feta.manganeseMg = 0.044;
+        Branza_Feta.phosphorusMg = 349;
+        Branza_Feta.potassiumMg = 125;
+        Branza_Feta.seleniumMug = 6.2;
+        Branza_Feta.sodiumMg = 917;
+        Branza_Feta.zincMg = 2.63;
+        Branza_Feta.retinolMug = 157;
+        Branza_Feta.betaCaroteneMug = 3;
+        Branza_Feta.dMug = 0.32;
+        Branza_Feta.eMg = 0.37;
+        Branza_Feta.k1PhylloquinoneMug = 1.8;
+        Branza_Feta.b1thiaminMg = 0.1;
+        Branza_Feta.b2riboflavinMg = 0.65;
+        Branza_Feta.b3niacinMg = 1.4;
+        Branza_Feta.b5pantothenicAcidMg = 1.16;
+        Branza_Feta.b6Mg = 0.34;
+        Branza_Feta.b9folateMug = 47;
+        Branza_Feta.b12Mug = 1.41;
+
         // Ciqual
         Branza_Gorgonzola.calories = 312;
         Branza_Gorgonzola.proteins = 19;
@@ -373,5 +408,213 @@ public enum Ingredient {
         Branza_Mozzarella.b9folateMug = 7;
         Branza_Mozzarella.b12Mug = 2.28;
 
+        Branza_Telemea.calories = Branza_Feta.calories;
+        Branza_Telemea.proteins = Branza_Feta.proteins;
+        Branza_Telemea.sugars = Branza_Feta.sugars;
+        Branza_Telemea.fatTotal = Branza_Feta.fatTotal;
+        Branza_Telemea.saturatedFat = Branza_Feta.saturatedFat;
+        Branza_Telemea.salt = Branza_Feta.salt;
+        Branza_Telemea.calciumMg = Branza_Feta.calciumMg;
+        Branza_Telemea.copperMg = Branza_Feta.copperMg;
+        Branza_Telemea.ironMg = Branza_Feta.ironMg;
+        Branza_Telemea.iodineMug = Branza_Feta.iodineMug;
+        Branza_Telemea.magnesiumMg = Branza_Feta.magnesiumMg;
+        Branza_Telemea.manganeseMg = Branza_Feta.manganeseMg;
+        Branza_Telemea.phosphorusMg = Branza_Feta.phosphorusMg;
+        Branza_Telemea.potassiumMg = Branza_Feta.potassiumMg;
+        Branza_Telemea.seleniumMug = Branza_Feta.seleniumMug;
+        Branza_Telemea.sodiumMg = Branza_Feta.sodiumMg;
+        Branza_Telemea.zincMg = Branza_Feta.zincMg;
+        Branza_Telemea.retinolMug = Branza_Feta.retinolMug;
+        Branza_Telemea.betaCaroteneMug = Branza_Feta.betaCaroteneMug;
+        Branza_Telemea.dMug = Branza_Feta.dMug;
+        Branza_Telemea.eMg = Branza_Feta.eMg;
+        Branza_Telemea.k1PhylloquinoneMug = Branza_Feta.k1PhylloquinoneMug;
+        Branza_Telemea.b1thiaminMg = Branza_Feta.b1thiaminMg;
+        Branza_Telemea.b2riboflavinMg = Branza_Feta.b2riboflavinMg;
+        Branza_Telemea.b3niacinMg = Branza_Feta.b3niacinMg;
+        Branza_Telemea.b5pantothenicAcidMg = Branza_Feta.b5pantothenicAcidMg;
+        Branza_Telemea.b6Mg = Branza_Feta.b6Mg;
+        Branza_Telemea.b9folateMug = Branza_Feta.b9folateMug;
+        Branza_Telemea.b12Mug = Branza_Feta.b12Mug;
+
+        // https://fdc.nal.usda.gov/food-details/747447/nutrients
+        Broccoli.calories = 39;
+        Broccoli.proteins = 2.57;
+        Broccoli.fatTotal = 0.34;
+        Broccoli.saturatedFat = 0.039;
+        Broccoli.sugars = 1.4;
+        Broccoli.fibers = 2.4;
+        Broccoli.calciumMg = 46;
+        Broccoli.ironMg = 0.69;
+        Broccoli.magnesiumMg = 21;
+        Broccoli.phosphorusMg = 67;
+        Broccoli.potassiumMg = 303;
+        Broccoli.sodiumMg = 36;
+        Broccoli.zincMg = 0.42;
+        Broccoli.copperMg = 0.059;
+        Broccoli.manganeseMg = 0.197;
+        Broccoli.seleniumMug = 1.6;
+        Broccoli.cMg = 91.3;
+        Broccoli.b1thiaminMg = 0.077;
+        Broccoli.b2riboflavinMg = 0.114;
+        Broccoli.b3niacinMg = 0.639;
+        Broccoli.b5pantothenicAcidMg = 0.61;
+        Broccoli.b6Mg = 0.191;
+        Broccoli.b9folateMug = 65;
+        Broccoli.betaCaroteneMug = 93;
+        Broccoli.luteinZeaxanthinMug = 745;
+        Broccoli.eMg = 0.15;
+        Broccoli.k1PhylloquinoneMug = 102;
+
+        // Ciqual 36030
+        Carne_Pui_Picioare.calories = 188;
+        Carne_Pui_Picioare.proteins = 24.8;
+        Carne_Pui_Picioare.carbohydratesNonSugarNonFiber = 0.7;
+        Carne_Pui_Picioare.fatTotal = 9.52;
+        Carne_Pui_Picioare.saturatedFat = 2; // from others
+        Carne_Pui_Picioare.salt = 0.23;
+        Carne_Pui_Picioare.calciumMg = 5.8;
+        Carne_Pui_Picioare.ironMg = 1.2;
+        Carne_Pui_Picioare.iodineMug = 3;
+        Carne_Pui_Picioare.magnesiumMg = 26.2;
+        Carne_Pui_Picioare.phosphorusMg = 164;
+        Carne_Pui_Picioare.potassiumMg = 262;
+        Carne_Pui_Picioare.sodiumMg = 90;
+        Carne_Pui_Picioare.zincMg = 2.4;
+        Carne_Pui_Picioare.retinolMug = 10;
+        Carne_Pui_Picioare.eMg = 0.27;
+        Carne_Pui_Picioare.k1PhylloquinoneMug = 3.55;
+        Carne_Pui_Picioare.cMg = 2.2;
+        Carne_Pui_Picioare.b1thiaminMg = 0.059;
+        Carne_Pui_Picioare.b2riboflavinMg = 0.15;
+        Carne_Pui_Picioare.b3niacinMg = 4.9;
+        Carne_Pui_Picioare.b5pantothenicAcidMg = 0.64;
+        Carne_Pui_Picioare.b6Mg = 0.2;
+        Carne_Pui_Picioare.b9folateMug = 7.5;
+        Carne_Pui_Picioare.b12Mug = 0.49;
+
+        // Ciqual 36018
+        // TODO: Unele retete folosesc picioare
+        Carne_Pui_Piept.calories = 141;
+        Carne_Pui_Piept.proteins = 30.1;
+        Carne_Pui_Piept.fatTotal = 2;
+        Carne_Pui_Piept.saturatedFat = 0.58;
+        Carne_Pui_Piept.salt = 0.14;
+        Carne_Pui_Piept.calciumMg = 4.7;
+        Carne_Pui_Piept.copperMg = 0.03;
+        Carne_Pui_Piept.ironMg = 0.39;
+        Carne_Pui_Piept.magnesiumMg = 37;
+        Carne_Pui_Piept.phosphorusMg = 270;
+        Carne_Pui_Piept.potassiumMg = 440;
+        Carne_Pui_Piept.sodiumMg = 56;
+        Carne_Pui_Piept.zincMg = 0.72;
+        Carne_Pui_Piept.eMg = 0.11;
+        Carne_Pui_Piept.cMg = 1.43;
+        Carne_Pui_Piept.b1thiaminMg = 0.087;
+        Carne_Pui_Piept.b2riboflavinMg = 0.049;
+        Carne_Pui_Piept.b3niacinMg = 11.8;
+        Carne_Pui_Piept.b5pantothenicAcidMg = 1.74;
+        Carne_Pui_Piept.b6Mg = 0.19;
+        Carne_Pui_Piept.b9folateMug = 9.55;
+        Carne_Pui_Piept.b12Mug = 0.18;
+
+        // https://fdc.nal.usda.gov/food-details/2514746/nutrients
+        Carne_Pui_Tocata.calories = 133;
+        Carne_Pui_Tocata.proteins = 17.9;
+        Carne_Pui_Tocata.fatTotal = 7.16;
+        Carne_Pui_Tocata.saturatedFat = 1.56;
+        Carne_Pui_Tocata.calciumMg = 6;
+        Carne_Pui_Tocata.magnesiumMg = 20.5;
+        Carne_Pui_Tocata.phosphorusMg = 166;
+        Carne_Pui_Tocata.potassiumMg = 302;
+        Carne_Pui_Tocata.sodiumMg = 63;
+        Carne_Pui_Tocata.zincMg = 1.18;
+        Carne_Pui_Tocata.copperMg = 0.036;
+        Carne_Pui_Tocata.manganeseMg = 0.005;
+
+        // Ciqual 40116
+        Carne_Pui_Ficat.calories = 160;
+        Carne_Pui_Ficat.proteins = 24.5;
+        Carne_Pui_Ficat.carbohydratesNonSugarNonFiber = 0.8;
+        Carne_Pui_Ficat.fatTotal = 6.51;
+        Carne_Pui_Ficat.saturatedFat = 2.06;
+        Carne_Pui_Ficat.salt = 0.19;
+        Carne_Pui_Ficat.calciumMg = 11;
+        Carne_Pui_Ficat.copperMg = 0.5;
+        Carne_Pui_Ficat.ironMg = 11.6;
+        Carne_Pui_Ficat.iodineMug = 5;
+        Carne_Pui_Ficat.magnesiumMg = 25;
+        Carne_Pui_Ficat.manganeseMg = 0.36;
+        Carne_Pui_Ficat.phosphorusMg = 405;
+        Carne_Pui_Ficat.potassiumMg = 263;
+        Carne_Pui_Ficat.sodiumMg = 76;
+        Carne_Pui_Ficat.zincMg = 3.98;
+        Carne_Pui_Ficat.retinolMug = 3980;
+        Carne_Pui_Ficat.betaCaroteneMug = 30;
+        Carne_Pui_Ficat.eMg = 0.82;
+        Carne_Pui_Ficat.cMg = 27.9;
+        Carne_Pui_Ficat.b1thiaminMg = 0.29;
+        Carne_Pui_Ficat.b2riboflavinMg = 1.99;
+        Carne_Pui_Ficat.b3niacinMg = 11;
+        Carne_Pui_Ficat.b5pantothenicAcidMg = 6.67;
+        Carne_Pui_Ficat.b6Mg = 0.76;
+        Carne_Pui_Ficat.b9folateMug = 578;
+        Carne_Pui_Ficat.b12Mug = 16.9;
+
+        // Ciqual 6270
+        Carne_Vita_Chuck.calories = 144;
+        Carne_Vita_Chuck.proteins = 21.2;
+        Carne_Vita_Chuck.fatTotal = 6.54;
+        Carne_Vita_Chuck.saturatedFat = 2.59;
+        Carne_Vita_Chuck.salt = 0.12;
+        Carne_Vita_Chuck.calciumMg = 7.45;
+        Carne_Vita_Chuck.copperMg = 0.087;
+        Carne_Vita_Chuck.ironMg = 2.5;
+        Carne_Vita_Chuck.magnesiumMg = 25;
+        Carne_Vita_Chuck.manganeseMg = 0.012;
+        Carne_Vita_Chuck.phosphorusMg = 223;
+        Carne_Vita_Chuck.potassiumMg = 343;
+        Carne_Vita_Chuck.seleniumMug = 10.2;
+        Carne_Vita_Chuck.sodiumMg = 49;
+        Carne_Vita_Chuck.zincMg = 5.51;
+        Carne_Vita_Chuck.retinolMug = 3;
+        Carne_Vita_Chuck.dMug = 0.1;
+        Carne_Vita_Chuck.eMg = 0.2;
+        Carne_Vita_Chuck.k1PhylloquinoneMug = 1.5;
+        Carne_Vita_Chuck.b1thiaminMg = 0.08;
+        Carne_Vita_Chuck.b2riboflavinMg = 0.21;
+        Carne_Vita_Chuck.b3niacinMg = 3.67;
+        Carne_Vita_Chuck.b5pantothenicAcidMg = 0.86;
+        Carne_Vita_Chuck.b6Mg = 0.27;
+        Carne_Vita_Chuck.b9folateMug = 3;
+        Carne_Vita_Chuck.b12Mug = 2.77;
+
+        //Ciqual 6255
+        Carne_Vita_Tocata.calories = 239;
+        Carne_Vita_Tocata.proteins = 23.6;
+        Carne_Vita_Tocata.fatTotal = 16.1;
+        Carne_Vita_Tocata.saturatedFat = 7.08;
+        Carne_Vita_Tocata.salt = 0.21;
+        Carne_Vita_Tocata.calciumMg = 15;
+        Carne_Vita_Tocata.copperMg = 0.078;
+        Carne_Vita_Tocata.ironMg = 2.6;
+        Carne_Vita_Tocata.iodineMug = 6.1;
+        Carne_Vita_Tocata.magnesiumMg = 29.5;
+        Carne_Vita_Tocata.manganeseMg = 0.06;
+        Carne_Vita_Tocata.phosphorusMg = 198;
+        Carne_Vita_Tocata.potassiumMg = 318;
+        Carne_Vita_Tocata.sodiumMg = 84.3;
+        Carne_Vita_Tocata.zincMg = 4.9;
+        Carne_Vita_Tocata.retinolMug = 3;
+        Carne_Vita_Tocata.eMg = 0.12;
+        Carne_Vita_Tocata.k1PhylloquinoneMug = 1.2;
+        Carne_Vita_Tocata.b1thiaminMg = 0.046;
+        Carne_Vita_Tocata.b2riboflavinMg = 0.18;
+        Carne_Vita_Tocata.b3niacinMg = 5.2;
+        Carne_Vita_Tocata.b5pantothenicAcidMg = 0.66;
+        Carne_Vita_Tocata.b6Mg = 0.29;
+        Carne_Vita_Tocata.b9folateMug = 9;
+        Carne_Vita_Tocata.b12Mug = 2.3;
     }
 }
