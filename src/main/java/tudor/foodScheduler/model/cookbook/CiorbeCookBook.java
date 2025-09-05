@@ -98,7 +98,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de frunze", Disabled, List.of(
-                new IngredientEntry(Frunze, 500, gram),
+                new IngredientEntry(Stevie, 500, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Taitei, 200, gram),
@@ -281,7 +281,7 @@ public class CiorbeCookBook {
         cookbook.add(new Recipe("Supă de conopidă", Once, List.of(
                 new IngredientEntry(Conopida, 1, bucati),
                 new IngredientEntry(Ceapa, 1, bucati),
-                new IngredientEntry(Faina, 2, linguri),
+                new IngredientEntry(Faina_Grau_65, 2, linguri),
                 new IngredientEntry(Lapte, 500, gram)),
                 F1, List.of(SucLamaie, BoiaDulce, Sare)));
         cookbook.add(new Recipe("Supă de roșii", AtLeastOnce, List.of(

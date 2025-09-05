@@ -77,7 +77,7 @@ public class IngredientEntry {
             }
             case linguri -> {
                 switch (ingredient) {
-                    case Faina -> {
+                    case Faina_Grau_65 -> {
                         return 25 * quantity;// cu varf
                     }
                     case Gris -> {

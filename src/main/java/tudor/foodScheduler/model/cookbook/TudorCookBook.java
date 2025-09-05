@@ -17,7 +17,7 @@ public class TudorCookBook {
         Cookbook cookbook = new Cookbook();
         cookbook.nrChannels = 5;
         cookbook.add(new Recipe("American Pancakes", Once, List.of(
-                new IngredientEntry(Faina, 300, gram),
+                new IngredientEntry(Faina_Grau_65, 300, gram),
                 new IngredientEntry(Zahar, 100, gram),
                 new IngredientEntry(Ulei, 3, linguri)),
                 Desert, List.of())); // TODO No recipy
@@ -146,7 +146,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de frunze", Disabled, List.of(
-                new IngredientEntry(Frunze, 500, gram),
+                new IngredientEntry(Stevie, 500, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Taitei, 200, gram),
@@ -231,13 +231,13 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 12, gram)),
                 Rece, List.of(Sare)));
         cookbook.add(new Recipe("Clătite", Once, List.of(
-                new IngredientEntry(Faina, 280, gram),
+                new IngredientEntry(Faina_Grau_65, 280, gram),
                 new IngredientEntry(Lapte, 500, gram),
                 new IngredientEntry(Zahar, 50, gram),
                 new IngredientEntry(Ou, 2, bucati)),
                 Desert, List.of(Sare))); // TODO: Ia o rețetă, că ai făcut varză cu rețeta asta
         cookbook.add(new Recipe("Cozonac", Disabled, List.of(
-                new IngredientEntry(Faina, 200, gram),
+                new IngredientEntry(Faina_Grau_65, 200, gram),
                 new IngredientEntry(Zahar, 50, gram)),
                 Desert, List.of())); // TODO: No recipy
         cookbook.add(new Recipe("Fasole bătută", AtLeastOnce, List.of(
@@ -320,7 +320,7 @@ public class TudorCookBook {
                 new IngredientEntry(Apio, 100, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram),
                 new IngredientEntry(Unt, 100, gram),
-                new IngredientEntry(Faina, 75, gram),
+                new IngredientEntry(Faina_Grau_65, 75, gram),
                 new IngredientEntry(Lapte, 1000, gram),
                 new IngredientEntry(Paste_Lasagna, 500, gram)), F2, List.of(VinAlb, Sare)));
         cookbook.add(new Recipe("Lohikeitto", AtMostOnce, List.of(
@@ -659,7 +659,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Supă de conopidă", Once, List.of(
                 new IngredientEntry(Conopida, 1, bucati),
                 new IngredientEntry(Ceapa, 1, bucati),
-                new IngredientEntry(Faina, 2, linguri),
+                new IngredientEntry(Faina_Grau_65, 2, linguri),
                 new IngredientEntry(Lapte, 500, gram)),
                 F1, List.of(SucLamaie, BoiaDulce, Sare)));
         cookbook.add(new Recipe("Supă de roșii", AtLeastOnce, List.of(
@@ -791,7 +791,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ciuperci, 1000, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Unt, 50, gram),
-                new IngredientEntry(Faina, 2, linguri),
+                new IngredientEntry(Faina_Grau_65, 2, linguri),
                 new IngredientEntry(Lapte, 600, gram)),
                 FastFood, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Mâncare de ciuperci - Ciuperci cu smântână și usturoi", AtMostOnce, List.of(
@@ -885,7 +885,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paste, 100, gram),
                 new IngredientEntry(Peste_Somon, 100, gram),
                 new IngredientEntry(Unt, 25, gram),
-                new IngredientEntry(Faina, 20, gram),
+                new IngredientEntry(Faina_Grau_65, 20, gram),
                 new IngredientEntry(Lapte, 200, gram)), FastFood, List.of()));
         cookbook.add(new Recipe("Paste - cu ton", Once, List.of(
                 new IngredientEntry(Paste, 100, gram),
