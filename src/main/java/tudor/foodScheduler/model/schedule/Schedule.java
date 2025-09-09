@@ -114,7 +114,7 @@ public class Schedule {
                     ScheduleEntry entry = recipes.get(month).get(week).get(channel);
                     if (entry == null) continue;
                     for (IngredientEntry ingredientEntry : entry.recipe.ingredients) {
-                        ingredientsCount.count(ingredientEntry.ingredient);
+                        ingredientsCount.count(ingredientEntry.ingredient, Math.round(ingredientEntry.getIngredientInGrams()));
                     }
                     for (Spice spice : entry.recipe.spices) {
                         spicesCount.count(spice);
@@ -125,7 +125,7 @@ public class Schedule {
 
         String result = "\nIngredients:\n";
         for (Map.Entry<Ingredient, Integer> entry : ingredientsCount.getSortedDescending()) {
-            result += entry.getKey() + "\t" + entry.getValue() + "\n";
+            result += entry.getKey() + "\t" + (float) entry.getValue() / 1000 + "Kg\n";
         }
         result += "\nSpices:\n";
         for (Map.Entry<Spice, Integer> entry : spicesCount.getSortedDescending()) {

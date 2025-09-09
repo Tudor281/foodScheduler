@@ -15,6 +15,16 @@ public class Counter<T> {
         }
     }
 
+    public void count(T item, int quantity) {
+        Integer count = counts.get(item);
+        //noinspection Java8MapApi
+        if (count == null) {
+            counts.put(item, quantity);
+        } else {
+            counts.put(item, count + quantity);
+        }
+    }
+
     public void deCount(T item) {
         Integer count = counts.get(item);
         if (count == null) {
