@@ -101,32 +101,32 @@ public class InitialRun {
 //        schedule.add(4, 3, cozonac, true);
         schedule.addComment(4, 3, "Paștele");
 
-        // ziua italiei
-        Recipe melanzane = schedule.cookbook.get("Melanzane alla parmigiano");
-        schedule.add(6, 1, melanzane, true);
-        schedule.addComment(6, 1, "Ziua Italiei");
+        // ziua italiei - around mom's birthday
+//        Recipe melanzane = schedule.cookbook.get("Melanzane alla parmigiano");
+//        schedule.add(6, 1, melanzane, true);
+//        schedule.addComment(6, 1, "Ziua Italiei");
 
-        // ziua USA
-        Recipe potatoSalad = schedule.cookbook.get("American Potato Salad");
-        schedule.add(7, 1, potatoSalad, true);
+        // ziua USA - around holidays
+//        Recipe potatoSalad = schedule.cookbook.get("American Potato Salad");
+//        schedule.add(7, 1, potatoSalad, true);
 //        Recipe applePie = schedule.cookbook.get("Plăcintă cu mere - Foietaj");
 //        schedule.add(7, 1, applePie, true);
-        schedule.addComment(7, 1, "Ziua USA");
+//        schedule.addComment(7, 1, "Ziua USA");
 
-        // ziua frantei
-        Recipe gratinBroccoli = schedule.cookbook.get("Gratin de cartofi cu broccoli și brânză");
-        schedule.add(7, 2, gratinBroccoli, true);
-        schedule.addComment(7, 2, "Ziua Franței");
+        // ziua frantei - around holidays
+//        Recipe gratinBroccoli = schedule.cookbook.get("Gratin de cartofi cu broccoli și brânză");
+//        schedule.add(7, 2, gratinBroccoli, true);
+//        schedule.addComment(7, 2, "Ziua Franței");
 
-        // ziua egiptului
-        Recipe humus = schedule.cookbook.get("Humus");
-        schedule.add(7, 3, humus, true);
-        schedule.addComment(7, 3, "Ziua Egiptului");
+        // ziua egiptului - around holidays
+//        Recipe humus = schedule.cookbook.get("Humus");
+//        schedule.add(7, 3, humus, true);
+//        schedule.addComment(7, 3, "Ziua Egiptului");
 
-        // ziua ungariei
-        Recipe gulas = schedule.cookbook.get("Gulaș");
-        schedule.add(8, 3, gulas, true);
-        schedule.addComment(8,3,"Ziua Ungariei");
+        // ziua ungariei - around holidays
+//        Recipe gulas = schedule.cookbook.get("Gulaș");
+//        schedule.add(8, 3, gulas, true);
+//        schedule.addComment(8,3,"Ziua Ungariei");
 
         // ziua spaniei - n-are rost că avem și Nasi Goreng din Indonezia
 //        Recipe paella = schedule.cookbook.get("Pilaf - Paella cu pui");
