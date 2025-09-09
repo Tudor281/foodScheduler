@@ -25,7 +25,7 @@ public class ScheduleInitializer {
         Schedule schedule = new Schedule(weeksInMonths, cookbook);
         for (String row : rows) {
             String[] cells = row.split("\t");
-            for (int i=2; i<8; i++) {
+            for (int i=2; i<7; i++) {
                 if (cells.length > i && !cells[i].isBlank()) {
                     schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), cookbook.get(cells[i]), initialConstraint);
                 }

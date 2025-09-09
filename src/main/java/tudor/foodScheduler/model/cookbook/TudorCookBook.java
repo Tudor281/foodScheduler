@@ -49,7 +49,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei, 4, linguri),
                 new IngredientEntry(Carne_Pui_Tocata, 500, gram)),
                 F2, List.of(FrunzeTelina, Sare, Piper)));
-        cookbook.add(new Recipe("Bundincă", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Budincă", AtLeastOnce, List.of(
                 new IngredientEntry(Lapte, 100, gram),
                 new IngredientEntry(Zahar, 50, gram)),
                 Desert, List.of())); // TODO No Recipy
@@ -787,6 +787,10 @@ public class TudorCookBook {
                 new IngredientEntry(Malai, 100, gram),
                 new IngredientEntry(Branza_Telemea, 200, gram)),
                 FastFood, List.of()));
+        cookbook.add(new Recipe("Mămăligă cu brânză", Disabled, List.of(
+                new IngredientEntry(Malai, 100, gram),
+                new IngredientEntry(Branza_Telemea, 300, gram)),
+                FastFood, List.of(Sare)));
         cookbook.add(new Recipe("Mâncare de ciuperci - Ciulama de ciuperci", Once, List.of(
                 new IngredientEntry(Ciuperci, 1000, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
@@ -925,6 +929,11 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Paste - Bolognese (semi)", Disabled, List.of(
                 new IngredientEntry(Paste, 100, gram)),
                 FastFood, List.of()));
+        cookbook.add(new Recipe("Ciuperci prăjite", Disabled, List.of(
+                new IngredientEntry(Ciuperci, 1200, gram),
+                new IngredientEntry(Ceapa, 1, bucati),
+                new IngredientEntry(Usturoi, 2, bucati)),
+                FastFood, List.of(Sare)));
 
         // Fruits
         cookbook.add(new Recipe("Banane", AtLeastOnce, List.of(

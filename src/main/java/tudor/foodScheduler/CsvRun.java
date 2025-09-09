@@ -7,119 +7,119 @@ import tudor.foodScheduler.model.schedule.ScheduleInitializer;
 
 public class CsvRun {
     public static void main(String[] args) throws Exception {
-//        String input = """
-//                1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Ciuperci cu maioneză și usturoi
-//                1	2	Nakkikeitto	Musaca cu carne	Mâncare de ciuperci - Ciuperci cu smântână și usturoi	Kiwi	Humus
-//                1	3	Ciorbă de dovlecei cu ciuperci	Mâncare de mazăre - Cu soia	Roșii cu brânză	Clementine	Apple Pie
-//                1	4	Supă cremă de țelină - Cu praz și smântână	Tocăniță de legume	Paste - cu Basilico (semi)	Papaya	Salată boeuf
-//                2	1	Supă de conopidă	Musaca cu ciuperci	Omletă cremă	Grapefruit	Clătite
-//                2	2	Supă cremă de dovleac	Varză fiartă	Fish fingers	Mandarine	Griș cu lapte
-//                2	3	Ciorbă de salată cu scrob	Ghiveci	Paste - Napoletane (semi)	Kiwi	Ciuperci cu maioneză și usturoi
-//                2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait
-//                3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi - ardelenească	Găgău	Mere	Griș cu lapte
-//                3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia	Paste - con Ricotta (semi)	Pere	Humus cu pesto
-//                3	3	Ciorbă de fasole - Cu chimen	Mâncare de cartofi - ardelenească	Roșii cu brânză	Banane	Ciuperci cu maioneză și usturoi
-//                3	4	Ciorbă de pui a la Grec	Gigantes Plaki	Mămăligă	Mere	Tzatziki
-//                3	5	Ciorbă de frunze	Mâncare de cartofi - Cu pui	Facebook Salad	Banane	Salată de vienete cu usturoi
-//                4	1	Ciorbă de cartofi roșie	Tocăniță de praz	Omletă cremă	Mere	Chiftele cu carne
-//                4	2	Supă cremă de mazăre	Mâncare de fasole - Fasole prăjită - Fuchs remix	Omletă normală	Pere
-//                4	3
-//                4	4
-//                5	1
-//                5	2
-//                5	3
-//                5	4
-//                6	1
-//                6	2
-//                6	3
-//                6	4
-//                6	5
-//                7	1
-//                7	2
-//                7	3
-//                7	4
-//                8	1
-//                8	2
-//                8	3
-//                8	4
-//                8	5
-//                9	1
-//                9	2
-//                9	3
-//                9	4
-//                10	1
-//                10	2
-//                10	3
-//                10	4
-//                11	1
-//                11	2
-//                11	3
-//                11	4
-//                11	5
-//                12	1
-//                12	2
-//                12	3
-//                12	4
-//                """;
-//        Schedule schedule = ScheduleInitializer.getSchedule(input, true, TudorCookBook.buildCookbook());
-//
-//        InitialRun.addConstraints(schedule);
-
         String input = """
-1	1	Supă cremă de țelină - Cu praz și smântână
-1	2	Ciorbă de conopidă
-1	3	Supă cremă de țelină - Mama
-1	4	Ciorbă de dovlecei cu ciuperci
-2	1	Nakkikeitto
-2	2	Ciorbă de broccoli
-2	3	Supă cremă de mazăre
-2	4	Ciorbă de fasole - Cu dafin
-3	1	Supă cremă de broccoli - Simplu
-3	2	Ciorbă de ghebe cu smântână
-3	3	Supă cremă de țelină - Mama
-3	4	Ciorbă de salată cu scrob
-3	5	Ciorbă de conopidă
-4	1	Lohikeitto
-4	2	Ciorbă de cartofi cu smântână
-4	3	Supă de cartofi și mazăre
-4	4	Ciorbă de fasole - Cu leuștean
-5	1	Supă cremă de țelină - Mama
-5	2	Ciorbă de salată cu scrob
-5	3	Ciorbă de perișoare
-5	4	Ciorbă de salată cu scrob
-6	1	Ciorbă de fasole - Cu dafin
-6	2	Ciorbă de fasole - Cu chimen
-6	3	Ciorbă de fasole - Cu cimbru
-6	4	Supă cremă de broccoli - Simplu
-6	5	Supă cremă de mazăre
-7	1	Nakkikeitto - V
-7	2	Supă de conopidă
-7	3	Supă cremă de broccoli - Simplu
-7	4	Ciorbă de conopidă
-8	1	Supă cremă de broccoli - Soia
-8	2	Ciorbă de dovlecei cu ciuperci
-8	3	Ciorbă de cartofi roșie
-8	4	Ciorbă rădăuțeană
-8	5	Ciorbă de păstăi
-9	1	Supă cremă de mazăre
-9	2	Supă de roșii
-9	3	Ciorbă de pui a la Grec
-9	4	Supă cremă de dovlecei
-10	1	Ciorbă de broccoli
-10	2	Supă cremă de țelină - Mama
-10	3	Minestrone
-10	4	Supă cremă de broccoli - Simplu
-11	1	Supă cremă de dovleac
-11	2	Ciorbă de cartofi cu smântână
-11	3	Minestrone
-11	4	Supă cremă de broccoli - Simplu
-11	5	Ciorbă de năut cu afumătură
-12	1	Supă cremă de broccoli - Simplu
-12	2	Minestrone
-12	3	Supă cremă de broccoli - Cu carne
-12	4	Supă cremă de conopidă
+                1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Ciuperci cu maioneză și usturoi
+                1	2	Nakkikeitto	Musaca cu carne	Mâncare de ciuperci - Ciuperci cu smântână și usturoi	Kiwi	Humus
+                1	3	Ciorbă de dovlecei cu ciuperci	Mâncare de mazăre - Cu soia	Roșii cu brânză	Clementine	Apple Pie
+                1	4	Supă cremă de țelină - Cu praz și smântână	Tocăniță de legume		Papaya	Salată boeuf
+                2	1	Supă de conopidă	Musaca cu ciuperci	Omletă cremă	Grapefruit	Clătite
+                2	2	Supă cremă de dovleac	Varză fiartă	Fish fingers	Mandarine	Griș cu lapte
+                2	3	Ciorbă de salată cu scrob	Ghiveci		Kiwi	Ciuperci cu maioneză și usturoi
+                2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait
+                3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi - ardelenească	Găgău	Mere	Griș cu lapte
+                3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia		Pere	Humus cu pesto
+                3	3	Ciorbă de fasole - Cu chimen	Mâncare de cartofi - ardelenească	Roșii cu brânză	Banane	Ciuperci cu maioneză și usturoi
+                3	4	Ciorbă de pui a la Grec	Gigantes Plaki	Mămăligă	Mere	Tzatziki
+                3	5	Ciorbă de frunze	Mâncare de cartofi - Cu pui	Facebook Salad	Banane	Salată de vinete cu usturoi
+                4	1	Ciorbă de cartofi roșie	Tocăniță de praz	Omletă cremă	Mere	Chiftele cu carne
+                4	2	Supă cremă de mazăre	Pilaf - Cu ciuperci și alte legume	Omletă normală	Pere	Humus cu pesto
+                4	3	Supă de roșii	Varză călită		Banane	Salată orientală
+                4	4	Ciorbă de conopidă	Mâncare de fasole - Fasole prăjită	Mâncărică de păstăi	Pere	Humus
+                5	1	Ciorbă de păstăi	Lasagna bolognese		Banane	Salată boeuf
+                5	2	Ciorbă de dovlecei cu ciuperci	Mâncare de păstăi		Pere	Fasole bătută
+                5	3	Supă cremă de broccoli - Cu carne	Ardei umpluți cu carne	Mâncărică de păstăi	Mere	Salată orientală
+                5	4	Ciorbă de fasole - Cu leuștean	Mâncare de fasole - Fasole prăjită - Fuchs remix		Pere	Fasole bătută
+                6	1	Supă cremă de țelină - Mama	Melanzane alla parmigiano		Cireșe	Humus cu pesto
+                6	2	Ciorbă de perișoare	Tocăniță de gogonele	Ciuperci prăjite	Mango	Salată de vinete cu usturoi
+                6	3	Ciorbă de broccoli	Mâncare de cartofi - moldovenească	Mămăligă cu brânză	Mere	Tzatziki
+                6	4	Supă de roșii	Varză la Cluj		Caise	Fasole bătută
+                6	5	Supă cremă de țelină - Mama	Pilaf - Cu ciuperci și alte legume		Banane	Salată orientală
+                7	1	Minestrone	American Potato Salad	Mâncărică de păstăi	Caise	Plăcintă cu mere - Foietaj
+                7	2	Supă de roșii	Mâncare de fasole - Fasole prăjită		Mere	
+                7	3	Ciorbă rădăuțeană	Gratin de cartofi cu broccoli și brânză		Pepene Roșu	Humus
+                7	4	Ciorbă de fasole - Cu dafin	Mâncare de mazăre - Simplu	Mămăligă cu brânză	Mere	Salată de vinete cu usturoi
+                8	1	Ciorbă de salată cu scrob	Varză fiartă		Rodii	Tzatziki
+                8	2	Supă cremă de dovlecei	Mâncare de cartofi - Cu soia		Capșuni	Țelină cu morcov
+                8	3	Ciorbă de cartofi cu smântână	Gulaș	Mâncărică de păstăi	Pere	Humus cu pesto
+                8	4	Minestrone	Ghiveci	Mâncărică de păstăi	Caise	Salată de vinete cu usturoi
+                8	5	Supă de cartofi și mazăre	Mâncare de cartofi - moldovenească	Șnițel de soia	Banane	Salată de pui cu legume
+                9	1	Supă cremă de broccoli - Simplu	Tocăniță de ardei cu soia	Salad Box	Pepene Roșu	Salată orientală
+                9	2	Ciorbă de năut cu afumătură	Mâncare de cartofi - ardelenească	Paste - Carbonara (semi)	Pepene Galben	Fasole bătută
+                9	3	Ciorbă de fasole - Cu leuștean	Tocăniță de legume	Omletă cu roșii	Struguri	Tiramisu
+                9	4	Supă de roșii		Paste - cu somon	Pere	Fasole bătută
+                10	1	Ciorbă de fasole - Cu cimbru	Musaca cu soia	Șnițel de soia	Prune	Vitel tonne
+                10	2	Ciorbă de cartofi roșie	Pilaf - Paella cu pui	Ficat de pui prăjit	Kiwi	American Pancakes
+                10	3	Ciorbă de păstăi	Varză cu soia	Șnițel de soia	Banane	Salată de vinete cu usturoi
+                10	4	Supă cremă de broccoli - Soia	Pilaf - Sarmale viță de vie cu carne	Facebook Salad	Kaki	
+                11	1	Supă de roșii	Varză la Cluj cu soia	Găgău	Portocale	Budincă
+                11	2	Minestrone	Gratin de cartofi cu roșii și brânză	Mâncărică de păstăi	Kaki	Humus cu pesto
+                11	3	Ciorbă de conopidă	Varză fiartă	Paste - cu ton	Mere	Plăcintă cu mere - Foietaj
+                11	4	Supă cremă de mazăre	Ardei umpluți simplu	Șnițel de soia	Kaki	Salată de pui cu ciuperci
+                11	5	Ciorbă de ghebe cu smântână	Tocăniță de gogonele	Salad Box	Prune	Humus
+                12	1	Nakkikeitto - V	Mâncare de păstăi	Pește prăjit	Banane	Chiftele de soia în suc de roșii
+                12	2	Supă cremă de țelină - Mama		Găgău	Portocale	Griș cu lapte
+                12	3	Supă de roșii	Răcitură	Paste - Pesto al Genovese (semi)	Mere	Salată de pui
+                12	4	Ciorbă de fasole - Cu chimen	Pilaf - Simplu	Salad Box	Portocale	Tzatziki
                 """;
-        Schedule schedule = ScheduleInitializer.getSchedule(input, false, CiorbeCookBook.buildCookbook());
+        Schedule schedule = ScheduleInitializer.getSchedule(input, true, TudorCookBook.buildCookbook());
+
+        InitialRun.addConstraints(schedule);
+
+//        String input = """
+//1	1	Supă cremă de țelină - Cu praz și smântână
+//1	2	Ciorbă de conopidă
+//1	3	Supă cremă de țelină - Mama
+//1	4	Ciorbă de dovlecei cu ciuperci
+//2	1	Nakkikeitto
+//2	2	Ciorbă de broccoli
+//2	3	Supă cremă de mazăre
+//2	4	Ciorbă de fasole - Cu dafin
+//3	1	Supă cremă de broccoli - Simplu
+//3	2	Ciorbă de ghebe cu smântână
+//3	3	Supă cremă de țelină - Mama
+//3	4	Ciorbă de salată cu scrob
+//3	5	Ciorbă de conopidă
+//4	1	Lohikeitto
+//4	2	Ciorbă de cartofi cu smântână
+//4	3	Supă de cartofi și mazăre
+//4	4	Ciorbă de fasole - Cu leuștean
+//5	1	Supă cremă de țelină - Mama
+//5	2	Ciorbă de salată cu scrob
+//5	3	Ciorbă de perișoare
+//5	4	Ciorbă de salată cu scrob
+//6	1	Ciorbă de fasole - Cu dafin
+//6	2	Ciorbă de fasole - Cu chimen
+//6	3	Ciorbă de fasole - Cu cimbru
+//6	4	Supă cremă de broccoli - Simplu
+//6	5	Supă cremă de mazăre
+//7	1	Nakkikeitto - V
+//7	2	Supă de conopidă
+//7	3	Supă cremă de broccoli - Simplu
+//7	4	Ciorbă de conopidă
+//8	1	Supă cremă de broccoli - Soia
+//8	2	Ciorbă de dovlecei cu ciuperci
+//8	3	Ciorbă de cartofi roșie
+//8	4	Ciorbă rădăuțeană
+//8	5	Ciorbă de păstăi
+//9	1	Supă cremă de mazăre
+//9	2	Supă de roșii
+//9	3	Ciorbă de pui a la Grec
+//9	4	Supă cremă de dovlecei
+//10	1	Ciorbă de broccoli
+//10	2	Supă cremă de țelină - Mama
+//10	3	Minestrone
+//10	4	Supă cremă de broccoli - Simplu
+//11	1	Supă cremă de dovleac
+//11	2	Ciorbă de cartofi cu smântână
+//11	3	Minestrone
+//11	4	Supă cremă de broccoli - Simplu
+//11	5	Ciorbă de năut cu afumătură
+//12	1	Supă cremă de broccoli - Simplu
+//12	2	Minestrone
+//12	3	Supă cremă de broccoli - Cu carne
+//12	4	Supă cremă de conopidă
+//                """;
+//        Schedule schedule = ScheduleInitializer.getSchedule(input, false, CiorbeCookBook.buildCookbook());
 
         InitialRun.completeRecipe(schedule);
     }
