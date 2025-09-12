@@ -80,7 +80,7 @@ public enum Ingredient {
     Taitei(ALL, ALL),
     Telina(ALL, ALL),
     Ton(ALL, ALL),
-    Ulei(ALL, ALL),
+    Ulei_Floarea_Soarelui(ALL, ALL),
     Ulei_Masline(ALL, ALL),
     Unt(ALL, ALL),
     Urzici(List.of(3,4,5), List.of()),
@@ -121,7 +121,7 @@ public enum Ingredient {
         aka(PastaiCongelate, PastaiFresh);
         aka(Fidea, Paste, Paste_Lasagna);
         aka(Peste, Peste_Somon);
-        aka(Ulei, Ulei_Masline);
+        aka(Ulei_Floarea_Soarelui, Ulei_Masline);
         aka(Varza, VarzaMurata);
     }
 

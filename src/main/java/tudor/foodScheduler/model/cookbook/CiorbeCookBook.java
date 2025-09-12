@@ -25,7 +25,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de cartofi cu smântână", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi, 800, gram),
@@ -33,7 +33,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Smantana, 300, gram),
-                new IngredientEntry(Ulei, 4, linguri),
+                new IngredientEntry(Ulei_Masline, 4, linguri),
                 new IngredientEntry(Bors, 500, gram)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de cartofi roșie", AtLeastOnce, List.of(
@@ -42,7 +42,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de conopidă", AtLeastOnce, List.of(
                 new IngredientEntry(Conopida, 1, bucati),
@@ -50,7 +50,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de dovlecei cu ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Dovlecei, 2, bucati),
@@ -59,7 +59,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Telina, 250, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu chimen", AtLeastOnce, List.of(
                 new IngredientEntry(Fasole_Uscata, 400, gram ),
@@ -71,7 +71,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Telina, 150, gram),
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, BoiaAfumata, Iuteala, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu dafin", AtLeastOnce, List.of(
                 new IngredientEntry(Fasole_Uscata, 400, gram),
@@ -79,7 +79,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Dafin, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu cimbru", AtLeastOnce, List.of(
                 new IngredientEntry(Fasole_Uscata, 400, gram),
@@ -87,7 +87,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Cimbru, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu leuștean", AtLeastOnce, List.of(
                 new IngredientEntry(Fasole_Uscata, 400, gram),
@@ -95,14 +95,14 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de frunze", Disabled, List.of(
                 new IngredientEntry(Stevie, 500, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Taitei, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri),
+                new IngredientEntry(Ulei_Masline, 4, linguri),
                 new IngredientEntry(Bors, 500, gram)),
                 F1, List.of(Marar, Leustean, Sare, Piper))); // nu găsești cantități industriale de frunze în București, doar la legătură.
         cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", Once, List.of(
@@ -112,7 +112,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Bors, 500, gram),
-                new IngredientEntry(Ulei, 4, linguri))
+                new IngredientEntry(Ulei_Masline, 4, linguri))
                 , F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de năut cu afumătură", Once, List.of(
                 new IngredientEntry(Carne_Pui_Piept, 350, gram),
@@ -120,7 +120,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Pappardelle, 125, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(BoiaDulce, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de păstăi", AtLeastOnce, List.of(
                 new IngredientEntry(PastaiCongelate, 800, gram),
@@ -130,7 +130,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper), 3));
         cookbook.add(new Recipe("Ciorbă de păstăi fresh", Disabled, List.of(
                 new IngredientEntry(PastaiFresh, 800, gram),
@@ -140,7 +140,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Ulei, 4, linguri)),
+                new IngredientEntry(Ulei_Masline, 4, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de perișoare", Once, List.of(
                 new IngredientEntry(Carne_Pui_Piept, 500, gram)),
@@ -155,7 +155,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
                 new IngredientEntry(Telina, 150, gram),
                 new IngredientEntry(Smantana, 300, gram),
-                new IngredientEntry(Ulei, 2, linguri)),
+                new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F1, List.of(SucLamaie, Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de salată cu scrob", AtLeastOnce, List.of(
                 new IngredientEntry(Salata, 1, bucati),
@@ -165,7 +165,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Morcov, 1, bucati),
                 new IngredientEntry(Orez, 50, gram),
-                new IngredientEntry(Ulei, 2, linguri)), // de la omletă
+                new IngredientEntry(Ulei_Masline, 2, linguri)), // de la omletă
                 F1, List.of(Sare)));
         cookbook.add(new Recipe("Ciorbă rădăuțeană", Once, List.of(
                 new IngredientEntry(Carne_Pui_Piept, 500, gram),

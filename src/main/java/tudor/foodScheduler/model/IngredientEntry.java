@@ -86,7 +86,7 @@ public class IngredientEntry {
                     case Tahini -> {
                         return 20 * quantity; // cantarit
                     }
-                    case Ulei -> {
+                    case Ulei_Floarea_Soarelui -> {
                         return 15 * quantity;
                     }
                     case Ulei_Masline -> {
