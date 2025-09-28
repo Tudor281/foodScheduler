@@ -28,8 +28,8 @@ public class IngredientEntry {
                     case Broccoli -> {
                         return 1000 * quantity;
                     }
-                    case Castraveti -> {
-                        return 200 * quantity;
+                    case Castraveti_Cornichon -> {
+                        return 100 * quantity; // checked
                     }
                     case Ceapa -> {
                         return 150 * quantity;
@@ -44,7 +44,7 @@ public class IngredientEntry {
                         return 3000 * quantity;
                     }
                     case Dovlecei -> {
-                        return 750 * quantity; // TODO
+                        return 450 * quantity; // checked
                     }
                     case Morcov -> {
                         return 100 * quantity;

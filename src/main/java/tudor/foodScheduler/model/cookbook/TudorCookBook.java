@@ -746,7 +746,7 @@ public class TudorCookBook {
                 F2, List.of(Patrunjel, Dafin, SucLamaie, Sare)));
         cookbook.add(new Recipe("Tzatziki", AtLeastOnce, List.of(
                 new IngredientEntry(Iaurt_Grecesc_10, 2000, gram),
-                new IngredientEntry(Castraveti, 600, gram),
+                new IngredientEntry(Castraveti_Cornichon, 600, gram),
                 new IngredientEntry(Ulei_Masline, 30, gram),
                 new IngredientEntry(Usturoi, 10, bucati)),
                 Rece, List.of(Marar, Sare)));
@@ -883,7 +883,7 @@ public class TudorCookBook {
                 FastFood, List.of()));
         cookbook.add(new Recipe("Salată de roșii - mama", AtLeastOnce, List.of(
                 new IngredientEntry(Rosii, 3, bucati),
-                new IngredientEntry(Castraveti, 1, bucati),
+                new IngredientEntry(Castraveti_Cornichon, 1, bucati),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Branza_Telemea, 100, gram)),

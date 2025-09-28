@@ -9,7 +9,7 @@ import static tudor.foodScheduler.model.Months.ALL;
 public enum Ingredient {
     Ardei_Rosu(List.of(6,7,8,9), ALL),
     // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
-    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false),
+    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false), //https://en.wikipedia.org/wiki/Celery
     Avocado_Hass(List.of(), ALL), // coaja aspra, neagra la maturitate
     // mostly water, deci n-ar trebui să fie cine știe ce la capitolul nutrienți
     Bors(ALL, ALL),
@@ -29,7 +29,7 @@ public enum Ingredient {
     Carne_Vita_Chuck(ALL, ALL), // carne gulas
     Carne_Vita_Tocata(ALL, ALL),
     Cartofi(ALL, ALL),
-    Castraveti(List.of(3,4,5,6,7,8,9), ALL),
+    Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL),
     Castraveti_Murati(ALL, ALL),
     Ceapa(ALL, ALL),
     Ceapa_Verde(ALL, ALL),
