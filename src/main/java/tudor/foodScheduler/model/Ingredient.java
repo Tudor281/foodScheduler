@@ -17,6 +17,7 @@ public enum Ingredient {
     Branza_Fagaras(ALL, ALL),
     Branza_Feta(ALL, ALL),
     Branza_Gorgonzola(ALL, ALL),
+    Branza_Grattugiato(ALL, ALL),
     Branza_Mascarpone(ALL, ALL),
     Branza_Mozzarella(ALL, ALL),
     Branza_Telemea(ALL, ALL),
@@ -61,6 +62,7 @@ public enum Ingredient {
     Pastarnac(ALL, ALL),
     Paste(ALL, ALL),
     Paste_Lasagna(ALL, ALL),
+    Pesmet(ALL, ALL),
     Peste(ALL, ALL),
     Peste_Somon(ALL, ALL),
     Piscoturi(ALL, ALL),
@@ -115,7 +117,7 @@ public enum Ingredient {
     ;
 
     static { // akas
-        aka(Branza_CottageFullFat, Branza_Fagaras, Branza_Feta, Branza_Gorgonzola, Branza_Mascarpone, Branza_Mozzarella, Branza_Telemea);
+        aka(Branza_CottageFullFat, Branza_Fagaras, Branza_Feta, Branza_Grattugiato, Branza_Gorgonzola, Branza_Mascarpone, Branza_Mozzarella, Branza_Telemea);
         aka(Carne_Pui_Picioare, Carne_Pui_Piept, Carne_Pui_Tocata, Carne_Pui_Ficat, Carne_Vita_Chuck, Carne_Vita_Tocata);
         aka(Lapte, Lapte_Praf);
         aka(PastaiCongelate, PastaiFresh);

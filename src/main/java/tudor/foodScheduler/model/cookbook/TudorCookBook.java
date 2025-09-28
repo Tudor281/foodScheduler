@@ -881,6 +881,13 @@ public class TudorCookBook {
                 new IngredientEntry(Rosii, 500, gram),
                 new IngredientEntry(Branza_Telemea, 200, gram)),
                 FastFood, List.of()));
+        cookbook.add(new Recipe("Salată de roșii - mama", AtLeastOnce, List.of(
+                new IngredientEntry(Rosii, 3, bucati),
+                new IngredientEntry(Castraveti, 1, bucati),
+                new IngredientEntry(Ceapa, 1, bucati),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
+                new IngredientEntry(Branza_Telemea, 100, gram)),
+                FastFood, List.of(Sare)));
         cookbook.add(new Recipe("Salad Box", AtLeastOnce, List.of(
                 new IngredientEntry(Salata, 200, gram),
                 new IngredientEntry(Ulei_Masline, 2, linguri)), FastFood, List.of()));
@@ -897,6 +904,12 @@ public class TudorCookBook {
                 new IngredientEntry(Avocado_Hass, 1, bucati),
                 new IngredientEntry(Ou, 2, bucati),
                 new IngredientEntry(Rosii, 1, bucati)), FastFood, List.of()));
+        cookbook.add(new Recipe("Dovlecei prăjiți", Once, List.of(
+                new IngredientEntry(Dovlecei, 1, bucati),
+                new IngredientEntry(Ou, 2, bucati),
+                new IngredientEntry(Pesmet, 100, gram), // oare?
+                new IngredientEntry(Branza_Grattugiato, 100, gram   )),
+                FastFood, List.of(Sare)));
         cookbook.add(new Recipe("Paste - Pesto al Genovese (semi)", AtMostOnce, List.of(
                 new IngredientEntry(Paste, 100, gram),
                 new IngredientEntry(Sos_Pesto_Genovese, 100, gram)),
