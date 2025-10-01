@@ -319,7 +319,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 7, linguri),
                 new IngredientEntry(Tahini, 2, linguri),
                 new IngredientEntry(Usturoi, 2, bucati)),
-                Rece, List.of(Sare, SucLamaie, BoiaAfumata)));
+                Rece, List.of(Sare, SucLamaie, BoiaAfumata), 2));
         cookbook.add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(
                 new IngredientEntry(Naut, 400, gram),
                 new IngredientEntry(Ulei_Masline, 7, linguri),
@@ -327,7 +327,7 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 2, bucati),
                 new IngredientEntry(Sos_Pesto_Genovese, 100, gram)),
                 Rece, List.of(Busuioc, Sare, SucLamaie)));
-        cookbook.add(new Recipe("Lalele", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Lalele", Disabled, List.of( // ar fi aperitive, unde restul de la ceapă verde ar merge cu o ciorbă, nu ca al 3-lea dish
                 new IngredientEntry(Rosii, 4, bucati),
                 new IngredientEntry(Ceapa_Verde, 4, bucati),
                 new IngredientEntry(Branza_Fagaras, 400, gram),
@@ -560,7 +560,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte_Praf, 100, gram),
                 new IngredientEntry(Zahar, 200, gram)),
                 Desert, List.of()));
-        cookbook.add(new Recipe("Salată boeuf", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Salată boeuf", Once, List.of(
                 new IngredientEntry(Cartofi, 450, gram),
                 new IngredientEntry(Mazare, 150, gram),
                 new IngredientEntry(Morcov, 2, bucati),
@@ -599,6 +599,12 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 10, bucati),
                 new IngredientEntry(Maioneza, 100, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram)),
+                Rece, List.of(Sare, SucLamaie)));
+        cookbook.add(new Recipe("Salată de vinete cu tahini", Once, List.of(
+                new IngredientEntry(Vinete, 1000, gram),
+                new IngredientEntry(Maioneza, 100, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram),
+                new IngredientEntry(Tahini, 2, linguri)),
                 Rece, List.of(Sare, SucLamaie)));
         cookbook.add(new Recipe("Salată orientală", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi, 1000, gram),
@@ -792,9 +798,9 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa, 4, bucati),
                 new IngredientEntry(Orez, 150, gram)),
                 F2, List.of(Sare, Piper)));
-        cookbook.add(new Recipe("Vitel tonne", Once, List.of(
+        cookbook.add(new Recipe("Vitello tonnato", Once, List.of(
                 new IngredientEntry(Carne_Vita_Chuck, 500, gram),
-                new IngredientEntry(Ton, 300, gram)),
+                new IngredientEntry(Ton, 160, gram)),
                 Rece, List.of(Sare))); // TODO no recipy
 
         // Fast Food
