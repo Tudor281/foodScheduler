@@ -798,7 +798,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa, 4, bucati),
                 new IngredientEntry(Orez, 150, gram)),
                 F2, List.of(Sare, Piper)));
-        cookbook.add(new Recipe("Vitello tonnato", Once, List.of(
+        cookbook.add(new Recipe("Vitello tonnato", AtMostOnce, List.of( // mănânci ditamai halca de carne într-o săptămână
                 new IngredientEntry(Carne_Vita_Chuck, 500, gram),
                 new IngredientEntry(Ton, 160, gram)),
                 Rece, List.of(Sare))); // TODO no recipy
