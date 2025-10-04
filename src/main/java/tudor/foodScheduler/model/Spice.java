@@ -1,7 +1,5 @@
 package tudor.foodScheduler.model;
 
-import static tudor.foodScheduler.model.Months.ALL;
-
 /** Spices have the characteristic of giving a lot of taste, for a few calories
  * Most of them are dried and stored, so they are not seasonal */
 public enum Spice {
@@ -22,6 +20,7 @@ public enum Spice {
     Leustean,
     Marar,
     Mustar,
+    Nucsoara,
     Oregano,
     Otet,
     Patrunjel,
