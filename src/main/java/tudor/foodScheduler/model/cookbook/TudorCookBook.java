@@ -480,19 +480,19 @@ public class TudorCookBook {
                 new IngredientEntry(Mazare, 200, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
                 F1, List.of(Sare, Piper, Busuioc, Rozmarin, Patrunjel)));
-        cookbook.add(new Recipe("Musaca cu carne", Once, List.of(
+        cookbook.add(new Recipe("Musaca cu carne", Disabled, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Carne_Pui_Tocata, 500, gram),
                 new IngredientEntry(Lapte, 200, gram),
                 new IngredientEntry(Unt, 50, gram)), F2, List.of(Sare)));
-        cookbook.add(new Recipe("Musaca cu ciuperci", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Musaca cu ciuperci", AtMostOnce, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Lapte, 200, gram),
                 new IngredientEntry(Unt, 50, gram),
                 new IngredientEntry(Ciuperci, 1600, gram),
                 new IngredientEntry(Ceapa, 4, bucati)),
                 F2, List.of(Sare, Piper), 2));
-        cookbook.add(new Recipe("Musaca cu ragu", AtMostOnce, List.of(
+        cookbook.add(new Recipe("Musaca cu ragu", Disabled, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Carne_Vita_Tocata, 500, gram),
                 new IngredientEntry(Lapte, 200, gram),
@@ -501,14 +501,14 @@ public class TudorCookBook {
                 new IngredientEntry(Apio, 100, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram)),
                 F2, List.of(VinAlb)));
-        cookbook.add(new Recipe("Musaca cu soia", Once, List.of(
+        cookbook.add(new Recipe("Musaca cu soia", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Lapte, 100, gram),
                 new IngredientEntry(Unt, 50, gram),
                 new IngredientEntry(Soia, 100, gram),
-                new IngredientEntry(Ceapa, 3, bucati),
-                new IngredientEntry(Apio, 100, gram),
-                new IngredientEntry(Suc_Rosii_Bulion, 350, gram)),
+                new IngredientEntry(Ceapa, 2, bucati),
+                new IngredientEntry(Apio, 50, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
                 F2, List.of(VinAlb)));
         cookbook.add(new Recipe("Nakkikeitto", AtMostOnce, List.of(
                 new IngredientEntry(Cartofi, 900, gram),
@@ -597,7 +597,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Răcitură", Once, List.of(
                 new IngredientEntry(Carne_Pui_Picioare, 500, gram),
                 new IngredientEntry(Usturoi, 10, bucati)),
-                F2, List.of(Sare, Piper))); // TODO: Recipy
+                Rece, List.of(Sare, Piper))); // TODO: Recipy
         cookbook.add(new Recipe("Riz au lait", AtLeastOnce, List.of(
                 new IngredientEntry(Orez, 400, gram),
                 new IngredientEntry(Lapte_Praf, 100, gram),
@@ -887,9 +887,11 @@ public class TudorCookBook {
                 new IngredientEntry(Orez, 150, gram)),
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Vitello tonnato", AtMostOnce, List.of( // mănânci ditamai halca de carne într-o săptămână
-                new IngredientEntry(Carne_Vita_Chuck, 500, gram),
-                new IngredientEntry(Ton, 160, gram)),
-                Rece, List.of(Sare))); // TODO no recipy
+                new IngredientEntry(Carne_Vita_Chuck, 500, gram), // 1Kg iese mai mult decât făcea mama la familia întreagă
+                new IngredientEntry(Ton, 80, gram),
+                new IngredientEntry(Ou, 1, bucati),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram)),
+                Rece, List.of(Sare, SucLamaie, Mustar)));
 
         // Fast Food
         cookbook.add(new Recipe("Mămăligă", AtLeastOnce, List.of(
