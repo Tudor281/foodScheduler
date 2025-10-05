@@ -1047,7 +1047,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sos_Quattro_Formaggi, 370, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
                 FastFood, List.of()));
-        cookbook.add(new Recipe("Spaghetti alla carbonara (semi)", AtMostOnce, List.of(
+        cookbook.add(new Recipe("Spaghetti alla carbonara (semi)", Disabled, List.of(
                 new IngredientEntry(Paste, 200, gram),
                 new IngredientEntry(Sos_Carbonara, 370, gram)),
                 FastFood, List.of()));
