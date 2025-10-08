@@ -23,6 +23,7 @@ public enum Spice {
     Nucsoara,
     Oregano,
     Otet,
+    Otet_Balsamic,
     Patrunjel,
     Piper,
     Rozmarin,

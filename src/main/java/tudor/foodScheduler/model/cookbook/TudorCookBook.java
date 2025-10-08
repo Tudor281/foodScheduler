@@ -984,6 +984,14 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Branza_Telemea, 100, gram)),
                 FastFood, List.of(Sare)));
+        cookbook.add(new Recipe("Salată cu ton", AtLeastOnce, List.of(
+                new IngredientEntry(Salata, 100, gram),
+                new IngredientEntry(Rosii, 1, bucati),
+                new IngredientEntry(Mais, 50, gram),
+                new IngredientEntry(Branza_Telemea, 100, gram),
+                new IngredientEntry(Ton, 160, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri)), // de la ton
+                FastFood, List.of(Otet_Balsamic)));
         cookbook.add(new Recipe("Salad Box", AtLeastOnce, List.of(
                 new IngredientEntry(Salata, 200, gram),
                 new IngredientEntry(Ulei_Masline, 2, linguri)), FastFood, List.of()));
