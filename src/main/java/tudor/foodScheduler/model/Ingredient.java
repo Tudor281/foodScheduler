@@ -7,9 +7,9 @@ import static tudor.foodScheduler.model.Months.ALL;
 
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
-    Ardei_Rosu(List.of(6,7,8,9), ALL),
+    Ardei_Rosu(List.of(6,7,8,9), ALL, "20087"),
     // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
-    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false), //https://en.wikipedia.org/wiki/Celery
+    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "20023"), //https://en.wikipedia.org/wiki/Celery
     Avocado_Hass(List.of(), ALL), // coaja aspra, neagra la maturitate
     // mostly water, deci n-ar trebui să fie cine știe ce la capitolul nutrienți
     Bors(ALL, ALL),
@@ -144,14 +144,27 @@ public enum Ingredient {
     final List<Integer> importMonths;
     public final List<Ingredient> akas = new ArrayList<>();
     public boolean score = true; // recipes with less of this ingredient get better scores, by disabling I hope I get more of these
+    final String ciqualCode;
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
+        this.ciqualCode = null;
+    }
+
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, String ciqualCode) {
+        this.domesticMonths = domesticMonths;
+        this.importMonths = importMonths;
+        this.ciqualCode = ciqualCode;
     }
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score) {
         this(domesticMonths, importMonths);
+        this.score = score;
+    }
+
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score, String ciqualCode) {
+        this(domesticMonths, importMonths, ciqualCode);
         this.score = score;
     }
 
