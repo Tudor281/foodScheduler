@@ -274,8 +274,15 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 2, bucati)
         ), Rece, List.of(SucLamaie, Sare, Piper, Iuteala)));
         cookbook.add(new Recipe("Fasole bătută", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata, 500, gram)),
-                Rece, List.of())); // TODO: No Recipy
+                new IngredientEntry(Fasole_Uscata, 400, gram),
+                new IngredientEntry(Usturoi, 5, bucati),
+                new IngredientEntry(Ceapa, 3, bucati)),
+                Rece, List.of(Sare)));
+        cookbook.add(new Recipe("Fasole pasată cu ceapă", Once, List.of(
+                new IngredientEntry(Fasole_Uscata, 400, gram),
+                new IngredientEntry(Ceapa, 75, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram)),
+                Rece, List.of(Sare)));
         cookbook.add(new Recipe("Ghiveci", AtLeastOnce, List.of(
                 new IngredientEntry(Conopida, 1, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
