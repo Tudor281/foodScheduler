@@ -7,62 +7,62 @@ import static tudor.foodScheduler.model.Months.ALL;
 
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
-    Ardei_Rosu(List.of(6,7,8,9), ALL, "20087"),
+    Ardei_Rosu(List.of(6,7,8,9), ALL, "2258590"),
     // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
-    Apio (List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "20023"), //https://en.wikipedia.org/wiki/Celery
-    Avocado_Hass(List.of(), ALL), // coaja aspra, neagra la maturitate
+    Apio(List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "2346405"), //https://en.wikipedia.org/wiki/Celery
+    Avocado_Hass(List.of(), ALL, "2710824"), // coaja aspra, neagra la maturitate
     // mostly water, deci n-ar trebui să fie cine știe ce la capitolul nutrienți
     Bors(ALL, ALL),
-    Branza_CottageFullFat(ALL, ALL),
-    Branza_Fagaras(ALL, ALL),
-    Branza_Feta(ALL, ALL),
-    Branza_Gorgonzola(ALL, ALL),
-    Branza_Grattugiato(ALL, ALL),
-    Branza_Mascarpone(ALL, ALL),
-    Branza_Mozzarella(ALL, ALL),
-    Branza_Telemea(ALL, ALL),
-    Broccoli(List.of(5,6,7,8,9,10,11), ALL),
-    Carne_Pui_Picioare(ALL,ALL),
-    Carne_Pui_Piept(ALL, ALL),
-    Carne_Pui_Ficat(ALL, ALL),
-    Carne_Pui_Tocata(ALL, ALL),
-    Carne_Vita_Chuck(ALL, ALL), // carne gulas
-    Carne_Vita_Tocata(ALL, ALL),
-    Cartofi(ALL, ALL),
-    Cartofi_Dulci(List.of(), List.of(3,4,5,6,7,8,9)),
-    Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL),
-    Castraveti_Murati(ALL, ALL),
-    Ceapa(ALL, ALL),
-    Ceapa_Rosie(List.of(), List.of(3, 4, 5, 6, 7, 8, 9)),
-    Ceapa_Verde(ALL, ALL),
-    Ciuperci(ALL, ALL),
-    Conopida(List.of(5,6,7,8,9,10,11,12), ALL),
-    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4)), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
-    Dovlecei(List.of(4,5,6,7,8,9), ALL),
-    Faina_Grau_65(ALL, List.of()),
-    Faina_Grau_150(ALL, ALL),
-    Fasole_Uscata(ALL, ALL),
-    Fidea(ALL, ALL),
-    Foietaj(ALL, ALL),
+    Branza_CottageFullFat(ALL, ALL, "2346384"),
+    Branza_Fagaras(ALL, ALL, "2346384"),
+    Branza_Feta(ALL, ALL, "2259796"),
+    Branza_Gorgonzola(ALL, ALL, "328208"), // cheddar
+    Branza_Grattugiato(ALL, ALL, "2259795"),
+    Branza_Mascarpone(ALL, ALL, "328208"),
+    Branza_Mozzarella(ALL, ALL, "328842"),
+    Branza_Telemea(ALL, ALL, "2259796"),
+    Broccoli(List.of(5,6,7,8,9,10,11), ALL, "321612"),
+    Carne_Pui_Picioare(ALL,ALL, "2727566"),
+    Carne_Pui_Piept(ALL, ALL, "2646170"),
+    Carne_Pui_Ficat(ALL, ALL, "2514746"), //ground
+    Carne_Pui_Tocata(ALL, ALL, "2514746"),
+    Carne_Vita_Chuck(ALL, ALL, "2646174,"), // carne gulas
+    Carne_Vita_Tocata(ALL, ALL, "2514743"), // 10% fat
+    Cartofi(ALL, ALL, "2346403"),
+    Cartofi_Dulci(List.of(), List.of(3,4,5,6,7,8,9), "2346404"),
+    Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL, "2346406"),
+    Castraveti_Murati(ALL, ALL, "324653"),
+    Ceapa(ALL, ALL, "790646"),
+    Ceapa_Rosie(List.of(), List.of(3, 4, 5, 6, 7, 8, 9), "790577"),
+    Ceapa_Verde(ALL, ALL, "2727585"),
+    Ciuperci(ALL, ALL, "1750347"),
+    Conopida(List.of(5,6,7,8,9,10,11,12), ALL, "2685573"),
+    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4), "2727578"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
+    Dovlecei(List.of(4,5,6,7,8,9), ALL, "2685568"),
+    Faina_Grau_65(ALL, List.of(), "790018"),
+    Faina_Grau_150(ALL, ALL, "790018"),
+    Fasole_Uscata(ALL, ALL, "2644281"),
+    Fidea(ALL, ALL, "790018"),
+    Foietaj(ALL, ALL, "790018"),
     Gogonele(List.of(9,10,11), List.of()),
-    Gris(ALL, List.of()),
-    Iaurt_Grecesc_10(ALL, ALL),
-    Lapte(ALL, List.of()),
-    Lapte_Praf(ALL, ALL),
-    Linte_Galbena(ALL, ALL),
-    Linte_Rosie(ALL, ALL),
-    Maioneza(ALL, ALL),
-    Mais(ALL, ALL),
-    Malai(ALL, List.of()),
-    Masline(ALL, ALL),
-    Mazare(ALL, ALL),
-    Morcov(ALL, ALL),
-    Naut(ALL, ALL),
-    Orez(ALL, ALL),
-    Ou(ALL, ALL),
-    Pappardelle(ALL, ALL),
-    PastaiCongelate(ALL, List.of()),
-    PastaiFresh(List.of(5), List.of()), // pastai fresh doar prin Mai
+    Gris(ALL, List.of(), "2003589"),
+    Iaurt_Grecesc_10(ALL, ALL, "2259794"),
+    Lapte(ALL, List.of(), "322892"),
+    Lapte_Praf(ALL, ALL, "322892"),
+    Linte_Galbena(ALL, ALL, "2644283"),
+    Linte_Rosie(ALL, ALL, "2644283"),
+    Maioneza(ALL, ALL), //TODO switch to oil and eggs
+    Mais(ALL, ALL, "2710826"),
+    Malai(ALL, List.of(), "790276"),
+    Masline(ALL, ALL, "332791"),
+    Mazare(ALL, ALL, "2644291"),
+    Morcov(ALL, ALL, "2258586"),
+    Naut(ALL, ALL, "2644282"),
+    Orez(ALL, ALL, "2512381"),
+    Ou(ALL, ALL, "748967"),
+    Pappardelle(ALL, ALL, "790018"),
+    PastaiCongelate(ALL, List.of(), "2346400"),
+    PastaiFresh(List.of(5), List.of(), "2346400"), // pastai fresh doar prin Mai
     Pastarnac(ALL, ALL),
     Paste(ALL, ALL),
     Paste_Lasagna(ALL, ALL),
@@ -95,7 +95,7 @@ public enum Ingredient {
     VarzaMurata(ALL, ALL),
     Vinete(List.of(5,6,7,8,9,10), ALL),
     Zahar(ALL, List.of()),
-    Zucchini(List.of(6), ALL),
+    Zucchini(List.of(6), ALL, "2685568"),
 
     // fructe
     Banane(List.of(), ALL),
@@ -144,18 +144,18 @@ public enum Ingredient {
     final List<Integer> importMonths;
     public final List<Ingredient> akas = new ArrayList<>();
     public boolean score = true; // recipes with less of this ingredient get better scores, by disabling I hope I get more of these
-    final String ciqualCode;
+    final String usdaCode;
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
-        this.ciqualCode = null;
+        this.usdaCode = null;
     }
 
-    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, String ciqualCode) {
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, String usdaCode) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
-        this.ciqualCode = ciqualCode;
+        this.usdaCode = usdaCode;
     }
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score) {
@@ -163,8 +163,8 @@ public enum Ingredient {
         this.score = score;
     }
 
-    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score, String ciqualCode) {
-        this(domesticMonths, importMonths, ciqualCode);
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score, String usdaCode) {
+        this(domesticMonths, importMonths, usdaCode);
         this.score = score;
     }
 
