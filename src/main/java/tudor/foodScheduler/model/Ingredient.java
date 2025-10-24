@@ -48,6 +48,7 @@ public enum Ingredient {
     Gris(ALL, List.of(), "2003589"),
     Iaurt_Grecesc_10(ALL, ALL, "2259794"),
     Lapte(ALL, List.of(), "322892"),
+    Lapte_Acru(ALL, List.of()),
     Lapte_Praf(ALL, ALL, "322892"),
     Linte_Galbena(ALL, ALL, "2644283"),
     Linte_Rosie(ALL, ALL, "2644283"),

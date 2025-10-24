@@ -738,6 +738,10 @@ public class TudorCookBook {
                 new IngredientEntry(Mazare, 2000, gram),
                 new IngredientEntry(Ceapa, 4, bucati)),
                 F1, List.of(Sare, Piper)));
+        cookbook.add(new Recipe("Supă cremă de praz", AtLeastOnce, List.of(
+                new IngredientEntry(Praz, 4, bucati),
+                new IngredientEntry(Cartofi, 1000, gram)),
+                F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de spanac", Once, List.of(
                 new IngredientEntry(Cartofi, 400, gram),
                 new IngredientEntry(Morcov, 1, bucati),
@@ -911,10 +915,15 @@ public class TudorCookBook {
                 new IngredientEntry(Malai, 100, gram),
                 new IngredientEntry(Branza_Telemea, 200, gram)),
                 FastFood, List.of()));
-        cookbook.add(new Recipe("Mămăligă cu brânză", Disabled, List.of(
+        cookbook.add(new Recipe("Mămăligă cu brânză", Disabled, List.of( // nu știi când găsești caș
                 new IngredientEntry(Malai, 100, gram),
                 new IngredientEntry(Branza_Telemea, 300, gram)),
                 FastFood, List.of(Sare)));
+        cookbook.add(new Recipe("Mămăligă cu brânză cu smântână", AtLeastOnce, List.of(
+                new IngredientEntry(Branza_CottageFullFat, 200, gram),
+                new IngredientEntry(Branza_Fagaras, 200, gram),
+                new IngredientEntry(Lapte_Acru, 200, gram)),
+                FastFood, List.of()));
         cookbook.add(new Recipe("Ciulama de ciuperci", Once, List.of(
                 new IngredientEntry(Ciuperci, 1000, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
