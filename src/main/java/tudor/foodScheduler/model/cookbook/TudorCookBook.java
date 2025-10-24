@@ -732,8 +732,8 @@ public class TudorCookBook {
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
                 new IngredientEntry(Telina, 150, gram),
-                new IngredientEntry(Suc_Rosii_Bulion, 100, gram)
-        ), F1, List.of(Patrunjel, Chimen, BoiaDulce, Sare, Iuteala)));
+                new IngredientEntry(Suc_Rosii_Bulion, 100, gram)),
+                F1, List.of(Patrunjel, Chimen, BoiaDulce, Sare, Iuteala)));
         cookbook.add(new Recipe("Supă cremă de mazăre", AtLeastOnce, List.of(
                 new IngredientEntry(Mazare, 2000, gram),
                 new IngredientEntry(Ceapa, 4, bucati)),
@@ -819,7 +819,7 @@ public class TudorCookBook {
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Tocăniță de ardei cu ton", Disabled, List.of(
                 new IngredientEntry(Ardei_Rosu, 6, bucati),
-                new IngredientEntry(Ton, 300, gram)),
+                new IngredientEntry(Peste_Ton, 300, gram)),
                 F2, List.of())); // mi s-a acrit după varză cu fish fingers. Vrei ton cu tocăniță de ardei, mănâncă separat, nu fă o întreagă oală cu asta
         cookbook.add(new Recipe("Tocăniță de ardei cu soia", AtLeastOnce, List.of(
                 new IngredientEntry(Ardei_Rosu, 5, bucati),
@@ -858,7 +858,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Țelină cu morcov", AtLeastOnce, List.of(
                 new IngredientEntry(Telina, 900, gram),
                 new IngredientEntry(Morcov, 900, gram),
-                new IngredientEntry(Ton, 640, gram),
+                new IngredientEntry(Peste_Ton, 640, gram),
                 new IngredientEntry(Maioneza, 400, gram)),
                 Rece, List.of(Sare)));
         cookbook.add(new Recipe("Varză călită", Once, List.of(
@@ -899,7 +899,7 @@ public class TudorCookBook {
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Vitello tonnato", AtMostOnce, List.of( // mănânci ditamai halca de carne într-o săptămână
                 new IngredientEntry(Carne_Vita_Chuck, 500, gram), // 1Kg iese mai mult decât făcea mama la familia întreagă
-                new IngredientEntry(Ton, 80, gram),
+                new IngredientEntry(Peste_Ton, 80, gram),
                 new IngredientEntry(Ou, 1, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram)),
                 Rece, List.of(Sare, SucLamaie, Mustar)));
@@ -1005,7 +1005,7 @@ public class TudorCookBook {
                 new IngredientEntry(Rosii, 1, bucati),
                 new IngredientEntry(Mais, 50, gram),
                 new IngredientEntry(Branza_Telemea, 100, gram),
-                new IngredientEntry(Ton, 160, gram),
+                new IngredientEntry(Peste_Ton, 160, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri)), // de la ton
                 FastFood, List.of(Otet_Balsamic)));
         cookbook.add(new Recipe("Salad Box", AtLeastOnce, List.of(
@@ -1047,7 +1047,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte, 200, gram)), FastFood, List.of()));
         cookbook.add(new Recipe("Pasta con tonno", Once, List.of(
                 new IngredientEntry(Paste, 100, gram),
-                new IngredientEntry(Ton, 160, gram),
+                new IngredientEntry(Peste_Ton, 160, gram),
                 new IngredientEntry(Ceapa, 1, bucati)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Pasta con verdura (semi)", Disabled, List.of(
@@ -1109,7 +1109,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Mandarine", Once, List.of(
                 new IngredientEntry(Mandarine, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mango", AtMostOnce, List.of(
-                new IngredientEntry(Mango, 200, gram)), Fruits, List.of()));
+                new IngredientEntry(Mango_Tommy_Atkins, 200, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mere", AtLeastOnce, List.of(
                 new IngredientEntry(Mere, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mineole", Once, List.of(

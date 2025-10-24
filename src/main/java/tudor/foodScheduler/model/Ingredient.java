@@ -48,7 +48,7 @@ public enum Ingredient {
     Gris(ALL, List.of(), "2003589"),
     Iaurt_Grecesc_10(ALL, ALL, "2259794"),
     Lapte(ALL, List.of(), "322892"),
-    Lapte_Acru(ALL, List.of()),
+    Lapte_Acru(ALL, List.of(), "322892"), // same as milk, no data on sour milk
     Lapte_Praf(ALL, ALL, "322892"),
     Linte_Galbena(ALL, ALL, "2644283"),
     Linte_Rosie(ALL, ALL, "2644283"),
@@ -65,50 +65,50 @@ public enum Ingredient {
     PastaiCongelate(ALL, List.of(), "2346400"),
     PastaiFresh(List.of(5), List.of(), "2346400"), // pastai fresh doar prin Mai
     Pastarnac(ALL, ALL),
-    Paste(ALL, ALL),
-    Paste_Lasagna(ALL, ALL),
-    Pesmet(ALL, ALL),
-    Peste(ALL, ALL),
-    Peste_Somon(ALL, ALL),
-    Piscoturi(ALL, ALL),
-    Praz(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12)),
-    Salata(ALL, ALL),
-    Smantana(ALL, ALL),
-    Soia(ALL, ALL),
+    Paste(ALL, ALL, "2003586"), //flour for now
+    Paste_Lasagna(ALL, ALL, "2003586"), // flour for now
+    Pesmet(ALL, ALL, "2003586"), //flour... sunt branduri pentru pesmet si in america, dar nimic generic
+    Peste(ALL, ALL, "2684444"),
+    Peste_Somon(ALL, ALL, "2684441"),
+    Peste_Ton(ALL, ALL, "334194"),
+    Piscoturi(ALL, ALL, "2003586"), // flour and sugar, is definitely not a foundational food
+    Praz(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "2727584"),
+    Salata(ALL, ALL, "2346388"),
+    Smantana(ALL, ALL, "2346387"),
+    Soia(ALL, ALL, "1104705"),
     Sos_Carbonara(ALL, ALL),
     Sos_Pesto_Genovese(ALL, ALL),
     Sos_Quattro_Formaggi(ALL, ALL),
-    Spanac(ALL, ALL),
+    Spanac(ALL, ALL, "1750353"),
     Stevie(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
-    Suc_Rosii_Bulion(ALL, ALL),
+    Suc_Rosii_Bulion(ALL, ALL, "2685579"),
     Radacina_Patrunjel(ALL, ALL),
-    Rosii(List.of(6,7,8,9,10,11), ALL),
+    Rosii(List.of(6,7,8,9,10,11), ALL, "1750354"),
     Tahini(ALL, ALL),
-    Taitei(ALL, ALL),
+    Taitei(ALL, ALL, "2003586"), // flour for now
     Telina(ALL, ALL),
-    Ton(ALL, ALL),
-    Ulei_Floarea_Soarelui(ALL, ALL),
-    Ulei_Masline(ALL, ALL),
-    Unt(ALL, ALL),
+    Ulei_Floarea_Soarelui(ALL, ALL, "1750349"),
+    Ulei_Masline(ALL, ALL, "748608"),
+    Unt(ALL, ALL, "789772"),
     Urzici(List.of(3,4,5), List.of()),
-    Usturoi(ALL, ALL),
-    Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL),
-    VarzaMurata(ALL, ALL),
-    Vinete(List.of(5,6,7,8,9,10), ALL),
-    Zahar(ALL, List.of()),
+    Usturoi(ALL, ALL, "1104647"),
+    Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL, "2346407"),
+    VarzaMurata(ALL, ALL, "2346407"),
+    Vinete(List.of(5,6,7,8,9,10), ALL, "2685577"),
+    Zahar(ALL, List.of(), "334247"),
     Zucchini(List.of(6), ALL, "2685568"),
 
     // fructe
-    Banane(List.of(), ALL),
-    Caise(List.of(7,8,9), List.of()),
-    Capsuni(List.of(6,7,8,9), List.of()),
-    Cirese(List.of(6, 7), List.of()),
+    Banane(List.of(), ALL, "790991"),
+    Caise(List.of(7,8,9), List.of(), "2710815"),
+    Capsuni(List.of(6,7,8,9), List.of(), "327699"),
+    Cirese(List.of(6, 7), List.of(), "2346399"),
     Clementine(List.of(), List.of(12, 1)),
     Grapefruit(List.of(), List.of(12,1,2,3,4,5,6)),
     Kaki(List.of(), List.of(10,11,12,1)),
-    Kiwi(List.of(), List.of(10,11,12,1,2,3,4,5)),
-    Mandarine(List.of(), List.of(11,12,1,2,3,4)),
-    Mango(List.of(), ALL),
+    Kiwi(List.of(), List.of(10,11,12,1,2,3,4,5), "2710831"),
+    Mandarine(List.of(), List.of(11,12,1,2,3,4), "2710832"),
+    Mango_Tommy_Atkins(List.of(), ALL, "2710833"),
     Mere(List.of(11, 12,1,2), ALL),
     Mineole(List.of(), List.of(1)),
     Papaya(List.of(), List.of(1)),
@@ -127,7 +127,7 @@ public enum Ingredient {
         aka(Lapte, Lapte_Praf);
         aka(PastaiCongelate, PastaiFresh);
         aka(Fidea, Paste, Paste_Lasagna);
-        aka(Peste, Peste_Somon);
+        aka(Peste, Peste_Somon, Peste_Ton);
         aka(Ulei_Floarea_Soarelui, Ulei_Masline);
         aka(Varza, VarzaMurata);
     }
