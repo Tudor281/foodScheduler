@@ -278,7 +278,7 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 5, bucati),
                 new IngredientEntry(Ceapa, 3, bucati)),
                 Rece, List.of(Sare)));
-        cookbook.add(new Recipe("Fasole pasată cu ceapă", Once, List.of(
+        cookbook.add(new Recipe("Fasole pasată cu ceapă", AtLeastOnce, List.of(
                 new IngredientEntry(Fasole_Uscata, 400, gram),
                 new IngredientEntry(Ceapa, 75, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram)),
@@ -664,7 +664,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)
                 ), Rece, List.of(Sare)));
-        cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtMostOnce, List.of(
+        cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", Disabled, List.of(
                 new IngredientEntry(Broccoli, 2, bucati),
                 new IngredientEntry(Carne_Pui_Piept, 500, gram),
                 new IngredientEntry(Cartofi, 400, gram),
@@ -674,7 +674,7 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi, 4, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati)),
                 F1, List.of(Sare, Piper)));
-        cookbook.add(new Recipe("Supă cremă de broccoli - Simplu", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Supă cremă de broccoli - Simplu", Disabled, List.of(
                 new IngredientEntry(Broccoli, 2, bucati),
                 new IngredientEntry(Cartofi, 400, gram),
                 new IngredientEntry(Telina, 100, gram),
@@ -683,7 +683,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Usturoi, 4, bucati)),
                 F1, List.of(Sare, Piper)));
-        cookbook.add(new Recipe("Supă cremă de broccoli - Soia", Once, List.of(
+        cookbook.add(new Recipe("Supă cremă de broccoli - Soia", AtLeastOnce, List.of(
                 new IngredientEntry(Broccoli, 2, bucati),
                 new IngredientEntry(Soia, 100, gram),
                 new IngredientEntry(Cartofi, 400, gram),
@@ -875,7 +875,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ardei_Rosu, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 300, gram)),
                 F2, List.of(Dafin)));
-        cookbook.add(new Recipe("Varză fiartă", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Varză fiartă", Disabled, List.of(
                 new IngredientEntry(Varza, 2000, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Morcov, 2, bucati),
