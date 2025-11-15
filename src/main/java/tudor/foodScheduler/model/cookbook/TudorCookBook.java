@@ -738,7 +738,7 @@ public class TudorCookBook {
                 new IngredientEntry(Mazare, 2000, gram),
                 new IngredientEntry(Ceapa, 4, bucati)),
                 F1, List.of(Sare, Piper)));
-        cookbook.add(new Recipe("Supă cremă de praz", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Supă cremă de praz", Disabled, List.of(
                 new IngredientEntry(Praz, 4, bucati),
                 new IngredientEntry(Cartofi, 1000, gram)),
                 F1, List.of(Sare, Piper)));
