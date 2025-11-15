@@ -344,16 +344,16 @@ public class TudorCookBook {
                 new IngredientEntry(Telina, 200, gram)),
                 F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, Tarhon, FrunzeTelina, Sare, Piper)));
         cookbook.add(new Recipe("Humus", AtLeastOnce, List.of(
-                new IngredientEntry(Naut, 400, gram),
-                new IngredientEntry(Ulei_Masline, 7, linguri),
-                new IngredientEntry(Tahini, 2, linguri),
-                new IngredientEntry(Usturoi, 2, bucati)),
+                new IngredientEntry(Naut, 600, gram),
+                new IngredientEntry(Ulei_Masline, 5, linguri),
+                new IngredientEntry(Tahini, 3, linguri),
+                new IngredientEntry(Usturoi, 3, bucati)),
                 Rece, List.of(Sare, SucLamaie, BoiaAfumata), 2));
         cookbook.add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(
-                new IngredientEntry(Naut, 400, gram),
-                new IngredientEntry(Ulei_Masline, 7, linguri),
-                new IngredientEntry(Tahini, 2, linguri),
-                new IngredientEntry(Usturoi, 2, bucati),
+                new IngredientEntry(Naut, 600, gram),
+                new IngredientEntry(Ulei_Masline, 5, linguri),
+                new IngredientEntry(Tahini, 3, linguri),
+                new IngredientEntry(Usturoi, 3, bucati),
                 new IngredientEntry(Sos_Pesto_Genovese, 100, gram)),
                 Rece, List.of(Busuioc, Sare, SucLamaie)));
         cookbook.add(new Recipe("Lalele", Disabled, List.of(
