@@ -21,7 +21,7 @@ public enum Ingredient {
     Branza_Mascarpone(ALL, ALL, "328208"),
     Branza_Mozzarella(ALL, ALL, "328842"),
     Branza_Telemea(ALL, ALL, "2259796"),
-    Broccoli(List.of(5,6,7,8,9,10,11), ALL, "321612"),
+    Broccoli(List.of(), ALL, "321612"),
     Carne_Pui_Picioare(ALL,ALL, "2727566"),
     Carne_Pui_Piept(ALL, ALL, "2646170"),
     Carne_Pui_Ficat(ALL, ALL, "2514746"), //ground
