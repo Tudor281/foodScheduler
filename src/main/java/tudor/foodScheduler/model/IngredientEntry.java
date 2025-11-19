@@ -31,6 +31,9 @@ public class IngredientEntry {
                     case Castraveti_Cornichon -> {
                         return 100 * quantity; // checked
                     }
+                    case Castraveti_Murati -> {
+                        return 100 * quantity;
+                    }
                     case Ceapa -> {
                         return 150 * quantity;
                     }

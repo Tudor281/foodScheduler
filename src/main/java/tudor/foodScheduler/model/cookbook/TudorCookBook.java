@@ -610,12 +610,30 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte_Praf, 100, gram),
                 new IngredientEntry(Zahar, 200, gram)),
                 Desert, List.of()));
-        cookbook.add(new Recipe("Salată boeuf", Once, List.of(
+        cookbook.add(new Recipe("Salată alla russe", AtLeastOnce, List.of(
+                new IngredientEntry(Morcov, 4, bucati),
+                new IngredientEntry(Radacina_Patrunjel, 2, bucati),
+                new IngredientEntry(Pastarnac, 2, bucati),
+                new IngredientEntry(Telina, 150, gram),
+                new IngredientEntry(Mazare, 100, gram),
+                new IngredientEntry(Castraveti_Murati, 4, bucati),
+                new IngredientEntry(Ou, 4, bucati),
+                new IngredientEntry(Cartofi, 500, gram),
+                new IngredientEntry(Maioneza, 500, gram)),
+                Rece, List.of(Sare, Mustar)));
+        cookbook.add(new Recipe("Salată boeuf fără carne", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi, 450, gram),
                 new IngredientEntry(Mazare, 150, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Maioneza, 300, gram),
-                new IngredientEntry(Carne_Pui_Piept, 200, gram),
+                new IngredientEntry(Castraveti_Murati, 200, gram)),
+                Rece, List.of(Sare, Mustar)));
+        cookbook.add(new Recipe("Salată boeuf cu vită", Once, List.of(
+                new IngredientEntry(Cartofi, 450, gram),
+                new IngredientEntry(Mazare, 150, gram),
+                new IngredientEntry(Morcov, 2, bucati),
+                new IngredientEntry(Maioneza, 300, gram),
+                new IngredientEntry(Carne_Vita_Chuck, 200, gram),
                 new IngredientEntry(Castraveti_Murati, 200, gram)),
                 Rece, List.of(Sare, Mustar)));
         cookbook.add(new Recipe("Salată de pui", Once, List.of(
