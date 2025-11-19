@@ -29,7 +29,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ou, 3, bucati)),
                 F2, List.of(Mustar, Patrunjel, Sare, Piper, BoiaDulce)));
         cookbook.add(new Recipe("Apple Pie", Disabled, List.of(
-                new IngredientEntry(Mere, 500, gram),
+                new IngredientEntry(Mere_Red_Delicious, 500, gram),
                 new IngredientEntry(Zahar, 2, linguri)),
                 Desert, List.of(Scortisoara))); // TODO No recipy
         cookbook.add(new Recipe("Ardei umpluți simplu", Once, List.of(
@@ -598,7 +598,7 @@ public class TudorCookBook {
                 new IngredientEntry(Morcov, 2, bucati)), F2, List.of(Curcuma), 2));
         cookbook.add(new Recipe("Plăcintă cu mere - Foietaj", AtLeastOnce, List.of(
                 new IngredientEntry(Foietaj, 500, gram),
-                new IngredientEntry(Mere, 500, gram),
+                new IngredientEntry(Mere_Red_Delicious, 500, gram),
                 new IngredientEntry(Zahar, 2, linguri)),
                 Desert, List.of(Scortisoara)));
         cookbook.add(new Recipe("Răcitură", Once, List.of(
@@ -1111,7 +1111,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Mango", AtMostOnce, List.of(
                 new IngredientEntry(Mango_Tommy_Atkins, 200, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mere", AtLeastOnce, List.of(
-                new IngredientEntry(Mere, 500, gram)), Fruits, List.of()));
+                new IngredientEntry(Mere_Red_Delicious, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mineole", Once, List.of(
                 new IngredientEntry(Mineole, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Papaya", AtMostOnce, List.of(
