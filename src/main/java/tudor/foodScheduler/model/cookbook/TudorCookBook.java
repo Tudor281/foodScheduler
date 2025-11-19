@@ -473,7 +473,7 @@ public class TudorCookBook {
                 new IngredientEntry(Suc_Rosii_Bulion, 250, gram)),
                 F2, List.of(Sare, Piper, Patrunjel)));
         cookbook.add(new Recipe("Melanzane alla parmigiano", Once, List.of(
-                new IngredientEntry(Vinete, 1100, gram),
+                new IngredientEntry(Vinete_Crude, 1100, gram),
                 new IngredientEntry(Branza_Mozzarella, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram), // din toata prajeala
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
@@ -657,19 +657,19 @@ public class TudorCookBook {
                 new IngredientEntry(Mais, 100, gram)),
                 Rece, List.of(Sare, Mustar)));
         cookbook.add(new Recipe("Salată de vinete cu ceapă", Once, List.of(
-                new IngredientEntry(Vinete, 1000, gram),
+                new IngredientEntry(Vinete_Crude, 1000, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Maioneza, 100, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram)),
                 Rece, List.of(Sare, SucLamaie)));
-        cookbook.add(new Recipe("Salată de vinete cu tahini", Once, List.of(
-                new IngredientEntry(Vinete, 1000, gram),
-                new IngredientEntry(Maioneza, 100, gram),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram),
+        cookbook.add(new Recipe("Baba ganoush", Once, List.of(
+                new IngredientEntry(Vinete_Crude, 700, gram),
+                new IngredientEntry(Usturoi, 2, bucati),
+                new IngredientEntry(Ulei_Masline, 30, gram),
                 new IngredientEntry(Tahini, 2, linguri)),
                 Rece, List.of(Sare, SucLamaie)));
         cookbook.add(new Recipe("Salată de vinete cu usturoi", AtLeastOnce, List.of(
-                new IngredientEntry(Vinete, 1000, gram),
+                new IngredientEntry(Vinete_Crude, 1000, gram),
                 new IngredientEntry(Usturoi, 10, bucati),
                 new IngredientEntry(Maioneza, 100, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram)),

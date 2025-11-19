@@ -94,7 +94,7 @@ public enum Ingredient {
     Usturoi(ALL, ALL, "1104647"),
     Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL, "2346407"),
     VarzaMurata(ALL, ALL, "2346407"),
-    Vinete(List.of(5,6,7,8,9,10), ALL, "2685577"),
+    Vinete_Crude(List.of(5,6,7,8,9,10), ALL, "2685577"), // vinetele coapte ies jumate din vinetele crude
     Zahar(ALL, List.of(), "334247"),
     Zucchini(List.of(6), ALL, "2685568"),
 
