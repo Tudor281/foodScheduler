@@ -643,12 +643,12 @@ public class TudorCookBook {
                 new IngredientEntry(Maioneza, 100, gram)),
                 Rece, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(
-                new IngredientEntry(Maioneza, 400, gram),
+                new IngredientEntry(Maioneza, 800, gram),
                 new IngredientEntry(Ciuperci, 600, gram),
-                new IngredientEntry(Carne_Pui_Piept, 250, gram),
-                new IngredientEntry(Paste, 100, gram),
-                new IngredientEntry(Castraveti_Murati, 100, gram)),
-                Rece, List.of(Patrunjel, Mustar)));
+                new IngredientEntry(Carne_Pui_Piept, 500, gram),
+                new IngredientEntry(Paste, 200, gram),
+                new IngredientEntry(Castraveti_Murati, 200, gram)),
+                Rece, List.of(Sare, Patrunjel, Mustar)));
         cookbook.add(new Recipe("Salată de pui cu legume", Once, List.of(
                 new IngredientEntry(Cartofi, 400, gram),
                 new IngredientEntry(Morcov, 3, bucati),
