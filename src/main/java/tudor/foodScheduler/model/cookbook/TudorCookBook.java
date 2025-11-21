@@ -108,7 +108,7 @@ public class TudorCookBook {
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de dovlecei cu ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Dovlecei, 2, bucati),
-                new IngredientEntry(Ciuperci, 400, gram),
+                new IngredientEntry(Ciuperci_Raw, 400, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
@@ -166,7 +166,7 @@ public class TudorCookBook {
                 new IngredientEntry(Bors, 500, gram)),
                 F1, List.of(Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", Once, List.of(
-                new IngredientEntry(Ciuperci, 1000, gram),
+                new IngredientEntry(Ciuperci_Raw, 1000, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
@@ -254,7 +254,7 @@ public class TudorCookBook {
                 new IngredientEntry(Telina, 200, gram),
                 new IngredientEntry(Usturoi, 5, bucati)), F1, List.of(Otet, Patrunjel, Dafin, Sare, Piper)));
         cookbook.add(new Recipe("Ciuperci cu maioneză și usturoi", AtLeastOnce, List.of(
-                new IngredientEntry(Ciuperci, 1500, gram),
+                new IngredientEntry(Ciuperci_Raw, 1500, gram),
                 new IngredientEntry(Maioneza, 150, gram),
                 new IngredientEntry(Usturoi, 12, gram)),
                 Rece, List.of(Sare)));
@@ -496,7 +496,7 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Lapte, 200, gram),
                 new IngredientEntry(Unt, 50, gram),
-                new IngredientEntry(Ciuperci, 1600, gram),
+                new IngredientEntry(Ciuperci_Raw, 1600, gram),
                 new IngredientEntry(Ceapa, 4, bucati)),
                 F2, List.of(Sare, Piper), 2));
         cookbook.add(new Recipe("Musaca cu ragu", Disabled, List.of(
@@ -540,18 +540,18 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Mazare, 300, gram),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
-                new IngredientEntry(Ciuperci, 400, gram),
+                new IngredientEntry(Ciuperci_Raw, 400, gram),
                 new IngredientEntry(Usturoi, 2, bucati)),
                 F2, List.of(Sare, Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
         cookbook.add(new Recipe("Pilaf cu ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Orez, 400, gram),
                 new IngredientEntry(Ceapa, 4, bucati),
-                new IngredientEntry(Ciuperci, 600, gram)), F2, List.of(Curcuma), 2));
+                new IngredientEntry(Ciuperci_Raw, 600, gram)), F2, List.of(Curcuma), 2));
         cookbook.add(new Recipe("Pilaf cu ciuperci și alte legume", AtLeastOnce, List.of(
                 new IngredientEntry(Orez, 200, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Morcov, 1, bucati),
-                new IngredientEntry(Ciuperci, 400, gram),
+                new IngredientEntry(Ciuperci_Raw, 400, gram),
                 new IngredientEntry(Pastarnac, 1, bucati),
                 new IngredientEntry(Telina, 150, gram),
                 new IngredientEntry(Dovlecei, 1, bucati),
@@ -638,13 +638,13 @@ public class TudorCookBook {
                 Rece, List.of(Sare, Mustar)));
         cookbook.add(new Recipe("Salată de pui", Once, List.of(
                 new IngredientEntry(Carne_Pui_Piept, 300, gram),
-                new IngredientEntry(Ciuperci, 800, gram),
+                new IngredientEntry(Ciuperci_Raw, 800, gram),
                 new IngredientEntry(Mais, 200, gram),
                 new IngredientEntry(Maioneza, 100, gram)),
                 Rece, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Salată de pui cu ciuperci", Once, List.of(
                 new IngredientEntry(Maioneza, 800, gram),
-                new IngredientEntry(Ciuperci, 600, gram),
+                new IngredientEntry(Ciuperci_Raw, 1200, gram),
                 new IngredientEntry(Carne_Pui_Piept, 500, gram),
                 new IngredientEntry(Paste, 200, gram),
                 new IngredientEntry(Castraveti_Murati, 200, gram)),
@@ -943,14 +943,14 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte_Acru, 200, gram)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Ciulama de ciuperci", Once, List.of(
-                new IngredientEntry(Ciuperci, 1000, gram),
+                new IngredientEntry(Ciuperci_Raw, 1000, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Unt, 50, gram),
                 new IngredientEntry(Faina_Grau_65, 2, linguri),
                 new IngredientEntry(Lapte, 600, gram)),
                 FastFood, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciuperci cu smântână și usturoi", AtMostOnce, List.of(
-                new IngredientEntry(Ciuperci, 1000, gram),
+                new IngredientEntry(Ciuperci_Raw, 1000, gram),
                 new IngredientEntry(Unt, 50, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Usturoi, 4, bucati)),
@@ -1102,7 +1102,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paste, 100, gram)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Ciuperci prăjite", Disabled, List.of(
-                new IngredientEntry(Ciuperci, 1200, gram),
+                new IngredientEntry(Ciuperci_Raw, 1200, gram),
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Usturoi, 2, bucati)),
                 FastFood, List.of(Sare)));

@@ -35,7 +35,7 @@ public enum Ingredient {
     Ceapa(ALL, ALL, "790646"),
     Ceapa_Rosie(List.of(), List.of(3, 4, 5, 6, 7, 8, 9), "790577"),
     Ceapa_Verde(ALL, ALL, "2727585"),
-    Ciuperci(ALL, ALL, "1750347"),
+    Ciuperci_Raw(ALL, ALL, "1750347"),
     Conopida(List.of(5,6,7,8,9,10,11,12), ALL, "2685573"),
     DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4), "2727578"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
     Dovlecei(List.of(4,5,6,7,8,9), ALL, "2685568"),

@@ -54,7 +54,7 @@ public class CiorbeCookBook {
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de dovlecei cu ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Dovlecei, 2, bucati),
-                new IngredientEntry(Ciuperci, 400, gram),
+                new IngredientEntry(Ciuperci_Raw, 400, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Ardei_Rosu, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
@@ -106,7 +106,7 @@ public class CiorbeCookBook {
                 new IngredientEntry(Bors, 500, gram)),
                 F1, List.of(Marar, Leustean, Sare, Piper))); // nu găsești cantități industriale de frunze în București, doar la legătură.
         cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", Once, List.of(
-                new IngredientEntry(Ciuperci, 1000, gram),
+                new IngredientEntry(Ciuperci_Raw, 1000, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Morcov, 2, bucati),
                 new IngredientEntry(Ceapa, 2, bucati),
