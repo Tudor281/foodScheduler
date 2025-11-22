@@ -62,63 +62,66 @@ public enum Ingredient {
     Orez(ALL, ALL, "2512381"),
     Ou(ALL, ALL, "748967"),
     Pappardelle(ALL, ALL, "790018"),
-    PastaiCongelate(ALL, List.of(), "2346400"),
-    PastaiFresh(List.of(5), List.of(), "2346400"), // pastai fresh doar prin Mai
-    Pastarnac(ALL, ALL),
-    Paste(ALL, ALL, "2003586"), //flour for now
-    Paste_Lasagna(ALL, ALL, "2003586"), // flour for now
-    Pesmet(ALL, ALL, "2003586"), //flour... sunt branduri pentru pesmet si in america, dar nimic generic
-    Peste(ALL, ALL, "2684444"),
-    Peste_Somon(ALL, ALL, "2684441"),
+    // bookmark, to do the top
+    PastaiCongelate(ALL, List.of(), "2709769"),
+    PastaiFresh(List.of(5), List.of(), "2709769"), // pastai fresh doar prin Mai
+    Pastarnac(ALL, ALL, "170417"),
+    Paste(ALL, ALL, "2708357"),
+    Paste_Lasagna(ALL, ALL, "2656773"), // lasagna sheets
+    Pesmet(ALL, ALL, "1638229"), // breadcrumbs
+    Peste(ALL, ALL, "2684444"), // cod
+    Peste_Somon(ALL, ALL, "2684440"),
     Peste_Ton(ALL, ALL, "334194"),
-    Piscoturi(ALL, ALL, "2003586"), // flour and sugar, is definitely not a foundational food
+    Piscoturi(ALL, ALL, "509552"), // savoiardi
     Praz(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "2727584"),
-    Salata(ALL, ALL, "2346388"),
-    Smantana(ALL, ALL, "2346387"),
-    Soia(ALL, ALL, "1104705"),
-    Sos_Carbonara(ALL, ALL),
-    Sos_Pesto_Genovese(ALL, ALL),
-    Sos_Quattro_Formaggi(ALL, ALL),
-    Spanac(ALL, ALL, "1750353"),
+    Salata(ALL, ALL, "2346391"),
+    Smantana(ALL, ALL, "2705614"),
+    Soia(ALL, ALL, "174275"),
+    Sos_Carbonara(ALL, ALL, "378386"),
+    Sos_Pesto_Genovese(ALL, ALL, "1972571"),
+    Sos_Quattro_Formaggi(ALL, ALL, "1944558"), // feta
+    Spanac(ALL, ALL, "1999633"),
     Stevie(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
     Suc_Rosii_Bulion(ALL, ALL, "2685579"),
     Radacina_Patrunjel(ALL, ALL),
-    Rosii(List.of(6,7,8,9,10,11), ALL, "1750354"),
-    Tahini(ALL, ALL),
-    Taitei(ALL, ALL, "2003586"), // flour for now
-    Telina(ALL, ALL),
-    Ulei_Floarea_Soarelui(ALL, ALL, "1750349"),
-    Ulei_Masline(ALL, ALL, "748608"),
-    Unt(ALL, ALL, "789772"),
-    Urzici(List.of(3,4,5), List.of()),
+    Rosii(List.of(6,7,8,9,10,11), ALL, "1999634"),
+    Tahini(ALL, ALL, "2707587"),
+    Taitei(ALL, ALL, "2708357"),
+    Telina(ALL, ALL, "170400"),
+    Ulei_Floarea_Soarelui(ALL, ALL, "2710192"),
+    Ulei_Masline(ALL, ALL, "2710186"),
+    Unt_Sarat(ALL, ALL, "790508"),
+    Unt_Nesarat(ALL, ALL, "789828"),
+    Urzici(List.of(3,4,5), List.of(), "169819"),
     Usturoi(ALL, ALL, "1104647"),
     Varza(List.of(4,5,6,7,8,9,10,11,12,1), ALL, "2346407"),
-    VarzaMurata(ALL, ALL, "2346407"),
+    VarzaMurata(ALL, ALL, "2710075"),
     Vinete_Crude(List.of(5,6,7,8,9,10), ALL, "2685577"), // vinetele coapte ies jumate din vinetele crude
-    Zahar(ALL, List.of(), "334247"),
-    Zucchini(List.of(6), ALL, "2685568"),
+    Zahar(ALL, List.of(), "746784"),
+    Zucchini(List.of(6), ALL, "1956289"),
 
     // fructe
-    Banane(List.of(), ALL, "790991"),
+    Banane(List.of(), ALL, "1105314"),
     Caise(List.of(7,8,9), List.of(), "2710815"),
-    Capsuni(List.of(6,7,8,9), List.of(), "327699"),
+    Capsuni(List.of(6,7,8,9), List.of(), "747448"),
     Cirese(List.of(6, 7), List.of(), "2346399"),
-    Clementine(List.of(), List.of(12, 1)),
-    Grapefruit(List.of(), List.of(12,1,2,3,4,5,6)),
-    Kaki(List.of(), List.of(10,11,12,1)),
-    Kiwi(List.of(), List.of(10,11,12,1,2,3,4,5), "2710831"),
-    Mandarine(List.of(), List.of(11,12,1,2,3,4), "2710832"),
+    Clementine(List.of(), List.of(12, 1), "168195"),
+    Grapefruit(List.of(), List.of(12,1,2,3,4,5,6), "2709165"),
+    Kaki(List.of(), List.of(10,11,12,1), "2709259"),
+    Kiwi(List.of(), List.of(10,11,12,1,2,3,4,5), "327046"),
+    Mandarine(List.of(), List.of(11,12,1,2,3,4), "2609797"),
     Mango_Tommy_Atkins(List.of(), ALL, "2710833"),
-    Mere_Red_Delicious(List.of(11, 12,1,2), ALL, "1105430"),
-    Mineole(List.of(), List.of(1)),
-    Papaya(List.of(), List.of(1)),
-    PepeneGalben(List.of(7,8,9), List.of(), "327198"),
-    PepeneRosu(List.of(7,8,9), List.of()),
-    Pere(List.of(), ALL, "332597"),
-    Portocale(List.of(), List.of(11,12, 1, 2,3,4,5,6)),
-    Prune(List.of(8,9,10,11), List.of(12, 1)),
-    Rodii(List.of(), ALL),
-    Struguri(List.of(9,10,11), List.of())
+    Mere_Red_Delicious(List.of(11, 12,1,2), ALL, "1750339"),
+    Mineole(List.of(), List.of(1), "2450365"),
+    Papaya(List.of(), List.of(1), "2709246"),
+    PepeneGalben(List.of(7,8,9), List.of(), "746770"),
+    PepeneRosu(List.of(7,8,9), List.of(), "2709270"),
+    Pere(List.of(), ALL, "746773"),
+    Portocale(List.of(), List.of(11,12, 1, 2,3,4,5,6), "746771"),
+    Prune(List.of(8,9,10,11), List.of(12, 1), "169949"),
+    Rodii(List.of(), ALL, "2709267"),
+    Struguri_Negri(List.of(9,10,11), List.of(), "2263890"),
+    Struguri_Albi(List.of(9,10,11), List.of(), "2263891")
     ;
 
     static { // akas

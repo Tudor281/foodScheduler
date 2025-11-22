@@ -310,7 +310,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa, 1, bucati),
                 new IngredientEntry(Usturoi, 3, bucati),
                 new IngredientEntry(Lapte, 200, gram),
-                new IngredientEntry(Unt, 100, gram),
+                new IngredientEntry(Unt_Sarat, 100, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F2, List.of(Sare, Piper)));
@@ -369,7 +369,7 @@ public class TudorCookBook {
                 new IngredientEntry(Branza_Grattugiato, 50, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Usturoi, 1, bucati),
-                new IngredientEntry(Unt, 100, gram),
+                new IngredientEntry(Unt_Sarat, 100, gram),
                 new IngredientEntry(Faina_Grau_65, 75, gram),
                 new IngredientEntry(Lapte, 1000, gram)),
                 F2, List.of(Sare, Piper, Nucsoara)));
@@ -378,7 +378,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa, 3, bucati),
                 new IngredientEntry(Apio, 100, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram),
-                new IngredientEntry(Unt, 100, gram),
+                new IngredientEntry(Unt_Sarat, 100, gram),
                 new IngredientEntry(Faina_Grau_65, 75, gram),
                 new IngredientEntry(Lapte, 1000, gram),
                 new IngredientEntry(Paste_Lasagna, 500, gram)), F2, List.of(VinAlb, Sare)));
@@ -491,11 +491,12 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Carne_Pui_Tocata, 500, gram),
                 new IngredientEntry(Lapte, 200, gram),
-                new IngredientEntry(Unt, 50, gram)), F2, List.of(Sare)));
+                new IngredientEntry(Unt_Sarat, 50, gram)),
+                F2, List.of(Sare)));
         cookbook.add(new Recipe("Musaca cu ciuperci", AtMostOnce, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Lapte, 200, gram),
-                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Ciuperci_Raw, 1600, gram),
                 new IngredientEntry(Ceapa, 4, bucati)),
                 F2, List.of(Sare, Piper), 2));
@@ -503,7 +504,7 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Carne_Vita_Tocata, 500, gram),
                 new IngredientEntry(Lapte, 200, gram),
-                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Ceapa, 3, bucati),
                 new IngredientEntry(Apio, 100, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram)),
@@ -511,7 +512,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Musaca cu soia", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi, 2000, gram),
                 new IngredientEntry(Lapte, 100, gram),
-                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Soia, 100, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
                 new IngredientEntry(Apio, 50, gram),
@@ -902,7 +903,8 @@ public class TudorCookBook {
                 F2, List.of(Dafin, Sare)));
         cookbook.add(new Recipe("Varză cu fish fingers", Disabled, List.of(
                 new IngredientEntry(Varza, 2000, gram),
-                new IngredientEntry(Peste, 300, gram)), F2, List.of(Dafin))); // e o porcărie grasă și grețoasă
+                new IngredientEntry(Peste, 300, gram)),
+                F2, List.of(Dafin))); // e o porcărie grasă și grețoasă
         cookbook.add(new Recipe("Varză la Cluj", Once, List.of(
                 new IngredientEntry(VarzaMurata, 1000, gram),
                 new IngredientEntry(Ceapa, 4, bucati),
@@ -945,13 +947,13 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Ciulama de ciuperci", Once, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1000, gram),
                 new IngredientEntry(Ceapa, 2, bucati),
-                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Faina_Grau_65, 2, linguri),
                 new IngredientEntry(Lapte, 600, gram)),
                 FastFood, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciuperci cu smântână și usturoi", AtMostOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1000, gram),
-                new IngredientEntry(Unt, 50, gram),
+                new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Usturoi, 4, bucati)),
                 FastFood, List.of(Patrunjel, Sare, Piper)));
@@ -1060,7 +1062,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Pasta al salmone", Once, List.of(
                 new IngredientEntry(Paste, 100, gram),
                 new IngredientEntry(Peste_Somon, 100, gram),
-                new IngredientEntry(Unt, 25, gram),
+                new IngredientEntry(Unt_Sarat, 25, gram),
                 new IngredientEntry(Faina_Grau_65, 20, gram),
                 new IngredientEntry(Lapte, 200, gram)), FastFood, List.of()));
         cookbook.add(new Recipe("Pasta con tonno", Once, List.of(
@@ -1146,8 +1148,10 @@ public class TudorCookBook {
                 new IngredientEntry(Prune, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Rodii", AtMostOnce, List.of(
                 new IngredientEntry(Rodii, 200, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Struguri", Once, List.of(
-                new IngredientEntry(Struguri, 250, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Struguri Albi", Once, List.of(
+                new IngredientEntry(Struguri_Albi, 250, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Struguri Negri", Once, List.of(
+                new IngredientEntry(Struguri_Negri, 250, gram)), Fruits, List.of()));
 
         return cookbook;
     }

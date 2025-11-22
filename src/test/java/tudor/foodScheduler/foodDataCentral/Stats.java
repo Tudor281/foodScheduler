@@ -17,7 +17,7 @@ public class Stats {
 
     @Test
     void foodSearcher() throws IOException {
-        String query = "potato";
+        String query = "Green beans";
         List<FoodEntry> results = new ArrayList<>();
 
         Map<String, FoodEntry> foodByFdc_id = new HashMap<>();
@@ -28,7 +28,8 @@ public class Stats {
                 // process the line.
                 String[] row = line.split(",");
                 FoodEntry foodEntry = new FoodEntry(row);
-                if (foodEntry.description.toLowerCase().contains(query.toLowerCase())) {
+                if (foodEntry.description.toLowerCase().contains(query.toLowerCase())
+                    || (foodEntry.food_category_id != null && foodEntry.food_category_id.toLowerCase().contains(query.toLowerCase()))) {
                     results.add(foodEntry);
                     foodByFdc_id.put(foodEntry.fdc_id, foodEntry);
                 }
@@ -69,6 +70,7 @@ public class Stats {
 
     @Test
     void listAllFoodCategories() throws IOException {
+        printCurrentDir();
         Map<String, Integer> rowCounts = new HashMap<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fdcPath+"FoodData_Central_csv_2025-04-24/food.csv"))) {

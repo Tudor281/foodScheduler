@@ -49,6 +49,9 @@ public class IngredientEntry {
                     case Dovlecei -> {
                         return 450 * quantity; // checked
                     }
+                    case Kaki -> {
+                        return 200 * quantity; // weighted at 180 and something but it seemed a bit small
+                    }
                     case Morcov -> {
                         return 100 * quantity;
                     }
