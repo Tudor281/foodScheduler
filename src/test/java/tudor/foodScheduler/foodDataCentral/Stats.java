@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-@SuppressWarnings("NewClassNamingConvention")
+@SuppressWarnings({"NewClassNamingConvention", "resource", "CallToPrintStackTrace"})
 public class Stats {
     List<String> order = List.of("experimental_food", "foundation_food", "agricultural_acquisition", "sample_food", "survey_fndds_food", "market_acquistion", "sr_legacy_food", "sub_sample_food", "branded_food");
 
@@ -17,7 +17,7 @@ public class Stats {
 
     @Test
     void foodSearcher() throws IOException {
-        String query = "Green beans";
+        String query = "pepper";
         List<FoodEntry> results = new ArrayList<>();
 
         Map<String, FoodEntry> foodByFdc_id = new HashMap<>();
@@ -50,7 +50,8 @@ public class Stats {
 
         results.removeIf(foodEntry -> foodEntry.nutrientCount == 0);
 
-        results.sort(new Comparator<FoodEntry>() {
+        //noinspection Convert2Lambda
+        results.sort(new Comparator<>() {
             @Override
             public int compare(FoodEntry o1, FoodEntry o2) {
                 int dataTypeComparison = Integer.compare(order.indexOf(o1.data_type), order.indexOf(o2.data_type));

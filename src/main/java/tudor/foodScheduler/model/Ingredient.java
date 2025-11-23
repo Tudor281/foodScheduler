@@ -8,6 +8,7 @@ import static tudor.foodScheduler.model.Months.ALL;
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
     Ardei_Rosu(List.of(6,7,8,9), ALL, "2258590"),
+    Ardei_Verde(List.of(6,7,8,9), ALL, "2258588"),
     // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
     Apio(List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "2346405"), //https://en.wikipedia.org/wiki/Celery
     Avocado_Hass(List.of(), ALL, "2710824"), // coaja aspra, neagra la maturitate
@@ -16,15 +17,15 @@ public enum Ingredient {
     Branza_CottageFullFat(ALL, ALL, "2346384"),
     Branza_Fagaras(ALL, ALL, "2346384"),
     Branza_Feta(ALL, ALL, "2259796"),
-    Branza_Gorgonzola(ALL, ALL, "328208"), // cheddar
-    Branza_Grattugiato(ALL, ALL, "2259795"),
-    Branza_Mascarpone(ALL, ALL, "328208"),
-    Branza_Mozzarella(ALL, ALL, "328842"),
+    Branza_Gorgonzola(ALL, ALL, "2554287"),
+    Branza_Grattugiato(ALL, ALL, "2011246"), // parmigiano
+    Branza_Mascarpone(ALL, ALL, "506462"),
+    Branza_Mozzarella(ALL, ALL, "329370"),
     Branza_Telemea(ALL, ALL, "2259796"),
-    Broccoli(List.of(), ALL, "321612"),
-    Carne_Pui_Picioare(ALL,ALL, "2727566"),
+    Broccoli(List.of(), ALL, "747447"),
+    Carne_Pui_Picioare(ALL,ALL, "331897"),
     Carne_Pui_Piept(ALL, ALL, "2646170"),
-    Carne_Pui_Ficat(ALL, ALL, "2514746"), //ground
+    Carne_Pui_Ficat(ALL, ALL, "2706154"),
     Carne_Pui_Tocata(ALL, ALL, "2514746"),
     Carne_Vita_Chuck(ALL, ALL, "2646174,"), // carne gulas
     Carne_Vita_Tocata(ALL, ALL, "2514743"), // 10% fat
@@ -35,34 +36,33 @@ public enum Ingredient {
     Ceapa(ALL, ALL, "790646"),
     Ceapa_Rosie(List.of(), List.of(3, 4, 5, 6, 7, 8, 9), "790577"),
     Ceapa_Verde(ALL, ALL, "2727585"),
-    Ciuperci_Raw(ALL, ALL, "1750347"),
+    Ciuperci_Raw(ALL, ALL, "1999629"),
     Conopida(List.of(5,6,7,8,9,10,11,12), ALL, "2685573"),
-    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4), "2727578"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
-    Dovlecei(List.of(4,5,6,7,8,9), ALL, "2685568"),
+    DovleacPlacintar(List.of(9,10,11,12,1), List.of(2,3,4), "1936070"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
+    Dovlecei(List.of(4,5,6,7,8,9), ALL, "1956289"),
     Faina_Grau_65(ALL, List.of(), "790018"),
     Faina_Grau_150(ALL, ALL, "790018"),
     Fasole_Uscata(ALL, ALL, "2644281"),
-    Fidea(ALL, ALL, "790018"),
-    Foietaj(ALL, ALL, "790018"),
-    Gogonele(List.of(9,10,11), List.of()),
+    Fidea(ALL, ALL, "1944267"),
+    Foietaj(ALL, ALL, "172738"), // puff pastry
+    Gogonele(List.of(9,10,11), List.of(), "1856405"),
     Gris(ALL, List.of(), "2003589"),
-    Iaurt_Grecesc_10(ALL, ALL, "2259794"),
-    Lapte(ALL, List.of(), "322892"),
-    Lapte_Acru(ALL, List.of(), "322892"), // same as milk, no data on sour milk
-    Lapte_Praf(ALL, ALL, "322892"),
+    Iaurt_Grecesc_10(ALL, ALL, "375754"),
+    Lapte(ALL, List.of(), "746782"),
+    Lapte_Acru(ALL, List.of(), "2705394"), // kefir
+    Lapte_Praf(ALL, ALL, "502460"),
     Linte_Galbena(ALL, ALL, "2644283"),
     Linte_Rosie(ALL, ALL, "2644283"),
-    Maioneza(ALL, ALL), //TODO switch to oil and eggs
-    Mais(ALL, ALL, "2710826"),
-    Malai(ALL, List.of(), "790276"),
+    Maioneza(ALL, ALL, "2710204"),
+    Mais(ALL, ALL, "488861"), // corn kernels
+    Malai(ALL, List.of(), "2601092"), // cornmeal
     Masline(ALL, ALL, "332791"),
     Mazare(ALL, ALL, "2644291"),
     Morcov(ALL, ALL, "2258586"),
     Naut(ALL, ALL, "2644282"),
     Orez(ALL, ALL, "2512381"),
-    Ou(ALL, ALL, "748967"),
-    Pappardelle(ALL, ALL, "790018"),
-    // bookmark, to do the top
+    Ou(ALL, ALL, "323604"),
+    Pappardelle(ALL, ALL, "1118839"),
     PastaiCongelate(ALL, List.of(), "2709769"),
     PastaiFresh(List.of(5), List.of(), "2709769"), // pastai fresh doar prin Mai
     Pastarnac(ALL, ALL, "170417"),
@@ -162,6 +162,7 @@ public enum Ingredient {
         this.usdaCode = usdaCode;
     }
 
+    @SuppressWarnings("unused")
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score) {
         this(domesticMonths, importMonths);
         this.score = score;
