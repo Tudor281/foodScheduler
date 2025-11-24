@@ -32,7 +32,7 @@ public class IngredientEntry {
                         return 100 * quantity; // checked
                     }
                     case Castraveti_Murati -> {
-                        return 100 * quantity;
+                        return 150 * quantity;
                     }
                     case Ceapa -> {
                         return 150 * quantity;

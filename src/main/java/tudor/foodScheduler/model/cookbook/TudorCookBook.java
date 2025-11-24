@@ -618,7 +618,6 @@ public class TudorCookBook {
                 new IngredientEntry(Telina, 150, gram),
                 new IngredientEntry(Mazare, 100, gram),
                 new IngredientEntry(Castraveti_Murati, 4, bucati),
-                new IngredientEntry(Ou, 4, bucati),
                 new IngredientEntry(Cartofi, 500, gram),
                 new IngredientEntry(Maioneza, 500, gram)),
                 Rece, List.of(Sare, Mustar)));
