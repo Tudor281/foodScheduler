@@ -148,18 +148,19 @@ public enum Ingredient {
     final List<Integer> importMonths;
     public final List<Ingredient> akas = new ArrayList<>();
     public boolean score = true; // recipes with less of this ingredient get better scores, by disabling I hope I get more of these
-    final String usdaCode;
+    public final String fdcCode;
+    final Nutrients nutrients = new Nutrients();
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
-        this.usdaCode = null;
+        this.fdcCode = null;
     }
 
-    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, String usdaCode) {
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, String fdcCode) {
         this.domesticMonths = domesticMonths;
         this.importMonths = importMonths;
-        this.usdaCode = usdaCode;
+        this.fdcCode = fdcCode;
     }
 
     @SuppressWarnings("unused")
@@ -168,8 +169,8 @@ public enum Ingredient {
         this.score = score;
     }
 
-    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score, String usdaCode) {
-        this(domesticMonths, importMonths, usdaCode);
+    Ingredient(List<Integer> domesticMonths, List<Integer> importMonths, boolean score, String fdcCode) {
+        this(domesticMonths, importMonths, fdcCode);
         this.score = score;
     }
 

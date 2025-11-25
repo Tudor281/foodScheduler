@@ -9,11 +9,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+import static tudor.foodScheduler.foodDataCentral.NutrientLoader.fdcPath;
+
 @SuppressWarnings({"NewClassNamingConvention", "resource", "CallToPrintStackTrace"})
 public class Stats {
     List<String> order = List.of("experimental_food", "foundation_food", "agricultural_acquisition", "sample_food", "survey_fndds_food", "market_acquistion", "sr_legacy_food", "sub_sample_food", "branded_food");
-
-    static final String fdcPath = "/Food Data Central/All/";
 
     @Test
     void foodSearcher() throws IOException {
