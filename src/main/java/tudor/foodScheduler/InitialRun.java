@@ -139,7 +139,7 @@ public class InitialRun {
         schedule.addComment(10, 4, "Ziua Turciei");
 
         // ziua finlandei
-        Recipe nakki = schedule.cookbook.get("Nakkikeitto - V");
+        Recipe nakki = schedule.cookbook.get("Nakkikeitto");
         schedule.add(12, 1, nakki, true);
         schedule.addComment(12, 1,"Ziua Finlandei");
 

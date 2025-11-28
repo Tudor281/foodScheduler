@@ -32,7 +32,7 @@ public class TudorCookBook {
                 new IngredientEntry(Mere_Red_Delicious, 500, gram),
                 new IngredientEntry(Zahar, 2, linguri)),
                 Desert, List.of(Scortisoara))); // TODO No recipy
-        cookbook.add(new Recipe("Ardei umpluți simplu", Once, List.of(
+        cookbook.add(new Recipe("Ardei umpluți simplu", Disabled, List.of(
                 new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
@@ -41,7 +41,20 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F2, List.of(FrunzeTelina, Sare, Piper)));
-        cookbook.add(new Recipe("Ardei umpluți cu carne", Once, List.of(
+        cookbook.add(new Recipe("Ardei umpluți cu soia", AtLeastOnce, List.of(
+                new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
+                new IngredientEntry(Soia_Flour, 100, gram),
+                new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
+                new IngredientEntry(Morcov_Cooked, 2, bucati),
+                new IngredientEntry(Orez_Cooked, 200, gram),
+                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Rosii, 4, bucati),
+                new IngredientEntry(Suc_Rosii_Bulion, 250, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
+                new IngredientEntry(Ulei_Masline, 2, linguri),
+                new IngredientEntry(Lapte_Acru, 2000, gram)),
+                F2, List.of(FrunzeTelina, Sare, Piper)));
+        cookbook.add(new Recipe("Ardei umpluți cu carne", Disabled, List.of(
                 new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
@@ -526,7 +539,7 @@ public class TudorCookBook {
                 new IngredientEntry(Pastarnac_Cooked, 2, bucati),
                 new IngredientEntry(Usturoi_Cooked, 3, bucati)),
                 F1, List.of(Sare, Piper, Dafin, Patrunjel, Rozmarin)));
-        cookbook.add(new Recipe("Nakkikeitto - V", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Nakkikeitto - V", Disabled, List.of(
                 new IngredientEntry(Cartofi_Boiled, 900, gram),
                 new IngredientEntry(Soia_Flour, 200, gram),
                 new IngredientEntry(Morcov_Cooked, 450, gram),
