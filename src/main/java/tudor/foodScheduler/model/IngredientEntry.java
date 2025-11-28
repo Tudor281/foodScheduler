@@ -19,13 +19,13 @@ public class IngredientEntry {
             }
             case bucati -> {
                 switch (ingredient) {
-                    case Avocado_Hass -> {
+                    case Avocado_Hass_Raw -> {
                         return 120 * quantity; // copilot
                     }
-                    case Ardei_Rosu -> {
+                    case Ardei_Rosu_Raw -> {
                         return 100 * quantity;
                     }
-                    case Broccoli -> {
+                    case Broccoli_Cooked -> {
                         return 1000 * quantity;
                     }
                     case Castraveti_Cornichon -> {
@@ -34,34 +34,34 @@ public class IngredientEntry {
                     case Castraveti_Murati -> {
                         return 150 * quantity;
                     }
-                    case Ceapa -> {
+                    case Ceapa_Galbena_Cooked -> {
                         return 150 * quantity;
                     }
-                    case Ceapa_Verde -> {
+                    case Ceapa_Verde_Raw -> {
                         return 100 * quantity;
                     }
-                    case Conopida -> {
+                    case Conopida_Cooked -> {
                         return 1500 * quantity;
                     }
-                    case DovleacPlacintar -> {
+                    case DovleacPlacintar_Raw -> {
                         return 3000 * quantity;
                     }
-                    case Dovlecei -> {
+                    case Dovlecei_Raw -> {
                         return 450 * quantity; // checked
                     }
                     case Kaki -> {
                         return 200 * quantity; // weighted at 180 and something but it seemed a bit small
                     }
-                    case Morcov -> {
+                    case Morcov_Cooked -> {
                         return 100 * quantity;
                     }
-                    case Ou -> {
+                    case Ou_Raw -> {
                         return 60 * quantity; // ou mediu (Eat & Track)
                     }
-                    case Pastarnac -> {
+                    case Pastarnac_Cooked -> {
                         return 100 * quantity;
                     }
-                    case Praz -> {
+                    case Praz_Cooked -> {
                         return 200 * quantity; // partea alba
                     }
                     case Radacina_Patrunjel -> {
@@ -70,13 +70,13 @@ public class IngredientEntry {
                     case Rosii -> {
                         return 250 * quantity;
                     }
-                    case Salata -> {
+                    case Salata_Raw -> {
                         return 750 * quantity;
                     }
-                    case Telina -> {
+                    case Telina_Cooked -> {
                         return 900 * quantity;
                     }
-                    case Usturoi -> {
+                    case Usturoi_Cooked -> {
                         return 5 * quantity;
                     }
                     default -> {

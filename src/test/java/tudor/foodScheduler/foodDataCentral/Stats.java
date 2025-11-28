@@ -17,7 +17,7 @@ public class Stats {
 
     @Test
     void foodSearcher() throws IOException {
-        String query = "pepper";
+        String query = "eggplant";
         List<FoodEntry> results = new ArrayList<>();
 
         Map<String, FoodEntry> foodByFdc_id = new HashMap<>();
