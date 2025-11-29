@@ -27,8 +27,10 @@ public enum Ingredient {
     Branza_Telemea(ALL, ALL, "2259796"),
     Broccoli_Cooked(List.of(), ALL, "2709645"),
     Carne_Pui_Picioare_Stewed(ALL,ALL, "2705988"),
+    Carne_Pui_Picioare_Fried(ALL, ALL, "2705996"),
     Carne_Pui_Piept_Stewed(ALL, ALL, "2705966"),
     Carne_Pui_Ficat_Raw(ALL, ALL, "2706154"),
+    Carne_Pui_Crenvurst(ALL, ALL, "171624"), // frankfurter
     Carne_Pui_Tocata_Raw(ALL, ALL, "2514746"),
     Carne_Vita_Chuck_Roast(ALL, ALL, "2646174"), // carne gulas
     Carne_Vita_Tocata_Raw(ALL, ALL, "2514743"), // 10% fat
@@ -79,6 +81,7 @@ public enum Ingredient {
     Pesmet(ALL, ALL, "1638229"), // breadcrumbs
     Peste_Cod_Fried(ALL, ALL, "2706244"), // cod
     Peste_Somon_Fried(ALL, ALL, "2706289"),
+    Peste_Somon_Canned(ALL, ALL, "2706291"),
     Peste_Ton_Cooked(ALL, ALL, "2706310"),
     Piscoturi(ALL, ALL, "509552"), // savoiardi
     Praz_Cooked(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "168426"),

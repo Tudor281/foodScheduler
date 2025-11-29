@@ -24,7 +24,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("American Potato Salad", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi_Boiled, 1000, gram),
                 new IngredientEntry(Maioneza, 200, gram),
-                new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
+                new IngredientEntry(Ceapa_Rosie_Raw, 1, bucati),
                 new IngredientEntry(Apio_Raw, 100, gram),
                 new IngredientEntry(Ou_Raw, 3, bucati)),
                 F2, List.of(Mustar, Patrunjel, Sare, Piper, BoiaDulce)));
@@ -33,21 +33,21 @@ public class TudorCookBook {
                 new IngredientEntry(Zahar, 2, linguri)),
                 Desert, List.of(Scortisoara))); // TODO No recipy
         cookbook.add(new Recipe("Ardei umpluți simplu", Disabled, List.of(
-                new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 16, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
                 new IngredientEntry(Orez_Cooked, 250, gram),
-                new IngredientEntry(Ou_Raw, 1, bucati),
+                new IngredientEntry(Ou_Boiled, 1, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F2, List.of(FrunzeTelina, Sare, Piper)));
         cookbook.add(new Recipe("Ardei umpluți cu soia", AtLeastOnce, List.of(
-                new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 16, bucati),
                 new IngredientEntry(Soia_Flour, 100, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Orez_Cooked, 200, gram),
-                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Ou_Boiled, 2, bucati),
                 new IngredientEntry(Rosii, 4, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 250, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
@@ -55,11 +55,11 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte_Acru, 2000, gram)),
                 F2, List.of(FrunzeTelina, Sare, Piper)));
         cookbook.add(new Recipe("Ardei umpluți cu carne", Disabled, List.of(
-                new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 16, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
                 new IngredientEntry(Orez_Cooked, 150, gram),
-                new IngredientEntry(Ou_Raw, 1, bucati),
+                new IngredientEntry(Ou_Boiled, 1, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram)),
@@ -71,7 +71,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(
                 new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
-                new IngredientEntry(Ou_Raw, 1, bucati),
+                new IngredientEntry(Ou_Fried, 1, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Usturoi_Cooked, 7, bucati)),
                 Rece, List.of(Sare, Piper)));
@@ -86,7 +86,7 @@ public class TudorCookBook {
                 new IngredientEntry(Broccoli_Cooked, 1, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
@@ -95,7 +95,7 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi_Boiled, 800, gram),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri),
@@ -105,7 +105,7 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi_Boiled, 800, gram),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
@@ -114,7 +114,7 @@ public class TudorCookBook {
                 new IngredientEntry(Conopida_Cooked, 1, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
@@ -123,17 +123,17 @@ public class TudorCookBook {
                 new IngredientEntry(Dovlecei_Raw, 2, bucati),
                 new IngredientEntry(Ciuperci_Raw, 400, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Telina_Cooked, 250, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu chimen", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 400, gram ),
+                new IngredientEntry(Fasole_Uscata_Canned, 800, gram ),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Pastarnac_Cooked, 1, bucati),
                 new IngredientEntry(Usturoi_Cooked, 5, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
@@ -143,7 +143,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F1, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, BoiaAfumata, Iuteala, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu cimbru", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 400, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 800, gram),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
@@ -152,19 +152,19 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F1, List.of(Patrunjel, Marar, Cimbru, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu dafin", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 400, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 800, gram),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F1, List.of(Patrunjel, Marar, Dafin, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu leuștean", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 400, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 800, gram),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
@@ -183,15 +183,15 @@ public class TudorCookBook {
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Bors, 500, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri))
                 , F1, List.of(Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de linte cu smântână", Once, List.of(
-                new IngredientEntry(Linte_Galbena_Canned, 150, gram),
+                new IngredientEntry(Linte_Galbena_Canned, 300, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Cartofi_Boiled, 300, gram),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
@@ -202,7 +202,7 @@ public class TudorCookBook {
         ), F1, List.of(Leustean, Patrunjel, Sare, Piper, SucLamaie, Otet)));
         cookbook.add(new Recipe("Ciorbă de năut cu afumătură", Once, List.of(
                 new IngredientEntry(Carne_Pui_Piept_Stewed, 350, gram),
-                new IngredientEntry(Naut_Canned, 250, gram),
+                new IngredientEntry(Naut_Canned, 500, gram),
                 new IngredientEntry(Pappardelle, 125, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
@@ -215,7 +215,7 @@ public class TudorCookBook {
                 new IngredientEntry(Pastarnac_Cooked, 1, bucati),
                 new IngredientEntry(Telina_Cooked, 150, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
@@ -226,7 +226,7 @@ public class TudorCookBook {
                 new IngredientEntry(Pastarnac_Cooked, 1, bucati),
                 new IngredientEntry(Telina_Cooked, 150, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
@@ -238,7 +238,7 @@ public class TudorCookBook {
                 new IngredientEntry(Carne_Pui_Picioare_Stewed, 700, gram),
                 new IngredientEntry(Orez_Cooked, 100, gram),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Pastarnac_Cooked, 1, bucati),
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
@@ -247,8 +247,8 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F1, List.of(SucLamaie, Patrunjel, Marar, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de salată cu scrob", AtLeastOnce, List.of(
-                new IngredientEntry(Salata_Raw, 1, bucati),
-                new IngredientEntry(Ou_Raw, 7, bucati),
+                new IngredientEntry(Salata_Cooked, 1, bucati),
+                new IngredientEntry(Ou_Fried, 7, bucati),
                 new IngredientEntry(Bors, 500, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
@@ -259,10 +259,10 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Ciorbă rădăuțeană", Once, List.of(
                 new IngredientEntry(Carne_Pui_Picioare_Stewed, 500, gram),
                 new IngredientEntry(Smantana, 300, gram),
-                new IngredientEntry(Ou_Raw, 4, bucati),
+                new IngredientEntry(Ou_Boiled, 4, bucati),
                 new IngredientEntry(Pastarnac_Cooked, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Telina_Cooked, 200, gram),
                 new IngredientEntry(Usturoi_Cooked, 5, bucati)), F1, List.of(Otet, Patrunjel, Dafin, Sare, Piper)));
@@ -275,7 +275,7 @@ public class TudorCookBook {
                 new IngredientEntry(Faina_Grau_65, 280, gram),
                 new IngredientEntry(Lapte, 500, gram),
                 new IngredientEntry(Zahar, 50, gram),
-                new IngredientEntry(Ou_Raw, 2, bucati)),
+                new IngredientEntry(Ou_Fried, 2, bucati)),
                 Desert, List.of(Sare))); // TODO
         cookbook.add(new Recipe("Cozonac", Disabled, List.of(
                 new IngredientEntry(Faina_Grau_65, 200, gram),
@@ -284,15 +284,15 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Cremă de avocado cu brânză și usturoi", Once, List.of(
                 new IngredientEntry(Avocado_Hass_Raw, 1, bucati),
                 new IngredientEntry(Branza_CottageFullFat, 150, gram),
-                new IngredientEntry(Usturoi_Cooked, 2, bucati)
+                new IngredientEntry(Usturoi_Raw, 2, bucati)
         ), Rece, List.of(SucLamaie, Sare, Piper, Iuteala)));
         cookbook.add(new Recipe("Fasole bătută", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 400, gram),
-                new IngredientEntry(Usturoi_Cooked, 5, bucati),
+                new IngredientEntry(Fasole_Uscata_Canned, 800, gram),
+                new IngredientEntry(Usturoi_Raw, 5, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati)),
                 Rece, List.of(Sare)));
         cookbook.add(new Recipe("Fasole pasată cu ceapă", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 400, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 800, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 75, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram)),
                 Rece, List.of(Sare)));
@@ -300,15 +300,15 @@ public class TudorCookBook {
                 new IngredientEntry(Conopida_Cooked, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Dovlecei_Raw, 1, bucati),
                 new IngredientEntry(Mazare_Cooked, 200, gram),
                 new IngredientEntry(Cartofi_Boiled, 300, gram),
-                new IngredientEntry(Fasole_Uscata_Canned, 200, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 400, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 500, gram)),
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Gigantes Plaki", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 900, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 1800, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
                 new IngredientEntry(Usturoi_Cooked, 6, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
@@ -347,7 +347,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Gulaș", Once, List.of(
                 new IngredientEntry(Carne_Vita_Chuck_Roast, 600, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 300, gram),
                 new IngredientEntry(Cartofi_Boiled, 600, gram),
@@ -357,26 +357,26 @@ public class TudorCookBook {
                 new IngredientEntry(Telina_Cooked, 200, gram)),
                 F2, List.of(Chimen, BoiaDulce, BoiaIute, Dafin, Patrunjel, Tarhon, FrunzeTelina, Sare, Piper)));
         cookbook.add(new Recipe("Humus", AtLeastOnce, List.of(
-                new IngredientEntry(Naut_Canned, 600, gram),
+                new IngredientEntry(Naut_Canned, 1200, gram),
                 new IngredientEntry(Ulei_Masline, 5, linguri),
                 new IngredientEntry(Tahini, 3, linguri),
-                new IngredientEntry(Usturoi_Cooked, 3, bucati)),
+                new IngredientEntry(Usturoi_Raw, 3, bucati)),
                 Rece, List.of(Sare, SucLamaie, BoiaAfumata), 2));
         cookbook.add(new Recipe("Humus cu pesto", AtLeastOnce, List.of(
-                new IngredientEntry(Naut_Canned, 600, gram),
+                new IngredientEntry(Naut_Canned, 1200, gram),
                 new IngredientEntry(Ulei_Masline, 5, linguri),
                 new IngredientEntry(Tahini, 3, linguri),
-                new IngredientEntry(Usturoi_Cooked, 3, bucati),
+                new IngredientEntry(Usturoi_Raw, 3, bucati),
                 new IngredientEntry(Sos_Pesto_Genovese, 100, gram)),
                 Rece, List.of(Busuioc, Sare, SucLamaie)));
         cookbook.add(new Recipe("Lalele", Disabled, List.of(
                 new IngredientEntry(Rosii, 4, bucati),
                 new IngredientEntry(Ceapa_Verde_Raw, 4, bucati),
                 new IngredientEntry(Branza_Fagaras, 400, gram),
-                new IngredientEntry(Usturoi_Cooked, 1, bucati)),
+                new IngredientEntry(Usturoi_Raw, 1, bucati)),
                 Rece, List.of(SucLamaie, Oregano)));
         cookbook.add(new Recipe("Lasagna cu spanac", Once, List.of(
-                new IngredientEntry(Spanac_Raw, 450, gram),
+                new IngredientEntry(Spanac_Cooked, 450, gram),
                 new IngredientEntry(Paste_Lasagna, 500, gram),
                 new IngredientEntry(Branza_Mozzarella, 200, gram),
                 new IngredientEntry(Branza_Grattugiato, 50, gram),
@@ -389,14 +389,14 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Lasagna bolognese", Once, List.of(
                 new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
-                new IngredientEntry(Apio_Raw, 100, gram),
+                new IngredientEntry(Apio_Cooked, 100, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram),
                 new IngredientEntry(Unt_Sarat, 100, gram),
                 new IngredientEntry(Faina_Grau_65, 75, gram),
                 new IngredientEntry(Lapte, 1000, gram),
                 new IngredientEntry(Paste_Lasagna, 500, gram)), F2, List.of(VinAlb, Sare)));
         cookbook.add(new Recipe("Lohikeitto", AtMostOnce, List.of(
-                new IngredientEntry(Peste_Somon_Fried, 450, gram),
+                new IngredientEntry(Peste_Somon_Canned, 450, gram),
                 new IngredientEntry(Cartofi_Boiled, 700, gram),
                 new IngredientEntry(Morcov_Cooked, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
@@ -423,24 +423,24 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Mâncare de cartofi moldovenească", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi_Boiled, 2000, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 4, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati)),
                 F2, List.of(Sare, Piper, Marar, Iuteala)));
         cookbook.add(new Recipe("Fasole prăjită", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 900, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 1800, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati)),
                 F2, List.of(Sare, Piper, Marar)));
         cookbook.add(new Recipe("Fasole prăjită - Fuchs remix", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 900, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 1800, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 100, gram)),
                 F2, List.of(Sare, Piper, Marar, FuchsFasole)));
         cookbook.add(new Recipe("Iahnie de fasole", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Canned, 800, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 1600, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Usturoi_Cooked, 6, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
@@ -475,13 +475,13 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa_Galbena_Cooked, 4, bucati),
                 new IngredientEntry(Usturoi_Cooked, 36, bucati),
                 new IngredientEntry(Morcov_Cooked, 4, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 4, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 4, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 800, gram)
         ), F2, List.of(Sare, Piper, Chimen, BoiaDulce)));
         cookbook.add(new Recipe("Mâncare de păstăi", AtLeastOnce, List.of(
                 new IngredientEntry(PastaiCongelate_Cooked, 1400, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 3, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 3, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 250, gram)),
                 F2, List.of(Sare, Piper, Patrunjel)));
@@ -519,7 +519,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte, 200, gram),
                 new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
-                new IngredientEntry(Apio_Raw, 100, gram),
+                new IngredientEntry(Apio_Cooked, 100, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram)),
                 F2, List.of(VinAlb)));
         cookbook.add(new Recipe("Musaca cu soia", AtLeastOnce, List.of(
@@ -528,12 +528,12 @@ public class TudorCookBook {
                 new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Soia_Flour, 100, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Apio_Raw, 50, gram),
+                new IngredientEntry(Apio_Cooked, 50, gram),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
                 F2, List.of(VinAlb)));
         cookbook.add(new Recipe("Nakkikeitto", AtMostOnce, List.of(
                 new IngredientEntry(Cartofi_Boiled, 900, gram),
-                new IngredientEntry(Carne_Pui_Piept_Stewed, 700, gram),
+                new IngredientEntry(Carne_Pui_Crenvurst, 700, gram),
                 new IngredientEntry(Morcov_Cooked, 450, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Pastarnac_Cooked, 2, bucati),
@@ -549,11 +549,11 @@ public class TudorCookBook {
                 F1, List.of(Sare, Piper, Dafin, Patrunjel, Rozmarin), 2));
         cookbook.add(new Recipe("Nasi Goreng", AtMostOnce, List.of(
                 new IngredientEntry(Orez_Cooked, 250, gram),
-                new IngredientEntry(Carne_Pui_Picioare_Stewed, 500, gram),
+                new IngredientEntry(Carne_Pui_Picioare_Fried, 500, gram),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Mazare_Cooked, 300, gram),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Ciuperci_Raw, 400, gram),
                 new IngredientEntry(Usturoi_Cooked, 2, bucati)),
                 F2, List.of(Sare, Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
@@ -569,13 +569,13 @@ public class TudorCookBook {
                 new IngredientEntry(Pastarnac_Cooked, 1, bucati),
                 new IngredientEntry(Telina_Cooked, 150, gram),
                 new IngredientEntry(Dovlecei_Raw, 1, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati)),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati)),
                 F2, List.of(Sare, Piper, Marar, Patrunjel)));
         cookbook.add(new Recipe("Pilaf cu dovlecei", AtLeastOnce, List.of(
                 new IngredientEntry(Orez_Cooked, 200, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Dovlecei_Raw, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 250, gram)),
                 F2, List.of(Sare, Patrunjel)));
@@ -586,7 +586,7 @@ public class TudorCookBook {
                 F2, List.of(Sare, Patrunjel, Patrunjel)));
         cookbook.add(new Recipe("Paella", AtMostOnce, List.of(
                 new IngredientEntry(Orez_Cooked, 300, gram),
-                new IngredientEntry(Carne_Pui_Picioare_Stewed, 500, gram),
+                new IngredientEntry(Carne_Pui_Picioare_Fried, 500, gram),
                 new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Rosii, 1, bucati),
@@ -690,7 +690,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Salată orientală", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi_Boiled, 1000, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
-                new IngredientEntry(Ou_Raw, 4, bucati),
+                new IngredientEntry(Ou_Boiled, 4, bucati),
                 new IngredientEntry(Masline, 50, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri)
@@ -703,7 +703,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Usturoi_Cooked, 4, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati)),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Simplu", Disabled, List.of(
                 new IngredientEntry(Broccoli_Cooked, 2, bucati),
@@ -711,7 +711,7 @@ public class TudorCookBook {
                 new IngredientEntry(Telina_Cooked, 100, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Usturoi_Cooked, 4, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de broccoli - Soia", AtLeastOnce, List.of(
@@ -722,7 +722,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
                 new IngredientEntry(Usturoi_Cooked, 4, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati)),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de conopidă", AtMostOnce, List.of(
                 new IngredientEntry(Conopida_Cooked, 1, bucati),
@@ -778,7 +778,7 @@ public class TudorCookBook {
                 new IngredientEntry(Morcov_Cooked, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Usturoi_Cooked, 5, bucati),
-                new IngredientEntry(Spanac_Raw, 400, gram),
+                new IngredientEntry(Spanac_Cooked, 400, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri)),
                 F1, List.of(Sare, Iuteala)));
         cookbook.add(new Recipe("Supă cremă de țelină - Cu praz și smântână", Once, List.of(
@@ -814,7 +814,7 @@ public class TudorCookBook {
                 new IngredientEntry(Telina_Cooked, 200, gram),
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
                 new IngredientEntry(Pastarnac_Cooked, 1, bucati),
-                new IngredientEntry(Ardei_Verde_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Verde_Cooked, 1, bucati),
                 new IngredientEntry(Fidea, 80, gram)),
                 F1, List.of(Patrunjel, FrunzeTelina, Sare, Piper)));
         cookbook.add(new Recipe("Supă mexicană", Once, List.of(
@@ -823,7 +823,7 @@ public class TudorCookBook {
                 new IngredientEntry(Linte_Rosie_Canned, 150, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
                 new IngredientEntry(Morcov_Cooked, 1, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 1, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri)),
@@ -839,21 +839,21 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
                 new IngredientEntry(Morcov_Cooked, 3, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 500, gram),
-                new IngredientEntry(Ardei_Rosu_Raw, 6, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 6, bucati),
                 new IngredientEntry(Usturoi_Cooked, 4, bucati)),
                 F2, List.of(BoiaIute, Marar, Coriandru)));
         cookbook.add(new Recipe("Tocăniță de ardei", AtMostOnce, List.of(
-                new IngredientEntry(Ardei_Rosu_Raw, 6, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 6, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 4, bucati),
                 new IngredientEntry(Dovlecei_Raw, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 500, gram)),
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Tocăniță de ardei cu ton", Disabled, List.of(
-                new IngredientEntry(Ardei_Rosu_Raw, 6, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 6, bucati),
                 new IngredientEntry(Peste_Ton_Cooked, 300, gram)),
                 F2, List.of())); // mi s-a acrit după varză cu fish fingers. Vrei ton cu tocăniță de ardei, mănâncă separat, nu fă o întreagă oală cu asta
         cookbook.add(new Recipe("Tocăniță de ardei cu soia", AtLeastOnce, List.of(
-                new IngredientEntry(Ardei_Rosu_Raw, 5, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 5, bucati),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 4, bucati),
                 new IngredientEntry(Dovlecei_Raw, 2, bucati),
                 new IngredientEntry(Soia_Flour, 100, gram),
@@ -861,13 +861,13 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Tocăniță de gogonele", AtLeastOnce, List.of(
                 new IngredientEntry(Gogonele_Raw, 1200, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 4, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 4, bucati),
                 new IngredientEntry(Usturoi_Cooked, 4, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram)),
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Tocăniță de legume", AtLeastOnce, List.of(
                 new IngredientEntry(Ceapa_Galbena_Cooked, 4, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 5, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 5, bucati),
                 new IngredientEntry(Morcov_Cooked, 4, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram),
                 new IngredientEntry(Orez_Cooked, 100, gram)),
@@ -877,7 +877,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa_Galbena_Cooked, 4, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 300, gram),
                 new IngredientEntry(Masline, 150, gram),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Usturoi_Cooked, 4, bucati)),
                 F2, List.of(Patrunjel, Dafin, SucLamaie, Sare)));
         cookbook.add(new Recipe("Tzatziki", AtLeastOnce, List.of(
@@ -903,14 +903,14 @@ public class TudorCookBook {
                 new IngredientEntry(Soia_Flour, 100, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 300, gram)),
                 F2, List.of(Dafin)));
         cookbook.add(new Recipe("Varză fiartă", Disabled, List.of(
                 new IngredientEntry(Varza_Cooked, 2000, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 2, bucati),
                 new IngredientEntry(Morcov_Cooked, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Cooked, 2, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 300, gram)),
                 F2, List.of(Dafin, Sare)));
         cookbook.add(new Recipe("Varză cu fish fingers", Disabled, List.of(
@@ -941,7 +941,7 @@ public class TudorCookBook {
                 new IngredientEntry(Malai, 100, gram),
                 new IngredientEntry(Branza_Fagaras, 200, gram),
                 new IngredientEntry(Lapte, 300, gram),
-                new IngredientEntry(Ou_Raw, 2, bucati)),
+                new IngredientEntry(Ou_Fried, 2, bucati)),
                 FastFood, List.of(Sare)));
         cookbook.add(new Recipe("Găgău", AtLeastOnce, List.of(
                 new IngredientEntry(Malai, 100, gram),
@@ -970,7 +970,7 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi_Cooked, 4, bucati)),
                 FastFood, List.of(Patrunjel, Sare, Piper)));
         cookbook.add(new Recipe("Spanac cu smântână", Once, List.of(
-                new IngredientEntry(Spanac_Raw, 500, gram),
+                new IngredientEntry(Spanac_Cooked, 500, gram),
                 new IngredientEntry(Smantana, 200, gram),
                 new IngredientEntry(Lapte, 120, gram),
                 new IngredientEntry(Usturoi_Cooked, 4, bucati)),
@@ -1010,16 +1010,16 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi_Cooked, 5, gram)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Omletă cremă", Once, List.of(
-                new IngredientEntry(Ou_Raw, 3, bucati)),
+                new IngredientEntry(Ou_Fried, 3, bucati)),
                 FastFood, List.of(Sare)));
         cookbook.add(new Recipe("Omletă cu roșii", AtLeastOnce, List.of(
-                new IngredientEntry(Ou_Raw, 3, bucati),
+                new IngredientEntry(Ou_Fried, 3, bucati),
                 new IngredientEntry(Rosii, 1, bucati),
                 new IngredientEntry(Ceapa_Verde_Raw, 1, bucati),
                 new IngredientEntry(Branza_Mozzarella, 150, gram)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Omletă normală", AtLeastOnce, List.of(
-                new IngredientEntry(Ou_Raw, 3, bucati)),
+                new IngredientEntry(Ou_Fried, 3, bucati)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Roșii cu brânză", Once, List.of(
                 new IngredientEntry(Rosii, 500, gram),
@@ -1042,6 +1042,10 @@ public class TudorCookBook {
                 FastFood, List.of(Otet_Balsamic)));
         cookbook.add(new Recipe("Salad Box", AtLeastOnce, List.of(
                 new IngredientEntry(Salata_Raw, 200, gram),
+                new IngredientEntry(Rosii, 1, bucati),
+                new IngredientEntry(Branza_Telemea, 200, gram),
+                new IngredientEntry(Mais, 200, gram),
+                new IngredientEntry(Fasole_Uscata_Canned, 200, gram),
                 new IngredientEntry(Ulei_Masline, 2, linguri)), FastFood, List.of()));
         cookbook.add(new Recipe("Cobb Salad", Once, List.of(
                 new IngredientEntry(Salata_Raw, 200, gram),
@@ -1054,11 +1058,11 @@ public class TudorCookBook {
                 FastFood, List.of()));
         cookbook.add(new Recipe("Facebook Salad", AtLeastOnce, List.of(
                 new IngredientEntry(Avocado_Hass_Raw, 1, bucati),
-                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Ou_Boiled, 2, bucati),
                 new IngredientEntry(Rosii, 1, bucati)), FastFood, List.of()));
         cookbook.add(new Recipe("Dovlecei prăjiți", Once, List.of(
                 new IngredientEntry(Dovlecei_Raw, 1, bucati),
-                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Ou_Fried, 2, bucati),
                 new IngredientEntry(Pesmet, 100, gram), // oare?
                 new IngredientEntry(Branza_Grattugiato, 100, gram   )),
                 FastFood, List.of(Sare)));
