@@ -79,9 +79,7 @@ public class IngredientEntry {
                     case Usturoi_Cooked -> {
                         return 5 * quantity;
                     }
-                    default -> {
-                        throw new RuntimeException("Unknown bucati for ingredient "+ingredient.name());
-                    }
+                    default -> throw new RuntimeException("Unknown bucati for ingredient "+ingredient.name());
                 }
             }
             case linguri -> {
@@ -91,6 +89,9 @@ public class IngredientEntry {
                     }
                     case Gris -> {
                         return 17 * quantity; // cantarit
+                    }
+                    case Lapte -> {
+                        return 10 * quantity; // cantarit
                     }
                     case Tahini -> {
                         return 20 * quantity; // cantarit
@@ -102,16 +103,12 @@ public class IngredientEntry {
                         return 15 * quantity;
                     }
                     case Zahar -> {
-                        return 19 * quantity;
+                        return 19 * quantity; // cantarit
                     }
-                    default -> {
-                        throw new RuntimeException("Unknown linguri for ingredient "+ingredient.name());
-                    }
+                    default -> throw new RuntimeException("Unknown linguri for ingredient "+ingredient.name());
                 }
             }
-            default -> {
-                throw new RuntimeException("Unknown unit of measure: "+unitOfMeasure.name());
-            }
+            default -> throw new RuntimeException("Unknown unit of measure: "+unitOfMeasure.name());
         }
     }
 }

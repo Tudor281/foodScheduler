@@ -49,7 +49,6 @@ public class TudorCookBook {
                 new IngredientEntry(Orez_Cooked, 200, gram),
                 new IngredientEntry(Ou_Boiled, 2, bucati),
                 new IngredientEntry(Rosii, 4, bucati),
-                new IngredientEntry(Suc_Rosii_Bulion, 250, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Lapte_Acru, 2000, gram)),
@@ -65,9 +64,9 @@ public class TudorCookBook {
                 new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram)),
                 F2, List.of(FrunzeTelina, Sare, Piper)));
         cookbook.add(new Recipe("Budincă", AtLeastOnce, List.of(
-                new IngredientEntry(Lapte, 100, gram),
-                new IngredientEntry(Zahar, 50, gram)),
-                Desert, List.of())); // TODO No Recipy
+                new IngredientEntry(Lapte, 3000, gram),
+                new IngredientEntry(Zahar, 12, gram)),
+                Desert, List.of()));
         cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(
                 new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 1, bucati),
@@ -334,9 +333,9 @@ public class TudorCookBook {
                 new IngredientEntry(Branza_Mozzarella, 300, gram)),
                 F2, List.of(Busuioc, Sare, Piper)));
         cookbook.add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(
-                new IngredientEntry(Lapte, 1500, gram),
-                new IngredientEntry(Gris, 12, linguri),
-                new IngredientEntry(Zahar, 150, gram)),
+                new IngredientEntry(Lapte, 3000, gram),
+                new IngredientEntry(Gris, 24, linguri),
+                new IngredientEntry(Zahar, 400, gram)),
                 Desert, List.of()));
         cookbook.add(new Recipe("Guacamole", Once, List.of(
                 new IngredientEntry(Avocado_Hass_Raw, 2, bucati),
