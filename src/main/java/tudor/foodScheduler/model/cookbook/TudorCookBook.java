@@ -469,7 +469,7 @@ public class TudorCookBook {
                 new IngredientEntry(Morcov_Cooked, 3, bucati)),
                 F2, List.of(Sare, Piper, Marar)));
         cookbook.add(new Recipe("Mâncare de linte", Once, List.of(
-                new IngredientEntry(Linte_Galbena_Canned, 1200, gram),
+                new IngredientEntry(Linte_Galbena_Canned, 2400, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 4, linguri),
                 new IngredientEntry(Ulei_Masline, 4, linguri),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 4, bucati),
@@ -477,7 +477,7 @@ public class TudorCookBook {
                 new IngredientEntry(Morcov_Cooked, 4, bucati),
                 new IngredientEntry(Ardei_Rosu_Cooked, 4, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 800, gram)
-        ), F2, List.of(Sare, Piper, Chimen, BoiaDulce)));
+        ), F2, List.of(Sare, Piper, Chimen, BoiaDulce, Dafin)));
         cookbook.add(new Recipe("Mâncare de păstăi", AtLeastOnce, List.of(
                 new IngredientEntry(PastaiCongelate_Cooked, 1400, gram),
                 new IngredientEntry(Ceapa_Galbena_Cooked, 3, bucati),
