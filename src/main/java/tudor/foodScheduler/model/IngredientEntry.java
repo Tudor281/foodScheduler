@@ -25,7 +25,7 @@ public class IngredientEntry {
                     case Ardei_Rosu_Raw -> {
                         return 100 * quantity;
                     }
-                    case Broccoli_Cooked -> {
+                    case Broccoli_Raw -> {
                         return 1000 * quantity;
                     }
                     case Castraveti_Cornichon -> {
@@ -34,13 +34,13 @@ public class IngredientEntry {
                     case Castraveti_Murati -> {
                         return 150 * quantity;
                     }
-                    case Ceapa_Galbena_Cooked -> {
+                    case Ceapa_Galbena_Raw -> {
                         return 150 * quantity;
                     }
                     case Ceapa_Verde_Raw -> {
                         return 100 * quantity;
                     }
-                    case Conopida_Cooked -> {
+                    case Conopida_Raw -> {
                         return 1500 * quantity;
                     }
                     case DovleacPlacintar_Raw -> {
@@ -52,16 +52,16 @@ public class IngredientEntry {
                     case Kaki -> {
                         return 200 * quantity; // weighted at 180 and something but it seemed a bit small
                     }
-                    case Morcov_Cooked -> {
+                    case Morcov_Raw -> {
                         return 100 * quantity;
                     }
                     case Ou_Raw -> {
                         return 60 * quantity; // ou mediu (Eat & Track)
                     }
-                    case Pastarnac_Cooked -> {
+                    case Pastarnac_Raw -> {
                         return 100 * quantity;
                     }
-                    case Praz_Cooked -> {
+                    case Praz_Raw -> {
                         return 200 * quantity; // partea alba
                     }
                     case Radacina_Patrunjel -> {
@@ -73,10 +73,10 @@ public class IngredientEntry {
                     case Salata_Raw -> {
                         return 750 * quantity;
                     }
-                    case Telina_Cooked -> {
+                    case Telina_Raw -> {
                         return 900 * quantity;
                     }
-                    case Usturoi_Cooked -> {
+                    case Usturoi_Raw -> {
                         return 5 * quantity;
                     }
                     default -> throw new RuntimeException("Unknown bucati for ingredient "+ingredient.name());

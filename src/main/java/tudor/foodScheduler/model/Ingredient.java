@@ -8,12 +8,9 @@ import static tudor.foodScheduler.model.Months.ALL;
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
     Ardei_Rosu_Raw(List.of(6,7,8,9), ALL, "2258590"),
-    Ardei_Rosu_Cooked(List.of(6,7,8,9), ALL, "2709977"),
     Ardei_Verde_Raw(List.of(6,7,8,9), ALL, "2258588"),
-    Ardei_Verde_Cooked(List.of(6,7,8,9), ALL, "2709976"),
     // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
     Apio_Raw(List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "2346405"), //https://en.wikipedia.org/wiki/Celery
-    Apio_Cooked(List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "2709906"), //https://en.wikipedia.org/wiki/Celery
     Avocado_Hass_Raw(List.of(), ALL, "2710824"), // coaja aspra, neagra la maturitate
     // mostly water, deci n-ar trebui să fie cine știe ce la capitolul nutrienți
     Bors(ALL, ALL),
@@ -25,31 +22,29 @@ public enum Ingredient {
     Branza_Mascarpone(ALL, ALL, "506462"),
     Branza_Mozzarella(ALL, ALL, "329370"),
     Branza_Telemea(ALL, ALL, "2259796"),
-    Broccoli_Cooked(List.of(), ALL, "2709645"),
-    Carne_Pui_Picioare_Stewed(ALL,ALL, "2705988"),
-    Carne_Pui_Picioare_Fried(ALL, ALL, "2705996"),
-    Carne_Pui_Piept_Stewed(ALL, ALL, "2705966"),
+    Broccoli_Raw(List.of(), ALL, "747447"),
+    Carne_Pui_Picioare_Raw(ALL,ALL, "331897"),
+    Carne_Pui_Piept_Raw(ALL, ALL, "2646170"),
     Carne_Pui_Ficat_Raw(ALL, ALL, "2706154"),
     Carne_Pui_Crenvurst(ALL, ALL, "171624"), // frankfurter
     Carne_Pui_Tocata_Raw(ALL, ALL, "2514746"),
     Carne_Vita_Chuck_Roast(ALL, ALL, "2646174"), // carne gulas
     Carne_Vita_Tocata_Raw(ALL, ALL, "2514743"), // 10% fat
-    Cartofi_Boiled(ALL, ALL, "2709387"),
-    Cartofi_Dulci_Boiled(List.of(), List.of(3,4,5,6,7,8,9), "2709702"),
+    Cartofi_Raw(ALL, ALL, "2346403"),
+    Cartofi_Dulci_Raw(List.of(), List.of(3,4,5,6,7,8,9), "2346404"),
     Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL, "2346406"),
     Castraveti_Murati(ALL, ALL, "324653"),
     Ceapa_Alba_Raw(ALL, ALL, "1104962"),
     Ceapa_Galbena_Raw(ALL, ALL, "790646"),
-    Ceapa_Galbena_Cooked(ALL, ALL, "2710796"),
     Ceapa_Rosie_Raw(List.of(), List.of(3, 4, 5, 6, 7, 8, 9), "790577"),
     Ceapa_Verde_Raw(ALL, ALL, "2727585"),
     Ciuperci_Raw(ALL, ALL, "1999629"),
-    Conopida_Cooked(List.of(5,6,7,8,9,10,11,12), ALL, "2709897"),
+    Conopida_Raw(List.of(5,6,7,8,9,10,11,12), ALL, "2685573"),
     DovleacPlacintar_Raw(List.of(9,10,11,12,1), List.of(2,3,4), "1936070"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
     Dovlecei_Raw(List.of(4,5,6,7,8,9), ALL, "1956289"),
     Faina_Grau_65(ALL, List.of(), "790018"),
     Faina_Grau_150(ALL, ALL, "790018"),
-    Fasole_Uscata_Canned(ALL, ALL, "2644287"), // cannelini
+    Fasole_Uscata_Raw(ALL, ALL, "2644281"), // cannelini
     Fidea(ALL, ALL, "1944267"),
     Foietaj(ALL, ALL, "172738"), // puff pastry
     Gogonele_Raw(List.of(9,10,11), List.of(), "1856405"),
@@ -58,42 +53,36 @@ public enum Ingredient {
     Lapte(ALL, List.of(), "746782"),
     Lapte_Acru(ALL, List.of(), "2705394"), // kefir
     Lapte_Praf(ALL, ALL, "502460"),
-    Linte_Galbena_Canned(ALL, ALL, "2707426"),
-    Linte_Rosie_Canned(ALL, ALL, "2707426"),
+    Linte_Galbena_Raw(ALL, ALL, "2644283"),
+    Linte_Rosie_Raw(ALL, ALL, "2644283"),
     Maioneza(ALL, ALL, "2710204"),
     Mais(ALL, ALL, "488861"), // corn kernels
     Malai(ALL, List.of(), "2601092"), // cornmeal
     Masline(ALL, ALL, "332791"),
-    Mazare_Cooked(ALL, ALL, "2709960"),
-    Morcov_Cooked(ALL, ALL, "2709664"),
+    Mazare_Raw(ALL, ALL, "2644291"),
     Morcov_Raw(ALL, ALL, "2258586"),
-    Naut_Canned(ALL, ALL, "2644288"),
-    Orez_Cooked(ALL, ALL, "2708403"),
+    Naut_Raw(ALL, ALL, "2644282"),
+    Orez_Raw(ALL, ALL, "790214"),
     Ou_Raw(ALL, ALL, "323604"),
-    Ou_Boiled(ALL, ALL, "2707154"),
-    Ou_Fried(ALL, ALL, "2707155"),
     Pappardelle(ALL, ALL, "1118839"),
-    PastaiCongelate_Cooked(ALL, List.of(), "2709853"),
-    PastaiFresh_Cooked(List.of(5), List.of(), "2709852"), // pastai fresh doar prin Mai
-    Pastarnac_Cooked(ALL, ALL, "2709955"),
+    PastaiCongelate_Raw(ALL, List.of(), "2709769"),
+    PastaiFresh_Raw(List.of(5), List.of(), "2709769"), // pastai fresh doar prin Mai
+    Pastarnac_Raw(ALL, ALL, "170417"),
     Paste(ALL, ALL, "2708357"),
     Paste_Lasagna(ALL, ALL, "2656773"), // lasagna sheets
     Pesmet(ALL, ALL, "1638229"), // breadcrumbs
-    Peste_Cod_Fried(ALL, ALL, "2706244"), // cod
-    Peste_Somon_Fried(ALL, ALL, "2706289"),
-    Peste_Somon_Canned(ALL, ALL, "2706291"),
+    Peste_Cod_Raw(ALL, ALL, "2684444"), // cod
+    Peste_Somon_Raw(ALL, ALL, "2684441"),
     Peste_Ton_Cooked(ALL, ALL, "2706310"),
     Piscoturi(ALL, ALL, "509552"), // savoiardi
-    Praz_Cooked(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "168426"),
+    Praz_Raw(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "2727584"), // leek
     Salata_Raw(ALL, ALL, "2346391"),
-    Salata_Cooked(ALL, ALL, "2709949"),
     Smantana(ALL, ALL, "2705614"),
     Soia_Flour(ALL, ALL, "174275"),
     Sos_Carbonara(ALL, ALL, "378386"),
     Sos_Pesto_Genovese(ALL, ALL, "1972571"),
     Sos_Quattro_Formaggi(ALL, ALL, "1944558"), // feta
     Spanac_Raw(ALL, ALL, "1999633"),
-    Spanac_Cooked(ALL, ALL, "2710791"),
     Stevie(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
     Suc_Rosii_Bulion(ALL, ALL, "2685579"), // tomato sauce
     Radacina_Patrunjel(ALL, ALL),
@@ -101,17 +90,15 @@ public enum Ingredient {
     Tahini(ALL, ALL, "2707587"),
     Taitei(ALL, ALL, "2708357"),
     Telina_Raw(ALL, ALL, "170400"),
-    Telina_Cooked(ALL, ALL, "169987"),
     Ulei_Floarea_Soarelui(ALL, ALL, "2710192"),
     Ulei_Masline(ALL, ALL, "2710186"),
     Unt_Sarat(ALL, ALL, "790508"),
     Unt_Nesarat(ALL, ALL, "789828"),
     Urzici_Blanched(List.of(3,4,5), List.of(), "169819"),
-    Usturoi_Cooked(ALL, ALL, "2709932"),
     Usturoi_Raw(ALL, ALL, "1104647"),
-    Varza_Cooked(List.of(4,5,6,7,8,9,10,11,12,1), ALL, "2709889"),
+    Varza_Raw(List.of(4,5,6,7,8,9,10,11,12,1), ALL, "2346407"),
     VarzaMurata(ALL, ALL, "2710075"),
-    Vinete_Cooked(List.of(5,6,7,8,9,10), ALL, "2709929"), // vinetele coapte ies jumate din vinetele crude
+    Vinete_Raw(List.of(5,6,7,8,9,10), ALL, "2685577"), // vinetele coapte ies jumate din vinetele crude
     Zahar(ALL, List.of(), "746784"),
     Zucchini_Raw(List.of(6), ALL, "1956289"),
 
@@ -140,21 +127,20 @@ public enum Ingredient {
     ;
 
     static { // akas
-        aka(Ardei_Rosu_Raw, Ardei_Rosu_Cooked, Ardei_Verde_Raw, Ardei_Verde_Cooked);
-        aka(Apio_Raw, Apio_Cooked);
+        aka(Ardei_Rosu_Raw, Ardei_Verde_Raw);
         aka(Branza_CottageFullFat, Branza_Fagaras, Branza_Feta, Branza_Grattugiato, Branza_Gorgonzola, Branza_Mascarpone, Branza_Mozzarella, Branza_Telemea);
-        aka(Carne_Pui_Picioare_Stewed, Carne_Pui_Piept_Stewed, Carne_Pui_Tocata_Raw, Carne_Pui_Ficat_Raw, Carne_Vita_Chuck_Roast, Carne_Vita_Tocata_Raw);
+        aka(Carne_Pui_Piept_Raw, Carne_Pui_Tocata_Raw, Carne_Pui_Ficat_Raw, Carne_Vita_Chuck_Roast, Carne_Vita_Tocata_Raw);
         aka(Ceapa_Alba_Raw, Ceapa_Verde_Raw, Ceapa_Rosie_Raw, Ceapa_Galbena_Raw);
         aka(Dovlecei_Raw, Zucchini_Raw);
         aka(Faina_Grau_65, Faina_Grau_150);
         aka(Lapte, Lapte_Praf);
-        aka(Linte_Galbena_Canned, Linte_Rosie_Canned);
-        aka(PastaiCongelate_Cooked, PastaiFresh_Cooked);
+        aka(Linte_Galbena_Raw, Linte_Rosie_Raw);
+        aka(PastaiCongelate_Raw, PastaiFresh_Raw);
         aka(Fidea, Paste, Paste_Lasagna);
-        aka(Peste_Cod_Fried, Peste_Somon_Fried, Peste_Ton_Cooked);
+        aka(Peste_Cod_Raw, Peste_Somon_Raw, Peste_Ton_Cooked);
         aka(Ulei_Floarea_Soarelui, Ulei_Masline);
         aka(Unt_Sarat, Unt_Nesarat);
-        aka(Varza_Cooked, VarzaMurata);
+        aka(Varza_Raw, VarzaMurata);
     }
 
     static void aka(Ingredient... ingredients) {
