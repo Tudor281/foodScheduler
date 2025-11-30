@@ -5,17 +5,19 @@ import tudor.foodScheduler.model.Ingredient;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class NutrientLoader {
     static final String fdcPath = "/Food Data Central/All/";
 
     public static void load() throws IOException {
-        Map<String, Ingredient> fdcIngredientMap = new HashMap<>();
+        Map<String, List<Ingredient>> fdcIngredientMap = new HashMap<>(); // multiple ingredients may have the same code
 
         for (Ingredient ingredient : Ingredient.values()) {
-            fdcIngredientMap.put(ingredient.fdcCode, ingredient);
+            fdcIngredientMap.computeIfAbsent(ingredient.fdcCode, k -> new ArrayList<>()).add(ingredient);
         }
 
         try (BufferedReader br = new BufferedReader(new FileReader(fdcPath+"FoodData_Central_csv_2025-04-24/food_nutrient.csv"))) {
@@ -24,25 +26,11 @@ public class NutrientLoader {
                 // process the line.
                 String[] row = line.split(",");
                 String fdc_id = row[1].replace("\"", "");
-                Ingredient ingredient = fdcIngredientMap.get(fdc_id);
-                if (ingredient == null) continue;
+                List<Ingredient> ingredients = fdcIngredientMap.get(fdc_id);
+                if (ingredients == null) continue;
 
-                String nutrientId = row[2].replace("\"", "");
-
-                float quantity = Float.parseFloat(row[3].replace("\"", ""));
-                switch (nutrientId) {
-                    case "1008" : { // kcal legacy
-                        ingredient.nutrients.kCalGeneral = quantity;
-                        break;
-                    }
-                    case "2047" : { // kcal general
-                        ingredient.nutrients.kCalGeneral = quantity;
-                        break;
-                    }
-                    case "2048" : { // kcal specific
-                        ingredient.nutrients.kCalSpecific = quantity;
-                        break;
-                    }
+                for (Ingredient ingredient : ingredients) {
+                    ingredient.nutrients.loadNutrient(row[2], row[3]);
                 }
             }
         }

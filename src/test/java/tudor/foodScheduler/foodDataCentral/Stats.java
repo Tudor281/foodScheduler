@@ -1,6 +1,7 @@
 package tudor.foodScheduler.foodDataCentral;
 
 import org.junit.jupiter.api.Test;
+import tudor.foodScheduler.model.Nutrients;
 
 import java.io.*;
 import java.nio.file.DirectoryStream;
@@ -17,7 +18,7 @@ public class Stats {
 
     @Test
     void foodSearcher() throws IOException {
-        String query = "cottage";
+        String query = "olive";
         List<FoodEntry> results = new ArrayList<>();
 
         Map<String, FoodEntry> foodByFdc_id = new HashMap<>();
@@ -45,6 +46,7 @@ public class Stats {
                 FoodEntry foodEntry = foodByFdc_id.get(fdc_id);
                 if (foodEntry == null) continue;
                 foodEntry.nutrientCount++;
+                foodEntry.nutrients.loadNutrient(row[2], row[3]);
             }
         }
 
@@ -127,6 +129,7 @@ public class Stats {
         String food_category_id;
         String publication_date;
         int nutrientCount = 0;
+        Nutrients nutrients = new Nutrients();
 
         FoodEntry(String[] row) {
             try {
@@ -142,7 +145,7 @@ public class Stats {
         }
 
         public void print() {
-            System.out.println(fdc_id + "\t" + data_type + "\t" + nutrientCount+ "\t"+description+"\t"+food_category_id+"\t"+publication_date);
+            System.out.println(fdc_id + "\t" + data_type + "\t" + nutrientCount+ "\t"+description+"\t"+food_category_id+"\t"+publication_date + "\t" + nutrients);
         }
     }
 
