@@ -983,7 +983,7 @@ public class TudorCookBook {
                 new IngredientEntry(Carne_Pui_Picioare_Stewed, 500, gram),
                 new IngredientEntry(Malai, 100, gram)),
                 FastFood, List.of(Sare, Piper, BoiaDulce)));
-        cookbook.add(new Recipe("Ficat de pui prăjit", Once, List.of(
+        cookbook.add(new Recipe("Ficat de pui prăjit", Disabled, List.of(
                 new IngredientEntry(Carne_Pui_Ficat_Raw, 500, gram),
                 new IngredientEntry(Malai, 100, gram)),
                 FastFood, List.of()));
