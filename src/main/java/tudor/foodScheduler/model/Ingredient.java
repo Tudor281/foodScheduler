@@ -64,6 +64,7 @@ public enum Ingredient {
     Naut_Raw(ALL, ALL, "2644282"),
     Orez_Raw(ALL, ALL, "790214"),
     Ou_Raw(ALL, ALL, "323604"),
+    Paine(ALL, ALL, false, "335240"),
     Pappardelle(ALL, ALL, "1118839"),
     PastaiCongelate_Raw(ALL, List.of(), "2709769"),
     PastaiFresh_Raw(List.of(5), List.of(), "2709769"), // pastai fresh doar prin Mai

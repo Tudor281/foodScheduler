@@ -58,6 +58,9 @@ public class IngredientEntry {
                     case Ou_Raw -> {
                         return 60 * quantity; // ou mediu (Eat & Track)
                     }
+                    case Paine -> {
+                        return 28 * quantity;
+                    }
                     case Pastarnac_Raw -> {
                         return 100 * quantity;
                     }
