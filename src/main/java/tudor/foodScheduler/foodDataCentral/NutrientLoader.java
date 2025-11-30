@@ -11,7 +11,7 @@ import java.util.Map;
 public class NutrientLoader {
     static final String fdcPath = "/Food Data Central/All/";
 
-    public void load() throws IOException {
+    public static void load() throws IOException {
         Map<String, Ingredient> fdcIngredientMap = new HashMap<>();
 
         for (Ingredient ingredient : Ingredient.values()) {
@@ -27,7 +27,28 @@ public class NutrientLoader {
                 Ingredient ingredient = fdcIngredientMap.get(fdc_id);
                 if (ingredient == null) continue;
 
+                String nutrientId = row[2].replace("\"", "");
+
+                float quantity = Float.parseFloat(row[3].replace("\"", ""));
+                switch (nutrientId) {
+                    case "1008" : { // kcal legacy
+                        ingredient.nutrients.kCalGeneral = quantity;
+                        break;
+                    }
+                    case "2047" : { // kcal general
+                        ingredient.nutrients.kCalGeneral = quantity;
+                        break;
+                    }
+                    case "2048" : { // kcal specific
+                        ingredient.nutrients.kCalSpecific = quantity;
+                        break;
+                    }
+                }
             }
+        }
+
+        for (Ingredient ingredient : Ingredient.values()) {
+            System.out.println(ingredient.name() + "\t"+ ingredient.nutrients);
         }
     }
 }

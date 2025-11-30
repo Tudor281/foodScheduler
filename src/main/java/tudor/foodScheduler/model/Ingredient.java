@@ -171,7 +171,7 @@ public enum Ingredient {
     public final List<Ingredient> akas = new ArrayList<>();
     public boolean score = true; // recipes with less of this ingredient get better scores, by disabling I hope I get more of these
     public final String fdcCode;
-    final Nutrients nutrients = new Nutrients();
+    public final Nutrients nutrients = new Nutrients();
 
     Ingredient(List<Integer> domesticMonths, List<Integer> importMonths) {
         this.domesticMonths = domesticMonths;

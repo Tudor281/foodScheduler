@@ -145,4 +145,9 @@ public class Stats {
             System.out.println(fdc_id + "\t" + data_type + "\t" + nutrientCount+ "\t"+description+"\t"+food_category_id+"\t"+publication_date);
         }
     }
+
+    @Test
+    void loadNutrients() throws IOException {
+        NutrientLoader.load();
+    }
 }
