@@ -99,18 +99,19 @@ public class Schedule {
     String toString(int month, int week, int row) {
         String result = (month + 1) + "\t" + (week + 1);
         NutrientsSummer nutrientSummer = new NutrientsSummer();
+        int startingColumn = 2+1;
         //2
         HashSet<Integer> breadIngredients = new HashSet<>();
         for (int i = 0; i< cookbook.nrChannels; i++) {
             Recipe recipe = getRecipe(month, week, i);
             result += '\t' + (recipe.getName());
-            nutrientSummer.sum(recipe, i+2+1+cookbook.nrChannels);
+            nutrientSummer.sum(recipe, i+startingColumn+cookbook.nrChannels);
             if (recipe.gotAnyIngredients(Ingredient.Paine)) breadIngredients.add(i);
         }
         for (int i=0; i<cookbook.nrChannels; i++) {
             result += '\t' + (breadIngredients.contains(i) ? "B" : "Y");
         }
-        result += '\t' + nutrientSummer.toString(row);
+        result += '\t' + nutrientSummer.toString(row,startingColumn+cookbook.nrChannels*2);
         result += '\t' + buildComments(month, week) + '\n';
 
         return result;

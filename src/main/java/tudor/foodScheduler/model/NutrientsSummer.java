@@ -15,9 +15,15 @@ public class NutrientsSummer {
         for (IngredientEntry ingredientEntry : recipe.ingredients) {
             Ingredient ingredient = ingredientEntry.ingredient;
             if (ingredient != Ingredient.Paine) {
-                nfs.kCalWithoutBread = sum(nfs.kCalWithoutBread, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
+                nfs.kCalWB = sum(nfs.kCalWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
+                nfs.kCalProteinsWB = sum(nfs.kCalProteinsWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
+                nfs.kCalFatWB = sum(nfs.kCalFatWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getFat() * 9);
+                nfs.kCalCarbsWB = sum(nfs.kCalCarbsWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCarbs() * 4);
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
+            nfs.kCalProteins = sum(nfs.kCalProteins, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
+            nfs.kCalFat = sum(nfs.kCalFat, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getFat() * 9);
+            nfs.kCalCarbs = sum(nfs.kCalCarbs, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCarbs() * 4);
         }
     }
 
@@ -26,17 +32,42 @@ public class NutrientsSummer {
         return existing + (quantity / 100) * addend;
     }
 
-    public String toString(int row) {
+    public String toString(int row, int start) {
         String result = "=";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
-            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCal/7 + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalWithoutBread/7+" ; 0 ))";
+            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCal/7 + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalWB /7+" ; 0 ))";
         }
+
+        result += "\t = (";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCalProteins + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalProteinsWB+" ; 0 ))";
+        }
+        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
+
+        result += "\t = (";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCalFat + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalFatWB+" ; 0 ))";
+        }
+        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
+
+        result += "\t = (";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCalCarbs + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalCarbsWB+" ; 0 ))";
+        }
+        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
 
         return result.replace(".", ",");
     }
 
     static class NutrientsForSum {
         public float kCal = 0;
-        public float kCalWithoutBread = 0;
+        public float kCalWB = 0; // without bread
+
+        public float kCalProteinsWB;
+        public float kCalFatWB;
+        public float kCalCarbsWB;
+        public float kCalProteins;
+        public float kCalFat;
+        public float kCalCarbs;
     }
 }

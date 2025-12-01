@@ -8,13 +8,14 @@ public class Nutrients {
     public Float kCalLegacy;
 
     public Float protein;
+
+    public Float carbohydrateByDifference;
     public Float sugarsTotal;
 
     public Float totalLipidFat;
     public Float totalFatNLEA; // nutrition-labeling value defined by U.S. law (Nutrition Labeling and Education Act), which may be calculated differently to match FDA labeling rules. (E mai mic decat totalFat)
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
-    public static DecimalFormat zeroDigitFormatter = new DecimalFormat("#");
 
     public void loadNutrient(String nutrientIdUnparsed, String quantityUnparsed) {
         String nutrientIdParsed = nutrientIdUnparsed.replace("\"", "");
@@ -22,19 +23,35 @@ public class Nutrients {
         float quantity = Float.parseFloat(quantityUnparsed.replace("\"", ""));
 
         switch (nutrientIdParsed) {
-            case "1003" : {protein = quantity; break;} // protein
-            case "1004" : {totalLipidFat = quantity; break;} // totalLipidFat
-            case "1008" : {kCalGeneral = quantity;break;}// kcal legacy
-            case "1063" : {sugarsTotal = quantity;break;} // Sugars Total
-            case "1085" : {totalFatNLEA = quantity; break;} // total fat NLEA
-            case "2047" : {kCalGeneral = quantity;break;} // kcal general
-            case "2048" : {kCalSpecific = quantity;break;} // kcal specific
+            case "1003" : {protein = quantity; break;}
+            case "1004" : {totalLipidFat = quantity; break;}
+            case "1005" : {carbohydrateByDifference = quantity; break;}
+            case "1008" : {kCalLegacy = quantity;break;}
+            case "1063" : {sugarsTotal = quantity;break;}
+            case "1085" : {totalFatNLEA = quantity; break;}
+            case "2047" : {kCalGeneral = quantity;break;}
+            case "2048" : {kCalSpecific = quantity;break;}
         }
     }
 
     public String toString() {
         Tuple<String, Float> kCal = getKCal();
-        return (kCal.b != null ? doubleDigitFormatter.format(kCal.b) : "null") + "kCal (" + kCal.a + ")\t";
+        return (kCal.b != null ? doubleDigitFormatter.format(kCal.b) : "null") + "kCal (" + kCal.a + ")\t" +
+                doubleDigitFormatter.format(getProtein()) + "%\t" +
+                doubleDigitFormatter.format(getFat()) + "%\t" +
+                doubleDigitFormatter.format(getCarbs()) + "%";
+    }
+
+    public float getProtein() {
+        return protein != null ? protein : 0;
+    }
+
+    public float getFat() {
+        return totalLipidFat != null ? totalLipidFat : totalFatNLEA != null ? totalFatNLEA : 0;
+    }
+
+    public float getCarbs() {
+        return carbohydrateByDifference != null ? carbohydrateByDifference : sugarsTotal != null ? sugarsTotal : 0;
     }
 
     public Tuple<String, Float> getKCal() {
@@ -47,10 +64,7 @@ public class Nutrients {
         } else if (kCalLegacy != null) {
             return new Tuple<>("L", kCalLegacy);
         } else {
-            return new Tuple<>("C",
-                    (protein != null ? protein : 0) * 4 +
-                            (sugarsTotal != null ? sugarsTotal : 0) * 4 +
-                            (totalLipidFat != null ? totalLipidFat : totalFatNLEA != null ? totalFatNLEA : 0) * 9);
+            return new Tuple<>("C", getProtein() * 4 + getCarbs() * 4 + getFat() * 9);
         }
     }
 }
