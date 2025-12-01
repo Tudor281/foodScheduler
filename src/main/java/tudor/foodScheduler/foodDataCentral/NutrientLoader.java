@@ -38,5 +38,8 @@ public class NutrientLoader {
         for (Ingredient ingredient : Ingredient.values()) {
             System.out.println(ingredient.name() + "\t"+ ingredient.nutrients);
         }
+
+        System.out.println();
+        System.out.println();
     }
 }

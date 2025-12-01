@@ -1,7 +1,10 @@
 package tudor.foodScheduler.foodDataCentral;
 
 import org.junit.jupiter.api.Test;
+import tudor.foodScheduler.model.IngredientEntry;
 import tudor.foodScheduler.model.Nutrients;
+import tudor.foodScheduler.model.Recipe;
+import tudor.foodScheduler.model.cookbook.TudorCookBook;
 
 import java.io.*;
 import java.nio.file.DirectoryStream;
@@ -68,6 +71,34 @@ public class Stats {
 
         for (FoodEntry foodEntry : results) {
             foodEntry.print();
+        }
+    }
+
+    @Test
+    void detailRecipe() throws IOException {
+        NutrientLoader.load();
+
+        List<IngredientNutrients> ingredientNutrients = new ArrayList<>();
+        Recipe recipe = TudorCookBook.buildCookbook().get("Mâncare de linte");
+        for (IngredientEntry ingredientEntry : recipe.ingredients) {
+            IngredientNutrients in = new IngredientNutrients(ingredientEntry.ingredient.name());
+
+            in.kCal = (ingredientEntry.getIngredientInGrams() / 100) * (ingredientEntry.ingredient.nutrients.getKCal().b != null ? ingredientEntry.ingredient.nutrients.getKCal().b : 0);
+            ingredientNutrients.add(in);
+        }
+
+        //noinspection Convert2Lambda
+        ingredientNutrients.sort(new Comparator<>() {
+            @Override
+            public int compare(IngredientNutrients o1, IngredientNutrients o2) {
+                return -Float.compare(o1.kCal, o2.kCal);
+            }
+        });
+
+        System.out.println();
+        System.out.println(recipe.getName());
+        for (IngredientNutrients in : ingredientNutrients) {
+            System.out.println(in.toString());
         }
     }
 
@@ -146,6 +177,19 @@ public class Stats {
 
         public void print() {
             System.out.println(fdc_id + "\t" + data_type + "\t" + nutrientCount+ "\t"+description+"\t"+food_category_id+"\t"+publication_date + "\t" + nutrients);
+        }
+    }
+
+    static class IngredientNutrients {
+        float kCal;
+        String name;
+
+        public IngredientNutrients(String name) {
+            this.name = name;
+        }
+
+        public String toString() {
+            return name + "\t" + Nutrients.doubleDigitFormatter.format(kCal);
         }
     }
 

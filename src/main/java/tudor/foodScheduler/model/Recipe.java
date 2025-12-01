@@ -112,6 +112,15 @@ public class Recipe {
         throw new RuntimeException("Couldn't find ingredient "+ingredient.name()+" in "+name);
     }
 
+    public boolean gotAnyIngredients(Ingredient... ingredients) {
+        for (IngredientEntry ingredientEntry : this.ingredients) {
+            for (Ingredient criteria : ingredients) {
+                if (ingredientEntry.ingredient == criteria) return true;
+            }
+        }
+        return false;
+    }
+
     public String toString() {
         return name;
     }

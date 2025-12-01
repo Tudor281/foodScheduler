@@ -86,25 +86,31 @@ public class Schedule {
 
     public String toString() {
         String result = "";
+        int rowCounter = 2;
         for (int month=0; month<12; month++) {
             for (int week=0; week<weeksInMonth[month]; week++) {
-                result += toString(month, week);
+                result += toString(month, week, ++rowCounter);
             }
         }
         result += countIngredientsAndSpices();
         return result;
     }
 
-    String toString(int month, int week) {
+    String toString(int month, int week, int row) {
         String result = (month + 1) + "\t" + (week + 1);
         NutrientsSummer nutrientSummer = new NutrientsSummer();
-
+        //2
+        HashSet<Integer> breadIngredients = new HashSet<>();
         for (int i = 0; i< cookbook.nrChannels; i++) {
             Recipe recipe = getRecipe(month, week, i);
             result += '\t' + (recipe.getName());
-            nutrientSummer.sum(recipe);
+            nutrientSummer.sum(recipe, i+2+1+cookbook.nrChannels);
+            if (recipe.gotAnyIngredients(Ingredient.Paine)) breadIngredients.add(i);
         }
-        result += '\t' + nutrientSummer.toString();
+        for (int i=0; i<cookbook.nrChannels; i++) {
+            result += '\t' + (breadIngredients.contains(i) ? "B" : "Y");
+        }
+        result += '\t' + nutrientSummer.toString(row);
         result += '\t' + buildComments(month, week) + '\n';
 
         return result;
