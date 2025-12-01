@@ -1,65 +1,66 @@
 package tudor.foodScheduler;
 
-import tudor.foodScheduler.model.cookbook.CiorbeCookBook;
 import tudor.foodScheduler.model.cookbook.TudorCookBook;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleInitializer;
 
 public class CsvRun {
+    public static boolean fillRemainingSlots = false; // e bun ca la sfarsitul anului incarci un calendar existent si el vrea sa umple cu retete noi
+
     public static void main(String[] args) throws Exception {
         String input = """
-                1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Ciuperci cu maioneză și usturoi
-                1	2	Nakkikeitto	Musaca cu carne	Mâncare de ciuperci - Ciuperci cu smântână și usturoi	Kiwi	Humus
-                1	3	Ciorbă de dovlecei cu ciuperci	Mâncare de mazăre - Cu soia	Roșii cu brânză	Clementine	Apple Pie
-                1	4	Supă cremă de țelină - Cu praz și smântână	Tocăniță de legume		Papaya	Salată boeuf
-                2	1	Supă de conopidă	Musaca cu ciuperci	Omletă cremă	Grapefruit	Clătite
-                2	2	Supă cremă de dovleac	Varză fiartă	Fish fingers	Mandarine	Griș cu lapte
-                2	3	Ciorbă de salată cu scrob	Ghiveci		Kiwi	Ciuperci cu maioneză și usturoi
-                2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait
-                3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi - ardelenească	Găgău	Mere	Griș cu lapte
-                3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia		Pere	Humus cu pesto
-                3	3	Ciorbă de fasole - Cu chimen	Mâncare de cartofi - ardelenească	Roșii cu brânză	Banane	Ciuperci cu maioneză și usturoi
-                3	4	Ciorbă de pui a la Grec	Gigantes Plaki	Mămăligă	Mere	Tzatziki
-                3	5	Ciorbă de frunze	Mâncare de cartofi - Cu pui	Facebook Salad	Banane	Salată de vinete cu usturoi
-                4	1	Ciorbă de cartofi roșie	Tocăniță de praz	Omletă cremă	Mere	Chiftele cu carne
-                4	2	Supă cremă de mazăre	Pilaf - Cu ciuperci și alte legume	Omletă normală	Pere	Humus cu pesto
-                4	3	Supă de roșii	Varză călită		Banane	Salată orientală
-                4	4	Ciorbă de conopidă	Mâncare de fasole - Fasole prăjită	Mâncărică de păstăi	Pere	Humus
-                5	1	Ciorbă de păstăi	Lasagna bolognese		Banane	Salată boeuf
-                5	2	Ciorbă de dovlecei cu ciuperci	Mâncare de păstăi		Pere	Fasole bătută
-                5	3	Supă cremă de broccoli - Cu carne	Ardei umpluți cu carne	Mâncărică de păstăi	Mere	Salată orientală
-                5	4	Ciorbă de fasole - Cu leuștean	Mâncare de fasole - Fasole prăjită - Fuchs remix		Pere	Fasole bătută
-                6	1	Supă cremă de țelină - Mama	Melanzane alla parmigiano		Cireșe	Humus cu pesto
-                6	2	Ciorbă de perișoare	Tocăniță de gogonele	Ciuperci prăjite	Mango	Salată de vinete cu usturoi
-                6	3	Ciorbă de broccoli	Mâncare de cartofi - moldovenească	Mămăligă cu brânză	Mere	Tzatziki
-                6	4	Supă de roșii	Varză la Cluj		Caise	Fasole bătută
-                6	5	Supă cremă de țelină - Mama	Pilaf - Cu ciuperci și alte legume		Banane	Salată orientală
-                7	1	Minestrone	American Potato Salad	Mâncărică de păstăi	Caise	Plăcintă cu mere - Foietaj
-                7	2	Supă de roșii	Mâncare de fasole - Fasole prăjită		Mere	
-                7	3	Ciorbă rădăuțeană	Gratin de cartofi cu broccoli și brânză		Pepene Roșu	Humus
-                7	4	Ciorbă de fasole - Cu dafin	Mâncare de mazăre - Simplu	Mămăligă cu brânză	Mere	Salată de vinete cu usturoi
-                8	1	Ciorbă de salată cu scrob	Varză fiartă		Rodii	Tzatziki
-                8	2	Supă cremă de dovlecei	Mâncare de cartofi - Cu soia		Capșuni	Țelină cu morcov
-                8	3	Ciorbă de cartofi cu smântână	Gulaș	Mâncărică de păstăi	Pere	Humus cu pesto
-                8	4	Minestrone	Ghiveci	Mâncărică de păstăi	Caise	Salată de vinete cu usturoi
-                8	5	Supă de cartofi și mazăre	Mâncare de cartofi - moldovenească	Șnițel de soia	Banane	Salată de pui cu legume
-                9	1	Supă cremă de broccoli - Simplu	Tocăniță de ardei cu soia	Salad Box	Pepene Roșu	Salată orientală
-                9	2	Ciorbă de năut cu afumătură	Mâncare de cartofi - ardelenească	Paste - Carbonara (semi)	Pepene Galben	Fasole bătută
-                9	3	Ciorbă de fasole - Cu leuștean	Tocăniță de legume	Omletă cu roșii	Struguri	Tiramisu
-                9	4	Supă de roșii		Paste - cu somon	Pere	Fasole bătută
-                10	1	Ciorbă de fasole - Cu cimbru	Musaca cu soia	Șnițel de soia	Prune	Vitel tonne
-                10	2	Ciorbă de cartofi roșie	Pilaf - Paella cu pui	Ficat de pui prăjit	Kiwi	American Pancakes
-                10	3	Ciorbă de păstăi	Varză cu soia	Șnițel de soia	Banane	Salată de vinete cu usturoi
-                10	4	Supă cremă de broccoli - Soia	Pilaf - Sarmale viță de vie cu carne	Facebook Salad	Kaki	
-                11	1	Supă de roșii	Varză la Cluj cu soia	Găgău	Portocale	Budincă
-                11	2	Minestrone	Gratin de cartofi cu roșii și brânză	Mâncărică de păstăi	Kaki	Humus cu pesto
-                11	3	Ciorbă de conopidă	Varză fiartă	Paste - cu ton	Mere	Plăcintă cu mere - Foietaj
-                11	4	Supă cremă de mazăre	Ardei umpluți simplu	Șnițel de soia	Kaki	Salată de pui cu ciuperci
-                11	5	Ciorbă de ghebe cu smântână	Tocăniță de gogonele	Salad Box	Prune	Humus
-                12	1	Nakkikeitto - V	Mâncare de păstăi	Pește prăjit	Banane	Chiftele de soia în suc de roșii
-                12	2	Supă cremă de țelină - Mama		Găgău	Portocale	Griș cu lapte
-                12	3	Supă de roșii	Răcitură	Paste - Pesto al Genovese (semi)	Mere	Salată de pui
-                12	4	Ciorbă de fasole - Cu chimen	Pilaf - Simplu	Salad Box	Portocale	Tzatziki
+                1	1	Ciorbă de fasole - Cu chimen	Tocăniță de ardei	Omletă cremă	Mineole	Ciuperci cu maioneză și usturoi	
+                1	2	Nakkikeitto	Musaca cu carne	Ciuperci cu smântână și usturoi	Kiwi	Humus	Ziua mea
+                1	3	Ciorbă de dovlecei cu ciuperci	Mazăre cu soia	Roșii cu brânză	Clementine	Apple Pie	
+                1	4	Supă cremă de țelină - Cu praz și smântână	Tocăniță de legume	Somon prăjit	Papaya	Salată boeuf cu vită	
+                2	1	Supă de conopidă	Musaca cu ciuperci	Omletă cremă	Grapefruit	Clătite	
+                2	2	Supă cremă de dovleac	Varză fiartă	Fish fingers	Mandarine	Griș cu lapte	
+                2	3	Ciorbă de salată cu scrob	Ghiveci	Șnițel de pui	Kiwi	Ciuperci cu maioneză și usturoi	
+                2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait	
+                3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi ardelenească	Găgău	Mere	Griș cu lapte	
+                3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia	Găgău	Pere	Humus cu pesto	
+                3	3	Ciorbă de fasole - Cu chimen	Mâncare de cartofi ardelenească	Roșii cu brânză	Banane	Ciuperci cu maioneză și usturoi	
+                3	4	Ciorbă de pui a la Grec	Gigantes Plaki	Mămăligă	Mere	Tzatziki	Ziua Greciei
+                3	5	Ciorbă de frunze	Mâncare de cartofi cu pui	Facebook Salad	Banane	Salată de vinete cu usturoi	
+                4	1	Ciorbă de cartofi roșie	Tocăniță de praz	Omletă cremă	Mere	Chiftele cu carne	
+                4	2	Supă cremă de mazăre	Pilaf cu ciuperci și alte legume	Omletă normală	Pere	Humus cu pesto	
+                4	3	Supă de roșii	Varză călită	Salad Box	Banane	Salată orientală	Paștele
+                4	4	Ciorbă de conopidă	Fasole prăjită	Mâncărică de păstăi	Pere	Humus	
+                5	1	Ciorbă de păstăi	Lasagna bolognese	Găgău	Banane	Salată boeuf cu vită	
+                5	2	Ciorbă de dovlecei cu ciuperci	Mâncare de păstăi	Microfoane	Pere	Fasole bătută	
+                5	3	Supă cremă de broccoli - Cu carne	Ardei umpluți cu carne	Mâncărică de păstăi	Mere	Salată orientală	
+                5	4	Ciorbă de fasole - Cu leuștean	Fasole prăjită - Fuchs remix	Omletă normală	Pere	Fasole bătută	
+                6	1	Supă cremă de țelină - Mama	Melanzane alla parmigiano	Roșii cu brânză	Cireșe	Humus cu pesto	
+                6	2	Ciorbă de perișoare	Tocăniță de gogonele	Ciuperci prăjite	Mango	Salată de vinete cu usturoi	
+                6	3	Ciorbă de broccoli	Mâncare de cartofi moldovenească	Mămăligă cu brânză	Mere	Tzatziki	
+                6	4	Supă de roșii	Varză la Cluj	Omletă normală	Caise	Fasole bătută	
+                6	5	Supă cremă de țelină - Mama	Pilaf cu ciuperci și alte legume	Cobb Salad	Banane	Salată orientală	
+                7	1	Minestrone	American Potato Salad	Mâncărică de păstăi	Caise	Plăcintă cu mere - Foietaj	
+                7	2	Supă de roșii	Fasole prăjită	Ciulama de ciuperci	Mere	Salată de vinete cu ceapă	
+                7	3	Ciorbă rădăuțeană	Gratin de cartofi cu broccoli și brânză	Penne quatro formaggi (semi)	Pepene Roșu	Humus	
+                7	4	Ciorbă de fasole - Cu dafin	Mazăre - Simplu	Mămăligă cu brânză	Mere	Salată de vinete cu usturoi	
+                8	1	Ciorbă de salată cu scrob	Varză fiartă	Spanac cu smântână	Rodii	Tzatziki	
+                8	2	Supă cremă de dovlecei	Mâncare de cartofi cu soia	Pasta al sugo di pomodoro	Capșuni	Țelină cu morcov	
+                8	3	Ciorbă de cartofi cu smântână	Gulaș	Mâncărică de păstăi	Pere	Humus cu pesto	
+                8	4	Minestrone	Ghiveci	Mâncărică de păstăi	Caise	Salată de vinete cu usturoi	
+                8	5	Supă de cartofi și mazăre	Mâncare de cartofi moldovenească	Șnițel de soia	Banane	Salată de pui cu legume	
+                9	1	Supă cremă de broccoli - Simplu	Tocăniță de ardei cu soia	Salad Box	Pepene Roșu	Salată orientală	
+                9	2	Ciorbă de năut cu afumătură	Mâncare de cartofi ardelenească	Spaghetti alla carbonara (semi)	Pepene Galben	Fasole bătută	
+                9	3	Ciorbă de fasole - Cu leuștean	Tocăniță de legume	Omletă cu roșii	Struguri Albi	Tiramisu	
+                9	4	Supă de roșii	Pilaf cu dovlecei	Pasta al salmone	Pere	Fasole bătută	
+                10	1	Ciorbă de fasole - Cu cimbru	Musaca cu soia	Șnițel de soia	Prune	Vitello tonnato	
+                10	2	Ciorbă de cartofi roșie	Pilaf cu ciuperci	Ficat de pui prăjit	Kiwi	American Pancakes	
+                10	3	Supă cremă de broccoli - Soia	Varză cu soia	Șnițel de soia	Banane	Salată de vinete cu usturoi	
+                10	4	Supă de roșii	Sarmale viță de vie cu carne	Facebook Salad	Kaki	Fasole pasată cu ceapă	Ziua Turciei
+                11	1	Ciorbă de păstăi	Varză la Cluj cu soia	Găgău	Portocale	Budincă	
+                11	2	Minestrone	Gratin de cartofi cu roșii și brânză	Mâncărică de păstăi	Kaki	Humus cu pesto	
+                11	3	Ciorbă de conopidă	Varză fiartă	Pasta con tonno	Mere	Plăcintă cu mere - Foietaj	
+                11	4	Supă cremă de mazăre	Ardei umpluți simplu	Șnițel de soia	Kaki	Salată de pui cu ciuperci	
+                11	5	Ciorbă de ghebe cu smântână	Tocăniță de gogonele	Salad Box	Prune	Humus	
+                12	1	Nakkikeitto - V	Mâncare de păstăi	Pește prăjit	Banane	Chiftele de soia în suc de roșii	Ziua Finlandei
+                12	2	Supă cremă de țelină - Mama	Iahnie de fasole	Găgău	Portocale	Răcitură	
+                12	3	Supă de roșii	Ghiveci	Pasta al pesto genovese (semi)	Mere	Salată de pui	Crăciunul
+                12	4	Ciorbă de fasole - Cu chimen	Pilaf - Simplu	Salad Box	Portocale	Tzatziki	Anul nou
                 """;
         Schedule schedule = ScheduleInitializer.getSchedule(input, true, TudorCookBook.buildCookbook());
 

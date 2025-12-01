@@ -350,6 +350,7 @@ public class Schedule {
         return bestRecipes;
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private boolean canRemove(Recipe recipe) {
         switch (recipe.multiplicity) {
             case AtLeastOnce, Once -> {
@@ -430,6 +431,7 @@ public class Schedule {
         return weightedDistance;
     }
 
+    @SuppressWarnings("RedundantIfStatement")
     boolean hasCommonIngredient(ScheduleSlot slot, Ingredient ingredient, int channel, ScheduleSlot exception) {
         if (exception != null && slot.computerMonth == exception.computerMonth && slot.computerWeek == exception.computerWeek) return false;
 
@@ -550,6 +552,9 @@ public class Schedule {
                 continue;
             }
             ScheduleSlot slot = minDistanceSlots.get(index);
+            ScheduleEntry entry = recipes.get(slot.computerMonth).get(slot.computerWeek).get(recipe.fel.channel);
+            if (entry.initialConstraint) return;
+
             List<Recipe> suitableReplacements = getSuitableReplacements(currentDistance, slot, recipe);
             if (suitableReplacements.isEmpty()) {
                 continue;

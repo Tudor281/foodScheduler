@@ -23,6 +23,9 @@ public class IngredientEntry {
                         return 120 * quantity; // copilot
                     }
                     case Ardei_Rosu_Raw -> {
+                        return 150 * quantity;
+                    }
+                    case Ardei_Verde_Raw -> {
                         return 100 * quantity;
                     }
                     case Broccoli_Raw -> {
@@ -35,6 +38,9 @@ public class IngredientEntry {
                         return 150 * quantity;
                     }
                     case Ceapa_Galbena_Raw -> {
+                        return 150 * quantity;
+                    }
+                    case Ceapa_Rosie_Raw -> {
                         return 150 * quantity;
                     }
                     case Ceapa_Verde_Raw -> {

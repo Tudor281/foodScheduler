@@ -1,7 +1,6 @@
 package tudor.foodScheduler;
 
 import tudor.foodScheduler.model.Recipe;
-import tudor.foodScheduler.model.cookbook.CiorbeCookBook;
 import tudor.foodScheduler.model.cookbook.TudorCookBook;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.utils.Stats;
@@ -15,8 +14,8 @@ public class InitialRun {
     public static Random random;
     static {
         Random random1 = new Random();
-        long seed = -3641413982555598708L;
-//        long seed = random1.nextLong();
+//        long seed = -3641413982555598708L;
+        long seed = random1.nextLong();
         System.out.println("Seed: "+seed);
         random = new Random(seed);
     }
@@ -36,8 +35,10 @@ public class InitialRun {
         Scheduler scheduler = new Scheduler();
 
         Schedule bestSchedule = template.copy();
-        scheduler.addAtLeastOnceRecipes(bestSchedule);
-        scheduler.fillInOtherRecipes(bestSchedule);
+        if (CsvRun.fillRemainingSlots) {
+            scheduler.addAtLeastOnceRecipes(bestSchedule);
+            scheduler.fillInOtherRecipes(bestSchedule);
+        }
         double bestScore = bestSchedule.getScore();
         System.out.println("Score before optimization: "+bestScore);
         System.out.println(bestSchedule);
@@ -134,7 +135,7 @@ public class InitialRun {
 //        schedule.addComment(10, 2, "Ziua Spaniei");
 
         // ziua turciei
-        Recipe sarmale = schedule.cookbook.get("Pilaf - Sarmale viță de vie cu carne");
+        Recipe sarmale = schedule.cookbook.get("Sarmale viță de vie cu carne");
         schedule.add(10,4, sarmale, true);
         schedule.addComment(10, 4, "Ziua Turciei");
 
@@ -144,12 +145,12 @@ public class InitialRun {
         schedule.addComment(12, 1,"Ziua Finlandei");
 
         // craciun ? il fac mereu cu familia, nu prea are sens. Dar răcitura ar trebui să țină mult și bine?
-        Recipe racitura = schedule.cookbook.get("Răcitură");
-        schedule.add(12, 3, racitura, true);
-        schedule.addComment(12, 3, "Crăciunul");
+//        Recipe racitura = schedule.cookbook.get("Răcitură");
+//        schedule.add(12, 3, racitura, true);
+//        schedule.addComment(12, 3, "Crăciunul");
 
-        Recipe fasoleChimen = schedule.cookbook.get("Ciorbă de fasole - Cu chimen");
-        schedule.add(12, 4, fasoleChimen, true);
-        schedule.addComment(12, 4, "Anul nou");
+//        Recipe fasoleChimen = schedule.cookbook.get("Ciorbă de fasole - Cu chimen");
+//        schedule.add(12, 4, fasoleChimen, true);
+//        schedule.addComment(12, 4, "Anul nou");
     }
 }
