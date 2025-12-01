@@ -510,7 +510,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Sare, Piper, Marar)));
         cookbook.add(new Recipe("Mâncare de linte", AtLeastOnce, List.of(
-                new IngredientEntry(Linte_Galbena_Raw, 1800, gram),
+                new IngredientEntry(Linte_Galbena_Raw, 800, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 3, linguri),
                 new IngredientEntry(Ulei_Masline, 3, linguri),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
