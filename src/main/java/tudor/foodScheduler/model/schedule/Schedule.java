@@ -97,9 +97,14 @@ public class Schedule {
 
     String toString(int month, int week) {
         String result = (month + 1) + "\t" + (week + 1);
+        NutrientsSummer nutrientSummer = new NutrientsSummer();
+
         for (int i = 0; i< cookbook.nrChannels; i++) {
-            result += '\t' + getName(month, week, i);
+            Recipe recipe = getRecipe(month, week, i);
+            result += '\t' + (recipe.getName());
+            nutrientSummer.sum(recipe);
         }
+        result += '\t' + nutrientSummer.toString();
         result += '\t' + buildComments(month, week) + '\n';
 
         return result;
@@ -135,10 +140,10 @@ public class Schedule {
         return result;
     }
 
-    String getName(int month, int week, int channel) {
+    Recipe getRecipe(int month, int week, int channel) {
         ScheduleEntry entry = recipes.get(month).get(week).get(channel);
-        if (entry == null) return "";
-        return entry.recipe.name;
+        if (entry == null) return null;
+        return entry.recipe;
     }
 
     String buildComments(int month, int week) {

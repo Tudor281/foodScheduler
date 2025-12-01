@@ -1,5 +1,6 @@
 package tudor.foodScheduler;
 
+import tudor.foodScheduler.foodDataCentral.NutrientLoader;
 import tudor.foodScheduler.model.cookbook.TudorCookBook;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.model.schedule.ScheduleInitializer;
@@ -62,6 +63,8 @@ public class CsvRun {
                 12	3	Supă de roșii	Ghiveci	Pasta al pesto genovese (semi)	Mere	Salată de pui	Crăciunul
                 12	4	Ciorbă de fasole - Cu chimen	Pilaf - Simplu	Salad Box	Portocale	Tzatziki	Anul nou
                 """;
+        System.out.println("Loading nutrients...");
+        NutrientLoader.load();
         Schedule schedule = ScheduleInitializer.getSchedule(input, true, TudorCookBook.buildCookbook());
 
         InitialRun.addConstraints(schedule);

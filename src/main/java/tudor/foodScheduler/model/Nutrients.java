@@ -13,7 +13,8 @@ public class Nutrients {
     public Float totalLipidFat;
     public Float totalFatNLEA; // nutrition-labeling value defined by U.S. law (Nutrition Labeling and Education Act), which may be calculated differently to match FDA labeling rules. (E mai mic decat totalFat)
 
-    static DecimalFormat df = new DecimalFormat("#.##");
+    public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
+    public static DecimalFormat zeroDigitFormatter = new DecimalFormat("#");
 
     public void loadNutrient(String nutrientIdUnparsed, String quantityUnparsed) {
         String nutrientIdParsed = nutrientIdUnparsed.replace("\"", "");
@@ -32,25 +33,24 @@ public class Nutrients {
     }
 
     public String toString() {
-        if (kCalGeneral == null && kCalSpecific == null && kCalLegacy == null && protein == null && sugarsTotal == null && totalLipidFat == null && totalFatNLEA == null) return "all null";
+        Tuple<String, Float> kCal = getKCal();
+        return (kCal.b != null ? doubleDigitFormatter.format(kCal.b) : "null") + "kCal (" + kCal.a + ")\t";
+    }
 
-        String kCalSymbol;
-        float calories;
+    public Tuple<String, Float> getKCal() {
+        if (kCalGeneral == null && kCalSpecific == null && kCalLegacy == null && protein == null && sugarsTotal == null && totalLipidFat == null && totalFatNLEA == null) return new Tuple<>("null", null);
+
         if (kCalSpecific != null) {
-            kCalSymbol = "S";
-            calories = kCalSpecific;
+            return new Tuple<>("S", kCalSpecific);
         } else if (kCalGeneral != null) {
-            kCalSymbol = "G";
-            calories = kCalGeneral;
+            return new Tuple<>("G", kCalGeneral);
         } else if (kCalLegacy != null) {
-            kCalSymbol = "L";
-            calories = kCalLegacy;
+            return new Tuple<>("L", kCalLegacy);
         } else {
-            kCalSymbol = "C";
-            calories = (protein != null ? protein : 0) * 4 +
-                    (sugarsTotal != null ? sugarsTotal : 0) * 4 +
-                    (totalLipidFat != null ? totalLipidFat : totalFatNLEA != null ? totalFatNLEA : 0) * 9;
+            return new Tuple<>("C",
+                    (protein != null ? protein : 0) * 4 +
+                            (sugarsTotal != null ? sugarsTotal : 0) * 4 +
+                            (totalLipidFat != null ? totalLipidFat : totalFatNLEA != null ? totalFatNLEA : 0) * 9);
         }
-        return df.format(calories) + "kCal (" + kCalSymbol + ")\t";
     }
 }
