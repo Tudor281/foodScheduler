@@ -54,7 +54,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Lapte_Acru, 2000, gram),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
-                F2, List.of(FrunzeTelina, Sare, Piper)));
+                F2, List.of(FrunzeTelina, Sare, Piper, BoiaAfumata)));
         cookbook.add(new Recipe("Ardei umpluți cu carne", Disabled, List.of(
                 new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
@@ -180,6 +180,18 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
+        cookbook.add(new Recipe("Ciorbă de linte cu smântână", Once, List.of(
+                new IngredientEntry(Linte_Galbena_Raw, 300, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
+                new IngredientEntry(Morcov_Raw, 4, bucati),
+                new IngredientEntry(Cartofi_Raw, 500, gram),
+                new IngredientEntry(Ulei_Masline, 2, linguri),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
+                new IngredientEntry(Suc_Rosii_Bulion, 100, gram),
+                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Bors, 500, gram)),
+                F1, List.of(Sare, Piper, Leustean, Patrunjel)));
         cookbook.add(new Recipe("Ciorbă de frunze", Disabled, List.of(
                 new IngredientEntry(Stevie, 500, gram),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
@@ -651,6 +663,11 @@ public class TudorCookBook {
                 new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of())); // TODO no recipy
+        cookbook.add(new Recipe("Sarmale viță de vie cu soia", Once, List.of(
+                new IngredientEntry(Orez_Raw, 200, gram),
+                new IngredientEntry(Soia_Flour, 100, gram),
+                new IngredientEntry(Paine, 3 * 7, bucati)),
+                F2, List.of())); // TODO no recipy
         cookbook.add(new Recipe("Sarmale viță de vie simplu", Disabled, List.of(
                 new IngredientEntry(Orez_Raw, 300, gram)), F2,
                 List.of())); // TODO no recipy
@@ -809,25 +826,25 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de linte galbenă", Once, List.of(
-                new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
-                new IngredientEntry(Morcov_Raw, 1, bucati),
-                new IngredientEntry(Cartofi_Raw, 200, gram),
-                new IngredientEntry(Linte_Galbena_Raw, 100, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
+                new IngredientEntry(Morcov_Raw, 3, bucati),
+                new IngredientEntry(Cartofi_Raw, 600, gram),
+                new IngredientEntry(Linte_Galbena_Raw, 400, gram),
                 new IngredientEntry(Telina_Raw, 150, gram),
-                new IngredientEntry(Iaurt_Grecesc_10, 200, gram),
-                new IngredientEntry(Ulei_Masline, 2, linguri),
-                new IngredientEntry(Paine, 3 * 8, bucati)),
+                new IngredientEntry(Iaurt_Grecesc_10, 600, gram),
+                new IngredientEntry(Ulei_Masline, 6, linguri),
+                new IngredientEntry(Paine, 3 * 7, bucati)),
                 F1, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Supă cremă de linte roșie", Once, List.of(
-                new IngredientEntry(Linte_Rosie_Raw, 250, gram),
-                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
-                new IngredientEntry(Usturoi_Raw, 4, bucati),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
-                new IngredientEntry(Ulei_Masline, 1, linguri),
+                new IngredientEntry(Linte_Rosie_Raw, 500, gram),
+                new IngredientEntry(Ceapa_Alba_Raw, 2, bucati),
+                new IngredientEntry(Usturoi_Raw, 8, bucati),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
+                new IngredientEntry(Ulei_Masline, 3, linguri),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
-                new IngredientEntry(Radacina_Patrunjel, 1, bucati),
+                new IngredientEntry(Radacina_Patrunjel, 3, bucati),
                 new IngredientEntry(Telina_Raw, 150, gram),
-                new IngredientEntry(Suc_Rosii_Bulion, 100, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Chimen, BoiaDulce, Sare, Iuteala)));
         cookbook.add(new Recipe("Supă cremă de mazăre", AtLeastOnce, List.of(
