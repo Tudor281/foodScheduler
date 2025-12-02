@@ -7,29 +7,30 @@ import static tudor.foodScheduler.model.Months.ALL;
 
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
-    Ardei_Rosu_Raw(List.of(6,7,8,9), ALL, "2258590"),
-    Ardei_Verde_Raw(List.of(6,7,8,9), ALL, "2258588"),
+    Ardei_Rosu_Raw(List.of(6,7,8,9), ALL, "170108"),
+    Ardei_Verde_Raw(List.of(6,7,8,9), ALL, "170427"),
     // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
-    Apio_Raw(List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "2346405"), //https://en.wikipedia.org/wiki/Celery
-    Avocado_Hass_Raw(List.of(), ALL, "2710824"), // coaja aspra, neagra la maturitate
+    Apio_Raw(List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "169988"), //https://en.wikipedia.org/wiki/Celery
+    Avocado_Hass_Raw(List.of(), ALL, "171705"), // coaja aspra, neagra la maturitate
     // mostly water, deci n-ar trebui să fie cine știe ce la capitolul nutrienți
     Bors(ALL, ALL),
-    Branza_CottageFullFat(ALL, ALL, "2346384"),
-    Branza_Fagaras(ALL, ALL, "2346384"),
-    Branza_Feta(ALL, ALL, "2259796"),
-    Branza_Gorgonzola(ALL, ALL, "2554287"),
-    Branza_Grattugiato(ALL, ALL, "2011246"), // parmigiano
-    Branza_Mascarpone(ALL, ALL, "506462"),
+    Branza_CottageFullFat(ALL, ALL, "328841"),
+    Branza_Fagaras(ALL, ALL, "328841"),
+    Branza_Feta(ALL, ALL, "173420"),
+    Branza_Gorgonzola(ALL, ALL, "2554287"), // All have vitamin A 0 (in fact it only has minerals)
+    Branza_Grattugiato(ALL, ALL, "325036"), // parmesan
+    Branza_Mascarpone(ALL, ALL, "506462"), // All have vitamin A 0 (in fact it only has minerals)
     Branza_Mozzarella(ALL, ALL, "329370"),
     Branza_Telemea(ALL, ALL, "2259796"),
     Broccoli_Raw(List.of(), ALL, "747447"),
+    Carne_Pui_Crenvurst(ALL, ALL, "171624"), // frankfurter // has some nutrients, but not Vitamin A
     Carne_Pui_Picioare_Raw(ALL,ALL, "331897"),
-    Carne_Pui_Piept_Raw(ALL, ALL, "2646170"),
+    Carne_Pui_Piept_Raw(ALL, ALL, "2646170"), // does not have vitamins
     Carne_Pui_Ficat_Raw(ALL, ALL, "2706154"),
-    Carne_Pui_Crenvurst(ALL, ALL, "171624"), // frankfurter
-    Carne_Pui_Tocata_Raw(ALL, ALL, "2514746"),
-    Carne_Vita_Chuck_Roast(ALL, ALL, "2646174"), // carne gulas
-    Carne_Vita_Tocata_Raw(ALL, ALL, "2514743"), // 10% fat
+    Carne_Pui_Tocata_Raw(ALL, ALL, "171116"), // has some vitamins but not Vitamin A
+    Carne_Vita_Chuck_Roast(ALL, ALL, "2646174"), // carne gulas has minerals, not vitamins
+    Carne_Vita_Tocata_Raw(ALL, ALL, "2514743"), // 10% fat has minerals, not vitamins
+    // bookmark
     Cartofi_Raw(ALL, ALL, "2346403"),
     Cartofi_Dulci_Raw(List.of(), List.of(3,4,5,6,7,8,9), "2346404"),
     Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL, "2346406"),

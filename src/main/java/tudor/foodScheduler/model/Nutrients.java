@@ -15,6 +15,12 @@ public class Nutrients {
     public Float totalLipidFat;
     public Float totalFatNLEA; // nutrition-labeling value defined by U.S. law (Nutrition Labeling and Education Act), which may be calculated differently to match FDA labeling rules. (E mai mic decat totalFat)
 
+    /*
+     * True vitamin A is retinol coming from animal sources.
+     *
+     */
+    public Float vitamimARAE;
+
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
     public void loadNutrient(String nutrientIdUnparsed, String quantityUnparsed) {
@@ -29,6 +35,7 @@ public class Nutrients {
             case "1008" : {kCalLegacy = quantity;break;}
             case "1063" : {sugarsTotal = quantity;break;}
             case "1085" : {totalFatNLEA = quantity; break;}
+            case "1106" : {vitamimARAE = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -37,21 +44,10 @@ public class Nutrients {
     public String toString() {
         Tuple<String, Float> kCal = getKCal();
         return (kCal.b != null ? doubleDigitFormatter.format(kCal.b) : "null") + "kCal (" + kCal.a + ")\t" +
-                doubleDigitFormatter.format(getProtein()) + "%\t" +
-                doubleDigitFormatter.format(getFat()) + "%\t" +
-                doubleDigitFormatter.format(getCarbs()) + "%";
-    }
-
-    public float getProtein() {
-        return protein != null ? protein : 0;
-    }
-
-    public float getFat() {
-        return totalLipidFat != null ? totalLipidFat : totalFatNLEA != null ? totalFatNLEA : 0;
-    }
-
-    public float getCarbs() {
-        return carbohydrateByDifference != null ? carbohydrateByDifference : sugarsTotal != null ? sugarsTotal : 0;
+                "Pr" +doubleDigitFormatter.format(getProtein()) + "%\t" +
+                "Fa" +doubleDigitFormatter.format(getFat()) + "%\t" +
+                "CR" +doubleDigitFormatter.format(getCarbs()) + "%\t" +
+                "VA" +doubleDigitFormatter.format(getVitaminARAE()) ;
     }
 
     public Tuple<String, Float> getKCal() {
@@ -66,5 +62,21 @@ public class Nutrients {
         } else {
             return new Tuple<>("C", getProtein() * 4 + getCarbs() * 4 + getFat() * 9);
         }
+    }
+
+    public float getProtein() {
+        return protein != null ? protein : 0;
+    }
+
+    public float getFat() {
+        return totalLipidFat != null ? totalLipidFat : totalFatNLEA != null ? totalFatNLEA : 0;
+    }
+
+    public float getCarbs() {
+        return carbohydrateByDifference != null ? carbohydrateByDifference : sugarsTotal != null ? sugarsTotal : 0;
+    }
+
+    public float getVitaminARAE() {
+        return vitamimARAE != null ? vitamimARAE : 0;
     }
 }

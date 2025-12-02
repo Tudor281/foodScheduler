@@ -78,8 +78,14 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 3, bucati)),
                 Rece, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Chiftele de soia în suc de roșii", Once, List.of(
-                new IngredientEntry(Soia_Flour, 200, gram)),
-                Rece, List.of())); // TODO No recipy
+                new IngredientEntry(Soia_Flour, 100, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 100, gram),
+                new IngredientEntry(Ou_Raw, 1, bucati),
+                new IngredientEntry(Usturoi_Raw, 20, bucati),
+                new IngredientEntry(Paine, 2, bucati),
+                new IngredientEntry(Lapte, 300, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 750, gram)),
+                Rece, List.of(Sare, Piper, Dafin)));
         cookbook.add(new Recipe("Ciorbă congelată", Disabled, List.of(
                 new IngredientEntry(Broccoli_Raw, 250, gram),
                 new IngredientEntry(Conopida_Raw, 250, gram)),
@@ -654,23 +660,37 @@ public class TudorCookBook {
                 new IngredientEntry(Fasole_Uscata_Raw, 200, gram)),
                 F2, List.of(Sare, Patrunjel, Curcuma, SucLamaie)));
         cookbook.add(new Recipe("Sarmale cu varză murată și carne", Disabled, List.of(
-                new IngredientEntry(Orez_Raw, 200, gram),
-                new IngredientEntry(VarzaMurata, 500, gram),
-                new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram)),
-                F2, List.of())); // TODO no recipy
-        cookbook.add(new Recipe("Sarmale viță de vie cu carne", Once, List.of(
-                new IngredientEntry(Orez_Raw, 200, gram),
                 new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
+                new IngredientEntry(Orez_Raw, 100, gram),
+                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(VarzaMurata, 1000, gram),
+                new IngredientEntry(Lapte_Acru, 2000, gram),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
-                F2, List.of())); // TODO no recipy
+                F2, List.of(Sare, Piper, Cimbru, Marar)));
+        cookbook.add(new Recipe("Sarmale viță de vie cu carne", Once, List.of(
+                new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
+                new IngredientEntry(Orez_Raw, 100, gram),
+                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Lapte_Acru, 2000, gram),
+                new IngredientEntry(Paine, 3 * 7, bucati)),
+                F2, List.of(Sare, Piper, Cimbru, Marar)));
         cookbook.add(new Recipe("Sarmale viță de vie cu soia", Once, List.of(
-                new IngredientEntry(Orez_Raw, 200, gram),
                 new IngredientEntry(Soia_Flour, 100, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
+                new IngredientEntry(Orez_Raw, 100, gram),
+                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Lapte_Acru, 2000, gram),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
-                F2, List.of())); // TODO no recipy
+                F2, List.of(Sare, Piper, Cimbru, Marar, BoiaAfumata)));
         cookbook.add(new Recipe("Sarmale viță de vie simplu", Disabled, List.of(
-                new IngredientEntry(Orez_Raw, 300, gram)), F2,
-                List.of())); // TODO no recipy
+                new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
+                new IngredientEntry(Orez_Raw, 150, gram),
+                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Lapte_Acru, 2000, gram),
+                new IngredientEntry(Paine, 3 * 7, bucati)),
+                F2, List.of(Sare, Piper, Cimbru, Marar)));
         cookbook.add(new Recipe("Pilaf - Simplu", AtLeastOnce, List.of(
                 new IngredientEntry(Orez_Raw, 600, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 6, bucati),
