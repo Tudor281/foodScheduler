@@ -30,11 +30,11 @@ public enum Ingredient {
     Carne_Pui_Tocata_Raw(ALL, ALL, "171116"), // has some vitamins but not Vitamin A
     Carne_Vita_Chuck_Roast(ALL, ALL, "2646174"), // carne gulas has minerals, not vitamins
     Carne_Vita_Tocata_Raw(ALL, ALL, "2514743"), // 10% fat has minerals, not vitamins
-    // bookmark
     Cartofi_Raw(ALL, ALL, "2346403"),
     Cartofi_Dulci_Raw(List.of(), List.of(3,4,5,6,7,8,9), "2346404"),
-    Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL, "2346406"),
+    Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL, "168409"),
     Castraveti_Murati(ALL, ALL, "324653"),
+    // bookmark
     Ceapa_Alba_Raw(ALL, ALL, "1104962"),
     Ceapa_Galbena_Raw(ALL, ALL, "790646"),
     Ceapa_Rosie_Raw(List.of(), List.of(3, 4, 5, 6, 7, 8, 9), "790577"),
