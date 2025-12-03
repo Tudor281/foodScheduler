@@ -116,6 +116,7 @@ public enum Ingredient {
     Mango_Tommy_Atkins(List.of(), ALL, "169910"),
     Mere_Red_Delicious(List.of(11, 12,1,2), ALL, "168201"),
     Mineole(List.of(), List.of(1), "2450365"),
+    Nuca(ALL, ALL, "170187"),
     Papaya(List.of(), List.of(1), "169926"),
     PepeneGalben(List.of(7,8,9), List.of(), "169092"),
     PepeneRosu(List.of(7,8,9), List.of(), "167765"),

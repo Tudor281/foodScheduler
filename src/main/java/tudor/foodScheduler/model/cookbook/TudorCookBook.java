@@ -1288,6 +1288,8 @@ public class TudorCookBook {
                 new IngredientEntry(Mere_Red_Delicious, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mineole", Once, List.of(
                 new IngredientEntry(Mineole, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Nucă", AtLeastOnce, List.of(
+                new IngredientEntry(Nuca, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Papaya", AtMostOnce, List.of(
                 new IngredientEntry(Papaya, 200, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Pepene Galben", Once, List.of(
