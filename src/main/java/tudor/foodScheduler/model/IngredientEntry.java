@@ -37,6 +37,9 @@ public class IngredientEntry {
                     case Castraveti_Murati -> {
                         return 150 * quantity;
                     }
+                    case Ceapa_Alba_Raw -> {
+                        return 100 * quantity;
+                    }
                     case Ceapa_Galbena_Raw -> {
                         return 150 * quantity;
                     }

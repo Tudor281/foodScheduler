@@ -19,7 +19,7 @@ public class Nutrients {
      * True vitamin A is retinol coming from animal sources.
      *
      */
-    public Float vitamimARAE;
+    public Float vitaminARAE;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -35,7 +35,7 @@ public class Nutrients {
             case "1008" : {kCalLegacy = quantity;break;}
             case "1063" : {sugarsTotal = quantity;break;}
             case "1085" : {totalFatNLEA = quantity; break;}
-            case "1106" : {vitamimARAE = quantity; break;}
+            case "1106" : {vitaminARAE = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -77,6 +77,6 @@ public class Nutrients {
     }
 
     public float getVitaminARAE() {
-        return vitamimARAE != null ? vitamimARAE : 0;
+        return vitaminARAE != null ? vitaminARAE : 0;
     }
 }

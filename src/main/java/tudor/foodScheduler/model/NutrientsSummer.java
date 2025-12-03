@@ -20,12 +20,14 @@ public class NutrientsSummer {
                 nfs.kCalFatWB = sum(nfs.kCalFatWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getFat() * 9);
                 nfs.kCalCarbsWB = sum(nfs.kCalCarbsWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCarbs() * 4);
                 nfs.gProteinWB = sum(nfs.gProteinWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein());
+                nfs.vitaminARaeWB = sum(nfs.vitaminARaeWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminARAE());
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
             nfs.kCalProtein = sum(nfs.kCalProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
             nfs.kCalFat = sum(nfs.kCalFat, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getFat() * 9);
             nfs.kCalCarbs = sum(nfs.kCalCarbs, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCarbs() * 4);
             nfs.gProtein = sum(nfs.gProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein());
+            nfs.vitaminARae = sum(nfs.vitaminARae, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminARAE());
         }
     }
 
@@ -65,6 +67,13 @@ public class NutrientsSummer {
         // Minimum official US RDA
         result += ")/("+0.8 * 115 +"*7)";
 
+        result += "\t = (";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().vitaminARae + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().vitaminARaeWB +" ; 0 ))";
+        }
+        // Minimum official US RDA
+        result += ")/("+900 +"*7)";
+
         return result.replace(".", ",");
     }
 
@@ -81,5 +90,8 @@ public class NutrientsSummer {
 
         float gProtein;
         float gProteinWB;
+
+        float vitaminARaeWB;
+        float vitaminARae;
     }
 }
