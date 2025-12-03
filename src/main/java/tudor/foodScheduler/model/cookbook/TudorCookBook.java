@@ -1299,7 +1299,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Portocale", AtLeastOnce, List.of(
                 new IngredientEntry(Portocale, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Prune", AtLeastOnce, List.of(
-                new IngredientEntry(Prune, 500, gram)), Fruits, List.of()));
+                new IngredientEntry(Prune, 1000, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Rodii", AtMostOnce, List.of(
                 new IngredientEntry(Rodii, 200, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Struguri Albi", Once, List.of(
