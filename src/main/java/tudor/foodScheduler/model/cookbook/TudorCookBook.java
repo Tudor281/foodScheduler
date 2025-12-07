@@ -69,7 +69,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte, 3000, gram),
                 new IngredientEntry(Zahar, 12, gram)),
                 Desert, List.of()));
-        cookbook.add(new Recipe("Chiftele cu carne", Once, List.of(
+        cookbook.add(new Recipe("Chiftele cu carne", Disabled, List.of(
                 new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Ou_Raw, 1, bucati),
@@ -77,7 +77,7 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi_Raw, 7, bucati),
                 new IngredientEntry(Paine, 3 * 3, bucati)),
                 Rece, List.of(Sare, Piper)));
-        cookbook.add(new Recipe("Chiftele de soia în suc de roșii", Once, List.of(
+        cookbook.add(new Recipe("Chiftele de soia în suc de roșii", Disabled, List.of(
                 new IngredientEntry(Soia_Flour, 100, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 100, gram),
                 new IngredientEntry(Ou_Raw, 1, bucati),
@@ -668,7 +668,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte_Acru, 2000, gram),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Sare, Piper, Cimbru, Marar)));
-        cookbook.add(new Recipe("Sarmale viță de vie cu carne", Once, List.of(
+        cookbook.add(new Recipe("Sarmale viță de vie cu carne", Disabled, List.of(
                 new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Orez_Raw, 100, gram),
