@@ -87,23 +87,23 @@ public class InitialRun {
 //        schedule.add(1, 2, musacaCuCarne, true);
 //        Recipe supaRosii = Recipe.get("Supă de roșii"); // sinergie apio
 //        schedule.add(1, 2, supaRosii, true);
-        Recipe nakkikeito = schedule.cookbook.get("Nakkikeitto");
-        schedule.add(1, 2, nakkikeito, true);
-        schedule.addComment(1, 2, "Ziua mea");
-
-        // ziua Greciei
-        Recipe ciorbaGrec = schedule.cookbook.get("Ciorbă de pui a la Grec");
-        schedule.add(3,4, ciorbaGrec, true);
-        Recipe gigantesPlaki = schedule.cookbook.get("Gigantes Plaki");
-        schedule.add(3, 4, gigantesPlaki, true);
-        Recipe tzatziki = schedule.cookbook.get("Tzatziki");
-        schedule.add(3, 4, tzatziki, true);
-        schedule.addComment(3, 4, "Ziua Greciei");
+//        Recipe nakkikeito = schedule.cookbook.get("Nakkikeitto");
+//        schedule.add(1, 2, nakkikeito, true);
+//        schedule.addComment(1, 2, "Ziua mea");
+//
+//        // ziua Greciei
+//        Recipe ciorbaGrec = schedule.cookbook.get("Ciorbă de pui a la Grec");
+//        schedule.add(3,4, ciorbaGrec, true);
+//        Recipe gigantesPlaki = schedule.cookbook.get("Gigantes Plaki");
+//        schedule.add(3, 4, gigantesPlaki, true);
+//        Recipe tzatziki = schedule.cookbook.get("Tzatziki");
+//        schedule.add(3, 4, tzatziki, true);
+//        schedule.addComment(3, 4, "Ziua Greciei");
 
         // pastele
 //        Recipe cozonac = Recipe.get("Cozonac");
 //        schedule.add(4, 3, cozonac, true);
-        schedule.addComment(4, 3, "Paștele");
+//        schedule.addComment(4, 3, "Paștele");
 
         // ziua italiei - around mom's birthday
 //        Recipe melanzane = schedule.cookbook.get("Melanzane alla parmigiano");
@@ -138,14 +138,14 @@ public class InitialRun {
 //        schedule.addComment(10, 2, "Ziua Spaniei");
 
         // ziua turciei
-        Recipe sarmale = schedule.cookbook.get("Sarmale viță de vie cu carne");
-        schedule.add(10,4, sarmale, true);
-        schedule.addComment(10, 4, "Ziua Turciei");
+//        Recipe sarmale = schedule.cookbook.get("Sarmale viță de vie cu carne");
+//        schedule.add(10,4, sarmale, true);
+//        schedule.addComment(10, 4, "Ziua Turciei");
 
         // ziua finlandei
-        Recipe nakki = schedule.cookbook.get("Nakkikeitto");
-        schedule.add(12, 1, nakki, true);
-        schedule.addComment(12, 1,"Ziua Finlandei");
+//        Recipe nakki = schedule.cookbook.get("Nakkikeitto");
+//        schedule.add(12, 1, nakki, true);
+//        schedule.addComment(12, 1,"Ziua Finlandei");
 
         // craciun ? il fac mereu cu familia, nu prea are sens. Dar răcitura ar trebui să țină mult și bine?
 //        Recipe racitura = schedule.cookbook.get("Răcitură");

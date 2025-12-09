@@ -58,10 +58,10 @@ public class CsvRun {
                 11	3	Ciorbă de conopidă	Varză fiartă	Pasta con tonno	Mere	Plăcintă cu mere - Foietaj
                 11	4	Supă cremă de mazăre	Ardei umpluți simplu	Șnițel de soia	Kaki	Salată de pui cu ciuperci
                 11	5	Ciorbă de ghebe cu smântână	Mâncare de linte	Salad Box	Prune	Humus
-                12	1	Nakkikeitto	Mâncare de păstăi	Pește prăjit	Banane	Chiftele de soia în suc de roșii
-                12	2	Supă cremă de țelină - Mama	Iahnie de fasole	Găgău	Portocale	Răcitură
-                12	3	Supă de roșii	Ghiveci	Pasta al pesto genovese (semi)	Mere	Salată de pui
-                12	4	Ciorbă de fasole - Cu chimen	Pilaf - Simplu	Salad Box	Portocale	Tzatziki
+                12	1	Supă de cartofi și mazăre	Sarmale viță de vie cu soia	Pește prăjit	Banane	Chiftele de soia în suc de roșii
+                12	2	Supă cremă de dovlecei	Iahnie de fasole	Găgău	Portocale	Chiftele cu carne
+                12	3	Supă cremă de spanac	Ghiveci	Pasta al pesto genovese (semi)	Mere	Guacamole
+                12	4	Supă mexicană	Pilaf - Simplu	Salad Box	Portocale	Cremă de avocado cu brânză și usturoi
                 """;
         System.out.println("Loading nutrients...");
         NutrientLoader.load();
