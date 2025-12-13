@@ -1,6 +1,5 @@
 package tudor.foodScheduler.model.schedule;
 
-import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.cookbook.Cookbook;
 
 public class ScheduleInitializer {
@@ -27,7 +26,7 @@ public class ScheduleInitializer {
             String[] cells = row.split("\t");
             for (int i=2; i<7; i++) {
                 if (cells.length > i && !cells[i].isBlank()) {
-                    schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), cookbook.get(cells[i]), initialConstraint);
+                    schedule.add(Integer.parseInt(cells[0]), Integer.parseInt(cells[1]), cookbook.get(cells[i]), initialConstraint, i-2);
                 }
             }
         }

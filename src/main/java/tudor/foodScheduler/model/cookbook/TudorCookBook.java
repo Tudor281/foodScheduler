@@ -305,7 +305,8 @@ public class TudorCookBook {
                 F1, List.of(Otet, Patrunjel, Dafin, Sare, Piper)));
         cookbook.add(new Recipe("Ciuperci cu maioneză și usturoi", AtLeastOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1500, gram),
-                new IngredientEntry(Maioneza, 150, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram),
+                new IngredientEntry(Ou_Raw, 1, bucati),
                 new IngredientEntry(Usturoi_Raw, 12, gram),
                 new IngredientEntry(Paine, 2 * 6, bucati)),Rece, List.of(Sare)));
         cookbook.add(new Recipe("Clătite", Once, List.of(
@@ -1009,9 +1010,10 @@ public class TudorCookBook {
                 new IngredientEntry(Telina_Raw, 900, gram),
                 new IngredientEntry(Morcov_Raw, 900, gram),
                 new IngredientEntry(Peste_Ton_Cooked, 640, gram),
-                new IngredientEntry(Maioneza, 400, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 400, gram),
+                new IngredientEntry(Ou_Raw, 2, bucati),
                 new IngredientEntry(Paine, 3 * 5, bucati)),
-                Rece, List.of(Sare)));
+                Rece, List.of(Sare, Mustar)));
         cookbook.add(new Recipe("Varză călită", Once, List.of(
                 new IngredientEntry(VarzaMurata, 1500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
