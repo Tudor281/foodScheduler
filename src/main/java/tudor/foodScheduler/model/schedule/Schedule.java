@@ -286,32 +286,6 @@ public class Schedule {
         }
     }
 
-    public Duplication getIngredientDuplicate() {
-        int prevMonth = 11;
-        int prevWeek = weeksInMonth[11]-1;
-        Map<Integer, ScheduleEntry> prevRow = recipes.get(prevMonth).get(prevWeek); // december 31st
-        for (int month=0; month<12; month++) {
-            for (int week = 0; week < weeksInMonth[month]; week++) {
-                for (int channel = 0; channel < cookbook.nrChannels; channel++) {
-                    ScheduleEntry prevEntry = prevRow.get(channel);
-                    ScheduleEntry entry = recipes.get(month).get(week).get(channel);
-                    if (prevEntry == null || entry == null) continue; // we could have empty slots, especially on channel 3
-                    if (prevEntry.recipe.hasIngredientsInCommon(entry.recipe) && !(prevEntry.initialConstraint && entry.initialConstraint)) {
-                        return new Duplication(
-                                new ScheduleSlot(prevMonth, prevWeek, hasConstraints(prevEntry)),
-                                prevEntry.recipe,
-                                new ScheduleSlot(month, week, hasConstraints(entry)),
-                                entry.recipe);
-                    }
-                }
-                prevMonth = month;
-                prevWeek = week;
-                prevRow = recipes.get(month).get(week);
-            }
-        }
-        return null;
-    }
-
     boolean hasConstraints(ScheduleEntry entry) {
         if (entry.initialConstraint) {
 //            logger.debug("{} is initial constraint", entry.recipe);

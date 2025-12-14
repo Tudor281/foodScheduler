@@ -21,6 +21,7 @@ public class NutrientsSummer {
                 nfs.kCalCarbsWB = sum(nfs.kCalCarbsWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCarbs() * 4);
                 nfs.gProteinWB = sum(nfs.gProteinWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein());
                 nfs.vitaminARaeWB = sum(nfs.vitaminARaeWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminARAE());
+                nfs.vitaminCWB = sum(nfs.vitaminCWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminC());
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
             nfs.kCalProtein = sum(nfs.kCalProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
@@ -28,6 +29,7 @@ public class NutrientsSummer {
             nfs.kCalCarbs = sum(nfs.kCalCarbs, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCarbs() * 4);
             nfs.gProtein = sum(nfs.gProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein());
             nfs.vitaminARae = sum(nfs.vitaminARae, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminARAE());
+            nfs.vitaminC = sum(nfs.vitaminC, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminC());
         }
     }
 
@@ -39,40 +41,47 @@ public class NutrientsSummer {
     public String toString(int row, int start) {
         String result = "=";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
-            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCal/7 + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalWB /7+" ; 0 ))";
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().kCal/7 + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().kCalWB /7+";0))";
         }
 
-        result += "\t = (";
+        result += "\t=(";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
-            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCalProtein + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalProteinWB +" ; 0 ))";
-        }
-        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
-
-        result += "\t = (";
-        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
-            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCalFat + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalFatWB+" ; 0 ))";
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().kCalProtein + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().kCalProteinWB +";0))";
         }
         result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
 
-        result += "\t = (";
+        result += "\t=(";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
-            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().kCalCarbs + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().kCalCarbsWB+" ; 0 ))";
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().kCalFat + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().kCalFatWB+";0))";
         }
         result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
 
-        result += "\t = (";
+        result += "\t=(";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
-            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().gProtein + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().gProteinWB +" ; 0 ))";
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().kCalCarbs + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().kCalCarbsWB+";0))";
+        }
+        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().gProtein + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().gProteinWB +";0))";
         }
         // Minimum official US RDA
         result += ")/("+0.8 * 115 +"*7)";
 
-        result += "\t = (";
+        result += "\t=(";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
-            result += " + IF ( "+entry.getKey()+row+" = \"B\" ; "+entry.getValue().vitaminARae + " ; IF ( "+entry.getKey() + row + " = \"Y\" ; "+entry.getValue().vitaminARaeWB +" ; 0 ))";
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().vitaminARae + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().vitaminARaeWB +";0))";
         }
         // Minimum official US RDA
         result += ")/("+900 +"*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().vitaminC + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().vitaminCWB +";0))";
+        }
+        // Minimum official US RDA
+        result += ")/("+90 +"*7)";
 
         return result.replace(".", ",");
     }
@@ -93,5 +102,8 @@ public class NutrientsSummer {
 
         float vitaminARaeWB;
         float vitaminARae;
+
+        float vitaminCWB;
+        float vitaminC;
     }
 }

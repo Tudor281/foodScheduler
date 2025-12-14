@@ -35,6 +35,7 @@ public class NutrientLoader {
             }
         }
 
+        System.out.println("Ingredient \tkCal\tsource\tprotein\tfat\tcarbs\tA RAE 900 ug\tC 90 mg");
         for (Ingredient ingredient : Ingredient.values()) {
             System.out.println(ingredient.name() + "\t"+ ingredient.nutrients);
         }

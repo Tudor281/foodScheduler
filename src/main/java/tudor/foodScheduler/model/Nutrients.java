@@ -20,6 +20,7 @@ public class Nutrients {
      *
      */
     public Float vitaminARAE;
+    public Float vitaminCTotalAscorbicAcid;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -36,6 +37,7 @@ public class Nutrients {
             case "1063" : {sugarsTotal = quantity;break;}
             case "1085" : {totalFatNLEA = quantity; break;}
             case "1106" : {vitaminARAE = quantity; break;}
+            case "1162" : {vitaminCTotalAscorbicAcid = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -43,11 +45,12 @@ public class Nutrients {
 
     public String toString() {
         Tuple<String, Float> kCal = getKCal();
-        return (kCal.b != null ? doubleDigitFormatter.format(kCal.b) : "null") + "kCal (" + kCal.a + ")\t" +
-                "Pr" +doubleDigitFormatter.format(getProtein()) + "%\t" +
-                "Fa" +doubleDigitFormatter.format(getFat()) + "%\t" +
-                "CR" +doubleDigitFormatter.format(getCarbs()) + "%\t" +
-                "VA" +doubleDigitFormatter.format(getVitaminARAE()) ;
+        return (kCal.b != null ? doubleDigitFormatter.format(kCal.b) : "null") + "\t" + kCal.a + "\t" +
+                doubleDigitFormatter.format(getProtein()) + "%\t" + //g
+                doubleDigitFormatter.format(getFat()) + "%\t" + //g
+                doubleDigitFormatter.format(getCarbs()) + "%\t" + //g
+                doubleDigitFormatter.format(getVitaminARAE()) + "\t"+ //RAE UG
+                doubleDigitFormatter.format(getVitaminC()); //mg
     }
 
     public Tuple<String, Float> getKCal() {
@@ -78,5 +81,9 @@ public class Nutrients {
 
     public float getVitaminARAE() {
         return vitaminARAE != null ? vitaminARAE : 0;
+    }
+
+    public float getVitaminC() {
+        return vitaminCTotalAscorbicAcid != null ? vitaminCTotalAscorbicAcid : 0;
     }
 }
