@@ -964,7 +964,7 @@ public class TudorCookBook {
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Tocăniță de ardei cu ton", Disabled, List.of(
                 new IngredientEntry(Ardei_Rosu_Raw, 6, bucati),
-                new IngredientEntry(Peste_Ton_Cooked, 300, gram)),
+                new IngredientEntry(Peste_Ton_Canned_In_Oil, 300, gram)),
                 F2, List.of())); // mi s-a acrit după varză cu fish fingers. Vrei ton cu tocăniță de ardei, mănâncă separat, nu fă o întreagă oală cu asta
         cookbook.add(new Recipe("Tocăniță de ardei cu soia", AtLeastOnce, List.of(
                 new IngredientEntry(Ardei_Rosu_Raw, 5, bucati),
@@ -1009,7 +1009,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Țelină cu morcov", AtLeastOnce, List.of(
                 new IngredientEntry(Telina_Raw, 900, gram),
                 new IngredientEntry(Morcov_Raw, 900, gram),
-                new IngredientEntry(Peste_Ton_Cooked, 640, gram),
+                new IngredientEntry(Peste_Ton_Canned_In_Oil, 640, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 600, gram),
                 new IngredientEntry(Ou_Raw, 2, bucati),
                 new IngredientEntry(Paine, 3 * 5, bucati)),
@@ -1057,7 +1057,7 @@ public class TudorCookBook {
                 F2, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Vitello tonnato", AtMostOnce, List.of( // mănânci ditamai halca de carne într-o săptămână
                 new IngredientEntry(Carne_Vita_Chuck_Roast, 500, gram), // 1Kg iese mai mult decât făcea mama la familia întreagă
-                new IngredientEntry(Peste_Ton_Cooked, 80, gram),
+                new IngredientEntry(Peste_Ton_Canned_In_Oil, 80, gram),
                 new IngredientEntry(Ou_Raw, 1, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram),
                 new IngredientEntry(Paine, 2 * 5, bucati)),
@@ -1176,7 +1176,7 @@ public class TudorCookBook {
                 new IngredientEntry(Rosii, 1, bucati),
                 new IngredientEntry(Mais, 50, gram),
                 new IngredientEntry(Branza_Telemea, 100, gram),
-                new IngredientEntry(Peste_Ton_Cooked, 160, gram),
+                new IngredientEntry(Peste_Ton_Canned_In_Oil, 160, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri)), // de la ton
                 FastFood, List.of(Otet_Balsamic)));
         cookbook.add(new Recipe("Salad Box", AtLeastOnce, List.of(
@@ -1222,7 +1222,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte, 200, gram)), FastFood, List.of()));
         cookbook.add(new Recipe("Pasta con tonno", Once, List.of(
                 new IngredientEntry(Paste, 100, gram),
-                new IngredientEntry(Peste_Ton_Cooked, 160, gram),
+                new IngredientEntry(Peste_Ton_Canned_In_Oil, 160, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Pasta con verdura (semi)", Disabled, List.of(

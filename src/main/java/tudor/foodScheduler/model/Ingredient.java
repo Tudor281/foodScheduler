@@ -75,6 +75,7 @@ public enum Ingredient {
     Peste_Cod_Raw(ALL, ALL, "171955"), // cod
     Peste_Somon_Raw(ALL, ALL, "175138"),
     Peste_Ton_Cooked(ALL, ALL, "175159"),
+    Peste_Ton_Canned_In_Oil(ALL, ALL, "175157"),
     Piscoturi(ALL, ALL, "509552"), // savoiardi
     Praz_Raw(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "169246"), // leek
     Salata_Raw(ALL, ALL, "169249"),
@@ -139,7 +140,7 @@ public enum Ingredient {
         aka(Linte_Galbena_Raw, Linte_Rosie_Raw);
         aka(PastaiCongelate_Raw, PastaiFresh_Raw);
         aka(Fidea, Paste, Paste_Lasagna);
-        aka(Peste_Cod_Raw, Peste_Somon_Raw, Peste_Ton_Cooked);
+        aka(Peste_Cod_Raw, Peste_Somon_Raw, Peste_Ton_Cooked, Peste_Ton_Canned_In_Oil);
         aka(Ulei_Floarea_Soarelui, Ulei_Masline);
         aka(Unt_Sarat, Unt_Nesarat);
         aka(Varza_Raw, VarzaMurata);
