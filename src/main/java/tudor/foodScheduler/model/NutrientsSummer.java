@@ -22,6 +22,8 @@ public class NutrientsSummer {
                 nfs.gProteinWB = sum(nfs.gProteinWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein());
                 nfs.vitaminARaeWB = sum(nfs.vitaminARaeWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminARAE());
                 nfs.vitaminCWB = sum(nfs.vitaminCWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminC());
+                nfs.vitaminB6WB = sum(nfs.vitaminB6WB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB6());
+                nfs.vitaminB12WB = sum(nfs.vitaminB12WB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB12());
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
             nfs.kCalProtein = sum(nfs.kCalProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
@@ -30,6 +32,8 @@ public class NutrientsSummer {
             nfs.gProtein = sum(nfs.gProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein());
             nfs.vitaminARae = sum(nfs.vitaminARae, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminARAE());
             nfs.vitaminC = sum(nfs.vitaminC, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminC());
+            nfs.vitaminB6 = sum(nfs.vitaminB6, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB6());
+            nfs.vitaminB12 = sum(nfs.vitaminB12, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB12());
         }
     }
 
@@ -67,21 +71,31 @@ public class NutrientsSummer {
             result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().gProtein + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().gProteinWB +";0))";
         }
         // Minimum official US RDA
-        result += ")/("+0.8 * 115 +"*7)";
+        result += ")/(0.8 * 115 *7)";
 
         result += "\t=(";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
             result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().vitaminARae + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().vitaminARaeWB +";0))";
         }
-        // Minimum official US RDA
-        result += ")/("+900 +"*7)";
+        result += ")/(900*7)";
 
         result += "\t=(";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
             result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().vitaminC + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().vitaminCWB +";0))";
         }
-        // Minimum official US RDA
-        result += ")/("+90 +"*7)";
+        result += ")/(90*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().vitaminB6 + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().vitaminB6WB +";0))";
+        }
+        result += ")/(1.3*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().vitaminB12 + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().vitaminB12WB +";0))";
+        }
+        result += ")/(2,4*7)";
 
         return result.replace(".", ",");
     }
@@ -105,5 +119,11 @@ public class NutrientsSummer {
 
         float vitaminCWB;
         float vitaminC;
+
+        float vitaminB6WB;
+        float vitaminB6;
+
+        float vitaminB12WB;
+        float vitaminB12;
     }
 }

@@ -21,6 +21,8 @@ public class Nutrients {
      */
     public Float vitaminARAE;
     public Float vitaminCTotalAscorbicAcid;
+    public Float vitaminB6;
+    public Float vitaminB12;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -38,6 +40,8 @@ public class Nutrients {
             case "1085" : {totalFatNLEA = quantity; break;}
             case "1106" : {vitaminARAE = quantity; break;}
             case "1162" : {vitaminCTotalAscorbicAcid = quantity; break;}
+            case "1175" : {vitaminB6 = quantity; break;}
+            case "1178" : {vitaminB12 = quantity; break; }
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -50,7 +54,10 @@ public class Nutrients {
                 doubleDigitFormatter.format(getFat()) + "%\t" + //g
                 doubleDigitFormatter.format(getCarbs()) + "%\t" + //g
                 doubleDigitFormatter.format(getVitaminARAE()) + "\t"+ //RAE UG
-                doubleDigitFormatter.format(getVitaminC()); //mg
+                doubleDigitFormatter.format(getVitaminC()) + "\t"+  //mg
+                doubleDigitFormatter.format(getVitaminB6()) + "\t" + //mg
+                doubleDigitFormatter.format(getVitaminB12()) + "\t" // mcg
+                ;
     }
 
     public Tuple<String, Float> getKCal() {
@@ -85,5 +92,13 @@ public class Nutrients {
 
     public float getVitaminC() {
         return vitaminCTotalAscorbicAcid != null ? vitaminCTotalAscorbicAcid : 0;
+    }
+
+    public float getVitaminB6() {
+        return vitaminB6 != null ? vitaminB6 : 0;
+    }
+
+    public float getVitaminB12() {
+        return vitaminB12 != null ? vitaminB12 : 0;
     }
 }
