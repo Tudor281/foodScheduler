@@ -1010,7 +1010,7 @@ public class TudorCookBook {
                 new IngredientEntry(Telina_Raw, 900, gram),
                 new IngredientEntry(Morcov_Raw, 900, gram),
                 new IngredientEntry(Peste_Ton_Cooked, 640, gram),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 400, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 600, gram),
                 new IngredientEntry(Ou_Raw, 2, bucati),
                 new IngredientEntry(Paine, 3 * 5, bucati)),
                 Rece, List.of(Sare, Mustar)));
