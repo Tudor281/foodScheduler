@@ -1300,9 +1300,9 @@ public class TudorCookBook {
                 new IngredientEntry(PepeneRosu, 1000, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Pere", AtLeastOnce, List.of(
                 new IngredientEntry(Pere, 500, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Portocale", AtLeastOnce, List.of(
-                new IngredientEntry(Portocale, 500, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Prune", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Portocale (1.5Kg)", AtLeastOnce, List.of(
+                new IngredientEntry(Portocale, 1500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Prune (1Kg)", AtLeastOnce, List.of(
                 new IngredientEntry(Prune, 1000, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Rodii", AtMostOnce, List.of(
                 new IngredientEntry(Rodii, 200, gram)), Fruits, List.of()));

@@ -17,7 +17,7 @@ public class CsvRun {
                 2	1	Supă de conopidă	Musaca cu ciuperci	Omletă cremă	Grapefruit	Clătite
                 2	2	Supă cremă de dovleac	Varză fiartă	Fish fingers	Mandarine	Griș cu lapte
                 2	3	Ciorbă de salată cu scrob	Ghiveci	Șnițel de pui	Kiwi	Ciuperci cu maioneză și usturoi
-                2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale	Riz au lait
+                2	4	Supă cremă de broccoli - Simplu	Tocănița Malita	Mâncărică de păstăi	Portocale (1.5Kg)	Riz au lait
                 3	1	Ciorbă de fasole - Cu leuștean	Mâncare de cartofi ardelenească	Găgău	Mere	Griș cu lapte
                 3	2	Supă cremă de țelină - Mama	Tocăniță de ardei cu soia	Găgău	Pere	Humus cu pesto
                 3	3	Ciorbă de fasole - Cu chimen	Mâncare de cartofi ardelenească	Roșii cu brânză	Banane	Ciuperci cu maioneză și usturoi
@@ -49,19 +49,19 @@ public class CsvRun {
                 9	2	Ciorbă de năut cu afumătură	Mâncare de cartofi ardelenească	Spaghetti alla carbonara (semi)	Pepene Galben	Fasole bătută
                 9	3	Ciorbă de fasole - Cu leuștean	Tocăniță de legume	Omletă cu roșii	Struguri Albi	Tiramisu
                 9	4	Supă de roșii	Pilaf cu dovlecei	Pasta al salmone	Pere	Fasole bătută
-                10	1	Ciorbă de fasole - Cu cimbru	Musaca cu soia	Șnițel de soia	Prune	Vitello tonnato
+                10	1	Ciorbă de fasole - Cu cimbru	Musaca cu soia	Șnițel de soia	Prune (1Kg)	Vitello tonnato
                 10	2	Ciorbă de cartofi roșie	Pilaf cu ciuperci	Ficat de pui prăjit	Kiwi	American Pancakes
                 10	3	Supă cremă de broccoli - Soia	Varză cu soia	Șnițel de soia	Banane	Salată de vinete cu usturoi
                 10	4	Supă de roșii	Sarmale viță de vie cu carne	Facebook Salad	Kaki	Fasole pasată cu ceapă
-                11	1	Ciorbă de păstăi	Varză la Cluj cu soia	Găgău	Portocale	Budincă
+                11	1	Ciorbă de păstăi	Varză la Cluj cu soia	Găgău	Portocale (1.5Kg)	Budincă
                 11	2	Minestrone	Gratin de cartofi cu roșii și brânză	Mâncărică de păstăi	Kaki	Humus cu pesto
                 11	3	Ciorbă de conopidă	Varză fiartă	Pasta con tonno	Mere	Plăcintă cu mere - Foietaj
                 11	4	Supă cremă de mazăre	Ardei umpluți simplu	Șnițel de soia	Kaki	Salată de pui cu ciuperci
-                11	5	Ciorbă de ghebe cu smântână	Mâncare de linte	Salad Box	Prune	Humus
+                11	5	Ciorbă de ghebe cu smântână	Mâncare de linte	Salad Box	Prune (1Kg)	Humus
                 12	1	Supă de cartofi și mazăre	Sarmale viță de vie cu soia	Pește prăjit	Banane	Chiftele de soia în suc de roșii
-                12	2	Țelină cu morcov	Ciuperci cu maioneză și usturoi	Găgău	Portocale	Tzatziki
+                12	2	Țelină cu morcov	Ciuperci cu maioneză și usturoi	Găgău	Portocale (1.5Kg)	Tzatziki
                 12	3	Supă cremă de spanac	Ghiveci	Pasta al pesto genovese (semi)	Mere	Guacamole
-                12	4	Supă mexicană	Pilaf - Simplu	Salad Box	Portocale	Cremă de avocado cu brânză și usturoi
+                12	4	Supă mexicană	Pilaf - Simplu	Salad Box	Portocale (1.5Kg)	Cremă de avocado cu brânză și usturoi
                 """;
         System.out.println("Loading nutrients...");
         NutrientLoader.load();

@@ -23,6 +23,7 @@ public class Nutrients {
     public Float vitaminCTotalAscorbicAcid;
     public Float vitaminB6;
     public Float vitaminB12;
+    public Float vitaminE;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -39,6 +40,7 @@ public class Nutrients {
             case "1063" : {sugarsTotal = quantity;break;}
             case "1085" : {totalFatNLEA = quantity; break;}
             case "1106" : {vitaminARAE = quantity; break;}
+            case "1109" : {vitaminE = quantity; break;}
             case "1162" : {vitaminCTotalAscorbicAcid = quantity; break;}
             case "1175" : {vitaminB6 = quantity; break;}
             case "1178" : {vitaminB12 = quantity; break; }
@@ -56,7 +58,8 @@ public class Nutrients {
                 doubleDigitFormatter.format(getVitaminARAE()) + "\t"+ //RAE UG
                 doubleDigitFormatter.format(getVitaminC()) + "\t"+  //mg
                 doubleDigitFormatter.format(getVitaminB6()) + "\t" + //mg
-                doubleDigitFormatter.format(getVitaminB12()) + "\t" // mcg
+                doubleDigitFormatter.format(getVitaminB12()) + "\t" + // mcg
+                doubleDigitFormatter.format(getVitaminE()) + "\t"
                 ;
     }
 
@@ -100,5 +103,9 @@ public class Nutrients {
 
     public float getVitaminB12() {
         return vitaminB12 != null ? vitaminB12 : 0;
+    }
+
+    public float getVitaminE() {
+        return vitaminE != null ? vitaminE : 0;
     }
 }
