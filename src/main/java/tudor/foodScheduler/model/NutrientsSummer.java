@@ -25,6 +25,7 @@ public class NutrientsSummer {
                 nfs.vitaminB6WB = sum(nfs.vitaminB6WB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB6());
                 nfs.vitaminB12WB = sum(nfs.vitaminB12WB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB12());
                 nfs.vitaminEWB = sum(nfs.vitaminEWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminE());
+                nfs.vitaminKWB = sum(nfs.vitaminKWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminK());
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
             nfs.kCalProtein = sum(nfs.kCalProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
@@ -36,6 +37,7 @@ public class NutrientsSummer {
             nfs.vitaminB6 = sum(nfs.vitaminB6, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB6());
             nfs.vitaminB12 = sum(nfs.vitaminB12, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminB12());
             nfs.vitaminE = sum(nfs.vitaminE, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminE());
+            nfs.vitaminK = sum(nfs.vitaminK, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminK());
         }
     }
 
@@ -105,6 +107,12 @@ public class NutrientsSummer {
         }
         result += ")/(15*7)";
 
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().vitaminK + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().vitaminKWB +";0))";
+        }
+        result += ")/(120*7)";
+
         return result.replace(".", ",");
     }
 
@@ -136,5 +144,8 @@ public class NutrientsSummer {
 
         float vitaminEWB;
         float vitaminE;
+
+        float vitaminKWB;
+        float vitaminK;
     }
 }

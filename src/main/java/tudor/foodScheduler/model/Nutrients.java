@@ -24,6 +24,9 @@ public class Nutrients {
     public Float vitaminB6;
     public Float vitaminB12;
     public Float vitaminE;
+    public Float vitaminKMena;
+    public Float vitaminKDihy;
+    public Float vitaminKPhyllo;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -44,6 +47,9 @@ public class Nutrients {
             case "1162" : {vitaminCTotalAscorbicAcid = quantity; break;}
             case "1175" : {vitaminB6 = quantity; break;}
             case "1178" : {vitaminB12 = quantity; break; }
+            case "1183" : {vitaminKMena = quantity; break;}
+            case "1184" : {vitaminKDihy = quantity; break;}
+            case "1185" : {vitaminKPhyllo = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -59,7 +65,8 @@ public class Nutrients {
                 doubleDigitFormatter.format(getVitaminC()) + "\t"+  //mg
                 doubleDigitFormatter.format(getVitaminB6()) + "\t" + //mg
                 doubleDigitFormatter.format(getVitaminB12()) + "\t" + // mcg
-                doubleDigitFormatter.format(getVitaminE()) + "\t"
+                doubleDigitFormatter.format(getVitaminE()) + "\t" + // mg
+                doubleDigitFormatter.format(getVitaminK()) + "\t" // mcg
                 ;
     }
 
@@ -107,5 +114,9 @@ public class Nutrients {
 
     public float getVitaminE() {
         return vitaminE != null ? vitaminE : 0;
+    }
+
+    public float getVitaminK() {
+        return (vitaminKMena !=  null ? vitaminKMena : 0) + (vitaminKDihy != null ? vitaminKDihy : 0) + (vitaminKPhyllo != null ? vitaminKPhyllo : 0);
     }
 }
