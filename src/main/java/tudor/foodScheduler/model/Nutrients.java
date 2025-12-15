@@ -28,6 +28,8 @@ public class Nutrients {
     public Float vitaminKDihy;
     public Float vitaminKPhyllo;
 
+    public Float thiamin;
+
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
     public void loadNutrient(String nutrientIdUnparsed, String quantityUnparsed) {
@@ -45,6 +47,7 @@ public class Nutrients {
             case "1106" : {vitaminARAE = quantity; break;}
             case "1109" : {vitaminE = quantity; break;}
             case "1162" : {vitaminCTotalAscorbicAcid = quantity; break;}
+            case "1165" : {thiamin = quantity; break;}
             case "1175" : {vitaminB6 = quantity; break;}
             case "1178" : {vitaminB12 = quantity; break; }
             case "1183" : {vitaminKMena = quantity; break;}
@@ -66,7 +69,8 @@ public class Nutrients {
                 doubleDigitFormatter.format(getVitaminB6()) + "\t" + //mg
                 doubleDigitFormatter.format(getVitaminB12()) + "\t" + // mcg
                 doubleDigitFormatter.format(getVitaminE()) + "\t" + // mg
-                doubleDigitFormatter.format(getVitaminK()) + "\t" // mcg
+                doubleDigitFormatter.format(getVitaminK()) + "\t" + // mcg
+                doubleDigitFormatter.format(getThiamin()) + "\t" // mg;
                 ;
     }
 
@@ -118,5 +122,9 @@ public class Nutrients {
 
     public float getVitaminK() {
         return (vitaminKMena !=  null ? vitaminKMena : 0) + (vitaminKDihy != null ? vitaminKDihy : 0) + (vitaminKPhyllo != null ? vitaminKPhyllo : 0);
+    }
+
+    public float getThiamin() {
+        return thiamin != null ? thiamin : 0;
     }
 }
