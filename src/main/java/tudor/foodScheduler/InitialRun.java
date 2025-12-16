@@ -1,7 +1,6 @@
 package tudor.foodScheduler;
 
 import tudor.foodScheduler.foodDataCentral.NutrientLoader;
-import tudor.foodScheduler.model.Recipe;
 import tudor.foodScheduler.model.cookbook.TudorCookBook;
 import tudor.foodScheduler.model.schedule.Schedule;
 import tudor.foodScheduler.utils.Stats;
@@ -27,7 +26,9 @@ public class InitialRun {
         NutrientLoader.load();
 
         // 2025
-        Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, TudorCookBook.buildCookbook());
+//      Schedule template = new Schedule(new int[]{4, 4, 5, 4, 4, 5, 4, 5, 4, 4, 5, 4}, TudorCookBook.buildCookbook());
+        // 2026
+        Schedule template = new Schedule(new int[]{4, 4, 5, 4, 5, 4, 4, 5, 4, 4, 5, 4}, TudorCookBook.buildCookbook());
 
 //        addConstraints(template);
 

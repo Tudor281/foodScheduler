@@ -27,6 +27,11 @@ public class NutrientsSummer {
                 nfs.vitaminEWB = sum(nfs.vitaminEWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminE());
                 nfs.vitaminKWB = sum(nfs.vitaminKWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminK());
                 nfs.thiaminWB = sum(nfs.thiaminWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getThiamin());
+                nfs.riboflavinWB = sum(nfs.riboflavinWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getRiboflavin());
+                nfs.folateWB = sum(nfs.folateWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getFolate());
+                nfs.niacinWB = sum(nfs.niacinWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getNiacin());
+                nfs.cholineWB = sum(nfs.cholineWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCholine());
+                nfs.pantothenicAcidWB = sum(nfs.pantothenicAcidWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPantothenicAcid());
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
             nfs.kCalProtein = sum(nfs.kCalProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
@@ -40,6 +45,11 @@ public class NutrientsSummer {
             nfs.vitaminE = sum(nfs.vitaminE, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminE());
             nfs.vitaminK = sum(nfs.vitaminK, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getVitaminK());
             nfs.thiamin = sum(nfs.thiamin, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getThiamin());
+            nfs.riboflavin = sum(nfs.riboflavin, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getRiboflavin());
+            nfs.folate = sum(nfs.folate, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getFolate());
+            nfs.niacin = sum(nfs.niacin, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getNiacin());
+            nfs.choline = sum(nfs.choline, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCholine());
+            nfs.pantothenicAcid = sum(nfs.pantothenicAcid, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPantothenicAcid());
         }
     }
 
@@ -121,6 +131,36 @@ public class NutrientsSummer {
         }
         result += ")/(1.2*7)";
 
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().riboflavin + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().riboflavinWB +";0))";
+        }
+        result += ")/(1.3*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().folate + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().folateWB +";0))";
+        }
+        result += ")/(400*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().niacin + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().niacinWB +";0))";
+        }
+        result += ")/(16*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().choline + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().cholineWB +";0))";
+        }
+        result += ")/(550*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().pantothenicAcid + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().pantothenicAcidWB +";0))";
+        }
+        result += ")/(5*7)";
+
         return result.replace(".", ",");
     }
 
@@ -158,5 +198,20 @@ public class NutrientsSummer {
 
         float thiaminWB;
         float thiamin;
+
+        float riboflavinWB;
+        float riboflavin;
+
+        float folateWB;
+        float folate;
+
+        float niacinWB;
+        float niacin;
+
+        float cholineWB;
+        float choline;
+
+        float pantothenicAcidWB;
+        float pantothenicAcid;
     }
 }

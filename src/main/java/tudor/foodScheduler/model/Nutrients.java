@@ -29,6 +29,11 @@ public class Nutrients {
     public Float vitaminKPhyllo;
 
     public Float thiamin;
+    public Float riboflavin;
+    public Float folate;
+    public Float niacin;
+    public Float choline;
+    public Float pantothenicAcid;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -48,8 +53,13 @@ public class Nutrients {
             case "1109" : {vitaminE = quantity; break;}
             case "1162" : {vitaminCTotalAscorbicAcid = quantity; break;}
             case "1165" : {thiamin = quantity; break;}
+            case "1166" : {riboflavin = quantity; break;}
+            case "1167" : {niacin = quantity; break;}
+            case "1170" : {pantothenicAcid = quantity; break;}
             case "1175" : {vitaminB6 = quantity; break;}
+            case "1177" : {folate = quantity; break;}
             case "1178" : {vitaminB12 = quantity; break; }
+            case "1180" : {choline = quantity; break;}
             case "1183" : {vitaminKMena = quantity; break;}
             case "1184" : {vitaminKDihy = quantity; break;}
             case "1185" : {vitaminKPhyllo = quantity; break;}
@@ -70,7 +80,12 @@ public class Nutrients {
                 doubleDigitFormatter.format(getVitaminB12()) + "\t" + // mcg
                 doubleDigitFormatter.format(getVitaminE()) + "\t" + // mg
                 doubleDigitFormatter.format(getVitaminK()) + "\t" + // mcg
-                doubleDigitFormatter.format(getThiamin()) + "\t" // mg;
+                doubleDigitFormatter.format(getThiamin()) + "\t" + // mg;
+                doubleDigitFormatter.format(getRiboflavin()) + "\t" + //mg
+                doubleDigitFormatter.format(getFolate()) + "\t" + // mcg
+                doubleDigitFormatter.format(getNiacin()) + "\t" + // mg
+                doubleDigitFormatter.format(getCholine()) + "\t" + // mg
+                doubleDigitFormatter.format(getPantothenicAcid()) + "\t" // mg
                 ;
     }
 
@@ -127,4 +142,16 @@ public class Nutrients {
     public float getThiamin() {
         return thiamin != null ? thiamin : 0;
     }
+
+    public float getRiboflavin() { return riboflavin != null ? riboflavin : 0; }
+
+    public float getFolate() { return folate != null ? folate : 0; }
+
+    public float getNiacin() { return niacin != null ? niacin : 0; }
+
+    public float getCholine() {
+        return choline != null ? choline : 0;
+    }
+
+    public float getPantothenicAcid() { return pantothenicAcid != null ? pantothenicAcid : 0; }
 }
