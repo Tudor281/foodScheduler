@@ -17,19 +17,19 @@ public enum Ingredient {
     Branza_CottageFullFat(ALL, ALL, "328841"),
     Branza_Fagaras(ALL, ALL, "328841"),
     Branza_Feta(ALL, ALL, "173420"),
-    Branza_Gorgonzola(ALL, ALL, "2554287"), // All have vitamin A 0 (in fact it only has minerals)
+    Branza_Gorgonzola(ALL, ALL, "2705705"), //
     Branza_Grattugiato(ALL, ALL, "325036"), // parmesan
     Branza_Mascarpone(ALL, ALL, "506462"), // All have vitamin A 0 (in fact it only has minerals)
     Branza_Mozzarella(ALL, ALL, "329370"),
-    Branza_Telemea(ALL, ALL, "2259796"),
+    Branza_Telemea(ALL, ALL, "173420"),
     Broccoli_Raw(List.of(), ALL, "747447"),
     Carne_Pui_Crenvurst(ALL, ALL, "171624"), // frankfurter // has some nutrients, but not Vitamin A
     Carne_Pui_Picioare_Raw(ALL,ALL, "331897"),
-    Carne_Pui_Piept_Raw(ALL, ALL, "2646170"), // does not have vitamins
+    Carne_Pui_Piept_Raw(ALL, ALL, "171077"),
     Carne_Pui_Ficat_Raw(ALL, ALL, "2706154"),
     Carne_Pui_Tocata_Raw(ALL, ALL, "171116"), // has some vitamins but not Vitamin A
-    Carne_Vita_Chuck_Roast(ALL, ALL, "2646174"), // carne gulas has minerals, not vitamins
-    Carne_Vita_Tocata_Raw(ALL, ALL, "2514743"), // 10% fat has minerals, not vitamins
+    Carne_Vita_Chuck_Roast(ALL, ALL, "170809"), // carne gulas
+    Carne_Vita_Tocata_Raw(ALL, ALL, "168608"), //
     Cartofi_Raw(ALL, ALL, "2346403"),
     Cartofi_Dulci_Raw(List.of(), List.of(3,4,5,6,7,8,9), "2346404"),
     Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL, "168409"),
@@ -71,6 +71,7 @@ public enum Ingredient {
     Pastarnac_Raw(ALL, ALL, "170417"),
     Paste(ALL, ALL, "168927"),
     Paste_Lasagna(ALL, ALL, "168927"), // lasagna sheets
+    Pate_Ficat_Gaina(ALL, ALL, "172928"),
     Pesmet(ALL, ALL, "1638229"), // breadcrumbs
     Peste_Cod_Raw(ALL, ALL, "171955"), // cod
     Peste_Somon_Raw(ALL, ALL, "175138"),

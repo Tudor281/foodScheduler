@@ -621,6 +621,26 @@ public class TudorCookBook {
                 new IngredientEntry(Ciuperci_Raw, 400, gram),
                 new IngredientEntry(Usturoi_Raw, 2, bucati)),
                 F2, List.of(Sare, Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
+        cookbook.add(new Recipe("Ouă umplute cu ficat", AtLeastOnce, List.of(
+                new IngredientEntry(Carne_Pui_Ficat_Raw, 500, gram),
+                new IngredientEntry(Ou_Raw, 7+1, bucati),
+                new IngredientEntry(Pate_Ficat_Gaina, 200, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
+                new IngredientEntry(Unt_Sarat, 100, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram)), // maioneza
+                Rece, List.of(Sare, Piper)));
+        cookbook.add(new Recipe("Ouă umplute cu pate", AtLeastOnce, List.of(
+                new IngredientEntry(Ou_Raw, 7+1, bucati),
+                new IngredientEntry(Pate_Ficat_Gaina, 700, gram),
+                new IngredientEntry(Unt_Sarat, 100, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram)), // maioneza
+                Rece, List.of(Sare, Piper)));
+        cookbook.add(new Recipe("Ouă umplute vegetariene", AtLeastOnce, List.of(
+                new IngredientEntry(Ou_Raw, 7+1, bucati),
+                new IngredientEntry(Ciuperci_Raw, 800, gram),
+                new IngredientEntry(Linte_Rosie_Raw, 200, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram)), // maioneza
+                Rece, List.of(Sare, Piper)));
         cookbook.add(new Recipe("Pilaf cu ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Orez_Raw, 400, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 4, bucati),
@@ -1115,9 +1135,10 @@ public class TudorCookBook {
                 new IngredientEntry(Carne_Pui_Picioare_Raw, 500, gram),
                 new IngredientEntry(Malai, 100, gram)),
                 FastFood, List.of(Sare, Piper, BoiaDulce)));
-        cookbook.add(new Recipe("Ficat de pui prăjit", Disabled, List.of(
+        cookbook.add(new Recipe("Ficat de pui prăjit", Once, List.of(
                 new IngredientEntry(Carne_Pui_Ficat_Raw, 500, gram),
-                new IngredientEntry(Malai, 100, gram)),
+                new IngredientEntry(Malai, 100, gram),
+                new IngredientEntry(Usturoi_Raw, 10, bucati)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Fish fingers", Disabled, List.of( // sunt grase, sunt puturoase. Dacă ți se face poftă, ia 100g, nu 500g. Dar sunt uleioase, grețoase.
                 new IngredientEntry(Peste_Cod_Raw, 300, gram)),
