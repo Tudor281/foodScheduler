@@ -376,7 +376,7 @@ public class TudorCookBook {
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Branza_Mozzarella, 300, gram)),
                 F2, List.of(Busuioc, Sare, Piper)));
-        cookbook.add(new Recipe("Griș cu lapte", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Griș cu lapte", Disabled, List.of(
                 new IngredientEntry(Lapte, 3000, gram),
                 new IngredientEntry(Gris, 24, linguri),
                 new IngredientEntry(Zahar, 400, gram)),
