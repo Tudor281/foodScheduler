@@ -35,7 +35,8 @@ public class NutrientLoader {
             }
         }
 
-        System.out.println("Ingredient \tkCal\tsource\tprotein\tfat\tcarbs\tA RAE 900 ug\tC 90 mg\tB6 1.3mg\tB12 2.4ug\tE 15mg\tK 120mcg\tThiamin 1.2mg\tRiboflavin 1.3mg\tFolate 400mcg\tNiacin 16mg\tCholine 550g\tPantothenic acid 5mg");
+        System.out.println("Ingredient \tkCal\tsource\tprotein\tfat\tcarbs\tA RAE 900 ug\tC 90 mg\tB6 1.3mg\tB12 2.4ug\tE 15mg\tK 120mcg\tThiamin 1.2mg\tRiboflavin 1.3mg\tFolate 400mcg\tNiacin 16mg\tCholine 550g\tPantothenic acid 5mg\tBiotin 30mcg\t" +
+                "Calcium 1000mg");
         for (Ingredient ingredient : Ingredient.values()) {
             System.out.println(ingredient.name() + "\t"+ ingredient.nutrients);
         }

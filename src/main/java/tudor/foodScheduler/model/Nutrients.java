@@ -34,6 +34,9 @@ public class Nutrients {
     public Float niacin;
     public Float choline;
     public Float pantothenicAcid;
+    public Float biotin;
+
+    public Float calcium;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -57,12 +60,14 @@ public class Nutrients {
             case "1167" : {niacin = quantity; break;}
             case "1170" : {pantothenicAcid = quantity; break;}
             case "1175" : {vitaminB6 = quantity; break;}
+            case "1176" : {biotin = quantity; break;}
             case "1177" : {folate = quantity; break;}
             case "1178" : {vitaminB12 = quantity; break; }
             case "1180" : {choline = quantity; break;}
             case "1183" : {vitaminKMena = quantity; break;}
             case "1184" : {vitaminKDihy = quantity; break;}
             case "1185" : {vitaminKPhyllo = quantity; break;}
+            case "1087" : {calcium = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -85,7 +90,9 @@ public class Nutrients {
                 doubleDigitFormatter.format(getFolate()) + "\t" + // mcg
                 doubleDigitFormatter.format(getNiacin()) + "\t" + // mg
                 doubleDigitFormatter.format(getCholine()) + "\t" + // mg
-                doubleDigitFormatter.format(getPantothenicAcid()) + "\t" // mg
+                doubleDigitFormatter.format(getPantothenicAcid()) + "\t" + // mg
+                doubleDigitFormatter.format(getBiotin()) + "\t" + //mcg
+                doubleDigitFormatter.format(getCalcium()) // mg
                 ;
     }
 
@@ -154,4 +161,8 @@ public class Nutrients {
     }
 
     public float getPantothenicAcid() { return pantothenicAcid != null ? pantothenicAcid : 0; }
+
+    public float getBiotin() {return biotin != null ? biotin : 0; }
+
+    public float getCalcium() { return calcium != null ? calcium : 0; }
 }
