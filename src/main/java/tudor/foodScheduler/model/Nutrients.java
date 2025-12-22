@@ -37,6 +37,8 @@ public class Nutrients {
     public Float biotin;
 
     public Float calcium;
+    public Float chloride; // Food Data Central does not track chloride. Is dependent on the agricultural means. A defficiency is extremely rare since it's covered abundently by salt.
+    public Float copper;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -68,6 +70,7 @@ public class Nutrients {
             case "1184" : {vitaminKDihy = quantity; break;}
             case "1185" : {vitaminKPhyllo = quantity; break;}
             case "1087" : {calcium = quantity; break;}
+            case "1098" : {copper = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -92,7 +95,9 @@ public class Nutrients {
                 doubleDigitFormatter.format(getCholine()) + "\t" + // mg
                 doubleDigitFormatter.format(getPantothenicAcid()) + "\t" + // mg
                 doubleDigitFormatter.format(getBiotin()) + "\t" + //mcg
-                doubleDigitFormatter.format(getCalcium()) // mg
+                doubleDigitFormatter.format(getCalcium()) + "\t" + // mg
+                doubleDigitFormatter.format(getChloride()) + "\t" + // g
+                doubleDigitFormatter.format(getCopper()) + "\t" // mcg
                 ;
     }
 
@@ -165,4 +170,8 @@ public class Nutrients {
     public float getBiotin() {return biotin != null ? biotin : 0; }
 
     public float getCalcium() { return calcium != null ? calcium : 0; }
+
+    public float getChloride() {return chloride != null ? chloride : 0; }
+
+    public float getCopper() { return copper != null ? copper : 0; }
 }

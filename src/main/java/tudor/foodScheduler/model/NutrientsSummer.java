@@ -33,6 +33,7 @@ public class NutrientsSummer {
                 nfs.cholineWB = sum(nfs.cholineWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCholine());
                 nfs.pantothenicAcidWB = sum(nfs.pantothenicAcidWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPantothenicAcid());
                 nfs.calciumWB = sum(nfs.calciumWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCalcium());
+                nfs.copperWB = sum(nfs.copperWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCopper());
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
             nfs.kCalProtein = sum(nfs.kCalProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
@@ -52,6 +53,7 @@ public class NutrientsSummer {
             nfs.choline = sum(nfs.choline, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCholine());
             nfs.pantothenicAcid = sum(nfs.pantothenicAcid, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPantothenicAcid());
             nfs.calcium = sum(nfs.calcium, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCalcium());
+            nfs.copper = sum(nfs.copper, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCopper());
         }
     }
 
@@ -169,6 +171,12 @@ public class NutrientsSummer {
         }
         result += ")/(1000*7)";
 
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().calcium + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().calciumWB +";0))";
+        }
+        result += ")/(900*7)";
+
         return result.replace(".", ",");
     }
 
@@ -224,5 +232,8 @@ public class NutrientsSummer {
 
         float calciumWB;
         float calcium;
+
+        float copperWB;
+        float copper;
     }
 }

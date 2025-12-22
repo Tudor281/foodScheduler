@@ -95,8 +95,8 @@ public enum Ingredient {
     Telina_Raw(ALL, ALL, "170400"),
     Ulei_Floarea_Soarelui(ALL, ALL, "1750349"),
     Ulei_Masline(ALL, ALL, "748608"),
-    Unt_Sarat(ALL, ALL, "790508"),
-    Unt_Nesarat(ALL, ALL, "790508"), // salted, is far more complete for now
+    Unt_Sarat(ALL, ALL, "173410"),
+    Unt_Nesarat(ALL, ALL, "173430"), // salted, is far more complete for now
     Urzici_Blanched(List.of(3,4,5), List.of(), "169819"),
     Usturoi_Raw(ALL, ALL, "169230"),
     Varza_Raw(List.of(4,5,6,7,8,9,10,11,12,1), ALL, "169975"),
