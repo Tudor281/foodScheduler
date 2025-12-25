@@ -39,6 +39,9 @@ public class Nutrients {
     public Float calcium;
     public Float chloride; // Food Data Central does not track chloride. Is dependent on the agricultural means. A defficiency is extremely rare since it's covered abundently by salt.
     public Float copper;
+    public Float iron;
+    public Float magnesium;
+    public Float manganese;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -70,7 +73,10 @@ public class Nutrients {
             case "1184" : {vitaminKDihy = quantity; break;}
             case "1185" : {vitaminKPhyllo = quantity; break;}
             case "1087" : {calcium = quantity; break;}
+            case "1089" : {iron = quantity; break;}
+            case "1090" : {magnesium = quantity; break;}
             case "1098" : {copper = quantity; break;}
+            case "1101" : {manganese = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -97,7 +103,10 @@ public class Nutrients {
                 doubleDigitFormatter.format(getBiotin()) + "\t" + //mcg
                 doubleDigitFormatter.format(getCalcium()) + "\t" + // mg
                 doubleDigitFormatter.format(getChloride()) + "\t" + // g
-                doubleDigitFormatter.format(getCopper()) + "\t" // mcg
+                doubleDigitFormatter.format(getCopper()) + "\t" + // mcg
+                doubleDigitFormatter.format(getIron()) + "\t" + // mg
+                doubleDigitFormatter.format(getMagnesium()) + "\t" + // mg
+                doubleDigitFormatter.format(getManganese()) // mg
                 ;
     }
 
@@ -174,4 +183,10 @@ public class Nutrients {
     public float getChloride() {return chloride != null ? chloride : 0; }
 
     public float getCopper() { return copper != null ? copper : 0; }
+
+    public float getIron() { return iron != null ? iron : 0; }
+
+    public float getMagnesium() { return magnesium != null ? magnesium : 0; }
+
+    public float getManganese() { return manganese != null ? manganese : 0; }
 }
