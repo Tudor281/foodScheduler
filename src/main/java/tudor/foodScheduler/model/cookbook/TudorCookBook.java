@@ -265,8 +265,15 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri)),
                 F1, List.of(Patrunjel, Marar, Leustean, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de perișoare", Once, List.of(
-                new IngredientEntry(Carne_Pui_Tocata_Raw, 500, gram)),
-                F1, List.of())); // TODO No recipy
+                new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
+                new IngredientEntry(Morcov_Raw, 1, bucati),
+                new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
+                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Ou_Raw, 1, bucati),
+                new IngredientEntry(Orez_Raw, 50, gram),
+                new IngredientEntry(Pastarnac_Raw, 1, bucati),
+                new IngredientEntry(Telina_Raw, 150, gram)),
+                F1, List.of(Marar, Patrunjel, Sare, Piper)));
         cookbook.add(new Recipe("Ciorbă de pui a la Grec", Once, List.of(
                 new IngredientEntry(Carne_Pui_Picioare_Raw, 700, gram),
                 new IngredientEntry(Orez_Raw, 100, gram),
