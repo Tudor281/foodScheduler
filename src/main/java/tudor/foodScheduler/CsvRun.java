@@ -61,7 +61,7 @@ public class CsvRun {
                 12	1	Supă de cartofi și mazăre	Sarmale viță de vie cu soia	Pește prăjit	Banane	Chiftele de soia în suc de roșii
                 12	2	Țelină cu morcov	Ciuperci cu maioneză și usturoi	Găgău	Portocale (1.5Kg)	Tzatziki
                 12	3	Supă cremă de spanac	Ghiveci	Pasta al pesto genovese (semi)	Mere	Guacamole
-                12	4	Supă mexicană	Pilaf - Simplu	Salad Box	Portocale (1.5Kg)	Cremă de avocado cu brânză și usturoi
+                12	4	Supă mexicană	Lasagna cu spanac	Cremă de avocado cu brânză și usturoi	Portocale (1.5Kg)	Korozott
                 """;
         System.out.println("Loading nutrients...");
         NutrientLoader.load();

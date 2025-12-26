@@ -326,12 +326,12 @@ public class TudorCookBook {
                 new IngredientEntry(Faina_Grau_65, 200, gram),
                 new IngredientEntry(Zahar, 50, gram)),
                 Desert, List.of())); // TODO: No recipy
-        cookbook.add(new Recipe("Cremă de avocado cu brânză și usturoi", Once, List.of(
+        cookbook.add(new Recipe("Cremă de avocado cu brânză și usturoi", Disabled, List.of(
                 new IngredientEntry(Avocado_Hass_Raw, 1, bucati),
                 new IngredientEntry(Branza_CottageFullFat, 150, gram),
                 new IngredientEntry(Usturoi_Raw, 2, bucati),
-                new IngredientEntry(Paine, 3 * 2, bucati)),
-                Rece, List.of(SucLamaie, Sare, Piper, Iuteala)));
+                new IngredientEntry(Paine, 4, bucati)),
+                Aperitiv, List.of(SucLamaie, Sare, Piper, Iuteala)));
         cookbook.add(new Recipe("Fasole bătută", AtLeastOnce, List.of(
                 new IngredientEntry(Fasole_Uscata_Raw, 800, gram),
                 new IngredientEntry(Usturoi_Raw, 5, bucati),
@@ -423,6 +423,12 @@ public class TudorCookBook {
                 new IngredientEntry(Sos_Pesto_Genovese, 100, gram),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 Rece, List.of(Busuioc, Sare, SucLamaie)));
+        cookbook.add(new Recipe("Korozott", Once, List.of(
+                new IngredientEntry(Branza_CottageFullFat, 1000, gram),
+                new IngredientEntry(Unt_Sarat, 250, gram),
+                new IngredientEntry(Ceapa_Rosie_Raw, 2, bucati),
+                new IngredientEntry(Paine, 3 * 6, bucati)),
+                Rece, List.of(Sare, Piper, BoiaDulce, Iuteala, Chimen)));
         cookbook.add(new Recipe("Lalele", Disabled, List.of(
                 new IngredientEntry(Rosii, 4, bucati),
                 new IngredientEntry(Ceapa_Verde_Raw, 4, bucati),
