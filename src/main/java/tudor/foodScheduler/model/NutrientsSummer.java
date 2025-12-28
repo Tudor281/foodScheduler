@@ -36,6 +36,12 @@ public class NutrientsSummer {
                 nfs.copperWB = sum(nfs.copperWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCopper());
                 nfs.ironWB = sum(nfs.ironWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getIron());
                 nfs.magnesiumWB = sum(nfs.magnesiumWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getMagnesium());
+                nfs.manganeseWB = sum(nfs.manganeseWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getManganese());
+                nfs.phosphorusWB = sum(nfs.phosphorusWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPhosphorus());
+                nfs.potassiumWB = sum(nfs.potassiumWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPotassium());
+                nfs.seleniumWB = sum(nfs.seleniumWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getSelenium());
+                nfs.sodiumWB = sum(nfs.sodiumWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getSodium());
+                nfs.zincWB = sum(nfs.zincWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getZinc());
             }
             nfs.kCal = sum(nfs.kCal, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getKCal().b);
             nfs.kCalProtein = sum(nfs.kCalProtein, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getProtein() * 4);
@@ -58,6 +64,12 @@ public class NutrientsSummer {
             nfs.copper = sum(nfs.copper, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCopper());
             nfs.iron = sum(nfs.iron, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getIron());
             nfs.magnesium = sum(nfs.magnesium, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getMagnesium());
+            nfs.manganese = sum(nfs.manganese, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getManganese());
+            nfs.phosphorus = sum(nfs.phosphorus, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPhosphorus());
+            nfs.potassium = sum(nfs.potassium, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPotassium());
+            nfs.selenium = sum(nfs.selenium, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getSelenium());
+            nfs.sodium = sum(nfs.sodium, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getSodium());
+            nfs.zinc = sum(nfs.zinc, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getZinc());
         }
     }
 
@@ -193,6 +205,42 @@ public class NutrientsSummer {
         }
         result += ")/(420*7)";
 
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().manganese + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().manganese +";0))";
+        }
+        result += ")/(2.3*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().phosphorus + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().phosphorusWB +";0))";
+        }
+        result += ")/(700*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().potassium + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().potassiumWB +";0))";
+        }
+        result += ")/(3400*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().selenium + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().seleniumWB +";0))";
+        }
+        result += ")/(55*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().sodium + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().sodiumWB +";0))";
+        }
+        result += ")/(1500*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().zinc + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().zincWB +";0))";
+        }
+        result += ")/(11*7)";
+
         return result.replace(".", ",");
     }
 
@@ -257,5 +305,23 @@ public class NutrientsSummer {
 
         float magnesiumWB;
         float magnesium;
+
+        float manganeseWB;
+        float manganese;
+
+        float phosphorusWB;
+        float phosphorus;
+
+        float potassiumWB;
+        float potassium;
+
+        float seleniumWB;
+        float selenium;
+
+        float sodiumWB;
+        float sodium;
+
+        float zincWB;
+        float zinc;
     }
 }

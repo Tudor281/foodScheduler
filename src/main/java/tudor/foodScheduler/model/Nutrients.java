@@ -42,6 +42,12 @@ public class Nutrients {
     public Float iron;
     public Float magnesium;
     public Float manganese;
+    public Float molybdenum;
+    public Float phosphorus;
+    public Float potassium;
+    public Float selenium;
+    public Float sodium;
+    public Float zinc;
 
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
@@ -57,6 +63,17 @@ public class Nutrients {
             case "1008" : {kCalLegacy = quantity;break;}
             case "1063" : {sugarsTotal = quantity;break;}
             case "1085" : {totalFatNLEA = quantity; break;}
+            case "1087" : {calcium = quantity; break;}
+            case "1089" : {iron = quantity; break;}
+            case "1090" : {magnesium = quantity; break;}
+            case "1091" : {phosphorus = quantity; break;}
+            case "1092" : {potassium = quantity; break;}
+            case "1093" : {sodium = quantity; break;}
+            case "1095" : {zinc = quantity; break;}
+            case "1098" : {copper = quantity; break;}
+            case "1101" : {manganese = quantity; break;}
+            case "1102" : {molybdenum = quantity; break;}
+            case "1103" : {selenium = quantity; break;}
             case "1106" : {vitaminARAE = quantity; break;}
             case "1109" : {vitaminE = quantity; break;}
             case "1162" : {vitaminCTotalAscorbicAcid = quantity; break;}
@@ -72,11 +89,6 @@ public class Nutrients {
             case "1183" : {vitaminKMena = quantity; break;}
             case "1184" : {vitaminKDihy = quantity; break;}
             case "1185" : {vitaminKPhyllo = quantity; break;}
-            case "1087" : {calcium = quantity; break;}
-            case "1089" : {iron = quantity; break;}
-            case "1090" : {magnesium = quantity; break;}
-            case "1098" : {copper = quantity; break;}
-            case "1101" : {manganese = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -106,7 +118,13 @@ public class Nutrients {
                 doubleDigitFormatter.format(getCopper()) + "\t" + // mcg
                 doubleDigitFormatter.format(getIron()) + "\t" + // mg
                 doubleDigitFormatter.format(getMagnesium()) + "\t" + // mg
-                doubleDigitFormatter.format(getManganese()) // mg
+                doubleDigitFormatter.format(getManganese()) + "\t" + // mg
+                doubleDigitFormatter.format(getMolybdenum()) + "\t" + // mcg
+                doubleDigitFormatter.format(getPhosphorus()) + "\t" + // mg
+                doubleDigitFormatter.format(getPotassium()) + "\t" + // mg
+                doubleDigitFormatter.format(getSelenium()) + "\t" + // mcg
+                doubleDigitFormatter.format(getSodium()) + "\t" + // mg
+                doubleDigitFormatter.format(getZinc()) // mg
                 ;
     }
 
@@ -189,4 +207,16 @@ public class Nutrients {
     public float getMagnesium() { return magnesium != null ? magnesium : 0; }
 
     public float getManganese() { return manganese != null ? manganese : 0; }
+
+    public float getMolybdenum() { return molybdenum != null ? molybdenum : 0; }
+
+    public float getPhosphorus() {return phosphorus != null ? phosphorus : 0; }
+
+    public float getPotassium() { return potassium != null ? potassium : 0; }
+
+    public float getSelenium() { return selenium != null ? selenium : 0; }
+
+    public float getSodium() { return sodium != null ? sodium : 0; }
+
+    public float getZinc() {return zinc != null ? zinc : 0; }
 }
