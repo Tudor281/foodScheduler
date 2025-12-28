@@ -49,6 +49,22 @@ public class Nutrients {
     public Float sodium;
     public Float zinc;
 
+    // omega 6
+    public Float PUFA18c2o6;
+    public Float PUFA18c3o6;
+    public Float PUFA20c2o6;
+    public Float PUFA20c3o6;
+    public Float PUFA20c4o6;
+
+    // omega 3
+    public Float PUFA18c3o3;
+    public Float PUFA20c3o3;
+    public Float PUFA20c4o3;
+    public Float PUFA20c5o3;
+    public Float PUFA22c5o3;
+    public Float PUFA22c6o3;
+
+
     public static DecimalFormat doubleDigitFormatter = new DecimalFormat("#.##");
 
     public void loadNutrient(String nutrientIdUnparsed, String quantityUnparsed) {
@@ -89,6 +105,17 @@ public class Nutrients {
             case "1183" : {vitaminKMena = quantity; break;}
             case "1184" : {vitaminKDihy = quantity; break;}
             case "1185" : {vitaminKPhyllo = quantity; break;}
+            case "1272" : {PUFA22c6o3 = quantity; break;}
+            case "1278" : {PUFA20c5o3 = quantity; break;}
+            case "1280" : {PUFA22c5o3 = quantity; break;}
+            case "1313" : {PUFA20c2o6 = quantity; break;}
+            case "1316" : {PUFA18c2o6 = quantity; break;}
+            case "1321" : {PUFA18c3o6 = quantity; break;}
+            case "1404" : {PUFA18c3o3 = quantity; break;}
+            case "1405" : {PUFA20c3o3 = quantity; break;}
+            case "1406" : {PUFA20c3o6 = quantity; break;}
+            case "1407" : {PUFA20c4o3 = quantity; break;}
+            case "1408" : {PUFA20c4o6 = quantity; break;}
             case "2047" : {kCalGeneral = quantity;break;}
             case "2048" : {kCalSpecific = quantity;break;}
         }
@@ -124,7 +151,9 @@ public class Nutrients {
                 doubleDigitFormatter.format(getPotassium()) + "\t" + // mg
                 doubleDigitFormatter.format(getSelenium()) + "\t" + // mcg
                 doubleDigitFormatter.format(getSodium()) + "\t" + // mg
-                doubleDigitFormatter.format(getZinc()) // mg
+                doubleDigitFormatter.format(getZinc()) + "\t" + // mg
+                doubleDigitFormatter.format(getOmega6()) + "\t" + // g
+                doubleDigitFormatter.format(getOmega3()) // g
                 ;
     }
 
@@ -219,4 +248,23 @@ public class Nutrients {
     public float getSodium() { return sodium != null ? sodium : 0; }
 
     public float getZinc() {return zinc != null ? zinc : 0; }
+
+    public float getOmega6() {
+        return (PUFA18c2o6 != null ? PUFA18c2o6 : 0)
+                + (PUFA18c3o6 != null ? PUFA18c3o6 : 0)
+                + (PUFA20c2o6 != null ? PUFA20c2o6 : 0)
+                + (PUFA20c3o6 != null ? PUFA20c3o6 : 0)
+                + (PUFA20c4o6 != null ? PUFA20c4o6 : 0)
+                ;
+    }
+
+    public float getOmega3() {
+        return (PUFA18c3o3 != null ? PUFA18c3o3 : 0)
+                + (PUFA20c3o3 != null ? PUFA20c3o3 : 0)
+                + (PUFA20c4o3 != null ? PUFA20c4o3 : 0)
+                + (PUFA20c5o3 != null ? PUFA20c5o3 : 0)
+                + (PUFA22c5o3 != null ? PUFA22c5o3 : 0)
+                + (PUFA22c6o3 != null ? PUFA22c6o3 : 0)
+                ;
+    }
 }

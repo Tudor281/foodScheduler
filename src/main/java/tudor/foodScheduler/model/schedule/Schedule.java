@@ -92,7 +92,27 @@ public class Schedule {
                 result += toString(month, week, ++rowCounter);
             }
         }
+
+        // averages
+        for (int i=0; i<12; i++) {
+            result += "\t";
+        }
+        for (int i=0; i<27; i++) {
+            result += "=AVERAGE("+toExcelColumn(i)+"3:"+toExcelColumn(i)+"54)\t";
+        }
+        result += "\n";
+
         result += countIngredientsAndSpices();
+        return result;
+    }
+
+    private String toExcelColumn(int column) {
+        String result = "";
+        if (column > 13) {
+            result += "A";
+            column -= 26;
+        }
+        result += (char) ('M' + (column));
         return result;
     }
 

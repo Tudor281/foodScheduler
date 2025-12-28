@@ -95,6 +95,7 @@ public enum Ingredient {
     Telina_Raw(ALL, ALL, "170400"),
     Ulei_Floarea_Soarelui(ALL, ALL, "1750349"),
     Ulei_Masline(ALL, ALL, "748608"),
+    Ulei_Rapita(ALL, ALL, "748278"),
     Unt_Sarat(ALL, ALL, "173410"),
     Unt_Nesarat(ALL, ALL, "173430"), // salted, is far more complete for now
     Urzici_Blanched(List.of(3,4,5), List.of(), "169819"),
