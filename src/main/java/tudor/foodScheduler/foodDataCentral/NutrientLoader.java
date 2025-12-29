@@ -51,5 +51,8 @@ public class NutrientLoader {
     private static void postTreatment() {
         // 5000 mcg / 100g
         // 40mg / kg => 4 mg / 100g => 4000 mcg / 1000g so Iodine is good
+
+        // copilot 0.606 of salt is chloride, so 60.3 g per 100g
+        Ingredient.Sare.nutrients.chloride = 60.3f;
     }
 }

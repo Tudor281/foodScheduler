@@ -97,7 +97,7 @@ public class Schedule {
         for (int i=0; i<12; i++) {
             result += "\t";
         }
-        for (int i=0; i<27; i++) {
+        for (int i=0; i<29; i++) {
             result += "=AVERAGE("+toExcelColumn(i)+"3:"+toExcelColumn(i)+"54)\t";
         }
         result += "\n";

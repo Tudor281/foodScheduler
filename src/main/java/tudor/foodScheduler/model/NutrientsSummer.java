@@ -33,6 +33,7 @@ public class NutrientsSummer {
                 nfs.cholineWB = sum(nfs.cholineWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCholine());
                 nfs.pantothenicAcidWB = sum(nfs.pantothenicAcidWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPantothenicAcid());
                 nfs.calciumWB = sum(nfs.calciumWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCalcium());
+                nfs.chlorideWB = sum(nfs.chlorideWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getChloride());
                 nfs.copperWB = sum(nfs.copperWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCopper());
                 nfs.iodineWB = sum(nfs.iodineWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getIodine());
                 nfs.ironWB = sum(nfs.ironWB, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getIron());
@@ -62,6 +63,7 @@ public class NutrientsSummer {
             nfs.choline = sum(nfs.choline, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCholine());
             nfs.pantothenicAcid = sum(nfs.pantothenicAcid, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getPantothenicAcid());
             nfs.calcium = sum(nfs.calcium, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCalcium());
+            nfs.chloride = sum(nfs.chloride, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getChloride());
             nfs.copper = sum(nfs.copper, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getCopper());
             nfs.iodine = sum(nfs.iodine, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getIodine());
             nfs.iron = sum(nfs.iron, ingredientEntry.getIngredientInGrams(), ingredient.nutrients.getIron());
@@ -191,6 +193,12 @@ public class NutrientsSummer {
 
         result += "\t=(";
         for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
+            result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().chloride + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().chlorideWB +";0))";
+        }
+        result += ")/(2.3*7)";
+
+        result += "\t=(";
+        for (Map.Entry<Character, NutrientsForSum> entry : nutrients.entrySet()) {
             result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().copper + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().copperWB +";0))";
         }
         result += ")/(0.9*7)";
@@ -304,6 +312,9 @@ public class NutrientsSummer {
 
         float calciumWB;
         float calcium;
+
+        float chlorideWB;
+        float chloride;
 
         float copperWB;
         float copper;
