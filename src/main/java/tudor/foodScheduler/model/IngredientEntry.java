@@ -120,6 +120,14 @@ public class IngredientEntry {
                     default -> throw new RuntimeException("Unknown linguri for ingredient "+ingredient.name());
                 }
             }
+            case lingurite -> {
+                switch (ingredient) {
+                    case Sare ->  {
+                        return 4 * quantity;
+                    }
+                    default -> throw new RuntimeException("Unknown lingurite for ingredient "+ingredient.name());
+                }
+            }
             default -> throw new RuntimeException("Unknown unit of measure: "+unitOfMeasure.name());
         }
     }

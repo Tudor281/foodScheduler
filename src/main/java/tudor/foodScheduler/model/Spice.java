@@ -27,7 +27,6 @@ public enum Spice {
     Patrunjel,
     Piper,
     Rozmarin,
-    Sare,
     Scortisoara,
     SucLamaie,
     Tarhon,

@@ -39,6 +39,7 @@ public class Nutrients {
     public Float calcium;
     public Float chloride; // Food Data Central does not track chloride. Is dependent on the agricultural means. A defficiency is extremely rare since it's covered abundently by salt.
     public Float copper;
+    public Float iodine;
     public Float iron;
     public Float magnesium;
     public Float manganese;
@@ -87,6 +88,7 @@ public class Nutrients {
             case "1093" : {sodium = quantity; break;}
             case "1095" : {zinc = quantity; break;}
             case "1098" : {copper = quantity; break;}
+            case "1100" : {iodine = quantity; break;}
             case "1101" : {manganese = quantity; break;}
             case "1102" : {molybdenum = quantity; break;}
             case "1103" : {selenium = quantity; break;}
@@ -143,6 +145,7 @@ public class Nutrients {
                 doubleDigitFormatter.format(getCalcium()) + "\t" + // mg
                 doubleDigitFormatter.format(getChloride()) + "\t" + // g
                 doubleDigitFormatter.format(getCopper()) + "\t" + // mcg
+                doubleDigitFormatter.format(getIodine()) + "\t" + // mcg
                 doubleDigitFormatter.format(getIron()) + "\t" + // mg
                 doubleDigitFormatter.format(getMagnesium()) + "\t" + // mg
                 doubleDigitFormatter.format(getManganese()) + "\t" + // mg
@@ -230,6 +233,8 @@ public class Nutrients {
     public float getChloride() {return chloride != null ? chloride : 0; }
 
     public float getCopper() { return copper != null ? copper : 0; }
+
+    public float getIodine() { return iodine != null ? iodine : 0; }
 
     public float getIron() { return iron != null ? iron : 0; }
 

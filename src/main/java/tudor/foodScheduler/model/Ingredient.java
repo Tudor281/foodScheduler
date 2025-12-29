@@ -80,6 +80,7 @@ public enum Ingredient {
     Piscoturi(ALL, ALL, "509552"), // savoiardi
     Praz_Raw(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "169246"), // leek
     Salata_Raw(ALL, ALL, "169249"),
+    Sare(ALL, ALL, false, "746775"),
     Smantana(ALL, ALL, "171257"),
     Soia_Flour(ALL, ALL, "174275"),
     Sos_Carbonara(ALL, ALL, "378386"),
