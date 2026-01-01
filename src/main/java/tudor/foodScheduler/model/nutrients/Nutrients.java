@@ -1,4 +1,6 @@
-package tudor.foodScheduler.model;
+package tudor.foodScheduler.model.nutrients;
+
+import tudor.foodScheduler.model.Tuple;
 
 import java.text.DecimalFormat;
 

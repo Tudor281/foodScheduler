@@ -1,5 +1,7 @@
 package tudor.foodScheduler.model;
 
+import tudor.foodScheduler.model.nutrients.Nutrients;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,10 +9,10 @@ import static tudor.foodScheduler.model.Months.ALL;
 
 /** Ingredients have the characteristic of being nutritious */
 public enum Ingredient {
-    Ardei_Rosu_Raw(List.of(6,7,8,9), ALL, "170108"),
-    Ardei_Verde_Raw(List.of(6,7,8,9), ALL, "170427"),
+    Ardei_Rosu_Raw(List.of(6,7,8,9,10,11), ALL, "170108"),
+    Ardei_Verde_Raw(List.of(6,7,8,9,10,11), ALL, "170427"),
     // sort of spice, sort of ingredient. But it's pointless to have it as spice, if it's not available
-    Apio_Raw(List.of(5, 6, 7, 8, 9, 10), List.of(11, 12, 1, 3, 4, 5 , 6), false, "169988"), //https://en.wikipedia.org/wiki/Celery
+    Apio_Raw(List.of(5, 6, 7, 8, 9, 10), ALL, false, "169988"), //https://en.wikipedia.org/wiki/Celery
     Avocado_Hass_Raw(List.of(), ALL, "171705"), // coaja aspra, neagra la maturitate
     // mostly water, deci n-ar trebui să fie cine știe ce la capitolul nutrienți
     Bors(ALL, ALL),
@@ -22,7 +24,7 @@ public enum Ingredient {
     Branza_Mascarpone(ALL, ALL, "506462"), // All have vitamin A 0 (in fact it only has minerals)
     Branza_Mozzarella(ALL, ALL, "329370"),
     Branza_Telemea(ALL, ALL, "173420"),
-    Broccoli_Raw(List.of(), ALL, "747447"),
+    Broccoli_Raw(List.of(11), ALL, "747447"),
     Carne_Pui_Crenvurst(ALL, ALL, "171624"), // frankfurter // has some nutrients, but not Vitamin A
     Carne_Pui_Picioare_Raw(ALL,ALL, "331897"),
     Carne_Pui_Piept_Raw(ALL, ALL, "171077"),
@@ -30,18 +32,18 @@ public enum Ingredient {
     Carne_Pui_Tocata_Raw(ALL, ALL, "171116"), // has some vitamins but not Vitamin A
     Carne_Vita_Chuck_Roast(ALL, ALL, "170809"), // carne gulas
     Carne_Vita_Tocata_Raw(ALL, ALL, "168608"), //
-    Cartofi_Raw(ALL, ALL, "2346403"),
-    Cartofi_Dulci_Raw(List.of(), List.of(3,4,5,6,7,8,9), "2346404"),
+    Cartofi_Raw(List.of(7,8,9,10,11,12,1,2), ALL, "2346403"),
+    Cartofi_Dulci_Raw(List.of(), List.of(3,4,5,6,7,8,9,10,11,12), "2346404"),
     Castraveti_Cornichon(List.of(3,4,5,6,7,8,9), ALL, "168409"),
     Castraveti_Murati(ALL, ALL, "324653"),
     Ceapa_Alba_Raw(ALL, ALL, "170000"), // legacy yellow onion
     Ceapa_Galbena_Raw(ALL, ALL, "170000"), // legacy yellow onion
-    Ceapa_Rosie_Raw(List.of(), List.of(3, 4, 5, 6, 7, 8, 9), "170000"), // legacy yellow onion
+    Ceapa_Rosie_Raw(List.of(), ALL, "170000"), // legacy yellow onion
     Ceapa_Verde_Raw(ALL, ALL, "170005"), // interesting, mature onion has no vitamin A, a scallion does have 50ug, little but still
     Ciuperci_Raw(ALL, ALL, "169251"),
-    Conopida_Raw(List.of(5,6,7,8,9,10,11,12), ALL, "169986"),
-    DovleacPlacintar_Raw(List.of(9,10,11,12,1), List.of(2,3,4), "169295"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
-    Dovlecei_Raw(List.of(4,5,6,7,8,9), ALL, "169291"),
+    Conopida_Raw(List.of(4,5,6,7,8,9,10,11), ALL, "169986"),
+    DovleacPlacintar_Raw(List.of(9,10,11,12), List.of(1,2,3,4,5), "169295"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
+    Dovlecei_Raw(List.of(5,6,7,8,9,10), List.of(11,12,2,3,4), "169291"),
     Faina_Grau_65(ALL, List.of(), "169761"),
     Faina_Grau_150(ALL, ALL, "168944"), // copilot zice că e mai whole
     Fasole_Uscata_Raw(ALL, ALL, "175202"), // cannelini
@@ -78,7 +80,7 @@ public enum Ingredient {
     Peste_Ton_Cooked(ALL, ALL, "175159"),
     Peste_Ton_Canned_In_Oil(ALL, ALL, "175157"),
     Piscoturi(ALL, ALL, "509552"), // savoiardi
-    Praz_Raw(List.of(10,11,12,1,2,3,4), List.of(2, 3, 4, 12), "169246"), // leek
+    Praz_Raw(List.of(9,10,11,12,1,2,3,4), List.of(2, 3, 4), "169246"), // leek
     Salata_Raw(ALL, ALL, "169249"),
     Sare(ALL, ALL, false, "746775"),
     Smantana(ALL, ALL, "171257"),
@@ -90,7 +92,7 @@ public enum Ingredient {
     Stevie(List.of(4,5,6), List.of()), // lobodă sau ștevie. Problema e că dacă ai ști că poți obține lobodă sau ștevie la comandă, le-ai separa, dar eu cred că o să fiu norocos dacă găsesc una sau alta
     Suc_Rosii_Bulion(ALL, ALL, "170054"), // tomato sauce
     Radacina_Patrunjel(ALL, ALL),
-    Rosii(List.of(6,7,8,9,10,11), ALL, "170457"),
+    Rosii(List.of(5,6,7,8,9,10,11,12), ALL, "170457"),
     Tahini(ALL, ALL, "168604"),
     Taitei(ALL, ALL, "168927"), // pasta
     Telina_Raw(ALL, ALL, "170400"),
@@ -105,27 +107,28 @@ public enum Ingredient {
     VarzaMurata(ALL, ALL, "2710075"),
     Vinete_Raw(List.of(5,6,7,8,9,10), ALL, "169228"), // vinetele coapte ies jumate din vinetele crude
     Zahar(ALL, List.of(), "169655"),
-    Zucchini_Raw(List.of(6), ALL, "169291"),
+    Zucchini_Raw(List.of(6,7,8,9), ALL, "169291"),
 
     // fructe
     Banane(List.of(), ALL, "173944"),
-    Caise(List.of(7,8,9), List.of(), "171697"),
-    Capsuni(List.of(6,7,8,9), List.of(), "167762"),
+    Caise(List.of(7), List.of(), "171697"),
+    Capsuni(List.of(6,7,8,9), ALL, "167762"),
     Cirese(List.of(6, 7), List.of(), "171719"),
-    Clementine(List.of(), List.of(12, 1), "168195"),
+    Clementine(List.of(), List.of(11,12, 1), "168195"),
     Grapefruit(List.of(), List.of(12,1,2,3,4,5,6), "174673"),
     Kaki(List.of(), List.of(10,11,12,1), "169941"),
     Kiwi(List.of(), List.of(10,11,12,1,2,3,4,5), "327046"),
     Mandarine(List.of(), List.of(11,12,1,2,3,4), "169105"),
     Mango_Tommy_Atkins(List.of(), ALL, "169910"),
-    Mere_Red_Delicious(List.of(11, 12,1,2), ALL, "168201"),
+    Mere_Red_Delicious(List.of(9,10,11, 12,1,2), ALL, "168201"),
     Mineole(List.of(), List.of(1), "2450365"),
     Nuca(ALL, ALL, "170187"),
-    Papaya(List.of(), List.of(1), "169926"),
-    PepeneGalben(List.of(7,8,9), List.of(), "169092"),
+    Papaya(List.of(), List.of(1,5,12), "169926"),
+    PepeneGalben(List.of(7,8,9), ALL, "169092"),
     PepeneRosu(List.of(7,8,9), List.of(), "167765"),
-    Pere(List.of(), ALL, "169118"),
-    Portocale(List.of(), List.of(11,12, 1, 2,3,4,5,6), "169097"),
+    Pere(List.of(8,9,10,11), ALL, "169118"),
+    Piersici(List.of(5,6,7,8,9), ALL, "169928"),
+    Portocale(List.of(), List.of(11,12,1,2,3,4,5,6), "169097"),
     Prune(List.of(8,9,10,11), List.of(12, 1), "169949"),
     Rodii(List.of(), ALL, "169134"),
     Struguri_Negri(List.of(9,10,11), List.of(), "174683"),

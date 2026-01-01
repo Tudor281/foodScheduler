@@ -29,7 +29,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ou_Raw, 3, bucati),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3*6, bucati)),
-                F2, List.of(Mustar, Patrunjel, Piper, BoiaDulce)));
+                Rece, List.of(Mustar, Patrunjel, Piper, BoiaDulce)));
         cookbook.add(new Recipe("Ardei umpluți cu soia", AtLeastOnce, List.of(
                 new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
                 new IngredientEntry(Soia_Flour, 100, gram),
@@ -44,7 +44,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte_Acru, 3000, gram),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(FrunzeTelina, Piper, BoiaAfumata)));
-        cookbook.add(new Recipe("Ardei umpluți cu carne", Disabled, List.of(
+        cookbook.add(new Recipe("Ardei umpluți cu carne", AtLeastOnce, List.of(
                 new IngredientEntry(Ardei_Verde_Raw, 16, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Morcov_Raw, 3, bucati),
@@ -72,7 +72,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Marar, Piper)));
-        cookbook.add(new Recipe("Ciorbă de cartofi cu smântână", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Ciorbă de cartofi cu smântână", Once, List.of(
                 new IngredientEntry(Cartofi_Raw, 800, gram),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
@@ -191,7 +191,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Marar, Leustean, Piper)));
-        cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", Once, List.of(
+        cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", AtLeastOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1400, gram),
                 new IngredientEntry(Smantana, 300, gram),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
@@ -217,7 +217,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Leustean, Patrunjel, Piper, SucLamaie, Otet)));
-        cookbook.add(new Recipe("Ciorbă de năut cu afumătură", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Ciorbă de năut cu afumătură", Once, List.of(
                 new IngredientEntry(Carne_Pui_Piept_Raw, 350, gram),
                 new IngredientEntry(Naut_Raw, 500, gram),
                 new IngredientEntry(Pappardelle, 125, gram),
@@ -254,7 +254,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Marar, Leustean, Piper)));
-        cookbook.add(new Recipe("Ciorbă de perișoare", Once, List.of(
+        cookbook.add(new Recipe("Ciorbă de perișoare", AtLeastOnce, List.of(
                 new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
                 new IngredientEntry(Morcov_Raw, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
@@ -352,7 +352,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper)));
-        cookbook.add(new Recipe("Gigantes Plaki", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Gigantes Plaki", Once, List.of(
                 new IngredientEntry(Fasole_Uscata_Raw, 900, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Usturoi_Raw, 6, bucati),
@@ -394,8 +394,8 @@ public class TudorCookBook {
                 new IngredientEntry(Usturoi_Raw, 1, bucati),
                 new IngredientEntry(Sare, 2, gram),
                 new IngredientEntry(Paine, 2 * 2, bucati)),
-                Rece, List.of(SucLamaie, Iuteala, Piper, Patrunjel)));
-        cookbook.add(new Recipe("Gulaș", Once, List.of(
+                Aperitiv, List.of(SucLamaie, Iuteala, Piper, Patrunjel)));
+        cookbook.add(new Recipe("Gulaș", AtLeastOnce, List.of(
                 new IngredientEntry(Carne_Vita_Chuck_Roast, 600, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
@@ -438,8 +438,8 @@ public class TudorCookBook {
                 new IngredientEntry(Ceapa_Verde_Raw, 4, bucati),
                 new IngredientEntry(Branza_Fagaras, 400, gram),
                 new IngredientEntry(Usturoi_Raw, 1, bucati)),
-                Rece, List.of(SucLamaie, Oregano)));
-        cookbook.add(new Recipe("Lasagna cu spanac", Once, List.of(
+                Aperitiv, List.of(SucLamaie, Oregano)));
+        cookbook.add(new Recipe("Lasagna cu spanac", AtLeastOnce, List.of(
                 new IngredientEntry(Spanac_Raw, 900, gram),
                 new IngredientEntry(Paste_Lasagna, 500, gram),
                 new IngredientEntry(Branza_Mozzarella, 400, gram),
@@ -471,10 +471,11 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Dafin, Marar, Piper)));
-        cookbook.add(new Recipe("Mâncare de cartofi ardelenească", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Mâncare de cartofi ardelenească", Once, List.of(
                 new IngredientEntry(Cartofi_Raw, 2500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 5, bucati),
                 new IngredientEntry(Sare, 2, lingurite),
+                new IngredientEntry(Castraveti_Murati, 2 * 7, bucati),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Iuteala, BoiaDulce, BoiaIute, Dafin)));
         cookbook.add(new Recipe("Mâncare de cartofi cu pui", AtMostOnce, List.of(
@@ -501,6 +502,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
                 new IngredientEntry(Sare, 2, lingurite),
+                new IngredientEntry(Castraveti_Murati, 2 * 7, bucati),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Marar, Iuteala)));
         cookbook.add(new Recipe("Fasole prăjită", AtLeastOnce, List.of(
@@ -512,7 +514,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati),
                 new IngredientEntry(Castraveti_Murati, 2 * 7, bucati)),
                 F2, List.of(Piper, Marar)));
-        cookbook.add(new Recipe("Fasole prăjită - Fuchs remix", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Fasole prăjită - Fuchs remix", Once, List.of(
                 new IngredientEntry(Fasole_Uscata_Raw, 1800, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
@@ -532,7 +534,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Dafin)));
-        cookbook.add(new Recipe("Mazăre cu pui", Disabled, List.of(
+        cookbook.add(new Recipe("Mazăre cu pui", AtLeastOnce, List.of(
                 new IngredientEntry(Mazare_Raw, 1000, gram),
                 new IngredientEntry(Carne_Pui_Piept_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
@@ -607,7 +609,7 @@ public class TudorCookBook {
                 new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Sare, 2, lingurite)),
                 F2, List.of()));
-        cookbook.add(new Recipe("Musaca cu ciuperci", AtMostOnce, List.of(
+        cookbook.add(new Recipe("Musaca cu ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi_Raw, 2000, gram),
                 new IngredientEntry(Lapte, 200, gram),
                 new IngredientEntry(Unt_Sarat, 50, gram),
@@ -625,7 +627,7 @@ public class TudorCookBook {
                 new IngredientEntry(Suc_Rosii_Bulion, 350, gram),
                 new IngredientEntry(Sare, 2, lingurite)),
                 F2, List.of(VinAlb)));
-        cookbook.add(new Recipe("Musaca cu soia", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Musaca cu soia", Once, List.of(
                 new IngredientEntry(Cartofi_Raw, 2000, gram),
                 new IngredientEntry(Lapte, 100, gram),
                 new IngredientEntry(Unt_Sarat, 50, gram),
@@ -682,7 +684,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(Piper)));
-        cookbook.add(new Recipe("Pilaf cu ciuperci", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Pilaf cu ciuperci", Once, List.of(
                 new IngredientEntry(Orez_Raw, 400, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 4, bucati),
                 new IngredientEntry(Ciuperci_Raw, 600, gram),
@@ -757,7 +759,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Cimbru, Marar, BoiaAfumata)));
-        cookbook.add(new Recipe("Pilaf - Simplu", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Pilaf - Simplu", Once, List.of(
                 new IngredientEntry(Orez_Raw, 600, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 6, bucati),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
@@ -773,12 +775,12 @@ public class TudorCookBook {
                 new IngredientEntry(Carne_Pui_Picioare_Raw, 500, gram),
                 new IngredientEntry(Usturoi_Raw, 10, bucati)),
                 Rece, List.of(Piper))); // TODO: Recipy
-        cookbook.add(new Recipe("Riz au lait", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Riz au lait", Once, List.of(
                 new IngredientEntry(Orez_Raw, 400, gram),
                 new IngredientEntry(Lapte_Praf, 100, gram),
                 new IngredientEntry(Zahar, 200, gram)),
                 Desert, List.of()));
-        cookbook.add(new Recipe("Salată alla russe", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Salată alla russe", Once, List.of(
                 new IngredientEntry(Morcov_Raw, 4, bucati),
                 new IngredientEntry(Radacina_Patrunjel, 2, bucati),
                 new IngredientEntry(Pastarnac_Raw, 2, bucati),
@@ -790,7 +792,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 6, bucati)),
                 Rece, List.of(Mustar)));
-        cookbook.add(new Recipe("Salată boeuf fără carne", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Salată boeuf fără carne", Once, List.of(
                 new IngredientEntry(Cartofi_Raw, 450, gram),
                 new IngredientEntry(Mazare_Raw, 150, gram),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
@@ -809,7 +811,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 6, bucati)),
                 Rece, List.of(Mustar)));
-        cookbook.add(new Recipe("Salată de pui", Once, List.of(
+        cookbook.add(new Recipe("Salată de pui", AtLeastOnce, List.of(
                 new IngredientEntry(Carne_Pui_Piept_Raw, 300, gram),
                 new IngredientEntry(Ciuperci_Raw, 800, gram),
                 new IngredientEntry(Mais, 200, gram),
@@ -843,7 +845,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(SucLamaie)));
-        cookbook.add(new Recipe("Baba ganoush", Once, List.of(
+        cookbook.add(new Recipe("Baba ganoush", AtLeastOnce, List.of(
                 new IngredientEntry(Vinete_Raw, 700, gram),
                 new IngredientEntry(Usturoi_Raw, 2, bucati),
                 new IngredientEntry(Ulei_Masline, 30, gram),
@@ -868,7 +870,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Sare, 1, lingurite)),
                 Rece, List.of()));
-        cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", Once, List.of(
+        cookbook.add(new Recipe("Supă cremă de broccoli - Cu carne", AtLeastOnce, List.of(
                 new IngredientEntry(Broccoli_Raw, 2, bucati),
                 new IngredientEntry(Carne_Pui_Piept_Raw, 500, gram),
                 new IngredientEntry(Cartofi_Raw, 400, gram),
@@ -892,7 +894,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Piper)));
-        cookbook.add(new Recipe("Supă cremă de conopidă", AtMostOnce, List.of(
+        cookbook.add(new Recipe("Supă cremă de conopidă", AtLeastOnce, List.of(
                 new IngredientEntry(Conopida_Raw, 1, bucati),
                 new IngredientEntry(Cartofi_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
@@ -910,7 +912,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Piper, Rozmarin)));
-        cookbook.add(new Recipe("Supă cremă de dovlecei", Once, List.of(
+        cookbook.add(new Recipe("Supă cremă de dovlecei", AtLeastOnce, List.of(
                 new IngredientEntry(Dovlecei_Raw, 1200, gram),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
@@ -955,7 +957,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 4, bucati)),
                 F1, List.of(Piper)));
-        cookbook.add(new Recipe("Supă cremă de spanac", Once, List.of(
+        cookbook.add(new Recipe("Supă cremă de spanac", AtLeastOnce, List.of(
                 new IngredientEntry(Cartofi_Raw, 400, gram),
                 new IngredientEntry(Morcov_Raw, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
@@ -991,7 +993,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Coriandru, Curry, Piper)));
-        cookbook.add(new Recipe("Supă de conopidă", Once, List.of(
+        cookbook.add(new Recipe("Supă de conopidă", AtLeastOnce, List.of(
                 new IngredientEntry(Conopida_Raw, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Faina_Grau_65, 2, linguri),
@@ -1030,7 +1032,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ou_Raw, 4, bucati),
                 new IngredientEntry(Zahar, 250, gram)),
                 Desert, List.of()));
-        cookbook.add(new Recipe("Tocănița Malita", Once, List.of(
+        cookbook.add(new Recipe("Tocănița Malita", AtLeastOnce, List.of(
                 new IngredientEntry(Soia_Flour, 200, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Morcov_Raw, 3, bucati),
@@ -1057,7 +1059,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of()));
-        cookbook.add(new Recipe("Tocăniță de gogonele", Once, List.of(
+        cookbook.add(new Recipe("Tocăniță de gogonele", AtLeastOnce, List.of(
                 new IngredientEntry(Gogonele_Raw, 1200, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Ardei_Rosu_Raw, 4, bucati),
@@ -1122,9 +1124,9 @@ public class TudorCookBook {
                 F2, List.of(Dafin)));
         cookbook.add(new Recipe("Varză la Cluj", Once, List.of(
                 new IngredientEntry(VarzaMurata, 1000, gram),
+                new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 4, bucati),
                 new IngredientEntry(Orez_Raw, 150, gram),
-                new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper)));
@@ -1136,7 +1138,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper)));
-        cookbook.add(new Recipe("Vitello tonnato", AtMostOnce, List.of( // mănânci ditamai halca de carne într-o săptămână
+        cookbook.add(new Recipe("Vitello tonnato", Once, List.of( // mănânci ditamai halca de carne într-o săptămână
                 new IngredientEntry(Carne_Vita_Chuck_Roast, 500, gram), // 1Kg iese mai mult decât făcea mama la familia întreagă
                 new IngredientEntry(Peste_Ton_Canned_In_Oil, 80, gram),
                 new IngredientEntry(Ou_Raw, 1, bucati),
@@ -1170,7 +1172,7 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte_Acru, 200, gram),
                 new IngredientEntry(Sare, 1, lingurite)),
                 FastFood, List.of()));
-        cookbook.add(new Recipe("Ciulama de ciuperci", Once, List.of(
+        cookbook.add(new Recipe("Ciulama de ciuperci", AtLeastOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1000, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Unt_Sarat, 50, gram),
@@ -1187,7 +1189,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 2, bucati)),
                 FastFood, List.of(Patrunjel, Piper)));
-        cookbook.add(new Recipe("Spanac cu smântână", Once, List.of(
+        cookbook.add(new Recipe("Spanac cu smântână", AtLeastOnce, List.of(
                 new IngredientEntry(Spanac_Raw, 500, gram),
                 new IngredientEntry(Smantana, 200, gram),
                 new IngredientEntry(Lapte, 120, gram),
@@ -1233,7 +1235,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Castraveti_Murati, 2 * 2, gram)),
                 FastFood, List.of(Piper)));
-        cookbook.add(new Recipe("Somon prăjit", Once, List.of(
+        cookbook.add(new Recipe("Somon prăjit", AtLeastOnce, List.of(
                 new IngredientEntry(Peste_Somon_Raw, 250, gram),
                 new IngredientEntry(Malai, 100, gram),
                 new IngredientEntry(Sare, 1, lingurite),
@@ -1290,7 +1292,7 @@ public class TudorCookBook {
                 new IngredientEntry(Mais, 200, gram),
                 new IngredientEntry(Fasole_Uscata_Raw, 200, gram),
                 new IngredientEntry(Ulei_Masline, 2, linguri)), FastFood, List.of()));
-        cookbook.add(new Recipe("Cobb Salad", Once, List.of(
+        cookbook.add(new Recipe("Cobb Salad", AtLeastOnce, List.of(
                 new IngredientEntry(Salata_Raw, 200, gram),
                 new IngredientEntry(Carne_Pui_Piept_Raw, 200, gram),
                 new IngredientEntry(Ou_Raw, 3, bucati),
@@ -1362,26 +1364,26 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Spaghetti alla bolognese (semi)", Disabled, List.of(
                 new IngredientEntry(Paste, 100, gram)),
                 FastFood, List.of()));
-        cookbook.add(new Recipe("Ciuperci prăjite", Disabled, List.of(
+        cookbook.add(new Recipe("Ciuperci prăjite", AtLeastOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1200, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Usturoi_Raw, 2, bucati),
                 new IngredientEntry(Malai, 100, gram),
-                new IngredientEntry(Sare, 2, lingurite)),
+                new IngredientEntry(Sare, 2, lingurite)), // una la mămăligă, una la ciuperci
                 FastFood, List.of()));
 
         // Fruits
         cookbook.add(new Recipe("Banane", AtLeastOnce, List.of(
                 new IngredientEntry(Banane, 1000, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Caise", AtLeastOnce, List.of(
-                new IngredientEntry(Caise, 500, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Capșuni", Once, List.of(
+                new IngredientEntry(Caise, 1000, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Capșuni", AtLeastOnce, List.of(
                 new IngredientEntry(Capsuni, 250, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Cireșe", Once, List.of(
                 new IngredientEntry(Cirese, 250, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Clementine", Once, List.of(
+        cookbook.add(new Recipe("Clementine", AtLeastOnce, List.of(
                 new IngredientEntry(Clementine, 250, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Grapefruit", AtMostOnce, List.of(
+        cookbook.add(new Recipe("Grapefruit", Once, List.of(
                 new IngredientEntry(Grapefruit, 300, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Kaki", AtLeastOnce, List.of(
                 new IngredientEntry(Kaki, 500, gram)), Fruits, List.of()));
@@ -1392,19 +1394,21 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Mango", AtMostOnce, List.of(
                 new IngredientEntry(Mango_Tommy_Atkins, 200, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mere", AtLeastOnce, List.of(
-                new IngredientEntry(Mere_Red_Delicious, 500, gram)), Fruits, List.of()));
+                new IngredientEntry(Mere_Red_Delicious, 1500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Mineole", Once, List.of(
                 new IngredientEntry(Mineole, 500, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Nucă", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Nucă", Once, List.of(
                 new IngredientEntry(Nuca, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Papaya", AtMostOnce, List.of(
                 new IngredientEntry(Papaya, 200, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Pepene Galben", Once, List.of(
-                new IngredientEntry(PepeneGalben, 500, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Pepene Galben", AtLeastOnce, List.of(
+                new IngredientEntry(PepeneGalben, 1500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Pepene Roșu", AtLeastOnce, List.of(
                 new IngredientEntry(PepeneRosu, 1000, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Pere", AtLeastOnce, List.of(
-                new IngredientEntry(Pere, 500, gram)), Fruits, List.of()));
+                new IngredientEntry(Pere, 1000, gram)), Fruits, List.of()));
+        cookbook.add(new Recipe("Piersici", AtLeastOnce, List.of(
+                new IngredientEntry(Piersici, 1000, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Portocale (1.5Kg)", AtLeastOnce, List.of(
                 new IngredientEntry(Portocale, 1500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Prune (1Kg)", AtLeastOnce, List.of(

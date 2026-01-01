@@ -2,6 +2,7 @@ package tudor.foodScheduler.model.schedule;
 
 import tudor.foodScheduler.InitialRun;
 import tudor.foodScheduler.model.cookbook.Cookbook;
+import tudor.foodScheduler.model.nutrients.RowNutrientsSummer;
 import tudor.foodScheduler.utils.Counter;
 import tudor.foodScheduler.utils.Stats;
 import tudor.foodScheduler.model.*;
@@ -118,7 +119,7 @@ public class Schedule {
 
     String toString(int month, int week, int row) {
         String result = (month + 1) + "\t" + (week + 1);
-        NutrientsSummer nutrientSummer = new NutrientsSummer();
+        RowNutrientsSummer nutrientSummer = new RowNutrientsSummer();
         int startingColumn = 2+1;
         //2
         HashSet<Integer> breadIngredients = new HashSet<>();

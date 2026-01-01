@@ -114,6 +114,9 @@ public class IngredientEntry {
                     case Ulei_Masline -> {
                         return 15 * quantity;
                     }
+                    case Ulei_Rapita -> {
+                        return 15 * quantity;
+                    }
                     case Zahar -> {
                         return 19 * quantity; // cantarit
                     }
