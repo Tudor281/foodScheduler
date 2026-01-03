@@ -658,7 +658,7 @@ public class TudorCookBook {
                 F2, List.of(Curcuma, Ghimbir, Coriandru, Chimen, SucLamaie)));
         cookbook.add(new Recipe("Ouă umplute cu ficat", AtLeastOnce, List.of(
                 new IngredientEntry(Carne_Pui_Ficat_Raw, 500, gram),
-                new IngredientEntry(Ou_Raw, 7+1, bucati),
+                new IngredientEntry(Ou_Raw, 9+1, bucati),
                 new IngredientEntry(Pate_Ficat_Gaina, 200, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Unt_Sarat, 100, gram),
@@ -667,7 +667,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(Piper)));
         cookbook.add(new Recipe("Ouă umplute cu pate", AtLeastOnce, List.of(
-                new IngredientEntry(Ou_Raw, 7+1, bucati),
+                new IngredientEntry(Ou_Raw, 9+1, bucati),
                 new IngredientEntry(Pate_Ficat_Gaina, 700, gram),
                 new IngredientEntry(Unt_Sarat, 100, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram),  // maioneza
@@ -675,7 +675,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(Piper)));
         cookbook.add(new Recipe("Ouă umplute vegetariene", AtLeastOnce, List.of(
-                new IngredientEntry(Ou_Raw, 7+1, bucati),
+                new IngredientEntry(Ou_Raw, 9+1, bucati),
                 new IngredientEntry(Ciuperci_Raw, 800, gram),
                 new IngredientEntry(Linte_Rosie_Raw, 200, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram), // maioneza
