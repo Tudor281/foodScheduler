@@ -83,7 +83,9 @@ public enum Ingredient {
     Praz_Raw(List.of(9,10,11,12,1,2,3,4), List.of(2, 3, 4), "169246"), // leek
     Salata_Raw(ALL, ALL, "169249"),
     Sare(ALL, ALL, false, "746775"),
-    Smantana(ALL, ALL, "171257"),
+    Smantana_20(ALL, ALL, "171257"),
+    Smantana_10(ALL, ALL, "173443"),
+    Smantana_Frisca(ALL, ALL, "170859"),
     Soia_Flour(ALL, ALL, "174275"),
     Sos_Carbonara(ALL, ALL, "378386"),
     Sos_Pesto_Genovese(ALL, ALL, "1972571"),
@@ -105,6 +107,7 @@ public enum Ingredient {
     Usturoi_Raw(ALL, ALL, "169230"),
     Varza_Raw(List.of(4,5,6,7,8,9,10,11,12,1), ALL, "169975"),
     VarzaMurata(ALL, ALL, "2710075"),
+    Visine_Frozen(ALL, ALL, "171718"),
     Vinete_Raw(List.of(5,6,7,8,9,10), ALL, "169228"), // vinetele coapte ies jumate din vinetele crude
     Zahar(ALL, List.of(), "169655"),
     Zucchini_Raw(List.of(6,7,8,9), ALL, "169291"),

@@ -77,7 +77,7 @@ public class TudorCookBook {
                 new IngredientEntry(Morcov_Raw, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Bors, 500, gram),
@@ -175,7 +175,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
                 new IngredientEntry(Suc_Rosii_Bulion, 100, gram),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Bors, 500, gram),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
@@ -193,7 +193,7 @@ public class TudorCookBook {
                 F1, List.of(Marar, Leustean, Piper)));
         cookbook.add(new Recipe("Ciorbă de ghebe cu smântână", AtLeastOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1400, gram),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Morcov_Raw, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
@@ -212,7 +212,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Masline, 1, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
-                new IngredientEntry(Smantana, 150, gram),
+                new IngredientEntry(Smantana_10, 150, gram),
                 new IngredientEntry(Bors, 500, gram),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
@@ -275,7 +275,7 @@ public class TudorCookBook {
                 new IngredientEntry(Pastarnac_Raw, 1, bucati),
                 new IngredientEntry(Radacina_Patrunjel, 1, bucati),
                 new IngredientEntry(Telina_Raw, 150, gram),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
@@ -284,7 +284,7 @@ public class TudorCookBook {
                 new IngredientEntry(Salata_Raw, 1, bucati),
                 new IngredientEntry(Ou_Raw, 7, bucati),
                 new IngredientEntry(Bors, 500, gram),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Morcov_Raw, 1, bucati),
                 new IngredientEntry(Orez_Raw, 50, gram),
@@ -294,7 +294,7 @@ public class TudorCookBook {
                 F1, List.of()));
         cookbook.add(new Recipe("Ciorbă rădăuțeană", Once, List.of(
                 new IngredientEntry(Carne_Pui_Picioare_Raw, 500, gram),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Ou_Raw, 4, bucati),
                 new IngredientEntry(Pastarnac_Raw, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
@@ -365,7 +365,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Gratin de cartofi cu broccoli și brânză", Once, List.of(
                 new IngredientEntry(Cartofi_Raw, 1500, gram),
                 new IngredientEntry(Broccoli_Raw, 1, bucati),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Branza_Gorgonzola, 200, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Usturoi_Raw, 3, bucati),
@@ -378,7 +378,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Gratin de cartofi cu roșii și brânză", Once, List.of(
                 new IngredientEntry(Cartofi_Raw, 1500, gram),
                 new IngredientEntry(Rosii, 600, gram),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Branza_Mozzarella, 300, gram),
                 new IngredientEntry(Sare, 2, lingurite)),
                 F2, List.of(Busuioc, Piper)));
@@ -465,7 +465,7 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi_Raw, 700, gram),
                 new IngredientEntry(Morcov_Raw, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Dafin, Marar, Piper)));
@@ -897,7 +897,7 @@ public class TudorCookBook {
                 new IngredientEntry(Cartofi_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Usturoi_Raw, 3, bucati),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Piper)));
@@ -970,7 +970,7 @@ public class TudorCookBook {
                 new IngredientEntry(Pastarnac_Raw, 3, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Praz_Raw, 3, bucati),
-                new IngredientEntry(Smantana, 600, gram),
+                new IngredientEntry(Smantana_10, 600, gram),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F1, List.of(Piper)));
@@ -1144,6 +1144,18 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, gram),
                 new IngredientEntry(Paine, 2 * 5, bucati)),
                 Rece, List.of(SucLamaie, Mustar)));
+        cookbook.add(new Recipe("Clătite cu vișine moldovenești", Once, List.of(
+                new IngredientEntry(Faina_Grau_65, 350, gram),
+                new IngredientEntry(Ou_Raw, 3, bucati),
+                new IngredientEntry(Unt_Sarat, 50, gram),
+                new IngredientEntry(Lapte, 500, gram),
+                new IngredientEntry(Sare, 1, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 4, linguri), // care se iau de pe tigaie la prăjeală
+                new IngredientEntry(Visine_Frozen, 500, gram),
+                new IngredientEntry(Zahar, 50, gram),
+                new IngredientEntry(Smantana_Frisca, 500, gram),
+                new IngredientEntry(Smantana_10, 300, gram)),
+                Desert, List.of()));
 
         // Fast Food
         cookbook.add(new Recipe("Mămăligă", AtLeastOnce, List.of(
@@ -1182,14 +1194,14 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Ciuperci cu smântână și usturoi", AtMostOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1000, gram),
                 new IngredientEntry(Unt_Sarat, 50, gram),
-                new IngredientEntry(Smantana, 300, gram),
+                new IngredientEntry(Smantana_10, 300, gram),
                 new IngredientEntry(Usturoi_Raw, 4, bucati),
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 2, bucati)),
                 FastFood, List.of(Patrunjel, Piper)));
         cookbook.add(new Recipe("Spanac cu smântână", AtLeastOnce, List.of(
                 new IngredientEntry(Spanac_Raw, 500, gram),
-                new IngredientEntry(Smantana, 200, gram),
+                new IngredientEntry(Smantana_10, 200, gram),
                 new IngredientEntry(Lapte, 120, gram),
                 new IngredientEntry(Usturoi_Raw, 4, bucati),
                 new IngredientEntry(Sare, 1, lingurite),
