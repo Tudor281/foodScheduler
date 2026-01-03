@@ -1217,7 +1217,7 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Șnițel de soia", AtLeastOnce, List.of(
                 new IngredientEntry(Soia_Flour, 100, gram),
                 new IngredientEntry(Ou_Raw, 3, bucati),
-                new IngredientEntry(Usturoi_Raw, 5, bucati),
+                new IngredientEntry(Usturoi_Raw, 10, bucati),
                 new IngredientEntry(Cartofi_Raw, 800, gram),
                 new IngredientEntry(Lapte, 50, gram),
                 new IngredientEntry(Unt_Sarat, 25, gram),
