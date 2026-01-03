@@ -444,8 +444,6 @@ public class TudorCookBook {
                 new IngredientEntry(Paste_Lasagna, 500, gram),
                 new IngredientEntry(Branza_Mozzarella, 400, gram),
                 new IngredientEntry(Branza_Grattugiato, 100, gram),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri),
-                new IngredientEntry(Ulei_Rapita, 2, linguri),
                 new IngredientEntry(Usturoi_Raw, 2, bucati),
                 new IngredientEntry(Unt_Sarat, 100, gram),
                 new IngredientEntry(Faina_Grau_65, 75, gram),
@@ -1218,6 +1216,7 @@ public class TudorCookBook {
                 FastFood, List.of()));
         cookbook.add(new Recipe("Șnițel de soia", AtLeastOnce, List.of(
                 new IngredientEntry(Soia_Flour, 100, gram),
+                new IngredientEntry(Ou_Raw, 3, bucati),
                 new IngredientEntry(Usturoi_Raw, 5, bucati),
                 new IngredientEntry(Cartofi_Raw, 800, gram),
                 new IngredientEntry(Lapte, 50, gram),
