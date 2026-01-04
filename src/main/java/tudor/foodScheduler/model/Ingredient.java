@@ -25,6 +25,7 @@ public enum Ingredient {
     Branza_Mozzarella(ALL, ALL, "329370"),
     Branza_Telemea(ALL, ALL, "173420"),
     Broccoli_Raw(List.of(11), ALL, "747447"),
+    Broccoli_Frozen(ALL, ALL, "169970"),
     Carne_Pui_Crenvurst(ALL, ALL, "171624"), // frankfurter // has some nutrients, but not Vitamin A
     Carne_Pui_Picioare_Raw(ALL,ALL, "331897"),
     Carne_Pui_Piept_Raw(ALL, ALL, "171077"),
@@ -42,6 +43,7 @@ public enum Ingredient {
     Ceapa_Verde_Raw(ALL, ALL, "170005"), // interesting, mature onion has no vitamin A, a scallion does have 50ug, little but still
     Ciuperci_Raw(ALL, ALL, "169251"),
     Conopida_Raw(List.of(4,5,6,7,8,9,10,11), ALL, "169986"),
+    Conopida_Frozen(ALL, ALL, "170398"),
     DovleacPlacintar_Raw(List.of(9,10,11,12), List.of(1,2,3,4,5), "169295"), // Pe 8 Februarie n-am mai găsit nici în Carrefour nici Auchan
     Dovlecei_Raw(List.of(5,6,7,8,9,10), List.of(11,12,2,3,4), "169291"),
     Faina_Grau_65(ALL, List.of(), "169761"),
@@ -141,6 +143,7 @@ public enum Ingredient {
     static { // akas
         aka(Ardei_Rosu_Raw, Ardei_Verde_Raw);
         aka(Branza_CottageFullFat, Branza_Fagaras, Branza_Feta, Branza_Grattugiato, Branza_Gorgonzola, Branza_Mascarpone, Branza_Mozzarella, Branza_Telemea);
+        aka(Broccoli_Raw, Broccoli_Frozen);
         aka(Carne_Pui_Piept_Raw, Carne_Pui_Tocata_Raw, Carne_Pui_Ficat_Raw, Carne_Vita_Chuck_Roast, Carne_Vita_Tocata_Raw);
         aka(Ceapa_Alba_Raw, Ceapa_Verde_Raw, Ceapa_Rosie_Raw, Ceapa_Galbena_Raw);
         aka(Dovlecei_Raw, Zucchini_Raw);
@@ -150,6 +153,7 @@ public enum Ingredient {
         aka(PastaiCongelate_Raw, PastaiFresh_Raw);
         aka(Fidea, Paste, Paste_Lasagna);
         aka(Peste_Cod_Raw, Peste_Somon_Raw, Peste_Ton_Cooked, Peste_Ton_Canned_In_Oil);
+        aka(Smantana_10, Smantana_20, Smantana_Frisca);
         aka(Ulei_Floarea_Soarelui, Ulei_Masline);
         aka(Unt_Sarat, Unt_Nesarat);
         aka(Varza_Raw, VarzaMurata);

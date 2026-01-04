@@ -10,7 +10,7 @@ public class CsvRun {
 
     public static void main(String[] args) throws Exception {
         String input = """
-                1	1	Minestrone	Mazăre cu soia	Șnițel de soia	Papaya	Ouă umplute cu ficat
+                1	1	Minestrone	Mazăre cu soia	Șnițel de soia	Kaki	Ouă umplute cu ficat
                 1	2	Supă de cartofi și mazăre	Tocănița Malita	Găgău	Mineole	Salată boeuf cu vită
                 1	3	Lohikeitto	Mâncare de cartofi ardelenească	Ciuperci prăjite	Clementine	Ciuperci cu maioneză și usturoi
                 1	4	Supă cremă de spanac	Musaca cu ciuperci	Ciulama de ciuperci	Grapefruit	Fasole bătută
