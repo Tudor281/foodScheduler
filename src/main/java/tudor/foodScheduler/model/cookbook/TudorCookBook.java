@@ -669,27 +669,27 @@ public class TudorCookBook {
         cookbook.add(new Recipe("Ouă umplute cu ficat", AtLeastOnce, List.of(
                 new IngredientEntry(Carne_Pui_Ficat_Raw, 500, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 5, linguri), // prăjeală ficat
-                new IngredientEntry(Ou_Raw, 9+1, bucati),
+                new IngredientEntry(Ou_Raw, 9+1, bucati), // 1 de maioneză
                 new IngredientEntry(Pate_Ficat_Gaina, 200, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
-                new IngredientEntry(Unt_Sarat, 100, gram),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram), // maioneza
+                new IngredientEntry(Unt_Sarat, 50, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram), // maioneza
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(Piper)));
         cookbook.add(new Recipe("Ouă umplute cu pate", AtLeastOnce, List.of(
-                new IngredientEntry(Ou_Raw, 9+1, bucati),
-                new IngredientEntry(Pate_Ficat_Gaina, 700, gram),
-                new IngredientEntry(Unt_Sarat, 100, gram),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram),  // maioneza
+                new IngredientEntry(Ou_Raw, 9+1, bucati), // 1 de maioneză
+                new IngredientEntry(Pate_Ficat_Gaina, 500, gram),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram),  // maioneza
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(Piper)));
         cookbook.add(new Recipe("Ouă umplute vegetariene", AtLeastOnce, List.of(
-                new IngredientEntry(Ou_Raw, 9+1, bucati),
+                new IngredientEntry(Ou_Raw, 9+1, bucati), // 1 de maioneză
+                new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Ciuperci_Raw, 800, gram),
                 new IngredientEntry(Linte_Rosie_Raw, 200, gram),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram), // maioneza
+                new IngredientEntry(Ulei_Floarea_Soarelui, 100, gram), // maioneza
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(Piper)));
