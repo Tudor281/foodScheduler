@@ -27,19 +27,19 @@ public class RowNutrientsSummer {
         for (Map.Entry<Character, NutrientsSummer> entry : nutrientsPerChannel.entrySet()) {
             result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().kCalProtein + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().kCalProteinNB +";0))";
         }
-        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
+        result += ")/("+((char) ('A' + (start)))+row+"*7)";
 
         result += "\t=(";
         for (Map.Entry<Character, NutrientsSummer> entry : nutrientsPerChannel.entrySet()) {
             result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().kCalFat + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().kCalFatNB +";0))";
         }
-        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
+        result += ")/("+((char) ('A' + (start)))+row+"*7)";
 
         result += "\t=(";
         for (Map.Entry<Character, NutrientsSummer> entry : nutrientsPerChannel.entrySet()) {
             result += "+IF("+entry.getKey()+row+"=\"B\";"+entry.getValue().kCalCarbs + ";IF("+entry.getKey() + row + "=\"Y\";"+entry.getValue().kCalCarbsNB +";0))";
         }
-        result += ")/("+((char) ('A' + (start - 1)))+row+"*7)";
+        result += ")/("+((char) ('A' + (start)))+row+"*7)";
 
         result += "\t=(";
         for (Map.Entry<Character, NutrientsSummer> entry : nutrientsPerChannel.entrySet()) {

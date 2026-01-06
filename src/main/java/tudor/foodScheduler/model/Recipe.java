@@ -121,6 +121,16 @@ public class Recipe {
         return false;
     }
 
+    public int getNumberOfEggs() {
+        int count = 0;
+        for (IngredientEntry ingredientEntry : ingredients) {
+           if (ingredientEntry.ingredient == Ingredient.Ou_Raw && ingredientEntry.unitOfMeasure == UnitOfMeasure.bucati) {
+               count += ingredientEntry.quantity;
+           }
+        }
+        return count;
+    }
+
     public String toString() {
         return name;
     }

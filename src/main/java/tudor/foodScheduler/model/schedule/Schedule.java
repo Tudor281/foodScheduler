@@ -4,6 +4,7 @@ import tudor.foodScheduler.InitialRun;
 import tudor.foodScheduler.model.cookbook.Cookbook;
 import tudor.foodScheduler.model.nutrients.RowNutrientsSummer;
 import tudor.foodScheduler.utils.Counter;
+import tudor.foodScheduler.utils.EggsCalculator;
 import tudor.foodScheduler.utils.Stats;
 import tudor.foodScheduler.model.*;
 
@@ -95,7 +96,7 @@ public class Schedule {
         }
 
         // averages
-        for (int i=0; i<12; i++) {
+        for (int i=0; i<13; i++) {
             result += "\t";
         }
         for (int i=0; i<29; i++) {
@@ -113,7 +114,7 @@ public class Schedule {
             result += "A";
             column -= 26;
         }
-        result += (char) ('M' + (column));
+        result += (char) ('N' + (column));
         return result;
     }
 
@@ -123,17 +124,34 @@ public class Schedule {
         int startingColumn = 2+1;
         //2
         HashSet<Integer> breadIngredients = new HashSet<>();
+        int eggsCount = 0;
         for (int i = 0; i< cookbook.nrChannels; i++) {
             Recipe recipe = getRecipe(month, week, i);
+            eggsCount += recipe.getNumberOfEggs();
             result += '\t' + (recipe.getName());
             nutrientSummer.sum(recipe, i+startingColumn+cookbook.nrChannels);
             if (recipe.gotAnyIngredients(Ingredient.Paine)) breadIngredients.add(i);
         }
+
+        // eggs
+        int extraEggs = EggsCalculator.getExtraEggs(eggsCount);
+        if (extraEggs>0) {
+            Recipe recipe = new Recipe(
+                    "Extra eggs", null, List.of(
+                    new IngredientEntry(Ingredient.Ou_Raw, extraEggs, UnitOfMeasure.bucati),
+                    new IngredientEntry(Ingredient.Paine, extraEggs, UnitOfMeasure.bucati)),
+                    null, null);
+            nutrientSummer.sum(recipe, cookbook.nrChannels * 2 + startingColumn);
+            breadIngredients.add(cookbook.nrChannels);
+        }
+
         for (int i=0; i<cookbook.nrChannels; i++) {
             result += '\t' + (breadIngredients.contains(i) ? "B" : "Y");
         }
+        result += '\t' + "B";
+
         result += '\t' + nutrientSummer.toString(row,startingColumn+cookbook.nrChannels*2);
-        result += '\t' + buildComments(month, week) + '\n';
+        result += '\t' + comments.get(month).get(week) + (extraEggs > 0 ? (extraEggs + " extra eggs") : "") + '\n';
 
         return result;
     }
@@ -172,10 +190,6 @@ public class Schedule {
         ScheduleEntry entry = recipes.get(month).get(week).get(channel);
         if (entry == null) return null;
         return entry.recipe;
-    }
-
-    String buildComments(int month, int week) {
-        return comments.get(month).get(week);
     }
 
     public List<ScheduleSlot> getDomesticSlots(Recipe recipe) {
