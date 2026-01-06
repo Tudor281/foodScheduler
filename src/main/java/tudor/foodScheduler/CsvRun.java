@@ -11,9 +11,9 @@ public class CsvRun {
     public static void main(String[] args) throws Exception {
         String input = """
                 1	1	Minestrone	Mazăre cu soia	Șnițel de soia	Kaki	Ouă umplute cu ficat
-                1	2	Supă de cartofi și mazăre	Tocănița Malita	Găgău	Mineole	Salată boeuf cu vită
+                1	2	Supă de conopidă	Tocănița Malita	Găgău	Mineole	Salată boeuf cu vită
                 1	3	Lohikeitto	Mâncare de cartofi ardelenească	Ciuperci prăjite	Clementine	Ciuperci cu maioneză și usturoi
-                1	4	Supă cremă de spanac	Musaca cu ciuperci	Ciulama de ciuperci	Grapefruit	Fasole bătută
+                1	4	Supă cremă de spanac	Musaca cu ciuperci	Ciulama de ciuperci	Grapefruit	Clătite cu vișine moldovenești
                 2	1	Supă cremă de linte roșie	Pilaf - Simplu	Spanac cu smântână	Pere	Țelină cu morcov
                 2	2	Nakkikeitto	Tocăniță de ardei	Ciulama de ciuperci	Mere	Plăcintă cu mere - Foietaj
                 2	3	Supă cremă de mazăre	Pilaf cu dovlecei	Facebook Salad	Pepene Galben	Ciuperci cu maioneză și usturoi
@@ -28,7 +28,7 @@ public class CsvRun {
                 4	3	Supă cremă de mazăre	Tocăniță de praz	Găgău	Pepene Galben	Salată de pui
                 4	4	Supă cremă de conopidă	Pilaf cu dovlecei	Cobb Salad	Portocale (1.5Kg)	Humus cu pesto
                 5	1	Supă de roșii	Mâncare de cartofi moldovenească	Găgău	Rodii	American Pancakes
-                5	2	Supă de conopidă	Gulaș	Cobb Salad	Banane	Korozott
+                5	2	Supă de cartofi și mazăre	Gulaș	Cobb Salad	Banane	Korozott
                 5	3	Ciorbă de salată cu scrob	Melanzane alla parmigiano	Omletă cremă	Pere	Fasole pasată cu ceapă
                 5	4	Supă de conopidă	Fasole prăjită	Omletă normală	Kiwi	American Potato Salad
                 5	5	Supă cremă de conopidă	Lasagna bolognese	Cobb Salad	Nucă	Fasole pasată cu ceapă
