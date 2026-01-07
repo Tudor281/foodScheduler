@@ -1145,7 +1145,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Coriandru, Curry, Piper)));
-        cookbook.add(new Recipe("Supă de conopidă", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Supă de conopidă ardelenească", AtLeastOnce, List.of(
                 new IngredientEntry(Conopida_Raw, 1, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Faina_Grau_65, 2, linguri),
