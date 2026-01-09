@@ -110,7 +110,7 @@ public class Schedule {
 
     private String toExcelColumn(int column) {
         String result = "";
-        if (column > 13) {
+        if (column > 12) {
             result += "A";
             column -= 26;
         }

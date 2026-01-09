@@ -749,7 +749,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ou_Raw, 9+1, bucati), // 1 de maioneză
                 new IngredientEntry(Pate_Ficat_Gaina, 200, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
-                new IngredientEntry(Unt_Sarat, 50, gram),
+                new IngredientEntry(Unt_Sarat, 100, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 50, gram), // maioneza
                 new IngredientEntry(Ulei_Rapita, 50, gram),
                 new IngredientEntry(Sare, 1, lingurite),

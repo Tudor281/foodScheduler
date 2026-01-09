@@ -11,7 +11,7 @@ public class CsvRun {
     public static void main(String[] args) throws Exception {
         String input = """
                 1	1	Minestrone	Mazăre cu soia	Șnițel de soia	Kaki	Ouă umplute cu ficat
-                1	2	Supă de conopidă	Tocănița Malita	Găgău	Mineole	Salată boeuf cu vită
+                1	2	Supă de conopidă ardelenească	Tocănița Malita	Găgău	Mineole	Salată boeuf cu vită
                 1	3	Lohikeitto	Mâncare de cartofi ardelenească	Ciuperci prăjite	Clementine	Ciuperci cu maioneză și usturoi
                 1	4	Supă cremă de spanac	Musaca cu ciuperci	Ciulama de ciuperci	Grapefruit	Clătite cu vișine moldovenești
                 2	1	Supă cremă de linte roșie	Pilaf - Simplu	Spanac cu smântână	Pere	Țelină cu morcov
@@ -30,7 +30,7 @@ public class CsvRun {
                 5	1	Supă de roșii	Mâncare de cartofi moldovenească	Găgău	Rodii	American Pancakes
                 5	2	Supă de cartofi și mazăre	Gulaș	Cobb Salad	Banane	Korozott
                 5	3	Ciorbă de salată cu scrob	Melanzane alla parmigiano	Omletă cremă	Pere	Fasole pasată cu ceapă
-                5	4	Supă de conopidă	Fasole prăjită	Omletă normală	Kiwi	American Potato Salad
+                5	4	Supă de conopidă ardelenească	Fasole prăjită	Omletă normală	Kiwi	American Potato Salad
                 5	5	Supă cremă de conopidă	Lasagna bolognese	Cobb Salad	Nucă	Fasole pasată cu ceapă
                 6	1	Ciorbă de năut cu afumătură	Pilaf cu dovlecei	Facebook Salad	Capșuni	Salată de vinete cu ceapă
                 6	2	Ciorbă rădăuțeană	Varză călită	Salată cu ton	Piersici	Tzatziki
