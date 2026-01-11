@@ -914,14 +914,14 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 6, bucati)),
                 Rece, List.of(Mustar)));
         cookbook.add(new Recipe("Salată boeuf cu vită", Once, List.of(
-                new IngredientEntry(Cartofi_Raw, 450, gram),
-                new IngredientEntry(Mazare_Raw, 150, gram),
-                new IngredientEntry(Morcov_Raw, 2, bucati),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 150, gram), // maioneza
-                new IngredientEntry(Ulei_Rapita, 150, gram),
-                new IngredientEntry(Ou_Raw, 1, bucati),
-                new IngredientEntry(Carne_Vita_Chuck_Roast, 200, gram),
-                new IngredientEntry(Castraveti_Murati, 200, gram),
+                new IngredientEntry(Cartofi_Raw, 900, gram),
+                new IngredientEntry(Mazare_Raw, 300, gram),
+                new IngredientEntry(Morcov_Raw, 4, bucati),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 200, gram), // maioneza
+                new IngredientEntry(Ulei_Rapita, 200, gram),
+                new IngredientEntry(Ou_Raw, 2, bucati),
+                new IngredientEntry(Carne_Vita_Chuck_Roast, 400, gram),
+                new IngredientEntry(Castraveti_Murati, 400, gram),
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 6, bucati)),
                 Rece, List.of(Mustar)));
