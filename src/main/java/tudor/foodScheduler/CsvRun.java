@@ -13,8 +13,8 @@ public class CsvRun {
                 1	1	Minestrone	Mazăre cu soia	Șnițel de soia	Kaki	Ouă umplute cu ficat
                 1	2	Supă de conopidă ardelenească	Tocănița Malita	Găgău	Mineole	Salată boeuf cu vită
                 1	3	Lohikeitto	Mâncare de cartofi ardelenească	Ciuperci prăjite	Clementine	Ciuperci cu maioneză și usturoi
-                1	4	Supă cremă de spanac	Musaca cu ciuperci	Ciulama de ciuperci	Grapefruit	Clătite cu vișine moldovenești
-                2	1	Supă cremă de linte roșie	Pilaf - Simplu	Spanac cu smântână	Pere	Țelină cu morcov
+                1	4	Supă cremă de spanac	Musaca cu ciuperci	Ciulama de ciuperci	Grapefruit	Ciorbă de fasole - Cu chimen
+                2	1	Supă cremă de linte roșie	Pilaf - Simplu	Spanac cu smântână	Pere	Clătite cu vișine moldovenești
                 2	2	Nakkikeitto	Tocăniță de ardei	Ciulama de ciuperci	Mere	Plăcintă cu mere - Foietaj
                 2	3	Supă cremă de mazăre	Pilaf cu dovlecei	Facebook Salad	Pepene Galben	Ciuperci cu maioneză și usturoi
                 2	4	Ciorbă de perișoare	Varză la Cluj cu soia	Penne quatro formaggi (semi)	Mere	Salată de pui cu legume

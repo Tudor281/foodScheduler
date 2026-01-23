@@ -1277,7 +1277,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Rapita, 300, gram),
                 new IngredientEntry(Ou_Raw, 2, bucati),
                 new IngredientEntry(Sare, 1, lingurite),
-                new IngredientEntry(Paine, 3 * 5, bucati)),
+                new IngredientEntry(Paine, 3 * 6, bucati)),
                 Rece, List.of(Mustar)));
         cookbook.add(new Recipe("Varză călită", Once, List.of(
                 new IngredientEntry(VarzaMurata, 1500, gram),
