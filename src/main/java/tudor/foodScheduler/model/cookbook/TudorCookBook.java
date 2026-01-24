@@ -491,7 +491,17 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte, 1000, gram),
                 new IngredientEntry(Paste_Lasagna, 500, gram),
                 new IngredientEntry(Sare, 2, lingurite)), F2, List.of(VinAlb, Nucsoara)));
-        cookbook.add(new Recipe("Lohikeitto", AtMostOnce, List.of(
+        cookbook.add(new Recipe("Lizz Soup", Disabled, List.of(
+                new IngredientEntry(Praz_Raw, 2, bucati),
+                new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
+                new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
+                new IngredientEntry(Cartofi_Raw, 600, gram),
+                new IngredientEntry(Ulei_Masline, 2, linguri),
+                new IngredientEntry(Smantana_10, 350, gram),
+                new IngredientEntry(Sare, 2, lingurite),
+                new IngredientEntry(Paine, 3 * 7, bucati)),
+                F1, List.of(Piper, Nucsoara)));
+        cookbook.add(new Recipe("Lohikeitto", Once, List.of(
                 new IngredientEntry(Peste_Somon_Raw, 450, gram),
                 new IngredientEntry(Cartofi_Raw, 700, gram),
                 new IngredientEntry(Morcov_Raw, 1, bucati),
