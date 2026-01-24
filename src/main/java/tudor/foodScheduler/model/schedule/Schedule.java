@@ -148,7 +148,7 @@ public class Schedule {
         for (int i=0; i<cookbook.nrChannels; i++) {
             result += '\t' + (breadIngredients.contains(i) ? "B" : "Y");
         }
-        result += '\t' + "B";
+        result += '\t' + (extraEggs>0 ? "B" : "");
 
         result += '\t' + nutrientSummer.toString(row,startingColumn+cookbook.nrChannels*2);
         result += '\t' + comments.get(month).get(week) + (extraEggs > 0 ? (extraEggs + " extra eggs") : "") + '\n';
