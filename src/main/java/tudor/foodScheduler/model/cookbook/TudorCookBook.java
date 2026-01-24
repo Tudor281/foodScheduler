@@ -127,10 +127,10 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Marar, Piper)));
         cookbook.add(new Recipe("Ciorbă de fasole - Cu chimen", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Raw, 800, gram ),
-                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
-                new IngredientEntry(Morcov_Raw, 2, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Fasole_Uscata_Raw, 500, gram ),
+                new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
+                new IngredientEntry(Morcov_Raw, 3, bucati),
+                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
                 new IngredientEntry(Pastarnac_Raw, 1, bucati),
                 new IngredientEntry(Usturoi_Raw, 5, bucati),
                 new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
