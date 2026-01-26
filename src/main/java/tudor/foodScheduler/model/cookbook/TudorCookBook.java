@@ -1616,7 +1616,7 @@ public class TudorCookBook {
                 new IngredientEntry(Cirese, 250, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Clementine", AtLeastOnce, List.of(
                 new IngredientEntry(Clementine, 250, gram)), Fruits, List.of()));
-        cookbook.add(new Recipe("Grapefruit", Once, List.of(
+        cookbook.add(new Recipe("Grapefruit", AtLeastOnce, List.of(
                 new IngredientEntry(Grapefruit, 300, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Kaki", AtLeastOnce, List.of(
                 new IngredientEntry(Kaki, 6, bucati)), Fruits, List.of()));
