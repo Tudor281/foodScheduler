@@ -15,7 +15,7 @@ public class CsvRun {
                 1	3	Lohikeitto	Mâncare de cartofi ardelenească	Ciuperci prăjite	Clementine	Ciuperci cu maioneză și usturoi
                 1	4	Supă cremă de spanac	Musaca cu ciuperci	Ciulama de ciuperci	Grapefruit	Ciorbă de fasole - Cu chimen
                 2	1	Supă cremă de linte roșie	Pilaf - Simplu	Spanac cu smântână	Pere	Clătite cu vișine moldovenești
-                2	2	Nakkikeitto	Tocăniță de ardei	Ciulama de ciuperci	Mere	Plăcintă cu mere - Foietaj
+                2	2	Nakkikeitto	Tocăniță de ardei	Ciulama de ciuperci	Mere	Ciorbă de cartofi cu castraveți murați
                 2	3	Supă cremă de mazăre	Pilaf cu dovlecei	Facebook Salad	Pepene Galben	Ciuperci cu maioneză și usturoi
                 2	4	Ciorbă de perișoare	Varză la Cluj cu soia	Penne quatro formaggi (semi)	Mere	Salată de pui cu legume
                 3	1	Ciorbă de conopidă	Mazăre - Simplu	Spanac cu smântână	Pepene Galben	Ouă umplute vegetariene
