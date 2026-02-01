@@ -803,6 +803,7 @@ public class TudorCookBook {
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
                 new IngredientEntry(Ulei_Rapita, 1, linguri),
                 new IngredientEntry(Ciuperci_Raw, 600, gram),
+                new IngredientEntry(Morcov_Raw, 2, bucati),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Castraveti_Murati, 2 * 7, gram)),
                 F2, List.of(Curcuma), 2));
@@ -1091,16 +1092,16 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F1, List.of(Piper)));
         cookbook.add(new Recipe("Supă cremă de linte roșie", Once, List.of(
-                new IngredientEntry(Linte_Rosie_Raw, 500, gram),
-                new IngredientEntry(Ceapa_Alba_Raw, 3, bucati),
+                new IngredientEntry(Linte_Rosie_Raw, 700, gram),
+                new IngredientEntry(Ceapa_Alba_Raw, 4, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
                 new IngredientEntry(Ulei_Rapita, 1, linguri),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
-                new IngredientEntry(Usturoi_Raw, 8, bucati),
-                new IngredientEntry(Morcov_Raw, 3, bucati),
+                new IngredientEntry(Usturoi_Raw, 10, bucati),
+                new IngredientEntry(Morcov_Raw, 4, bucati),
                 new IngredientEntry(Radacina_Patrunjel, 2, bucati),
                 new IngredientEntry(Telina_Raw, 300, gram),
-                new IngredientEntry(Suc_Rosii_Bulion, 200, gram),
+                new IngredientEntry(Suc_Rosii_Bulion, 250, gram),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Chimen, BoiaDulce, Iuteala)));
@@ -1419,14 +1420,13 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 2, bucati)),
                 FastFood, List.of(Patrunjel, Piper)));
         cookbook.add(new Recipe("Spanac cu smântână", AtLeastOnce, List.of(
-                new IngredientEntry(Spanac_Raw, 500, gram),
+                new IngredientEntry(Spanac_Raw, 100, gram),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
-                new IngredientEntry(Ulei_Rapita, 1, linguri),
-                new IngredientEntry(Smantana_10, 200, gram),
-                new IngredientEntry(Lapte, 120, gram),
-                new IngredientEntry(Usturoi_Raw, 4, bucati),
+                new IngredientEntry(Smantana_10, 140, gram),
+                new IngredientEntry(Lapte, 25, gram),
+                new IngredientEntry(Usturoi_Raw, 1, bucati),
                 new IngredientEntry(Sare, 1, lingurite),
-                new IngredientEntry(Paine, 3 * 3, bucati)),
+                new IngredientEntry(Paine, 3, bucati)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Mâncărică de păstăi", AtLeastOnce, List.of(
                 new IngredientEntry(PastaiCongelate_Raw, 700, gram),
