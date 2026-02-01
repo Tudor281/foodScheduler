@@ -1357,17 +1357,17 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, gram),
                 new IngredientEntry(Paine, 2 * 5, bucati)),
                 Rece, List.of(SucLamaie, Mustar)));
-        cookbook.add(new Recipe("Clătite cu vișine moldovenești", Once, List.of(
+        cookbook.add(new Recipe("Cușma lui Guguță", Once, List.of(
                 new IngredientEntry(Faina_Grau_65, 350, gram),
                 new IngredientEntry(Ou_Raw, 3, bucati),
                 new IngredientEntry(Unt_Sarat, 50, gram),
                 new IngredientEntry(Lapte, 500, gram),
                 new IngredientEntry(Sare, 1, gram),
-                new IngredientEntry(Ulei_Floarea_Soarelui, 5, linguri), // care se iau de pe tigaie la prăjeală
-                new IngredientEntry(Visine_Frozen, 500, gram),
-                new IngredientEntry(Zahar, 50, gram),
-                new IngredientEntry(Smantana_Frisca, 500, gram),
-                new IngredientEntry(Smantana_10, 300, gram)),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 7, linguri), // care se iau de pe tigaie la prăjeală
+                new IngredientEntry(Visine_Frozen, 1000, gram),
+                new IngredientEntry(Zahar, 100, gram),
+                new IngredientEntry(Smantana_Frisca, 400, gram),
+                new IngredientEntry(Smantana_20, 280, gram)),
                 Desert, List.of()));
 
         // Fast Food
