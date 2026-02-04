@@ -1357,7 +1357,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, gram),
                 new IngredientEntry(Paine, 2 * 5, bucati)),
                 Rece, List.of(SucLamaie, Mustar)));
-        cookbook.add(new Recipe("Cușma lui Guguță", Once, List.of(
+        cookbook.add(new Recipe("Cușma lui Guguță", Disabled, List.of(
                 new IngredientEntry(Faina_Grau_65, 350, gram),
                 new IngredientEntry(Ou_Raw, 3, bucati),
                 new IngredientEntry(Unt_Sarat, 50, gram),
