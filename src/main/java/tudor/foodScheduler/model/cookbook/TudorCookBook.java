@@ -1205,7 +1205,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Piper, BoiaDulce, Cimbru, Patrunjel, Leustean, Otet, SucLamaie)));
-        cookbook.add(new Recipe("Tiramisu", AtLeastOnce, List.of(
+        cookbook.add(new Recipe("Tiramisu", Disabled, List.of(
                 new IngredientEntry(Piscoturi, 200, gram),
                 new IngredientEntry(Branza_Mascarpone, 500, gram),
                 new IngredientEntry(Ou_Raw, 4, bucati),
