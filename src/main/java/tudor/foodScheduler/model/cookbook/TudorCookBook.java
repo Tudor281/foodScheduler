@@ -1397,16 +1397,16 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite)),
                 FastFood, List.of()));
         cookbook.add(new Recipe("Ciulama de ciuperci", AtLeastOnce, List.of(
-                new IngredientEntry(Ciuperci_Raw, 1000, gram),
-                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
+                new IngredientEntry(Ciuperci_Raw, 500, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
                 new IngredientEntry(Ulei_Rapita, 1, linguri),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
-                new IngredientEntry(Unt_Sarat, 50, gram),
-                new IngredientEntry(Faina_Grau_65, 2, linguri),
-                new IngredientEntry(Lapte, 600, gram),
+                new IngredientEntry(Unt_Sarat, 25, gram),
+                new IngredientEntry(Faina_Grau_65, 1, linguri),
+                new IngredientEntry(Lapte, 300, gram),
                 new IngredientEntry(Sare, 1, lingurite),
-                new IngredientEntry(Paine, 3 * 2, bucati)),
+                new IngredientEntry(Paine, 3, bucati)),
                 FastFood, List.of(Patrunjel, Marar, Piper)));
         cookbook.add(new Recipe("Ciuperci cu smântână și usturoi", AtMostOnce, List.of(
                 new IngredientEntry(Ciuperci_Raw, 1000, gram),
