@@ -1509,6 +1509,13 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Castraveti_Murati, 2, bucati)),
                 FastFood, List.of()));
+        cookbook.add(new Recipe("Omletă cu ciuperci", AtLeastOnce, List.of(
+                new IngredientEntry(Ou_Raw, 3, bucati),
+                new IngredientEntry(Ulei_Floarea_Soarelui, 2, linguri), // prăjeală
+                new IngredientEntry(Ciuperci_Raw, 300, gram),
+                new IngredientEntry(Castraveti_Murati, 2, bucati),
+                new IngredientEntry(Paine, 3, bucati)),
+                FastFood, List.of()));
         cookbook.add(new Recipe("Roșii cu brânză", Once, List.of(
                 new IngredientEntry(Rosii, 500, gram),
                 new IngredientEntry(Branza_Telemea, 200, gram)),
