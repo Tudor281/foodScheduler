@@ -823,7 +823,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Marar, Patrunjel)));
         cookbook.add(new Recipe("Pilaf cu dovlecei", AtLeastOnce, List.of(
-                new IngredientEntry(Orez_Raw, 200, gram),
+                new IngredientEntry(Orez_Raw, 300, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
