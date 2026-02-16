@@ -115,6 +115,7 @@ public enum Ingredient {
     Zucchini_Raw(List.of(6,7,8,9), ALL, "169291"),
 
     // fructe
+    Afine(ALL, ALL, "171711"),
     Banane(List.of(), ALL, "173944"),
     Caise(List.of(7), List.of(), "171697"),
     Capsuni(List.of(6,7,8,9), ALL, "167762"),
@@ -137,7 +138,8 @@ public enum Ingredient {
     Prune(List.of(8,9,10,11), List.of(12, 1), "169949"),
     Rodii(List.of(), ALL, "169134"),
     Struguri_Negri(List.of(9,10,11), List.of(), "174683"),
-    Struguri_Albi(List.of(9,10,11), List.of(), "174683")
+    Struguri_Albi(List.of(9,10,11), List.of(), "174683"),
+    Zmeura(ALL, ALL, "167755")
     ;
 
     static { // akas

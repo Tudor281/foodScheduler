@@ -1625,6 +1625,8 @@ public class TudorCookBook {
                 FastFood, List.of()));
 
         // Fruits
+        cookbook.add(new Recipe("Afine + ce vrei", Once, List.of(
+                new IngredientEntry(Afine, 500, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Banane", AtLeastOnce, List.of(
                 new IngredientEntry(Banane, 1000, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Caise", AtLeastOnce, List.of(
@@ -1671,7 +1673,8 @@ public class TudorCookBook {
                 new IngredientEntry(Struguri_Albi, 250, gram)), Fruits, List.of()));
         cookbook.add(new Recipe("Struguri Negri", Once, List.of(
                 new IngredientEntry(Struguri_Negri, 250, gram)), Fruits, List.of()));
-
+        cookbook.add(new Recipe("Zmeură + ce vrei", Once, List.of(
+                new IngredientEntry(Zmeura, 500, gram)), Fruits, List.of()));
         return cookbook;
     }
 }
