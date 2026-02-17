@@ -69,7 +69,7 @@ public class StatsRecipes {
     }
 
     private float processPerRDARatio(float micronutrient, float rda) {
-        return micronutrient / rda;
+        return micronutrient;
     }
 
     @Test

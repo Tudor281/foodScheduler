@@ -191,7 +191,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Patrunjel, Marar, Leustean, Piper)));
-        cookbook.add(new Recipe("Ciorbă de linte cu smântână", Once, List.of(
+        cookbook.add(new Recipe("Ciorbă de linte cu smântână", AtLeastOnce, List.of(
                 new IngredientEntry(Linte_Galbena_Raw, 300, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
@@ -504,10 +504,21 @@ public class TudorCookBook {
                 new IngredientEntry(Lapte, 1000, gram),
                 new IngredientEntry(Paste_Lasagna, 500, gram),
                 new IngredientEntry(Sare, 2, lingurite)), F2, List.of(VinAlb, Nucsoara)));
-        cookbook.add(new Recipe("Lizz Soup", Disabled, List.of(
+        cookbook.add(new Recipe("Lizz Soup", AtMostOnce, List.of(
                 new IngredientEntry(Praz_Raw, 2, bucati),
                 new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
                 new IngredientEntry(Carne_Vita_Tocata_Raw, 500, gram),
+                new IngredientEntry(Cartofi_Raw, 600, gram),
+                new IngredientEntry(Ulei_Masline, 2, linguri),
+                new IngredientEntry(Smantana_10, 350, gram),
+                new IngredientEntry(Sare, 2, lingurite),
+                new IngredientEntry(Paine, 3 * 7, bucati)),
+                F1, List.of(Piper, Nucsoara)));
+        cookbook.add(new Recipe("Lizz Soup Vegan", AtMostOnce, List.of(
+                new IngredientEntry(Praz_Raw, 2, bucati),
+                new IngredientEntry(Ceapa_Galbena_Raw, 1, bucati),
+                new IngredientEntry(Soia_Flour, 100, gram),
+                new IngredientEntry(Linte_Rosie_Raw, 300, gram),
                 new IngredientEntry(Cartofi_Raw, 600, gram),
                 new IngredientEntry(Ulei_Masline, 2, linguri),
                 new IngredientEntry(Smantana_10, 350, gram),
