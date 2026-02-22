@@ -581,7 +581,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Marar, Iuteala)));
         cookbook.add(new Recipe("Fasole prăjită", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Raw, 1800, gram),
+                new IngredientEntry(Fasole_Uscata_Raw, 900, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
@@ -593,7 +593,7 @@ public class TudorCookBook {
                 new IngredientEntry(Castraveti_Murati, 2 * 7, bucati)),
                 F2, List.of(Piper, Marar)));
         cookbook.add(new Recipe("Fasole prăjită - Fuchs remix", Once, List.of(
-                new IngredientEntry(Fasole_Uscata_Raw, 1800, gram),
+                new IngredientEntry(Fasole_Uscata_Raw, 900, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
@@ -605,7 +605,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Marar, FuchsFasole)));
         cookbook.add(new Recipe("Iahnie de fasole", AtLeastOnce, List.of(
-                new IngredientEntry(Fasole_Uscata_Raw, 1600, gram),
+                new IngredientEntry(Fasole_Uscata_Raw, 900, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
@@ -807,6 +807,17 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 1, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 Rece, List.of(Piper)));
+        cookbook.add(new Recipe("Papricaș de năut", AtLeastOnce, List.of(
+                new IngredientEntry(Naut_Raw, 700, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 4, bucati),
+                new IngredientEntry(Sare, 2, lingurite),
+                new IngredientEntry(Usturoi_Raw, 4, bucati),
+                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Rosii, 3, bucati),
+                new IngredientEntry(Faina_Grau_65, 3, linguri),
+                new IngredientEntry(Smantana_10, 350, gram),
+                new IngredientEntry(Lapte, 700, gram)),
+                F2, List.of(Patrunjel, BoiaDulce)));
         cookbook.add(new Recipe("Pilaf cu ciuperci", Once, List.of(
                 new IngredientEntry(Orez_Raw, 400, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 4, bucati),
