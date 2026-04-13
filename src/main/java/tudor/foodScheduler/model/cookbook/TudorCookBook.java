@@ -619,7 +619,7 @@ public class TudorCookBook {
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Dafin)));
         cookbook.add(new Recipe("Mazăre cu pui", AtLeastOnce, List.of(
-                new IngredientEntry(Mazare_Raw, 1000, gram),
+                new IngredientEntry(Mazare_Raw, 1500, gram),
                 new IngredientEntry(Carne_Pui_Piept_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
