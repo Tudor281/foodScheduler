@@ -427,7 +427,7 @@ public class TudorCookBook {
                 new IngredientEntry(Gris, 24, linguri),
                 new IngredientEntry(Zahar, 400, gram)),
                 Desert, List.of()));
-        cookbook.add(new Recipe("Guacamole", Once, List.of(
+        cookbook.add(new Recipe("Guacamole - Savori Urbane", Once, List.of(
                 new IngredientEntry(Avocado_Hass_Raw, 2, bucati),
                 new IngredientEntry(Rosii, 1, bucati),
                 new IngredientEntry(Ceapa_Rosie_Raw, 1, bucati),
@@ -435,6 +435,14 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, gram),
                 new IngredientEntry(Paine, 2 * 2, bucati)),
                 Aperitiv, List.of(SucLamaie, Iuteala, Piper, Patrunjel)));
+        cookbook.add(new Recipe("Guacamole - Mama", Once, List.of(
+                new IngredientEntry(Avocado_Hass_Raw, 1, bucati),
+                new IngredientEntry(Ceapa_Rosie_Raw, 1, bucati),
+                new IngredientEntry(Usturoi_Raw, 3, bucati),
+                new IngredientEntry(Sare, 1, gram),
+                new IngredientEntry(Ulei_Masline, 1, linguri),
+                new IngredientEntry(Paine, 3, bucati)),
+                Aperitiv, List.of(SucLamaie)));
         cookbook.add(new Recipe("Gulaș", AtLeastOnce, List.of(
                 new IngredientEntry(Carne_Vita_Chuck_Roast, 600, gram),
                 new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
