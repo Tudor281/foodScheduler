@@ -354,7 +354,7 @@ public class TudorCookBook {
                 new IngredientEntry(Zahar, 50, gram),
                 new IngredientEntry(Ou_Raw, 2, bucati)),
                 Desert, List.of())); // TODO
-        cookbook.add(new Recipe("Cremă de avocado cu brânză și usturoi", Disabled, List.of(
+        cookbook.add(new Recipe("Cremă de avocado cu brânză și usturoi", Once, List.of(
                 new IngredientEntry(Avocado_Hass_Raw, 1, bucati),
                 new IngredientEntry(Branza_CottageFullFat, 150, gram),
                 new IngredientEntry(Usturoi_Raw, 2, bucati),
