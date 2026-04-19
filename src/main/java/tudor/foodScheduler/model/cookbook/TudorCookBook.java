@@ -838,17 +838,17 @@ public class TudorCookBook {
                 new IngredientEntry(Castraveti_Murati, 2 * 7, gram)),
                 F2, List.of(Curcuma), 2));
         cookbook.add(new Recipe("Pilaf cu ciuperci și alte legume", AtLeastOnce, List.of(
-                new IngredientEntry(Orez_Raw, 200, gram),
-                new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
+                new IngredientEntry(Orez_Raw, 300, gram),
+                new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
                 new IngredientEntry(Ulei_Masline, 1, linguri),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
                 new IngredientEntry(Ulei_Rapita, 1, linguri),
-                new IngredientEntry(Morcov_Raw, 1, bucati),
-                new IngredientEntry(Ciuperci_Raw, 400, gram),
+                new IngredientEntry(Morcov_Raw, 2, bucati),
+                new IngredientEntry(Ciuperci_Raw, 800, gram),
                 new IngredientEntry(Pastarnac_Raw, 1, bucati),
                 new IngredientEntry(Telina_Raw, 150, gram),
-                new IngredientEntry(Dovlecei_Raw, 1, bucati),
-                new IngredientEntry(Ardei_Rosu_Raw, 1, bucati),
+                new IngredientEntry(Dovlecei_Raw, 2, bucati),
+                new IngredientEntry(Ardei_Rosu_Raw, 2, bucati),
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F2, List.of(Piper, Marar, Patrunjel)));
