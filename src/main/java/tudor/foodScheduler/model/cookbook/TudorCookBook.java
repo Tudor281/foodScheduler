@@ -1187,7 +1187,7 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 7, bucati)),
                 F1, List.of(Piper)));
-        cookbook.add(new Recipe("Supă de cartofi și mazăre", Once, List.of(
+        cookbook.add(new Recipe("Supă de cartofi și mazăre", Disabled, List.of(
                 new IngredientEntry(Ceapa_Galbena_Raw, 2, bucati),
                 new IngredientEntry(Ulei_Floarea_Soarelui, 1, linguri),
                 new IngredientEntry(Ulei_Rapita, 1, linguri),
