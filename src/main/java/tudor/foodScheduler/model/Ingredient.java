@@ -59,6 +59,7 @@ public enum Ingredient {
     Lapte_Praf(ALL, ALL, "502460"),
     Linte_Galbena_Raw(ALL, ALL, "172420"),
     Linte_Rosie_Raw(ALL, ALL, "174284"),
+    Loboda(ALL, ALL),
     Maioneza(ALL, ALL, "2710204"),
     Mais(ALL, ALL, "170288"), // corn grain
     Malai(ALL, List.of(), "168039"), // cornmeal
