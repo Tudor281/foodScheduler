@@ -1064,18 +1064,6 @@ public class TudorCookBook {
                 new IngredientEntry(Sare, 2, lingurite),
                 new IngredientEntry(Paine, 3 * 8, bucati)),
                 F1, List.of(Piper)));
-        cookbook.add(new Recipe("Supă cremă de linte galbenă", Once, List.of(
-                new IngredientEntry(Ceapa_Galbena_Raw, 3, bucati),
-                new IngredientEntry(Ulei_Masline, 3, linguri),
-                new IngredientEntry(Morcov_Raw, 3, bucati),
-                new IngredientEntry(Cartofi_Raw, 600, gram),
-                new IngredientEntry(Linte_Galbena_Raw, 400, gram),
-                new IngredientEntry(Telina_Raw, 150, gram),
-                new IngredientEntry(Iaurt_Grecesc_10, 600, gram),
-                new IngredientEntry(Ulei_Masline, 6, linguri),
-                new IngredientEntry(Sare, 2, lingurite),
-                new IngredientEntry(Paine, 3 * 7, bucati)),
-                F1, List.of(Piper)));
         cookbook.add(new Recipe("Supă cremă de linte roșie", Once, List.of(
                 new IngredientEntry(Linte_Rosie_Raw, 500, gram),
                 new IngredientEntry(Ceapa_Alba_Raw, 2, bucati),
